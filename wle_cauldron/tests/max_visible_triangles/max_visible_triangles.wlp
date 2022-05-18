@@ -81,7 +81,7 @@
                         "_myTextMaterial": "33",
                         "_myPlaneMaterial": "32",
                         "_myShowVisibilityButton": false,
-                        "_myShowOnStart": true
+                        "_myShowOnStart": false
                     }
                 },
                 {
@@ -761,7 +761,10 @@
                         "_myPlaneTriangles": 2,
                         "_myStartPlaneCount": 1,
                         "_mySecondsBeforeDoubling": 0.5,
-                        "_myCloneMesh": false
+                        "_myCloneMesh": false,
+                        "_myCloneMaterial": true,
+                        "_myTargetFrameRate": -1,
+                        "_myTextMaterial": "DefaultFontMaterial"
                     }
                 }
             ]

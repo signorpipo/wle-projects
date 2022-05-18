@@ -7,7 +7,8 @@ WL.registerComponent("max-visible-triangles", {
     _myCloneMaterial: { type: WL.Type.Bool, default: true },
     _myCloneMesh: { type: WL.Type.Bool, default: false },
     _myPlaneMaterial: { type: WL.Type.Material },
-    _myBackgroundMaterial: { type: WL.Type.Material }
+    _myBackgroundMaterial: { type: WL.Type.Material },
+    _myTextMaterial: { type: WL.Type.Material, default: null }
 }, {
     _start() {
         this._myBackgroundSize = 4;
@@ -58,12 +59,12 @@ WL.registerComponent("max-visible-triangles", {
             if (this._myDoubleTimer.isDone()) {
                 this._myDoubleTimer.start();
 
+                let averageDT = this._myElapsedTime / this._myFrameCount;
+                let averageFrameRate = 1 / averageDT;
+
                 if (this._myFirstTime) {
                     this._myFirstTime = false;
                 } else {
-
-                    let averageDT = this._myElapsedTime / this._myFrameCount;
-                    let averageFrameRate = 1 / averageDT;
 
                     //if there is not lag, the current plane count is a good lower limit, otherwise the current count is now a upper threshold, we have to search below it
                     let isLagging = false;
@@ -78,6 +79,20 @@ WL.registerComponent("max-visible-triangles", {
                         }
                     } else {
                         this._myLowerLimit = this._myCurrentPlanes;
+                    }
+
+                    this._myTriangleTextComponent.text = "Triangles: " + this._myCurrentPlanes * this._myRealTrianglesAmount;
+                    this._myPlaneTextComponent.text = "Planes: " + this._myCurrentPlanes;
+                    this._myFPSTextComponent.text = "FPS: " + averageFrameRate.toFixed(2);
+
+                    if (isLagging) {
+                        this._myTriangleTextComponent.material.outlineColor = [0.5, 0, 0, 1];
+                        this._myPlaneTextComponent.material.outlineColor = [0.5, 0, 0, 1];
+                        this._myFPSTextComponent.material.outlineColor = [0.5, 0, 0, 1];
+                    } else {
+                        this._myTriangleTextComponent.material.outlineColor = [0, 0, 0, 1];
+                        this._myPlaneTextComponent.material.outlineColor = [0, 0, 0, 1];
+                        this._myFPSTextComponent.material.outlineColor = [0, 0, 0, 1];
                     }
 
                     //check if the binary search is completed
@@ -95,6 +110,12 @@ WL.registerComponent("max-visible-triangles", {
                                 console.log("\nEnd - Triangles:", this._myLowerLimit * this._myRealTrianglesAmount, "- Planes:", this._myLowerLimit, "- Average Frame Rate:", averageFrameRate.toFixed(2));
                                 console.log("Plane Triangles (Adjusted):", this._myRealTrianglesAmount);
                                 console.log("Target Frame Rate:", this._myStableFrameRate.toFixed(2), "- Threshold: ", (this._myStableFrameRate - this._myTargetFrameRateThreshold).toFixed(2));
+
+                                this._myTriangleTextComponent.text = "Triangles: " + this._myLowerLimit * this._myRealTrianglesAmount;
+                                this._myPlaneTextComponent.text = "Planes: " + this._myLowerLimit;
+                                this._myFPSTextComponent.text = "FPS: " + averageFrameRate.toFixed(2);
+
+                                this._myDoneTextComponent.text = "End";
                             }
                             this._myIsDone = true;
                         }
@@ -210,6 +231,74 @@ WL.registerComponent("max-visible-triangles", {
 
         this._myStartTimer = new PP.Timer(1);
         this._mySessionStarted = false;
+
+        this._myTextsObject = WL.scene.addObject(this._myTrianglesObject);
+        //this._myTextsObject.pp_addComponent("pp-easy-transform");
+
+        this._myTriangleTextObject = WL.scene.addObject(this._myTextsObject);
+        //this._myTriangleTextObject.pp_addComponent("pp-easy-transform", { _myIsLocal: true });
+
+        this._myTriangleTextComponent = this._myTriangleTextObject.addComponent('text');
+
+        this._myTriangleTextComponent.alignment = WL.Alignment.Left;
+        this._myTriangleTextComponent.justification = WL.Justification.Line;
+        this._myTriangleTextComponent.material = this._myTextMaterial.clone();
+        this._myTriangleTextComponent.material.color = [1, 1, 1, 1];
+        this._myTriangleTextComponent.material.outlineColor = [0, 0, 0, 1];
+        this._myTriangleTextComponent.material.outlineRange = [0.5, 0.3];
+        this._myTriangleTextComponent.text = " ";
+        //this._myTriangleTextComponent.text = "Triangles: 9999999";
+
+        this._myPlaneTextObject = WL.scene.addObject(this._myTextsObject);
+
+        this._myPlaneTextComponent = this._myPlaneTextObject.addComponent('text');
+        //this._myPlaneTextObject.pp_addComponent("pp-easy-transform", { _myIsLocal: true });
+
+        this._myPlaneTextComponent.alignment = WL.Alignment.Left;
+        this._myPlaneTextComponent.justification = WL.Justification.Line;
+        this._myPlaneTextComponent.material = this._myTextMaterial.clone();
+        this._myPlaneTextComponent.material.color = [1, 1, 1, 1];
+        this._myPlaneTextComponent.material.outlineColor = [0, 0, 0, 1];
+        this._myPlaneTextComponent.material.outlineRange = [0.5, 0.3];
+        this._myPlaneTextComponent.text = " ";
+        //this._myPlaneTextComponent.text = "Planes: 9999999";
+
+        this._myFPSTextObject = WL.scene.addObject(this._myTextsObject);
+
+        this._myFPSTextComponent = this._myFPSTextObject.addComponent('text');
+        //this._myFPSTextObject.pp_addComponent("pp-easy-transform", { _myIsLocal: true });
+
+        this._myFPSTextComponent.alignment = WL.Alignment.Left;
+        this._myFPSTextComponent.justification = WL.Justification.Line;
+        this._myFPSTextComponent.material = this._myTextMaterial.clone();
+        this._myFPSTextComponent.material.color = [1, 1, 1, 1];
+        this._myFPSTextComponent.material.outlineColor = [0, 0, 0, 1];
+        this._myFPSTextComponent.material.outlineRange = [0.5, 0.3];
+        this._myFPSTextComponent.text = " ";
+        //this._myFPSTextComponent.text = "FPS: 99.99";
+
+        this._myDoneTextObject = WL.scene.addObject(this._myTrianglesObject);
+
+        this._myDoneTextComponent = this._myDoneTextObject.addComponent('text');
+        //this._myDoneTextObject.pp_addComponent("pp-easy-transform", { _myIsLocal: true });
+
+        this._myDoneTextComponent.alignment = WL.Alignment.Center;
+        this._myDoneTextComponent.justification = WL.Justification.Line;
+        this._myDoneTextComponent.material = this._myTextMaterial.clone();
+        this._myDoneTextComponent.material.color = [1, 1, 1, 1];
+        this._myDoneTextComponent.material.outlineColor = [0, 0, 0, 1];
+        this._myDoneTextComponent.material.outlineRange = [0.45, 0.3];
+        this._myDoneTextComponent.text = " ";
+        //this._myDoneTextComponent.text = "End";
+
+        this._myTextsObject.pp_setPositionLocal([0, 4.3, 0]);
+        this._myTextsObject.pp_setScale(2.75);
+
+        this._myTriangleTextObject.pp_setPositionLocal([-1.4, 0, 0]);
+        this._myPlaneTextObject.pp_setPositionLocal([0.55, 0, 0]);
+        this._myFPSTextObject.pp_setPositionLocal([-0.2, 0, 0]);
+        this._myDoneTextObject.pp_setPositionLocal([0, -4.6, 0]);
+        this._myDoneTextObject.pp_setScale(4);
     },
     update(dt) {
         if (this._mySessionStarted) {
