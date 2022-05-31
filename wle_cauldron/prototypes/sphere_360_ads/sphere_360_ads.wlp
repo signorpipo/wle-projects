@@ -1,0 +1,4293 @@
+{
+    "objects": {
+        "18": {
+            "name": "Scene",
+            "components": [
+                {
+                    "type": "pp-gamepad-manager"
+                },
+                {
+                    "type": "pp-debug-data",
+                    "pp-debug-data": {
+                        "_myCubeMesh": "p1",
+                        "_myFlatMaterial": "31"
+                    }
+                },
+                {
+                    "type": "pp-mute-all",
+                    "active": false
+                },
+                {
+                    "type": "pp-clear-console-on-session"
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "19": {
+            "name": "Player",
+            "parent": "18"
+        },
+        "20": {
+            "name": "Pivot",
+            "parent": "19",
+            "components": [
+                {
+                    "type": "pp-player-height",
+                    "active": false
+                }
+            ]
+        },
+        "21": {
+            "name": "Non VR Camera",
+            "parent": "20",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "mouse-look"
+                },
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "collisionGroup": 0,
+                        "handedness": "none"
+                    }
+                }
+            ]
+        },
+        "22": {
+            "name": "Eyes",
+            "parent": "71",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "23": {
+            "name": "Hand Left",
+            "parent": "71",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -0.1,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "pp-set-hand-transform"
+                },
+                {
+                    "type": "pp-console-vr",
+                    "pp-console-vr": {
+                        "_myHandedness": "left",
+                        "_myTextMaterial": "33",
+                        "_myPlaneMaterial": "32"
+                    }
+                },
+                {
+                    "type": "pp-easy-tune",
+                    "pp-easy-tune": {
+                        "_myHandedness": "left",
+                        "_myPlaneMaterial": "32",
+                        "_myTextMaterial": "33"
+                    }
+                },
+                {
+                    "type": "pp-gamepad-animator",
+                    "pp-gamepad-animator": {
+                        "_mySelect": "55",
+                        "_mySqueeze": "56",
+                        "_myThumbstick": "57",
+                        "_myBottomButton": "53",
+                        "_myTopButton": "58"
+                    }
+                }
+            ]
+        },
+        "24": {
+            "name": "Hand Right",
+            "parent": "71",
+            "components": [
+                {
+                    "type": "pp-set-hand-transform",
+                    "pp-set-hand-transform": {
+                        "_myHandedness": "right"
+                    }
+                },
+                {
+                    "type": "pp-tool-cursor",
+                    "pp-tool-cursor": {
+                        "_myHandedness": "right",
+                        "_myPulseOnHover": false,
+                        "_myCursorMesh": "p2",
+                        "_myCursorMaterial": "32"
+                    }
+                },
+                {
+                    "type": "pp-gamepad-animator",
+                    "pp-gamepad-animator": {
+                        "_myHandedness": "right",
+                        "_mySelect": "63",
+                        "_mySqueeze": "64",
+                        "_myThumbstick": "65",
+                        "_myBottomButton": "61",
+                        "_myTopButton": "66"
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.1,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "25": {
+            "name": "Head",
+            "parent": "71",
+            "components": [
+                {
+                    "type": "pp-set-head-transform"
+                },
+                {
+                    "type": "pp-audio-listener",
+                    "active": false
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "26": {
+            "name": "Eye Left",
+            "parent": "22",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye left"
+                    }
+                }
+            ]
+        },
+        "27": {
+            "name": "Eye Right",
+            "parent": "22",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye right"
+                    }
+                }
+            ]
+        },
+        "28": {
+            "name": "Lights",
+            "parent": "18"
+        },
+        "29": {
+            "name": "Light 1",
+            "parent": "28",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                1.0,
+                3.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "attenuation": 0.075
+                    }
+                }
+            ]
+        },
+        "30": {
+            "name": "Light 2",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "attenuation": 0.075
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                3.0,
+                -1.0,
+                1.0
+            ]
+        },
+        "34": {
+            "name": "Empty",
+            "deleted": true
+        },
+        "51": {
+            "link": {
+                "name": "Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "34",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "52": {
+            "link": {
+                "name": "Left_Body<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0104435,
+                0.0091218,
+                -0.0187672,
+                1.0
+            ]
+        },
+        "53": {
+            "link": {
+                "name": "Left_Bottom_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0015014,
+                0.000123,
+                -0.0252592,
+                1.0
+            ]
+        },
+        "54": {
+            "link": {
+                "name": "Left_Option_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0096518,
+                0.0081721,
+                -0.0086631,
+                1.0
+            ]
+        },
+        "55": {
+            "link": {
+                "name": "Left_Select<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.009961,
+                -0.0240266,
+                -0.0500781,
+                1.0
+            ]
+        },
+        "56": {
+            "link": {
+                "name": "Left_Squeeze<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.0098165,
+                0.0018168,
+                0.0005787,
+                0.0,
+                -0.0014374,
+                -0.0050561,
+                -0.0085068,
+                0.0,
+                -0.0012529,
+                -0.008434,
+                0.0052245,
+                0.0,
+                0.0019936,
+                -0.0052813,
+                0.0026141,
+                1.0
+            ]
+        },
+        "57": {
+            "link": {
+                "name": "Left_Thumbstick<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0179094,
+                -0.0037003,
+                -0.039634,
+                1.0
+            ]
+        },
+        "58": {
+            "link": {
+                "name": "Left_Top_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0025217,
+                -0.0069524,
+                -0.0371638,
+                1.0
+            ]
+        },
+        "59": {
+            "link": {
+                "name": "Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "34",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "60": {
+            "link": {
+                "name": "Right_Body<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0104433,
+                0.0091218,
+                -0.0187672,
+                1.0
+            ]
+        },
+        "61": {
+            "link": {
+                "name": "Right_Bottom_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0015014,
+                0.000123,
+                -0.0252592,
+                1.0
+            ]
+        },
+        "62": {
+            "link": {
+                "name": "Right_Option_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0096518,
+                0.0081721,
+                -0.0086631,
+                1.0
+            ]
+        },
+        "63": {
+            "link": {
+                "name": "Right_Select<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.009961,
+                -0.0240266,
+                -0.0500781,
+                1.0
+            ]
+        },
+        "64": {
+            "link": {
+                "name": "Right_Squeeze<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.0096597,
+                -0.0024702,
+                -0.0007666,
+                0.0,
+                0.0019505,
+                -0.0050111,
+                -0.0084311,
+                0.0,
+                0.0016984,
+                -0.0082937,
+                0.0053223,
+                0.0,
+                -0.0019936,
+                -0.0052813,
+                0.0026141,
+                1.0
+            ]
+        },
+        "65": {
+            "link": {
+                "name": "Right_Thumbstick<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0179094,
+                -0.0037003,
+                -0.039634,
+                1.0
+            ]
+        },
+        "66": {
+            "link": {
+                "name": "Right_Top_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0025217,
+                -0.0069524,
+                -0.0371638,
+                1.0
+            ]
+        },
+        "67": {
+            "name": "Pivot",
+            "parent": "69",
+            "transformation": [
+                -0.9999993,
+                -1.509957456846678e-7,
+                8.742273394091171e-8,
+                0.0,
+                -1.509958451606508e-7,
+                1.0,
+                -1.509958167389414e-7,
+                0.0,
+                -8.742270551920228e-8,
+                -1.509957172629584e-7,
+                -0.9999993,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "68": {
+            "name": "Pivot",
+            "parent": "70",
+            "transformation": [
+                -0.9999992,
+                -8.742271262462965e-8,
+                8.74229897362966e-8,
+                0.0,
+                -8.7422797889758e-8,
+                1.0000001,
+                -1.509958309497961e-7,
+                0.0,
+                -8.742306079057016e-8,
+                -1.509958593715055e-7,
+                -1.0000002,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "69": {
+            "name": "Mesh",
+            "parent": "23"
+        },
+        "70": {
+            "name": "Mesh",
+            "parent": "24"
+        },
+        "71": {
+            "name": "VR Setup",
+            "parent": "20",
+            "components": [
+                {
+                    "type": "pp-set-hierarchy-active",
+                    "pp-set-hierarchy-active": {
+                        "_myHierarchyActive": true
+                    },
+                    "active": true
+                }
+            ]
+        },
+        "72": {
+            "name": "Environments",
+            "parent": "18",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "move-away-and-back",
+                    "active": false
+                }
+            ]
+        },
+        "73": {
+            "name": "Environment 1",
+            "parent": "72",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "74": {
+            "name": "Sphere",
+            "parent": "73",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "79",
+                        "material": "81"
+                    }
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "84"
+                    }
+                }
+            ],
+            "transformation": [
+                100.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0002026,
+                -100.0000381,
+                0.0,
+                0.0,
+                100.0000381,
+                -0.0002026,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "75": {
+            "name": "Banners",
+            "parent": "73"
+        },
+        "76": {
+            "name": "Next",
+            "parent": "73",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "groups": 1,
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "163"
+                    }
+                },
+                {
+                    "type": "next-environment",
+                    "next-environment": {
+                        "environment": "97"
+                    }
+                }
+            ],
+            "transformation": [
+                -3.576263907234534e-7,
+                0.0,
+                2.9999873,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -2.9999985,
+                0.0,
+                -3.576277265437966e-7,
+                0.0,
+                25.0,
+                0.0,
+                5.364418029785156e-7,
+                1.0
+            ]
+        },
+        "77": {
+            "name": "Banner 1",
+            "parent": "75",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "153"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.988584,
+                0.0,
+                0.2614672,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -0.2614672,
+                0.0,
+                2.988584,
+                0.0,
+                -26.0,
+                6.0,
+                -32.0,
+                1.0
+            ]
+        },
+        "80": {
+            "link": {
+                "name": "Sphere",
+                "file": "assets\\models\\inverted_sphere.fbx"
+            },
+            "parent": "74",
+            "deleted": true
+        },
+        "97": {
+            "name": "Environment 2",
+            "parent": "72",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "deactivate-after-delay"
+                }
+            ]
+        },
+        "98": {
+            "name": "Sphere",
+            "parent": "97",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "79",
+                        "material": "81"
+                    }
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "90"
+                    }
+                }
+            ],
+            "transformation": [
+                100.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0002026,
+                -100.0000381,
+                0.0,
+                0.0,
+                100.0000381,
+                -0.0002026,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "99": {
+            "name": "Banners",
+            "parent": "97"
+        },
+        "100": {
+            "name": "Banner 1",
+            "parent": "99",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "86"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                -10.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "101": {
+            "name": "Next",
+            "parent": "97",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "groups": 1,
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "163"
+                    }
+                },
+                {
+                    "type": "next-environment",
+                    "next-environment": {
+                        "environment": "123"
+                    }
+                }
+            ],
+            "transformation": [
+                -3.576262486149062e-7,
+                0.0,
+                2.9999861,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -2.9999973,
+                0.0,
+                -3.576275844352495e-7,
+                0.0,
+                25.0,
+                0.0,
+                5.364418029785156e-7,
+                1.0
+            ]
+        },
+        "102": {
+            "name": "Cursor Object",
+            "parent": "104",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "32"
+                    }
+                }
+            ],
+            "transformation": [
+                0.1,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.1,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.1,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "103": {
+            "name": "Ray",
+            "parent": "104",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "32"
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -0.1,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "104": {
+            "name": "Cursor",
+            "parent": "24",
+            "components": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "handedness": "right",
+                        "cursorObject": "102",
+                        "collisionGroup": 0,
+                        "cursorRayObject": null
+                    }
+                }
+            ],
+            "transformation": [
+                -1.0000017,
+                -2.980238278382785e-8,
+                -2.38419005427204e-7,
+                0.0,
+                -1.8941877044653666e-7,
+                0.7082647,
+                0.7059468,
+                0.0,
+                1.478249203046289e-7,
+                0.7059482,
+                -0.7082661,
+                0.0,
+                0.01,
+                -0.024,
+                -0.05,
+                1.0
+            ]
+        },
+        "105": {
+            "name": "Banner 2",
+            "parent": "75",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "155"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.988584,
+                -4.512636451181607e-7,
+                -0.2614672,
+                0.0,
+                -4.135069673338876e-7,
+                3.0,
+                -4.512636451181607e-7,
+                0.0,
+                0.2614672,
+                -4.135069673338876e-7,
+                -2.988584,
+                0.0,
+                -11.5000038,
+                5.5001578,
+                23.0000019,
+                1.0
+            ]
+        },
+        "106": {
+            "name": "Banner 3",
+            "parent": "75",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "157"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.9544231,
+                0.0,
+                0.5209445,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -0.5209445,
+                0.0,
+                2.9544231,
+                0.0,
+                30.9999694,
+                2.5000054,
+                -15.999999,
+                1.0
+            ]
+        },
+        "107": {
+            "name": "Banner 4",
+            "parent": "75",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "159"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.988584,
+                -4.512636451181607e-7,
+                -0.2614672,
+                0.0,
+                -4.135069673338876e-7,
+                3.0,
+                -4.512636451181607e-7,
+                0.0,
+                0.2614672,
+                -4.135069673338876e-7,
+                -2.988584,
+                0.0,
+                31.9999961,
+                10.0000028,
+                23.5,
+                1.0
+            ]
+        },
+        "108": {
+            "name": "Banner 5",
+            "parent": "75",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "161"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9885809,
+                -4.512631335273909e-7,
+                -0.2614669,
+                0.0,
+                -4.135073936595291e-7,
+                3.000003,
+                -4.512640998655115e-7,
+                0.0,
+                0.261467,
+                -4.13506597851665e-7,
+                -2.9885816,
+                0.0,
+                -27.5001564,
+                8.999999,
+                20.0000171,
+                1.0
+            ]
+        },
+        "109": {
+            "name": "Banner 1",
+            "parent": "99",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "161"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.988584,
+                0.0,
+                0.2614672,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -0.2614672,
+                0.0,
+                2.988584,
+                0.0,
+                -8.0000705,
+                6.0,
+                -32.0,
+                1.0
+            ]
+        },
+        "110": {
+            "name": "Banner 2",
+            "parent": "99",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "159"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.988584,
+                -4.512636451181607e-7,
+                -0.2614672,
+                0.0,
+                -4.135069673338876e-7,
+                3.0,
+                -4.512636451181607e-7,
+                0.0,
+                0.2614672,
+                -4.135069673338876e-7,
+                -2.988584,
+                0.0,
+                -7.0000066,
+                5.500019,
+                23.0000801,
+                1.0
+            ]
+        },
+        "111": {
+            "name": "Banner 3",
+            "parent": "99",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "153"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.988584,
+                0.0,
+                0.2614672,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -0.2614672,
+                0.0,
+                2.988584,
+                0.0,
+                19.0000019,
+                10.0000114,
+                -16.0,
+                1.0
+            ]
+        },
+        "112": {
+            "name": "Banner 4",
+            "parent": "99",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "155"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -3.0,
+                -4.529874217951147e-7,
+                0.0,
+                0.0,
+                -4.529874217951147e-7,
+                3.0,
+                -4.529874217951147e-7,
+                0.0,
+                0.0,
+                -4.529874217951147e-7,
+                -3.0,
+                0.0,
+                21.5,
+                9.9999971,
+                23.5000019,
+                1.0
+            ]
+        },
+        "113": {
+            "name": "Banner 5",
+            "parent": "99",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "157"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.988584,
+                -4.512636451181607e-7,
+                -0.2614672,
+                0.0,
+                -4.135073936595291e-7,
+                3.000003,
+                -4.512640998655115e-7,
+                0.0,
+                0.2614672,
+                -4.135069673338876e-7,
+                -2.988584,
+                0.0,
+                -31.0000934,
+                8.9999446,
+                20.0000686,
+                1.0
+            ]
+        },
+        "114": {
+            "name": "Environment 1",
+            "parent": "72",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "115": {
+            "name": "Sphere",
+            "parent": "114",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "79",
+                        "material": "81"
+                    }
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "84"
+                    }
+                }
+            ],
+            "transformation": [
+                100.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0002026,
+                -100.0000381,
+                0.0,
+                0.0,
+                100.0000381,
+                -0.0002026,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "116": {
+            "name": "Banners",
+            "parent": "114",
+            "deleted": true
+        },
+        "117": {
+            "name": "Banner 1",
+            "parent": "116",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "86"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                -26.0,
+                6.0,
+                -32.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "118": {
+            "name": "Banner 2",
+            "parent": "116",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "86"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9999997,
+                -4.52988700772039e-7,
+                2.622683439312823e-7,
+                0.0,
+                -4.529887291937485e-7,
+                3.0,
+                -4.529874502168241e-7,
+                0.0,
+                -2.62268258666154e-7,
+                -4.529874217951147e-7,
+                -2.9999997,
+                0.0,
+                -11.5,
+                5.5,
+                23.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "119": {
+            "name": "Banner 3",
+            "parent": "116",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "86"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                31.0,
+                2.5,
+                -16.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "120": {
+            "name": "Banner 4",
+            "parent": "116",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "86"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9999997,
+                -4.529880186510127e-7,
+                2.622683439312823e-7,
+                0.0,
+                -4.529880470727221e-7,
+                3.0,
+                -4.529874502168241e-7,
+                0.0,
+                -2.62268258666154e-7,
+                -4.529874217951147e-7,
+                -2.9999997,
+                0.0,
+                31.9999961,
+                9.999999,
+                23.5,
+                1.0
+            ],
+            "deleted": true
+        },
+        "121": {
+            "name": "Banner 5",
+            "parent": "116",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "86"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9999966,
+                -4.529869102043449e-7,
+                -0.0,
+                0.0,
+                -4.529878765424656e-7,
+                3.000003,
+                -4.529878765424656e-7,
+                0.0,
+                0.0,
+                -4.529870238911826e-7,
+                -2.9999973,
+                0.0,
+                -27.5001564,
+                9.0,
+                20.0000171,
+                1.0
+            ],
+            "deleted": true
+        },
+        "122": {
+            "name": "Next",
+            "parent": "114",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "groups": 1,
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "88"
+                    }
+                },
+                {
+                    "type": "next-environment",
+                    "next-environment": {
+                        "environment": "97"
+                    }
+                }
+            ],
+            "transformation": [
+                -3.576263907234534e-7,
+                0.0,
+                2.9999873,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -2.9999985,
+                0.0,
+                -3.576277265437966e-7,
+                0.0,
+                25.0,
+                0.0,
+                5.364418029785156e-7,
+                1.0
+            ],
+            "deleted": true
+        },
+        "123": {
+            "name": "Environment 3",
+            "parent": "72",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "deactivate-after-delay"
+                }
+            ]
+        },
+        "124": {
+            "name": "Sphere",
+            "parent": "123",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "79",
+                        "material": "81"
+                    }
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "92"
+                    }
+                }
+            ],
+            "transformation": [
+                100.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0002026,
+                -100.0000381,
+                0.0,
+                0.0,
+                100.0000381,
+                -0.0002026,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "125": {
+            "name": "Banners",
+            "parent": "123"
+        },
+        "126": {
+            "name": "Banner 2",
+            "parent": "125",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "153"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9999997,
+                -4.529904913397331e-7,
+                2.622683439312823e-7,
+                0.0,
+                -4.529905197614426e-7,
+                3.0,
+                -4.529874502168241e-7,
+                0.0,
+                -2.62268258666154e-7,
+                -4.529874217951147e-7,
+                -2.9999997,
+                0.0,
+                -8.4999885,
+                6.9999995,
+                30.0,
+                1.0
+            ]
+        },
+        "127": {
+            "name": "Banner 3",
+            "parent": "125",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "155"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.9544231,
+                0.0,
+                -0.5209445,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.5209445,
+                0.0,
+                2.9544231,
+                0.0,
+                0.0,
+                15.5,
+                -25.0,
+                1.0
+            ]
+        },
+        "128": {
+            "name": "Banner 4",
+            "parent": "125",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "161"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9999997,
+                -4.529971420197399e-7,
+                2.622683439312823e-7,
+                0.0,
+                -4.529971704414493e-7,
+                3.0,
+                -4.529874502168241e-7,
+                0.0,
+                -2.62268258666154e-7,
+                -4.529874217951147e-7,
+                -2.9999997,
+                0.0,
+                29.9999961,
+                11.0,
+                23.5,
+                1.0
+            ]
+        },
+        "129": {
+            "name": "Banner 5",
+            "parent": "125",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "159"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.9999966,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                3.000003,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                2.9999973,
+                0.0,
+                31.5,
+                5.5,
+                -29.5,
+                1.0
+            ]
+        },
+        "130": {
+            "name": "Banner 1",
+            "parent": "125",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "157"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.8977775,
+                0.0,
+                -0.7764573,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                0.7764573,
+                0.0,
+                2.8977775,
+                0.0,
+                -31.5000801,
+                9.5000066,
+                -32.0000152,
+                1.0
+            ]
+        },
+        "131": {
+            "name": "Next",
+            "parent": "123",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "groups": 1,
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "163"
+                    }
+                },
+                {
+                    "type": "next-environment",
+                    "next-environment": {
+                        "environment": "132"
+                    }
+                }
+            ],
+            "transformation": [
+                -3.576262486149062e-7,
+                0.0,
+                2.9999861,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -2.9999973,
+                0.0,
+                -3.576275844352495e-7,
+                0.0,
+                25.0,
+                0.0,
+                5.364418029785156e-7,
+                1.0
+            ]
+        },
+        "132": {
+            "name": "Environment 4",
+            "parent": "72",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "deactivate-after-delay"
+                }
+            ]
+        },
+        "133": {
+            "name": "Sphere",
+            "parent": "132",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "79",
+                        "material": "81"
+                    }
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "94"
+                    }
+                }
+            ],
+            "transformation": [
+                100.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0002026,
+                -100.0000381,
+                0.0,
+                0.0,
+                100.0000381,
+                -0.0002026,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "134": {
+            "name": "Banners",
+            "parent": "132"
+        },
+        "135": {
+            "name": "Banner 2",
+            "parent": "134",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "157"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9776935,
+                -4.496191934322269e-7,
+                0.3656148,
+                0.0,
+                -5.08192670167773e-7,
+                3.0,
+                -4.496109511364921e-7,
+                0.0,
+                -0.3656148,
+                -5.082020493318851e-7,
+                -2.9776935,
+                0.0,
+                2.000003,
+                7.000072,
+                20.0000858,
+                1.0
+            ]
+        },
+        "136": {
+            "name": "Banner 3",
+            "parent": "134",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "159"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.7189233,
+                0.0,
+                -1.2678548,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                1.2678548,
+                0.0,
+                2.7189233,
+                0.0,
+                -31.5000019,
+                8.5000104,
+                -11.0,
+                1.0
+            ]
+        },
+        "137": {
+            "name": "Banner 4",
+            "parent": "134",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "155"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9497661,
+                -4.454023496691662e-7,
+                0.5467068,
+                0.0,
+                -5.355378789317911e-7,
+                3.0,
+                -4.454021791389096e-7,
+                0.0,
+                -0.5467068,
+                -5.355381063054665e-7,
+                -2.9497661,
+                0.0,
+                32.0000114,
+                9.9999628,
+                23.5000057,
+                1.0
+            ]
+        },
+        "138": {
+            "name": "Banner 5",
+            "parent": "134",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "161"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.988584,
+                -4.512637019615795e-7,
+                0.2614672,
+                0.0,
+                -4.924684162688209e-7,
+                3.000003,
+                -4.512641567089304e-7,
+                0.0,
+                -0.2614672,
+                -4.924679046780511e-7,
+                -2.988584,
+                0.0,
+                -31.0001144,
+                9.0000514,
+                41.0000267,
+                1.0
+            ]
+        },
+        "139": {
+            "name": "Banner 1",
+            "parent": "134",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "153"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                }
+            ],
+            "transformation": [
+                2.8190779,
+                0.0,
+                -1.0260607,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                1.0260607,
+                0.0,
+                2.8190779,
+                0.0,
+                -32.0000686,
+                6.0000004,
+                -25.0000495,
+                1.0
+            ]
+        },
+        "140": {
+            "name": "Next",
+            "parent": "132",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "groups": 1,
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "163"
+                    }
+                },
+                {
+                    "type": "next-environment",
+                    "next-environment": {
+                        "environment": "141"
+                    }
+                }
+            ],
+            "transformation": [
+                -3.576262486149062e-7,
+                0.0,
+                2.9999861,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -2.9999973,
+                0.0,
+                -3.576275844352495e-7,
+                0.0,
+                25.0,
+                0.0,
+                5.364418029785156e-7,
+                1.0
+            ]
+        },
+        "141": {
+            "name": "Environment 5",
+            "parent": "72",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "deactivate-after-delay"
+                }
+            ]
+        },
+        "142": {
+            "name": "Sphere",
+            "parent": "141",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "79",
+                        "material": "81"
+                    }
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "96"
+                    }
+                }
+            ],
+            "transformation": [
+                100.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0002026,
+                -100.0000381,
+                0.0,
+                0.0,
+                100.0000381,
+                -0.0002026,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "143": {
+            "name": "Banners",
+            "parent": "141"
+        },
+        "144": {
+            "name": "Banner 2",
+            "parent": "143",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "161"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                },
+                {
+                    "type": "pp-easy-transform",
+                    "pp-easy-transform": {
+                        "_myIsLocal": true,
+                        "_myVariableName": "Banner 2"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9544231,
+                -4.461054743387649e-7,
+                -0.5209444,
+                0.0,
+                -3.743269587630494e-7,
+                3.0,
+                -4.461055311821838e-7,
+                0.0,
+                0.5209444,
+                -3.743269019196305e-7,
+                -2.9544231,
+                0.0,
+                -5.5,
+                5.499999,
+                23.0,
+                1.0
+            ]
+        },
+        "145": {
+            "name": "Banner 3",
+            "parent": "143",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "155"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                },
+                {
+                    "type": "pp-easy-transform",
+                    "pp-easy-transform": {
+                        "_myIsLocal": true,
+                        "_myVariableName": "Banner 3"
+                    }
+                }
+            ],
+            "transformation": [
+                2.8977775,
+                0.0,
+                0.7764573,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -0.7764573,
+                0.0,
+                2.8977775,
+                0.0,
+                10.500019,
+                6.0000009,
+                -25.0,
+                1.0
+            ]
+        },
+        "146": {
+            "name": "Banner 4",
+            "parent": "143",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "159"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                },
+                {
+                    "type": "pp-easy-transform",
+                    "pp-easy-transform": {
+                        "_myIsLocal": true,
+                        "_myVariableName": "Banner 4"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9999997,
+                -4.529991031176906e-7,
+                2.622683439312823e-7,
+                0.0,
+                -4.529991315394e-7,
+                3.0,
+                -4.529874502168241e-7,
+                0.0,
+                -2.62268258666154e-7,
+                -4.529874217951147e-7,
+                -2.9999997,
+                0.0,
+                25.9999904,
+                5.5,
+                23.5,
+                1.0
+            ]
+        },
+        "147": {
+            "name": "Banner 5",
+            "parent": "143",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "153"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                },
+                {
+                    "type": "pp-easy-transform",
+                    "pp-easy-transform": {
+                        "_myIsLocal": true,
+                        "_myVariableName": "Banner 5"
+                    }
+                }
+            ],
+            "transformation": [
+                -2.9544191,
+                -4.461048490611575e-7,
+                -0.5209437,
+                0.0,
+                -3.743273566669814e-7,
+                3.000003,
+                -4.461059859295348e-7,
+                0.0,
+                0.5209438,
+                -3.743264471722796e-7,
+                -2.9544196,
+                0.0,
+                -23.0000171,
+                9.5000076,
+                20.0,
+                1.0
+            ]
+        },
+        "148": {
+            "name": "Banner 1",
+            "parent": "143",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "groups": 1,
+                        "collider": "box",
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "157"
+                    }
+                },
+                {
+                    "type": "link-on-click",
+                    "link-on-click": {
+                        "url": "https://elia-ducceschi.itch.io/"
+                    }
+                },
+                {
+                    "type": "pp-easy-transform",
+                    "pp-easy-transform": {
+                        "_myIsLocal": true,
+                        "_myVariableName": "Banner 1"
+                    }
+                }
+            ],
+            "transformation": [
+                2.9544231,
+                0.0,
+                0.5209445,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -0.5209445,
+                0.0,
+                2.9544231,
+                0.0,
+                -17.0,
+                6.0,
+                -31.9999866,
+                1.0
+            ]
+        },
+        "149": {
+            "name": "Next",
+            "parent": "141",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "82"
+                    }
+                },
+                {
+                    "type": "collision",
+                    "collision": {
+                        "collider": "box",
+                        "groups": 1,
+                        "box": {
+                            "extents": [
+                                3.0,
+                                3.0,
+                                0.5
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "set-texture",
+                    "set-texture": {
+                        "texture": "163"
+                    }
+                },
+                {
+                    "type": "next-environment",
+                    "next-environment": {
+                        "environment": "73"
+                    }
+                }
+            ],
+            "transformation": [
+                -3.576262486149062e-7,
+                0.0,
+                2.9999861,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                0.0,
+                -2.9999973,
+                0.0,
+                -3.576275844352495e-7,
+                0.0,
+                25.0,
+                0.0,
+                5.364418029785156e-7,
+                1.0
+            ]
+        },
+        "150": {
+            "name": "Blinder",
+            "parent": "18",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "79",
+                        "material": "151"
+                    },
+                    "active": true
+                },
+                {
+                    "type": "deactivate-after-delay",
+                    "deactivate-after-delay": {
+                        "delay": 1.5
+                    }
+                }
+            ],
+            "transformation": [
+                0.5,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.5,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        }
+    },
+    "meshes": {
+        "p0": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            }
+        },
+        "p1": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            }
+        },
+        "p2": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "p3": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "p4": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "p5": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        },
+        "37": {
+            "link": {
+                "name": "Mesh",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "38": {
+            "link": {
+                "name": "Mesh.002",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "39": {
+            "link": {
+                "name": "Mesh.003",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "40": {
+            "link": {
+                "name": "Mesh.005",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "41": {
+            "link": {
+                "name": "Mesh.006",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "42": {
+            "link": {
+                "name": "Mesh.004",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "43": {
+            "link": {
+                "name": "Mesh.001",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "44": {
+            "link": {
+                "name": "Mesh.007",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "45": {
+            "link": {
+                "name": "Mesh.009",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "46": {
+            "link": {
+                "name": "Mesh.010",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "47": {
+            "link": {
+                "name": "Mesh.012",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "48": {
+            "link": {
+                "name": "Mesh.013",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "49": {
+            "link": {
+                "name": "Mesh.011",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "50": {
+            "link": {
+                "name": "Mesh.008",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "79": {
+            "link": {
+                "name": "Sphere",
+                "file": "assets\\models\\inverted_sphere.fbx"
+            }
+        }
+    },
+    "textures": {
+        "t0": {
+            "link": {
+                "name": "DefaultFont",
+                "file": "default"
+            }
+        },
+        "84": {
+            "link": {
+                "name": "sphere_1.jpg",
+                "file": "assets\\textures\\spheres\\sphere_1.jpg"
+            }
+        },
+        "86": {
+            "link": {
+                "name": "banner_template.jpg",
+                "file": "assets\\textures\\banners\\banner_template.jpg"
+            }
+        },
+        "88": {
+            "link": {
+                "name": "next_template.jpg",
+                "file": "assets\\textures\\next_template.jpg"
+            }
+        },
+        "90": {
+            "link": {
+                "name": "sphere_2.jpg",
+                "file": "assets\\textures\\spheres\\sphere_2.jpg"
+            }
+        },
+        "92": {
+            "link": {
+                "name": "sphere_3.jpg",
+                "file": "assets\\textures\\spheres\\sphere_3.jpg"
+            }
+        },
+        "94": {
+            "link": {
+                "name": "sphere_4.jpg",
+                "file": "assets\\textures\\spheres\\sphere_4.jpg"
+            }
+        },
+        "96": {
+            "link": {
+                "name": "sphere_5.jpg",
+                "file": "assets\\textures\\spheres\\sphere_5.jpg"
+            }
+        },
+        "153": {
+            "link": {
+                "name": "banner_1.jpg",
+                "file": "assets\\textures\\banners\\banner_1.jpg"
+            }
+        },
+        "155": {
+            "link": {
+                "name": "banner_2.jpg",
+                "file": "assets\\textures\\banners\\banner_2.jpg"
+            }
+        },
+        "157": {
+            "link": {
+                "name": "banner_3.jpg",
+                "file": "assets\\textures\\banners\\banner_3.jpg"
+            }
+        },
+        "159": {
+            "link": {
+                "name": "banner_4.jpg",
+                "file": "assets\\textures\\banners\\banner_4.jpg"
+            }
+        },
+        "161": {
+            "link": {
+                "name": "banner_5.jpg",
+                "file": "assets\\textures\\banners\\banner_5.jpg"
+            }
+        },
+        "163": {
+            "link": {
+                "name": "next.jpg",
+                "file": "assets\\textures\\next.jpg"
+            }
+        }
+    },
+    "images": {
+        "f0": {
+            "link": {
+                "name": "DefaultFontImage",
+                "file": "default"
+            },
+            "maxSize": [
+                512,
+                512
+            ]
+        },
+        "83": {
+            "link": {
+                "name": "sphere_1.jpg",
+                "file": "assets\\textures\\spheres\\sphere_1.jpg"
+            },
+            "compress": false,
+            "maxSize": [
+                2048,
+                1024
+            ]
+        },
+        "85": {
+            "link": {
+                "name": "banner_template.jpg",
+                "file": "assets\\textures\\banners\\banner_template.jpg"
+            },
+            "maxSize": [
+                2048,
+                2048
+            ],
+            "compress": false
+        },
+        "87": {
+            "link": {
+                "name": "next_template.jpg",
+                "file": "assets\\textures\\next_template.jpg"
+            },
+            "maxSize": [
+                2048,
+                2048
+            ],
+            "compress": false
+        },
+        "89": {
+            "link": {
+                "name": "sphere_2.jpg",
+                "file": "assets\\textures\\spheres\\sphere_2.jpg"
+            },
+            "compress": false,
+            "maxSize": [
+                2048,
+                1024
+            ]
+        },
+        "91": {
+            "link": {
+                "name": "sphere_3.jpg",
+                "file": "assets\\textures\\spheres\\sphere_3.jpg"
+            },
+            "compress": false,
+            "maxSize": [
+                2048,
+                1024
+            ]
+        },
+        "93": {
+            "link": {
+                "name": "sphere_4.jpg",
+                "file": "assets\\textures\\spheres\\sphere_4.jpg"
+            },
+            "compress": false,
+            "maxSize": [
+                2048,
+                1024
+            ]
+        },
+        "95": {
+            "link": {
+                "name": "sphere_5.jpg",
+                "file": "assets\\textures\\spheres\\sphere_5.jpg"
+            },
+            "compress": false,
+            "maxSize": [
+                2048,
+                1024
+            ]
+        },
+        "152": {
+            "link": {
+                "name": "banner_1.jpg",
+                "file": "assets\\textures\\banners\\banner_1.jpg"
+            },
+            "compress": false
+        },
+        "154": {
+            "link": {
+                "name": "banner_2.jpg",
+                "file": "assets\\textures\\banners\\banner_2.jpg"
+            },
+            "compress": false
+        },
+        "156": {
+            "link": {
+                "name": "banner_3.jpg",
+                "file": "assets\\textures\\banners\\banner_3.jpg"
+            },
+            "compress": false
+        },
+        "158": {
+            "link": {
+                "name": "banner_4.jpg",
+                "file": "assets\\textures\\banners\\banner_4.jpg"
+            },
+            "compress": false
+        },
+        "160": {
+            "link": {
+                "name": "banner_5.jpg",
+                "file": "assets\\textures\\banners\\banner_5.jpg"
+            },
+            "compress": false
+        },
+        "162": {
+            "link": {
+                "name": "next.jpg",
+                "file": "assets\\textures\\next.jpg"
+            },
+            "compress": false
+        }
+    },
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            }
+        },
+        "31": {
+            "name": "Debug Flat",
+            "pipeline": "7"
+        },
+        "32": {
+            "name": "Tool Flat",
+            "pipeline": "7"
+        },
+        "33": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "name": "Tool Font"
+        },
+        "35": {
+            "link": {
+                "name": "Lambert_Body",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "name": "Quest Controller Body"
+        },
+        "36": {
+            "link": {
+                "name": "Lambert_Button",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "name": "Quest Controller Button"
+        },
+        "78": {
+            "link": {
+                "name": "DefaultMaterial",
+                "file": "assets\\models\\inverted_sphere.fbx"
+            }
+        },
+        "81": {
+            "name": "Sphere_Material",
+            "pipeline": "8",
+            "Flat": {
+                "flatTexture": "84"
+            }
+        },
+        "82": {
+            "name": "Banner_Material",
+            "pipeline": "8",
+            "Flat": {
+                "flatTexture": "86"
+            }
+        },
+        "151": {
+            "name": "Blinder",
+            "pipeline": "7"
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Dynamic",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Flat",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Skinning",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Phong",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        }
+    },
+    "animations": {},
+    "skins": {},
+    "pipelines": {
+        "2": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        }
+    },
+    "settings": {
+        "project": {
+            "name": "sphere_360_ads",
+            "version": [
+                0,
+                8,
+                10
+            ]
+        },
+        "rendering": {
+            "clearColor": [
+                1.0,
+                0.9999899,
+                0.9999899,
+                1.0
+            ]
+        },
+        "runtime": {
+            "xrButtonColor": "black",
+            "webxr": {
+                "optionalFeatures": {
+                    "hand-tracking": false,
+                    "hit-test": false
+                }
+            },
+            "visualizeColliders": false
+        },
+        "scripting": {
+            "sourcePaths": [
+                "js/bundle.js",
+                "js/pp",
+                "js/pp/audio",
+                "js/pp/cauldron",
+                "js/pp/cauldron/cauldron",
+                "js/pp/cauldron/components",
+                "js/pp/cauldron/fsm",
+                "js/pp/cauldron/utils",
+                "js/pp/debug",
+                "js/pp/debug/components",
+                "js/pp/gameplay",
+                "js/pp/gameplay/grab_throw",
+                "js/pp/input",
+                "js/pp/input/cauldron",
+                "js/pp/input/gamepad",
+                "js/pp/plugin",
+                "js/pp/plugin/component_mods",
+                "js/pp/plugin/extensions",
+                "js/pp/tool",
+                "js/pp/tool/cauldron",
+                "js/pp/tool/cauldron/cauldron",
+                "js/pp/tool/cauldron/components",
+                "js/pp/tool/console_vr",
+                "js/pp/tool/easy_tune",
+                "js/pp/tool/easy_tune/easy_object_tuners",
+                "js/pp/tool/easy_tune/easy_tune_widgets",
+                "js/pp/tool/widget_frame",
+                "js/custom"
+            ],
+            "useInternalBundler": false
+        },
+        "vr": {
+            "leftEyeObject": "26",
+            "rightEyeObject": "27",
+            "enable": true
+        },
+        "editor": {
+            "camera": {
+                "near": 0.0099999,
+                "far": 10000.0
+            }
+        }
+    },
+    "files": [
+        "assets/models/quest_controllers_credits_Jezza3D.glb",
+        "assets/models/inverted_sphere.fbx",
+        "assets/textures/spheres/sphere_1.jpg",
+        "assets/textures/banners/banner_template.jpg",
+        "assets/textures/next_template.jpg",
+        "assets/textures/spheres/sphere_2.jpg",
+        "assets/textures/spheres/sphere_3.jpg",
+        "assets/textures/spheres/sphere_4.jpg",
+        "assets/textures/spheres/sphere_5.jpg",
+        "assets/textures/banners/banner_1.jpg",
+        "assets/textures/banners/banner_2.jpg",
+        "assets/textures/banners/banner_3.jpg",
+        "assets/textures/banners/banner_4.jpg",
+        "assets/textures/banners/banner_5.jpg",
+        "assets/textures/next.jpg"
+    ]
+}
