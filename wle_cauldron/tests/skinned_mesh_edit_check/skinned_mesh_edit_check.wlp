@@ -1,0 +1,1629 @@
+{
+    "objects": {
+        "18": {
+            "name": "Scene",
+            "components": [
+                {
+                    "type": "pp-gamepad-manager"
+                },
+                {
+                    "type": "pp-debug-data",
+                    "pp-debug-data": {
+                        "_myCubeMesh": "p1",
+                        "_myFlatMaterial": "31"
+                    }
+                },
+                {
+                    "type": "pp-mute-all",
+                    "active": false
+                },
+                {
+                    "type": "pp-clear-console-on-session"
+                }
+            ]
+        },
+        "19": {
+            "name": "Player",
+            "parent": "18"
+        },
+        "20": {
+            "name": "Pivot",
+            "parent": "19",
+            "components": [
+                {
+                    "type": "pp-player-height",
+                    "active": false
+                }
+            ]
+        },
+        "21": {
+            "name": "Non VR Camera",
+            "parent": "20",
+            "components": [
+                {
+                    "type": "view"
+                }
+            ]
+        },
+        "22": {
+            "name": "Eyes",
+            "parent": "20"
+        },
+        "23": {
+            "name": "Hand Left",
+            "parent": "20",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -0.1,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "pp-set-hand-transform"
+                },
+                {
+                    "type": "pp-console-vr",
+                    "pp-console-vr": {
+                        "_myHandedness": "left",
+                        "_myTextMaterial": "33",
+                        "_myPlaneMaterial": "32"
+                    }
+                },
+                {
+                    "type": "pp-easy-tune",
+                    "pp-easy-tune": {
+                        "_myHandedness": "left",
+                        "_myPlaneMaterial": "32",
+                        "_myTextMaterial": "33"
+                    }
+                },
+                {
+                    "type": "pp-gamepad-animator",
+                    "pp-gamepad-animator": {
+                        "_mySelect": "55",
+                        "_mySqueeze": "56",
+                        "_myThumbstick": "57",
+                        "_myBottomButton": "53",
+                        "_myTopButton": "58"
+                    }
+                }
+            ]
+        },
+        "24": {
+            "name": "Hand Right",
+            "parent": "20",
+            "components": [
+                {
+                    "type": "pp-set-hand-transform",
+                    "pp-set-hand-transform": {
+                        "_myHandedness": "right"
+                    }
+                },
+                {
+                    "type": "pp-tool-cursor",
+                    "pp-tool-cursor": {
+                        "_myHandedness": "right",
+                        "_myPulseOnHover": false,
+                        "_myCursorMesh": "p2",
+                        "_myCursorMaterial": "32"
+                    }
+                },
+                {
+                    "type": "pp-gamepad-animator",
+                    "pp-gamepad-animator": {
+                        "_myHandedness": "right",
+                        "_mySelect": "63",
+                        "_mySqueeze": "64",
+                        "_myThumbstick": "65",
+                        "_myBottomButton": "61",
+                        "_myTopButton": "66"
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.1,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "25": {
+            "name": "Head",
+            "parent": "20",
+            "components": [
+                {
+                    "type": "pp-set-head-transform"
+                },
+                {
+                    "type": "pp-audio-listener",
+                    "active": false
+                }
+            ]
+        },
+        "26": {
+            "name": "Eye Left",
+            "parent": "22",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye left"
+                    }
+                }
+            ]
+        },
+        "27": {
+            "name": "Eye Right",
+            "parent": "22",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye right"
+                    }
+                }
+            ]
+        },
+        "28": {
+            "name": "Lights",
+            "parent": "18"
+        },
+        "29": {
+            "name": "Light 1",
+            "parent": "28",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                1.0,
+                3.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "attenuation": 0.075
+                    }
+                }
+            ]
+        },
+        "30": {
+            "name": "Light 2",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "attenuation": 0.075
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                3.0,
+                -1.0,
+                1.0
+            ]
+        },
+        "34": {
+            "name": "Empty",
+            "deleted": true
+        },
+        "51": {
+            "link": {
+                "name": "Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "34",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "52": {
+            "link": {
+                "name": "Left_Body<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0104435,
+                0.0091218,
+                -0.0187672,
+                1.0
+            ]
+        },
+        "53": {
+            "link": {
+                "name": "Left_Bottom_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0015014,
+                0.000123,
+                -0.0252592,
+                1.0
+            ]
+        },
+        "54": {
+            "link": {
+                "name": "Left_Option_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0096518,
+                0.0081721,
+                -0.0086631,
+                1.0
+            ]
+        },
+        "55": {
+            "link": {
+                "name": "Left_Select<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.009961,
+                -0.0240266,
+                -0.0500781,
+                1.0
+            ]
+        },
+        "56": {
+            "link": {
+                "name": "Left_Squeeze<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.0098165,
+                0.0018168,
+                0.0005787,
+                0.0,
+                -0.0014374,
+                -0.0050561,
+                -0.0085068,
+                0.0,
+                -0.0012529,
+                -0.008434,
+                0.0052245,
+                0.0,
+                0.0019936,
+                -0.0052813,
+                0.0026141,
+                1.0
+            ]
+        },
+        "57": {
+            "link": {
+                "name": "Left_Thumbstick<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0179094,
+                -0.0037003,
+                -0.039634,
+                1.0
+            ]
+        },
+        "58": {
+            "link": {
+                "name": "Left_Top_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "67",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0025217,
+                -0.0069524,
+                -0.0371638,
+                1.0
+            ]
+        },
+        "59": {
+            "link": {
+                "name": "Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "34",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "deleted": true
+        },
+        "60": {
+            "link": {
+                "name": "Right_Body<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0104433,
+                0.0091218,
+                -0.0187672,
+                1.0
+            ]
+        },
+        "61": {
+            "link": {
+                "name": "Right_Bottom_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0015014,
+                0.000123,
+                -0.0252592,
+                1.0
+            ]
+        },
+        "62": {
+            "link": {
+                "name": "Right_Option_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0096518,
+                0.0081721,
+                -0.0086631,
+                1.0
+            ]
+        },
+        "63": {
+            "link": {
+                "name": "Right_Select<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.009961,
+                -0.0240266,
+                -0.0500781,
+                1.0
+            ]
+        },
+        "64": {
+            "link": {
+                "name": "Right_Squeeze<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.0096597,
+                -0.0024702,
+                -0.0007666,
+                0.0,
+                0.0019505,
+                -0.0050111,
+                -0.0084311,
+                0.0,
+                0.0016984,
+                -0.0082937,
+                0.0053223,
+                0.0,
+                -0.0019936,
+                -0.0052813,
+                0.0026141,
+                1.0
+            ]
+        },
+        "65": {
+            "link": {
+                "name": "Right_Thumbstick<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                0.0179094,
+                -0.0037003,
+                -0.039634,
+                1.0
+            ]
+        },
+        "66": {
+            "link": {
+                "name": "Right_Top_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "parent": "68",
+            "transformation": [
+                -0.01,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -0.0051091,
+                -0.0085962,
+                0.0,
+                0.0,
+                -0.0085962,
+                0.0051091,
+                0.0,
+                -0.0025217,
+                -0.0069524,
+                -0.0371638,
+                1.0
+            ]
+        },
+        "67": {
+            "name": "Pivot",
+            "parent": "69",
+            "transformation": [
+                -0.9999993,
+                -1.509957456846678e-7,
+                8.742273394091171e-8,
+                0.0,
+                -1.509958451606508e-7,
+                1.0,
+                -1.509958167389414e-7,
+                0.0,
+                -8.742270551920228e-8,
+                -1.509957172629584e-7,
+                -0.9999993,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "68": {
+            "name": "Pivot",
+            "parent": "70",
+            "transformation": [
+                -0.9999992,
+                -8.742271262462965e-8,
+                8.74229897362966e-8,
+                0.0,
+                -8.7422797889758e-8,
+                1.0000001,
+                -1.509958309497961e-7,
+                0.0,
+                -8.742306079057016e-8,
+                -1.509958593715055e-7,
+                -1.0000002,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "69": {
+            "name": "Mesh",
+            "parent": "23"
+        },
+        "70": {
+            "name": "Mesh",
+            "parent": "24"
+        },
+        "71": {
+            "name": "Custom",
+            "parent": "18",
+            "transformation": [
+                -0.9999994,
+                1.5099588779321497e-7,
+                4.172360945631226e-7,
+                0.0,
+                1.5099591621492437e-7,
+                1.0,
+                -1.509958309497961e-7,
+                0.0,
+                -4.172360945631226e-7,
+                -1.5099568884124893e-7,
+                -0.9999994,
+                0.0,
+                0.0,
+                -0.75,
+                -2.0,
+                1.0
+            ]
+        },
+        "72": {
+            "name": "Skinned Mesh",
+            "parent": "71",
+            "components": [
+                {
+                    "type": "skinned-mesh-edit-check",
+                    "skinned-mesh-edit-check": {
+                        "_mySkinnedMesh": "78",
+                        "_mySkinnedObject": "78"
+                    }
+                }
+            ]
+        },
+        "78": {
+            "link": {
+                "name": "Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "72"
+        },
+        "79": {
+            "link": {
+                "name": "woman-actionhero<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "78"
+        },
+        "80": {
+            "link": {
+                "name": "mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "78",
+            "components": [
+                {
+                    "animation": {
+                        "preview": false,
+                        "retarget": false,
+                        "autoplay": false
+                    }
+                }
+            ]
+        },
+        "81": {
+            "link": {
+                "name": "mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "80"
+        },
+        "82": {
+            "link": {
+                "name": "mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "81"
+        },
+        "83": {
+            "link": {
+                "name": "mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "82"
+        },
+        "84": {
+            "link": {
+                "name": "mixamorig:Neck<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "83"
+        },
+        "85": {
+            "link": {
+                "name": "mixamorig:Head<mixamorig:Neck<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "84"
+        },
+        "86": {
+            "link": {
+                "name": "mixamorig:HeadTop_End<mixamorig:Head<mixamorig:Neck<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "85"
+        },
+        "87": {
+            "link": {
+                "name": "mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "83"
+        },
+        "88": {
+            "link": {
+                "name": "mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "87"
+        },
+        "89": {
+            "link": {
+                "name": "mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "88"
+        },
+        "90": {
+            "link": {
+                "name": "mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "89"
+        },
+        "91": {
+            "link": {
+                "name": "mixamorig:LeftHandThumb1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "90"
+        },
+        "92": {
+            "link": {
+                "name": "mixamorig:LeftHandThumb2<mixamorig:LeftHandThumb1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "91"
+        },
+        "93": {
+            "link": {
+                "name": "mixamorig:LeftHandThumb3<mixamorig:LeftHandThumb2<mixamorig:LeftHandThumb1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "92"
+        },
+        "94": {
+            "link": {
+                "name": "mixamorig:LeftHandThumb4<mixamorig:LeftHandThumb3<mixamorig:LeftHandThumb2<mixamorig:LeftHandThumb1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "93"
+        },
+        "95": {
+            "link": {
+                "name": "mixamorig:LeftHandIndex1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "90"
+        },
+        "96": {
+            "link": {
+                "name": "mixamorig:LeftHandIndex2<mixamorig:LeftHandIndex1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "95"
+        },
+        "97": {
+            "link": {
+                "name": "mixamorig:LeftHandIndex3<mixamorig:LeftHandIndex2<mixamorig:LeftHandIndex1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "96"
+        },
+        "98": {
+            "link": {
+                "name": "mixamorig:LeftHandIndex4<mixamorig:LeftHandIndex3<mixamorig:LeftHandIndex2<mixamorig:LeftHandIndex1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "97"
+        },
+        "99": {
+            "link": {
+                "name": "mixamorig:LeftHandMiddle1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "90"
+        },
+        "100": {
+            "link": {
+                "name": "mixamorig:LeftHandMiddle2<mixamorig:LeftHandMiddle1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "99"
+        },
+        "101": {
+            "link": {
+                "name": "mixamorig:LeftHandMiddle3<mixamorig:LeftHandMiddle2<mixamorig:LeftHandMiddle1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "100"
+        },
+        "102": {
+            "link": {
+                "name": "mixamorig:LeftHandMiddle4<mixamorig:LeftHandMiddle3<mixamorig:LeftHandMiddle2<mixamorig:LeftHandMiddle1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "101"
+        },
+        "103": {
+            "link": {
+                "name": "mixamorig:LeftHandRing1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "90"
+        },
+        "104": {
+            "link": {
+                "name": "mixamorig:LeftHandRing2<mixamorig:LeftHandRing1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "103"
+        },
+        "105": {
+            "link": {
+                "name": "mixamorig:LeftHandRing3<mixamorig:LeftHandRing2<mixamorig:LeftHandRing1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "104"
+        },
+        "106": {
+            "link": {
+                "name": "mixamorig:LeftHandRing4<mixamorig:LeftHandRing3<mixamorig:LeftHandRing2<mixamorig:LeftHandRing1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "105"
+        },
+        "107": {
+            "link": {
+                "name": "mixamorig:LeftHandPinky1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "90"
+        },
+        "108": {
+            "link": {
+                "name": "mixamorig:LeftHandPinky2<mixamorig:LeftHandPinky1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "107"
+        },
+        "109": {
+            "link": {
+                "name": "mixamorig:LeftHandPinky3<mixamorig:LeftHandPinky2<mixamorig:LeftHandPinky1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "108"
+        },
+        "110": {
+            "link": {
+                "name": "mixamorig:LeftHandPinky4<mixamorig:LeftHandPinky3<mixamorig:LeftHandPinky2<mixamorig:LeftHandPinky1<mixamorig:LeftHand<mixamorig:LeftForeArm<mixamorig:LeftArm<mixamorig:LeftShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "109"
+        },
+        "111": {
+            "link": {
+                "name": "mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "83"
+        },
+        "112": {
+            "link": {
+                "name": "mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "111"
+        },
+        "113": {
+            "link": {
+                "name": "mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "112"
+        },
+        "114": {
+            "link": {
+                "name": "mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "113"
+        },
+        "115": {
+            "link": {
+                "name": "mixamorig:RightHandThumb1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "114"
+        },
+        "116": {
+            "link": {
+                "name": "mixamorig:RightHandThumb2<mixamorig:RightHandThumb1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "115"
+        },
+        "117": {
+            "link": {
+                "name": "mixamorig:RightHandThumb3<mixamorig:RightHandThumb2<mixamorig:RightHandThumb1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "116"
+        },
+        "118": {
+            "link": {
+                "name": "mixamorig:RightHandThumb4<mixamorig:RightHandThumb3<mixamorig:RightHandThumb2<mixamorig:RightHandThumb1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "117"
+        },
+        "119": {
+            "link": {
+                "name": "mixamorig:RightHandIndex1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "114"
+        },
+        "120": {
+            "link": {
+                "name": "mixamorig:RightHandIndex2<mixamorig:RightHandIndex1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "119"
+        },
+        "121": {
+            "link": {
+                "name": "mixamorig:RightHandIndex3<mixamorig:RightHandIndex2<mixamorig:RightHandIndex1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "120"
+        },
+        "122": {
+            "link": {
+                "name": "mixamorig:RightHandIndex4<mixamorig:RightHandIndex3<mixamorig:RightHandIndex2<mixamorig:RightHandIndex1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "121"
+        },
+        "123": {
+            "link": {
+                "name": "mixamorig:RightHandMiddle1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "114"
+        },
+        "124": {
+            "link": {
+                "name": "mixamorig:RightHandMiddle2<mixamorig:RightHandMiddle1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "123"
+        },
+        "125": {
+            "link": {
+                "name": "mixamorig:RightHandMiddle3<mixamorig:RightHandMiddle2<mixamorig:RightHandMiddle1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "124"
+        },
+        "126": {
+            "link": {
+                "name": "mixamorig:RightHandMiddle4<mixamorig:RightHandMiddle3<mixamorig:RightHandMiddle2<mixamorig:RightHandMiddle1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "125"
+        },
+        "127": {
+            "link": {
+                "name": "mixamorig:RightHandRing1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "114"
+        },
+        "128": {
+            "link": {
+                "name": "mixamorig:RightHandRing2<mixamorig:RightHandRing1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "127"
+        },
+        "129": {
+            "link": {
+                "name": "mixamorig:RightHandRing3<mixamorig:RightHandRing2<mixamorig:RightHandRing1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "128"
+        },
+        "130": {
+            "link": {
+                "name": "mixamorig:RightHandRing4<mixamorig:RightHandRing3<mixamorig:RightHandRing2<mixamorig:RightHandRing1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "129"
+        },
+        "131": {
+            "link": {
+                "name": "mixamorig:RightHandPinky1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "114"
+        },
+        "132": {
+            "link": {
+                "name": "mixamorig:RightHandPinky2<mixamorig:RightHandPinky1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "131"
+        },
+        "133": {
+            "link": {
+                "name": "mixamorig:RightHandPinky3<mixamorig:RightHandPinky2<mixamorig:RightHandPinky1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "132"
+        },
+        "134": {
+            "link": {
+                "name": "mixamorig:RightHandPinky4<mixamorig:RightHandPinky3<mixamorig:RightHandPinky2<mixamorig:RightHandPinky1<mixamorig:RightHand<mixamorig:RightForeArm<mixamorig:RightArm<mixamorig:RightShoulder<mixamorig:Spine2<mixamorig:Spine1<mixamorig:Spine<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "133"
+        },
+        "135": {
+            "link": {
+                "name": "mixamorig:LeftUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "80"
+        },
+        "136": {
+            "link": {
+                "name": "mixamorig:LeftLeg<mixamorig:LeftUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "135"
+        },
+        "137": {
+            "link": {
+                "name": "mixamorig:LeftFoot<mixamorig:LeftLeg<mixamorig:LeftUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "136"
+        },
+        "138": {
+            "link": {
+                "name": "mixamorig:LeftToeBase<mixamorig:LeftFoot<mixamorig:LeftLeg<mixamorig:LeftUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "137"
+        },
+        "139": {
+            "link": {
+                "name": "mixamorig:LeftToe_End<mixamorig:LeftToeBase<mixamorig:LeftFoot<mixamorig:LeftLeg<mixamorig:LeftUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "138"
+        },
+        "140": {
+            "link": {
+                "name": "mixamorig:RightUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "80"
+        },
+        "141": {
+            "link": {
+                "name": "mixamorig:RightLeg<mixamorig:RightUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "140"
+        },
+        "142": {
+            "link": {
+                "name": "mixamorig:RightFoot<mixamorig:RightLeg<mixamorig:RightUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "141"
+        },
+        "143": {
+            "link": {
+                "name": "mixamorig:RightToeBase<mixamorig:RightFoot<mixamorig:RightLeg<mixamorig:RightUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "142"
+        },
+        "144": {
+            "link": {
+                "name": "mixamorig:RightToe_End<mixamorig:RightToeBase<mixamorig:RightFoot<mixamorig:RightLeg<mixamorig:RightUpLeg<mixamorig:Hips<Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            },
+            "parent": "143"
+        }
+    },
+    "meshes": {
+        "p0": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            }
+        },
+        "p1": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            }
+        },
+        "p2": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "p3": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "p4": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "p5": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        },
+        "37": {
+            "link": {
+                "name": "Mesh",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "38": {
+            "link": {
+                "name": "Mesh.002",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "39": {
+            "link": {
+                "name": "Mesh.003",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "40": {
+            "link": {
+                "name": "Mesh.005",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "41": {
+            "link": {
+                "name": "Mesh.006",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "42": {
+            "link": {
+                "name": "Mesh.004",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "43": {
+            "link": {
+                "name": "Mesh.001",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "44": {
+            "link": {
+                "name": "Mesh.007",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "45": {
+            "link": {
+                "name": "Mesh.009",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "46": {
+            "link": {
+                "name": "Mesh.010",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "47": {
+            "link": {
+                "name": "Mesh.012",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "48": {
+            "link": {
+                "name": "Mesh.013",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "49": {
+            "link": {
+                "name": "Mesh.011",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "50": {
+            "link": {
+                "name": "Mesh.008",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            }
+        },
+        "76": {
+            "link": {
+                "name": "woman-actionhero.001",
+                "file": "assets\\models\\skinned_mesh.glb"
+            }
+        }
+    },
+    "textures": {
+        "t0": {
+            "link": {
+                "name": "DefaultFont",
+                "file": "default"
+            }
+        },
+        "74": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\models\\skinned_mesh.glb"
+            }
+        }
+    },
+    "images": {
+        "f0": {
+            "link": {
+                "name": "DefaultFontImage",
+                "file": "default"
+            }
+        },
+        "73": {
+            "link": {
+                "name": "atlas-albedo-LPAP",
+                "file": "assets\\models\\skinned_mesh.glb"
+            }
+        }
+    },
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            }
+        },
+        "31": {
+            "name": "Debug Flat",
+            "pipeline": "7"
+        },
+        "32": {
+            "name": "Tool Flat",
+            "pipeline": "7"
+        },
+        "33": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "name": "Tool Font"
+        },
+        "35": {
+            "link": {
+                "name": "Lambert_Body",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "name": "Quest Controller Body"
+        },
+        "36": {
+            "link": {
+                "name": "Lambert_Button",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.glb"
+            },
+            "name": "Quest Controller Button"
+        },
+        "75": {
+            "link": {
+                "name": "LOWPOLY-COLORS",
+                "file": "assets\\models\\skinned_mesh.glb"
+            }
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Dynamic",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Flat",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Skinning",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Phong",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        }
+    },
+    "animations": {
+        "145": {
+            "link": {
+                "name": "Armature|mixamo.com|Layer0",
+                "file": "assets\\models\\skinned_mesh.glb"
+            }
+        }
+    },
+    "skins": {
+        "77": {
+            "link": {
+                "name": "Armature",
+                "file": "assets\\models\\skinned_mesh.glb"
+            }
+        }
+    },
+    "pipelines": {
+        "2": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        }
+    },
+    "settings": {
+        "project": {
+            "name": "skinned_mesh_edit_check",
+            "version": [
+                0,
+                8,
+                10
+            ]
+        },
+        "rendering": {
+            "clearColor": [
+                0.9215686,
+                0.9215686,
+                0.9215686,
+                1.0
+            ]
+        },
+        "runtime": {
+            "xrButtonColor": "black",
+            "webxr": {
+                "optionalFeatures": {
+                    "hand-tracking": false,
+                    "hit-test": false
+                }
+            }
+        },
+        "scripting": {
+            "sourcePaths": [
+                "js/bundle.js",
+                "js/pp",
+                "js/pp/audio",
+                "js/pp/cauldron",
+                "js/pp/cauldron/cauldron",
+                "js/pp/cauldron/components",
+                "js/pp/cauldron/fsm",
+                "js/pp/cauldron/utils",
+                "js/pp/debug",
+                "js/pp/debug/components",
+                "js/pp/gameplay",
+                "js/pp/gameplay/grab_throw",
+                "js/pp/input",
+                "js/pp/input/cauldron",
+                "js/pp/input/gamepad",
+                "js/pp/plugin",
+                "js/pp/plugin/component_mods",
+                "js/pp/plugin/extensions",
+                "js/pp/tool",
+                "js/pp/tool/cauldron",
+                "js/pp/tool/cauldron/cauldron",
+                "js/pp/tool/cauldron/components",
+                "js/pp/tool/console_vr",
+                "js/pp/tool/easy_tune",
+                "js/pp/tool/easy_tune/easy_object_tuners",
+                "js/pp/tool/easy_tune/easy_tune_widgets",
+                "js/pp/tool/widget_frame",
+                "js/custom"
+            ],
+            "useInternalBundler": false
+        },
+        "vr": {
+            "leftEyeObject": "26",
+            "rightEyeObject": "27"
+        },
+        "editor": {
+            "camera": {
+                "near": 0.0099999,
+                "far": 10000.0
+            }
+        }
+    },
+    "files": [
+        "assets/models/quest_controllers_credits_Jezza3D.glb",
+        "assets/models/skinned_mesh.glb"
+    ]
+}
