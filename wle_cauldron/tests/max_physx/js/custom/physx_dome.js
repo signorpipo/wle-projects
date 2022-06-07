@@ -5,7 +5,7 @@ WL.registerComponent('physx-dome', {
     _myStaticPhysXCount: { type: WL.Type.Int, default: 2000 },
     _myDynamicDomeSize: { type: WL.Type.Float, default: 80 },
     _myDynamicPhysXCount: { type: WL.Type.Int, default: 250 },
-    _myKinematic: { type: WL.Type.Bool, default: true },
+    _myKinematic: { type: WL.Type.Bool, default: false },
     _myRaycastCount: { type: WL.Type.Int, default: 500 },
     _myVisualizeRaycast: { type: WL.Type.Bool, default: false },
     _myVisualizeRaycastDelay: { type: WL.Type.Float, default: 0.5 },

@@ -1,14 +1,18 @@
 WL.registerComponent("max-visible-triangles", {
-    _myTargetFrameRate: { type: WL.Type.Int, default: -1 },             //-1 means it will auto detect it at start
-    _myTargetFrameRateThreshold: { type: WL.Type.Int, default: 2 },
-    _myStartPlaneCount: { type: WL.Type.Int, default: 2 },
-    _myPlaneTriangles: { type: WL.Type.Int, default: 2 },
-    _mySecondsBeforeDoubling: { type: WL.Type.Float, default: 0.5 },    // higher gives a better average frame rate
-    _myCloneMaterial: { type: WL.Type.Bool, default: true },
+    _myTargetFrameRate: { type: WL.Type.Int, default: -1 },     //-1 means it will auto detect it at start
+    _myTargetFrameRateThreshold: { type: WL.Type.Int, default: 3 },
+    _myStartPlaneCount: { type: WL.Type.Int, default: 1 },
+    _myPlaneTriangles: { type: WL.Type.Int, default: 100 },
+    _mySecondsBeforeDoubling: { type: WL.Type.Float, default: 0.5 },    // higher gives a better frame rate evaluation
+    _myDTHistoryToIgnorePercentage: { type: WL.Type.Float, default: 0.25 },
+    _myCloneMaterial: { type: WL.Type.Bool, default: false },
     _myCloneMesh: { type: WL.Type.Bool, default: false },
+
+    _myEnableLog: { type: WL.Type.Bool, default: true },
+
     _myPlaneMaterial: { type: WL.Type.Material },
     _myBackgroundMaterial: { type: WL.Type.Material },
-    _myTextMaterial: { type: WL.Type.Material, default: null }
+    _myTextMaterial: { type: WL.Type.Material, default: null },
 }, {
     _start() {
         this._myBackgroundSize = 4;
@@ -21,8 +25,7 @@ WL.registerComponent("max-visible-triangles", {
 
         this._myCurrentPlanes = this._myStartPlaneCount;
 
-        this._myElapsedTime = 0;
-        this._myFrameCount = 0;
+        this._myDTHistory = [];
 
         this._myUpperLimit = -1;
         this._myLowerLimit = 0;
@@ -38,6 +41,10 @@ WL.registerComponent("max-visible-triangles", {
     _update(dt) {
         //Skip lag frames after the new set of plane has been shown, wait for it to be stable
         {
+            if (dt < 0.00001) {
+                return;
+            }
+
             if (dt > 0.5 && this._myMaxWaitFrames > 0) {
                 this._myMaxWaitFrames--;
                 return;
@@ -52,15 +59,14 @@ WL.registerComponent("max-visible-triangles", {
         }
 
         if (!this._myIsDone) {
-            this._myElapsedTime += dt;
-            this._myFrameCount++;
-
             this._myDoubleTimer.update(dt);
+
+            this._myDTHistory.push(dt);
+
             if (this._myDoubleTimer.isDone()) {
                 this._myDoubleTimer.start();
 
-                let averageDT = this._myElapsedTime / this._myFrameCount;
-                let averageFrameRate = 1 / averageDT;
+                let frameRate = this._computeAverageFrameRate(false);
 
                 if (this._myFirstTime) {
                     this._myFirstTime = false;
@@ -68,10 +74,9 @@ WL.registerComponent("max-visible-triangles", {
 
                     //if there is not lag, the current plane count is a good lower limit, otherwise the current count is now a upper threshold, we have to search below it
                     let isLagging = false;
-                    if (averageFrameRate < this._myStableFrameRate - this._myTargetFrameRateThreshold) {
+                    if (frameRate < this._myStableFrameRate - this._myTargetFrameRateThreshold) {
                         this._myUpperLimit = this._myCurrentPlanes;
 
-                        console.log("Lag - Triangles:", this._myCurrentPlanes * this._myRealTrianglesAmount, "- Planes:", this._myCurrentPlanes, "- Average Frame Rate:", averageFrameRate.toFixed(2));
                         isLagging = true;
 
                         if (this._myUpperLimit == 1) {
@@ -79,11 +84,14 @@ WL.registerComponent("max-visible-triangles", {
                         }
                     } else {
                         this._myLowerLimit = this._myCurrentPlanes;
+                        if (this._myUpperLimit > 0) {
+                            this._myUpperLimit = Math.max(this._myUpperLimit, this._myLowerLimit);
+                        }
                     }
 
                     this._myTriangleTextComponent.text = "Triangles: " + this._myCurrentPlanes * this._myRealTrianglesAmount;
                     this._myPlaneTextComponent.text = "Planes: " + this._myCurrentPlanes;
-                    this._myFPSTextComponent.text = "FPS: " + averageFrameRate.toFixed(2);
+                    this._myFPSTextComponent.text = "FPS: " + frameRate + " / " + this._myStableFrameRate;
 
                     if (isLagging) {
                         this._myTriangleTextComponent.material.outlineColor = [0.5, 0, 0, 1];
@@ -95,29 +103,49 @@ WL.registerComponent("max-visible-triangles", {
                         this._myFPSTextComponent.material.outlineColor = [0, 0, 0, 1];
                     }
 
+                    let reset = false;
+
                     //check if the binary search is completed
-                    if (this._myUpperLimit > 0 && (this._myUpperLimit - this._myLowerLimit) <= 1 || (!isLagging && this._myMaxPlaneReached)) {
-                        if (this._myUpperLimit > 1 && averageFrameRate < this._myStableFrameRate - this._myTargetFrameRateThreshold) {
+                    if ((this._myUpperLimit > 0 &&
+                        (!isLagging && (this._myUpperLimit - this._myLowerLimit) <= Math.max(2, 1000 / this._myRealTrianglesAmount)) ||
+                        (isLagging && (this._myUpperLimit - this._myLowerLimit) <= 1)) ||
+                        (!isLagging && this._myMaxPlaneReached)) {
+                        if (frameRate < this._myStableFrameRate - this._myTargetFrameRateThreshold) {
                             //going a bit back with the binary search, maybe the lower limit was not lower after all cause of a bad assumption of average FPS
-                            this._myUpperLimit = this._myCurrentPlanes;
-                            this._myLowerLimit = Math.floor(this._myUpperLimit / 2);
+                            this._myLowerLimit = Math.max(1, Math.floor(this._myUpperLimit / 2.5));
+                            this._myUpperLimit = 0;
+                            reset = true;
+
+                            if (this._myEnableLog) {
+                                console.log("Rst - Triangles:", this._myCurrentPlanes * this._myRealTrianglesAmount, "- Planes:", this._myCurrentPlanes, "- Frame Rate:", frameRate);
+                            }
                         } else {
                             if (this._myMaxPlaneReached) {
-                                console.log("Aborting - Max Plane Reached");
+                                if (this._myEnableLog) {
+                                    console.log("Aborting - Max Plane Reached");
+                                }
                             } else {
                                 this._displayPlanes(this._myLowerLimit);
 
-                                console.log("\nEnd - Triangles:", this._myLowerLimit * this._myRealTrianglesAmount, "- Planes:", this._myLowerLimit, "- Average Frame Rate:", averageFrameRate.toFixed(2));
-                                console.log("Plane Triangles (Adjusted):", this._myRealTrianglesAmount);
-                                console.log("Target Frame Rate:", this._myStableFrameRate.toFixed(2), "- Threshold: ", (this._myStableFrameRate - this._myTargetFrameRateThreshold).toFixed(2));
+                                if (this._myEnableLog) {
+                                    console.log("\nEnd - Triangles:", this._myLowerLimit * this._myRealTrianglesAmount, "- Planes:", this._myLowerLimit, "- Frame Rate:", frameRate);
+                                    console.log("Plane Triangles (Adjusted):", this._myRealTrianglesAmount);
+                                    console.log("Target Frame Rate:", this._myStableFrameRate, "- Threshold: ", (this._myStableFrameRate - this._myTargetFrameRateThreshold));
+                                }
 
                                 this._myTriangleTextComponent.text = "Triangles: " + this._myLowerLimit * this._myRealTrianglesAmount;
                                 this._myPlaneTextComponent.text = "Planes: " + this._myLowerLimit;
-                                this._myFPSTextComponent.text = "FPS: " + averageFrameRate.toFixed(2);
+                                this._myFPSTextComponent.text = "FPS: " + frameRate + " / " + this._myStableFrameRate;
 
                                 this._myDoneTextComponent.text = "End";
                             }
                             this._myIsDone = true;
+                        }
+                    }
+
+                    if (isLagging && !reset) {
+                        if (this._myEnableLog) {
+                            console.log("Lag - Triangles:", this._myCurrentPlanes * this._myRealTrianglesAmount, "- Planes:", this._myCurrentPlanes, "- Frame Rate:", frameRate);
                         }
                     }
 
@@ -126,12 +154,14 @@ WL.registerComponent("max-visible-triangles", {
                         if (this._myUpperLimit > 0) {
                             this._myCurrentPlanes = Math.floor((this._myUpperLimit + this._myLowerLimit) / 2);
                             this._myCurrentPlanes = Math.max(this._myCurrentPlanes, 1);
-                        } else {
+                        } else if (!reset) {
                             this._myCurrentPlanes = this._myLowerLimit * 2;
+                        } else {
+                            this._myCurrentPlanes = this._myLowerLimit;
                         }
 
-                        if (this._myCurrentPlanes > 65000) {
-                            this._myCurrentPlanes = 65000;
+                        if (this._myCurrentPlanes > 50000) {
+                            this._myCurrentPlanes = 50000;
                             this._myMaxPlaneReached = true;
                         } else {
                             this._myMaxPlaneReached = false;
@@ -207,7 +237,7 @@ WL.registerComponent("max-visible-triangles", {
 
         let poolParams = new PP.ObjectPoolParams();
         if (!this._myCloneMesh) {
-            poolParams.myInitialPoolSize = 65100;
+            poolParams.myInitialPoolSize = 50000;
         } else {
             if (this._myRealTrianglesAmount <= 4) {
                 poolParams.myInitialPoolSize = 45100;
@@ -229,7 +259,7 @@ WL.registerComponent("max-visible-triangles", {
         this._myBackgroundObject.pp_setActive(false);
         this._myPlaneObject.pp_setActive(false);
 
-        this._myStartTimer = new PP.Timer(1);
+        this._myStartTimer = new PP.Timer(this._mySecondsBeforeDoubling * 2);
         this._mySessionStarted = false;
 
         this._myTextsObject = WL.scene.addObject(this._myTrianglesObject);
@@ -296,22 +326,30 @@ WL.registerComponent("max-visible-triangles", {
 
         this._myTriangleTextObject.pp_setPositionLocal([-1.4, 0, 0]);
         this._myPlaneTextObject.pp_setPositionLocal([0.55, 0, 0]);
-        this._myFPSTextObject.pp_setPositionLocal([-0.2, 0, 0]);
+        this._myFPSTextObject.pp_setPositionLocal([-0.315, 0, 0]);
         this._myDoneTextObject.pp_setPositionLocal([0, -4.6, 0]);
         this._myDoneTextObject.pp_setScale(4);
+
+        this._myDTHistory = [];
     },
     update(dt) {
         if (this._mySessionStarted) {
             if (this._myStartTimer.isRunning()) {
                 this._myStartTimer.update(dt);
+
+                this._myDTHistory.push(dt);
+
                 if (this._myStartTimer.isDone()) {
-                    this._myStableFrameRate = 1 / dt;
+                    this._myStableFrameRate = this._computeAverageFrameRate(true);
                     if (this._myTargetFrameRate > 0) {
                         this._myStableFrameRate = this._myTargetFrameRate;
                     }
-                    console.log("\nPlane Triangles (Adjusted):", this._myRealTrianglesAmount);
-                    console.log("Target Frame Rate:", this._myStableFrameRate.toFixed(2), "- Threshold: ", (this._myStableFrameRate - this._myTargetFrameRateThreshold).toFixed(2));
-                    console.log("");
+
+                    if (this._myEnableLog) {
+                        console.log("\nPlane Triangles (Adjusted):", this._myRealTrianglesAmount);
+                        console.log("Target Frame Rate:", this._myStableFrameRate, "- Threshold: ", (this._myStableFrameRate - this._myTargetFrameRateThreshold));
+                        console.log("");
+                    }
                     this._start();
                 }
             } else {
@@ -320,6 +358,26 @@ WL.registerComponent("max-visible-triangles", {
         } else {
             this._mySessionStarted = WL.xrSession != null;
         }
+    },
+    _computeAverageFrameRate(isStart) {
+        let frameRate = 0;
+
+        this._myDTHistory.sort();
+        let elementToRemove = Math.floor(this._myDTHistory.length) * Math.min(0.9, this._myDTHistoryToIgnorePercentage * (isStart ? 2 : 1));
+        for (let i = 0; i < elementToRemove; i++) {
+            this._myDTHistory.pop();
+        }
+
+        let averageDT = 0;
+        for (let dt of this._myDTHistory) {
+            averageDT += dt;
+        }
+        averageDT /= this._myDTHistory.length;
+        frameRate = Math.round(1 / averageDT);
+
+        this._myDTHistory = [];
+
+        return frameRate;
     },
     _createPlaneMesh(trianglesAmount) {
         let squaresAmount = Math.ceil(trianglesAmount / 2);

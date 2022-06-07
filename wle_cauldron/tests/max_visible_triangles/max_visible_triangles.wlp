@@ -758,13 +758,14 @@
                         "_myPlaneMaterial": "76",
                         "_myBackgroundMaterial": "73",
                         "_myTargetFrameRateThreshold": 3,
-                        "_myPlaneTriangles": 2,
+                        "_myPlaneTriangles": 100,
                         "_myStartPlaneCount": 1,
                         "_mySecondsBeforeDoubling": 0.5,
                         "_myCloneMesh": false,
-                        "_myCloneMaterial": true,
+                        "_myCloneMaterial": false,
                         "_myTargetFrameRate": -1,
-                        "_myTextMaterial": "DefaultFontMaterial"
+                        "_myTextMaterial": "DefaultFontMaterial",
+                        "_myDTHistoryToIgnorePercentage": 0.25
                     }
                 }
             ]

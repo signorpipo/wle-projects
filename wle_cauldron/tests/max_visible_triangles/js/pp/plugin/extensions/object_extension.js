@@ -46,7 +46,7 @@
         - pp_getUp          / pp_getDown
         - pp_getForward     / pp_getBackward
 
-        - pp_translate      / pp_translateAxis- pp_getComponentAmountMap / pp_getComponentAmountMapHierarchy / pp_getComponentAmountMapDescendants / pp_getComponentAmountMapChildren
+        - pp_translate      / pp_translateAxis
         - pp_rotate         / pp_rotateAxis     / pp_rotateAround    / pp_rotateAroundAxis
         - pp_scaleObject (for now scale only have this variant) (u can specify a single number instead of a vector to uniform scale easily)
 
@@ -2098,24 +2098,24 @@ if (WL && WL.Object) {
         return this.destroy();
     };
 
-    WL.Object.prototype.pp_reserveObjects = function (count, componentsToIgnore = []) {
+    WL.Object.prototype.pp_reserveObjects = function (count) {
         let componentAmountMap = this.pp_getComponentAmountMap();
-        this._pp_reserveObjects(count, componentsToIgnore, componentAmountMap);
+        this._pp_reserveObjects(count, componentAmountMap);
     };
 
-    WL.Object.prototype.pp_reserveObjectsHierarchy = function (count, componentsToIgnore = []) {
+    WL.Object.prototype.pp_reserveObjectsHierarchy = function (count) {
         let componentAmountMap = this.pp_getComponentAmountMapHierarchy();
-        this._pp_reserveObjects(count, componentsToIgnore, componentAmountMap);
+        this._pp_reserveObjects(count, componentAmountMap);
     };
 
-    WL.Object.prototype.pp_reserveObjectsDescendants = function (count, componentsToIgnore = []) {
+    WL.Object.prototype.pp_reserveObjectsDescendants = function (count) {
         let componentAmountMap = this.pp_getComponentAmountMapDescendants();
-        this._pp_reserveObjects(count, componentsToIgnore, componentAmountMap);
+        this._pp_reserveObjects(count, componentAmountMap);
     };
 
-    WL.Object.prototype.pp_reserveObjectsChildren = function (count, componentsToIgnore = []) {
+    WL.Object.prototype.pp_reserveObjectsChildren = function (count) {
         let componentAmountMap = this.pp_getComponentAmountMapChildren();
-        this._pp_reserveObjects(count, componentsToIgnore, componentAmountMap);
+        this._pp_reserveObjects(count, componentAmountMap);
     };
 
     WL.Object.prototype.pp_getComponentAmountMap = function (amountMap = new Map()) {
@@ -2210,15 +2210,13 @@ if (WL && WL.Object) {
         return Math.min(Math.max(value, min), max);
     };
 
-    WL.Object.prototype._pp_reserveObjects = function (count, componentsToIgnore = [], componentAmountMap) {
+    WL.Object.prototype._pp_reserveObjects = function (count, componentAmountMap) {
         let objectsToReserve = componentAmountMap.get("object") * count;
         componentAmountMap.delete("object");
 
         let componentsToReserve = {};
         for (let [componentName, componentCount] of componentAmountMap.entries()) {
-            if (!componentsToIgnore.pp_hasEqual(componentName)) {
-                componentsToReserve[componentName] = componentCount * count;
-            }
+            componentsToReserve[componentName] = componentCount * count;
         }
 
         WL.scene.reserveObjects(objectsToReserve, componentsToReserve);
