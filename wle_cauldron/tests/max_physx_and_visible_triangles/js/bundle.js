@@ -1,6 +1,4 @@
 //CUSTOM
-require('./custom/spawn_physx_test.js');
-require('./custom/log_physx.js');
 require('./custom/physx_dome.js');
 require('./custom/max_visible_triangles.js');
 
