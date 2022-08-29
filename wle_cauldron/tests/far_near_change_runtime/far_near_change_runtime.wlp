@@ -1,0 +1,1212 @@
+{
+    "objects": {
+        "18": {
+            "name": "Scene",
+            "components": [
+                {
+                    "type": "pp-gamepad-manager"
+                },
+                {
+                    "type": "pp-debug-manager",
+                    "pp-debug-manager": {
+                        "_myCubeMesh": "p1",
+                        "_myFlatMaterial": "31",
+                        "_myConeMesh": "p3",
+                        "_mySphereMesh": "p2",
+                        "_myDebugMaterial": "31",
+                        "_myTextMaterial": "86"
+                    }
+                },
+                {
+                    "type": "pp-get-player-objects",
+                    "pp-get-player-objects": {
+                        "_myPlayer": "19",
+                        "_myPlayerPivot": "20",
+                        "_myNonVRCamera": "21",
+                        "_myNonVRHead": "71",
+                        "_myVRHead": "25",
+                        "_myEyeLeft": "26",
+                        "_myEyeRight": "27",
+                        "_myHandLeft": "23",
+                        "_myHandRight": "24",
+                        "_myHead": "74"
+                    }
+                },
+                {
+                    "type": "pp-mute-all",
+                    "active": false
+                },
+                {
+                    "type": "pp-clear-console-on-session"
+                }
+            ]
+        },
+        "19": {
+            "name": "Player",
+            "parent": "18"
+        },
+        "20": {
+            "name": "Pivot",
+            "parent": "19",
+            "components": [
+                {
+                    "type": "pp-set-player-height",
+                    "active": false
+                }
+            ]
+        },
+        "21": {
+            "name": "Non VR Camera",
+            "parent": "72",
+            "components": [
+                {
+                    "type": "view",
+                    "view": {
+                        "far": 6.0
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "22": {
+            "name": "Eyes",
+            "parent": "72",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
+        },
+        "23": {
+            "name": "Hand Left",
+            "parent": "75",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -0.1,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform"
+                },
+                {
+                    "type": "pp-console-vr",
+                    "pp-console-vr": {
+                        "_myHandedness": "left",
+                        "_myTextMaterial": "33",
+                        "_myPlaneMaterial": "32",
+                        "_myShowOnStart": true
+                    }
+                },
+                {
+                    "type": "pp-easy-tune",
+                    "pp-easy-tune": {
+                        "_myHandedness": "left",
+                        "_myPlaneMaterial": "32",
+                        "_myTextMaterial": "33"
+                    }
+                },
+                {
+                    "type": "pp-gamepad-animator",
+                    "pp-gamepad-animator": {
+                        "_mySelect": "55",
+                        "_mySqueeze": "56",
+                        "_myThumbstick": "57",
+                        "_myBottomButton": "53",
+                        "_myTopButton": "58"
+                    }
+                }
+            ]
+        },
+        "24": {
+            "name": "Hand Right",
+            "parent": "75",
+            "components": [
+                {
+                    "type": "pp-set-hand-local-transform",
+                    "pp-set-hand-local-transform": {
+                        "_myHandedness": "right"
+                    }
+                },
+                {
+                    "type": "pp-tool-cursor",
+                    "pp-tool-cursor": {
+                        "_myHandedness": "right",
+                        "_myPulseOnHover": false,
+                        "_myCursorMesh": "p2",
+                        "_myCursorMaterial": "32"
+                    }
+                },
+                {
+                    "type": "pp-gamepad-animator",
+                    "pp-gamepad-animator": {
+                        "_myHandedness": "right",
+                        "_mySelect": "63",
+                        "_mySqueeze": "64",
+                        "_myThumbstick": "65",
+                        "_myBottomButton": "61",
+                        "_myTopButton": "66"
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.1,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "25": {
+            "name": "VR Head",
+            "parent": "73",
+            "components": [
+                {
+                    "type": "pp-set-vr-head-local-transform"
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "26": {
+            "name": "Eye Left",
+            "parent": "22",
+            "components": [
+                {
+                    "type": "view",
+                    "view": {
+                        "far": 6.0
+                    }
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye left"
+                    }
+                }
+            ]
+        },
+        "27": {
+            "name": "Eye Right",
+            "parent": "22",
+            "components": [
+                {
+                    "type": "view",
+                    "view": {
+                        "far": 6.0
+                    }
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye right"
+                    }
+                }
+            ]
+        },
+        "28": {
+            "name": "Lights",
+            "parent": "18"
+        },
+        "29": {
+            "name": "Light 1",
+            "parent": "28",
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                1.0,
+                3.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "attenuation": 0.075
+                    }
+                }
+            ]
+        },
+        "30": {
+            "name": "Light 2",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "attenuation": 0.075
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                3.0,
+                -1.0,
+                1.0
+            ]
+        },
+        "52": {
+            "link": {
+                "name": "Left_Body<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "67"
+        },
+        "53": {
+            "link": {
+                "name": "Left_Bottom_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "67"
+        },
+        "54": {
+            "link": {
+                "name": "Left_Option_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "67"
+        },
+        "55": {
+            "link": {
+                "name": "Left_Select<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "67"
+        },
+        "56": {
+            "link": {
+                "name": "Left_Squeeze<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "67"
+        },
+        "57": {
+            "link": {
+                "name": "Left_Thumbstick<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "67"
+        },
+        "58": {
+            "link": {
+                "name": "Left_Top_Button<Left_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "67"
+        },
+        "60": {
+            "link": {
+                "name": "Right_Body<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "68"
+        },
+        "61": {
+            "link": {
+                "name": "Right_Bottom_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "68"
+        },
+        "62": {
+            "link": {
+                "name": "Right_Option_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "68"
+        },
+        "63": {
+            "link": {
+                "name": "Right_Select<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "68"
+        },
+        "64": {
+            "link": {
+                "name": "Right_Squeeze<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "68"
+        },
+        "65": {
+            "link": {
+                "name": "Right_Thumbstick<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "68"
+        },
+        "66": {
+            "link": {
+                "name": "Right_Top_Button<Right_Quest_Controller",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "parent": "68"
+        },
+        "67": {
+            "name": "Pivot",
+            "parent": "69",
+            "transformation": [
+                0.9999992,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.9999992,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "68": {
+            "name": "Pivot",
+            "parent": "70",
+            "transformation": [
+                0.9999992,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0000001,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0000002,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "69": {
+            "name": "Mesh",
+            "parent": "23"
+        },
+        "70": {
+            "name": "Mesh",
+            "parent": "24"
+        },
+        "71": {
+            "name": "Non VR Head",
+            "parent": "73",
+            "components": [
+                {
+                    "type": "pp-set-non-vr-head-local-transform",
+                    "pp-set-non-vr-head-local-transform": {
+                        "_myNonVRCamera": "21"
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "72": {
+            "name": "Cameras",
+            "parent": "20",
+            "components": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "type": "far-near-change-runtime",
+                    "active": true
+                }
+            ]
+        },
+        "73": {
+            "name": "Heads",
+            "parent": "20"
+        },
+        "74": {
+            "name": "Head",
+            "parent": "73",
+            "components": [
+                {
+                    "type": "pp-set-head-local-transform",
+                    "pp-set-head-local-transform": {
+                        "_myNonVRCamera": "21"
+                    }
+                },
+                {
+                    "type": "pp-spatial-audio-listener"
+                }
+            ]
+        },
+        "75": {
+            "name": "Hands",
+            "parent": "20"
+        },
+        "87": {
+            "name": "Sphere",
+            "parent": "18",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "35"
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                -5.0,
+                1.0
+            ]
+        }
+    },
+    "meshes": {
+        "p0": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            }
+        },
+        "p1": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            }
+        },
+        "p2": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "p3": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "p4": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "p5": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        },
+        "37": {
+            "link": {
+                "name": "Mesh",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "38": {
+            "link": {
+                "name": "Mesh.002",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "39": {
+            "link": {
+                "name": "Mesh.003",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "40": {
+            "link": {
+                "name": "Mesh.005",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "41": {
+            "link": {
+                "name": "Mesh.006",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "42": {
+            "link": {
+                "name": "Mesh.004",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "43": {
+            "link": {
+                "name": "Mesh.001",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "44": {
+            "link": {
+                "name": "Mesh.007",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "45": {
+            "link": {
+                "name": "Mesh.009",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "46": {
+            "link": {
+                "name": "Mesh.010",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "47": {
+            "link": {
+                "name": "Mesh.012",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "48": {
+            "link": {
+                "name": "Mesh.013",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "49": {
+            "link": {
+                "name": "Mesh.011",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        },
+        "50": {
+            "link": {
+                "name": "Mesh.008",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            }
+        }
+    },
+    "textures": {
+        "t0": {
+            "link": {
+                "name": "DefaultTexture",
+                "file": "default"
+            }
+        }
+    },
+    "images": {
+        "f0": {
+            "link": {
+                "name": "DefaultImage",
+                "file": "default"
+            }
+        }
+    },
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            }
+        },
+        "31": {
+            "name": "Debug Flat",
+            "pipeline": "7"
+        },
+        "32": {
+            "name": "Tool Flat",
+            "pipeline": "7"
+        },
+        "33": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "name": "Tool Text"
+        },
+        "35": {
+            "link": {
+                "name": "Lambert_Body",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "name": "Quest Controller Body",
+            "Phong": {
+                "shininess": 2,
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4472135
+                ]
+            }
+        },
+        "36": {
+            "link": {
+                "name": "Lambert_Button",
+                "file": "assets\\models\\quest_controllers_credits_Jezza3D.fbx"
+            },
+            "name": "Quest Controller Button",
+            "Phong": {
+                "shininess": 2,
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.4472135
+                ]
+            }
+        },
+        "86": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "name": "Debug Text"
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        },
+        "76": {
+            "link": {
+                "name": "Physical.frag",
+                "file": "default"
+            }
+        },
+        "79": {
+            "link": {
+                "name": "Sky.frag",
+                "file": "default"
+            }
+        },
+        "80": {
+            "link": {
+                "name": "Sky.vert",
+                "file": "default"
+            }
+        },
+        "81": {
+            "link": {
+                "name": "Text.frag",
+                "file": "default"
+            }
+        },
+        "83": {
+            "link": {
+                "name": "Text.vert",
+                "file": "default"
+            }
+        },
+        "84": {
+            "link": {
+                "name": "TileFeedback.frag",
+                "file": "default"
+            }
+        },
+        "88": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "89": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "90": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "91": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "92": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "93": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "94": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "95": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        }
+    },
+    "animations": {},
+    "skins": {},
+    "pipelines": {
+        "2": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            }
+        },
+        "16": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "77": {
+            "link": {
+                "name": "Physical Opaque",
+                "file": "default"
+            }
+        },
+        "78": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            }
+        },
+        "82": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "85": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            }
+        }
+    },
+    "settings": {
+        "project": {
+            "name": "far_near_change_runtime",
+            "version": [
+                0,
+                8,
+                10
+            ]
+        },
+        "rendering": {
+            "clearColor": [
+                0.9215686,
+                0.9215686,
+                0.9215686,
+                1.0
+            ]
+        },
+        "runtime": {
+            "xrButtonColor": "black",
+            "webxr": {
+                "optionalFeatures": {
+                    "hand-tracking": false,
+                    "hit-test": false
+                }
+            }
+        },
+        "scripting": {
+            "sourcePaths": [
+                "js/bundle.js",
+                "js/pp",
+                "js/pp/audio",
+                "js/pp/cauldron",
+                "js/pp/cauldron/cauldron",
+                "js/pp/cauldron/components",
+                "js/pp/cauldron/fsm",
+                "js/pp/cauldron/utils",
+                "js/pp/debug",
+                "js/pp/debug/components",
+                "js/pp/gameplay",
+                "js/pp/gameplay/grab_throw",
+                "js/pp/input",
+                "js/pp/input/cauldron",
+                "js/pp/input/gamepad",
+                "js/pp/plugin",
+                "js/pp/plugin/component_mods",
+                "js/pp/plugin/extensions",
+                "js/pp/tool",
+                "js/pp/tool/cauldron",
+                "js/pp/tool/cauldron/cauldron",
+                "js/pp/tool/cauldron/components",
+                "js/pp/tool/console_vr",
+                "js/pp/tool/easy_tune",
+                "js/pp/tool/easy_tune/easy_object_tuners",
+                "js/pp/tool/easy_tune/easy_tune_widgets",
+                "js/pp/tool/widget_frame",
+                "js/pp/cauldron/benchmarks",
+                "js/pp/input/pose",
+                "js/pp/input/pose/components",
+                "js/cauldron"
+            ],
+            "useInternalBundler": false
+        },
+        "vr": {
+            "leftEyeObject": "26",
+            "rightEyeObject": "27"
+        },
+        "editor": {
+            "camera": {
+                "near": 0.0099999,
+                "far": 10000.0
+            }
+        }
+    },
+    "files": [
+        "assets/models/quest_controllers_credits_Jezza3D.fbx"
+    ]
+}
