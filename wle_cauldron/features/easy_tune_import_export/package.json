@@ -1,0 +1,19 @@
+{
+  "name": "easy_tune_import_export",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./js/bundle.js",
+  "scripts": {
+    "build": "esbuild ./js/bundle.js --sourcemap --bundle --outfile=\"deploy/easy_tune_import_export-bundle.js\""
+  },
+  "author": "Pipo",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.54"
+  },
+  "dependencies": {
+    "@wonderlandengine/components": "^0.8.16",
+    "gl-matrix": "^3.4.3",
+    "howler": "^2.2.3"
+  }
+}
