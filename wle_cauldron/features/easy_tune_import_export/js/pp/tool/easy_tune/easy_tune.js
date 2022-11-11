@@ -6,7 +6,8 @@ WL.registerComponent('pp-easy-tune', {
     _myVariablesImportURL: { type: WL.Type.String, default: '' },
     _myVariablesExportURL: { type: WL.Type.String, default: '' },
     _myImportVariablesOnStart: { type: WL.Type.Bool, default: false },
-    _myEnableVariablesImportExportButtons: { type: WL.Type.Bool, default: false }
+    _myEnableVariablesImportExportButtons: { type: WL.Type.Bool, default: false },
+    _myResetVariablesDefaultValueOnImport: { type: WL.Type.Bool, default: true }
 }, {
     init: function () {
         this._myWidget = new PP.EasyTuneWidget();
@@ -35,6 +36,7 @@ WL.registerComponent('pp-easy-tune', {
         additionalSetup.myEnableVariablesImportExportButtons = this._myEnableVariablesImportExportButtons;
         additionalSetup.myVariablesImportURL = this._myVariablesImportURL;
         additionalSetup.myVariablesExportURL = this._myVariablesExportURL;
+        additionalSetup.myResetVariablesDefaultValueOnImport = this._myResetVariablesDefaultValueOnImport;
 
         this._myWidget.start(this.object, additionalSetup, PP.myEasyTuneVariables._getInternalMap());
 

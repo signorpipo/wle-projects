@@ -123,10 +123,12 @@ PP.EasyTuneWidget = class EasyTuneWidget {
         this._myWidgets[PP.EasyTuneVariableType.BOOL] = new PP.EasyTuneBoolWidget(this._myGamepad);
         this._myWidgets[PP.EasyTuneVariableType.TRANSFORM] = new PP.EasyTuneTransformWidget(this._myGamepad);
 
-        for (let item of this._myWidgets) {
-            item.start(this._myWidgetFrame.getWidgetObject(), this._myAdditionalSetup);
-            item.setVisible(false);
-            item.registerScrollVariableRequestEventListener(this, this._scrollVariable.bind(this));
+        for (let widget of this._myWidgets) {
+            if (widget != null) {
+                widget.start(this._myWidgetFrame.getWidgetObject(), this._myAdditionalSetup);
+                widget.setVisible(false);
+                widget.registerScrollVariableRequestEventListener(this, this._scrollVariable.bind(this));
+            }
         }
 
         this._selectCurrentWidget();
@@ -196,7 +198,9 @@ PP.EasyTuneWidget = class EasyTuneWidget {
 
     _widgetVisibleChanged(visible) {
         for (let widget of this._myWidgets) {
-            widget.setVisible(false);
+            if (widget != null) {
+                widget.setVisible(false);
+            }
         }
 
         if (this._myCurrentWidget) {

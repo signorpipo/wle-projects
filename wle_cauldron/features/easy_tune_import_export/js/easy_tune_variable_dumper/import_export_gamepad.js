@@ -8,7 +8,7 @@ WL.registerComponent("import-export-gamepad", {
     },
     update: function (dt) {
         if (PP.myRightGamepad.getButtonInfo(PP.ButtonType.TOP_BUTTON).isPressEnd(2)) {
-            PP.importEasyTuneVariables(this._myVariablesImportURL);
+            PP.importEasyTuneVariables(this._myVariablesImportURL, true);
         }
 
         if (PP.myRightGamepad.getButtonInfo(PP.ButtonType.BOTTOM_BUTTON).isPressEnd(2)) {
@@ -16,5 +16,3 @@ WL.registerComponent("import-export-gamepad", {
         }
     }
 });
-
-PP.myAudioManager = null;
