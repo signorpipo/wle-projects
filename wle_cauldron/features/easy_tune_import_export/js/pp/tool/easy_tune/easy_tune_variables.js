@@ -20,10 +20,10 @@ PP.EasyTuneVariables = class EasyTuneVariables {
         return null;
     }
 
-    set(variableName, value, resetInitialValue = false) {
+    set(variableName, value, resetDefaultValue = false) {
         let variable = this._myMap.get(variableName);
         if (variable) {
-            variable.setValue(value, resetInitialValue);
+            variable.setValue(value, resetDefaultValue);
         }
     }
 
@@ -40,13 +40,13 @@ PP.EasyTuneVariables = class EasyTuneVariables {
         return this._myMap.get(variableName);
     }
 
-    fromJSON(json, resetInitialValue = false) {
+    fromJSON(json, resetDefaultValue = false) {
         let objectJSON = JSON.parse(json);
 
         for (let variable of this._myStateMap.values()) {
             let variableValue = objectJSON[variable.myName];
             if (variableValue !== undefined) {
-                variable.setValue(variableValue, resetInitialValue);
+                variable.setValue(variableValue, resetDefaultValue);
             }
         }
     }

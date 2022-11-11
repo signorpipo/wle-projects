@@ -229,7 +229,7 @@ PP.EasyTuneBoolArrayWidget = class EasyTuneBoolArrayWidget {
 
     _resetValue(index) {
         if (this._isActive()) {
-            this._myVariable.myValue[index] = this._myVariable.myInitialValue[index];
+            this._myVariable.myValue[index] = this._myVariable.myDefaultValue[index];
             this._myUI.myValueTextComponents[index].text = (this._myVariable.myValue[index]) ? "true" : "false";
         }
     }

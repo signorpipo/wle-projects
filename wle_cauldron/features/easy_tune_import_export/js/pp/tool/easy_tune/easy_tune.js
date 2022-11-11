@@ -90,7 +90,7 @@ PP.refreshEasyTuneWidget = function () {
 };
 PP._refreshEasyTuneWidgetCallbacks = [];
 
-PP.importEasyTuneVariables = function (filePath = null, resetInitialValue = false) {
+PP.importEasyTuneVariables = function (filePath = null, resetDefaultValue = false) {
     if (filePath == null) {
         // clipboard
     } else {

@@ -536,19 +536,19 @@ PP.EasyTuneTransformWidget = class EasyTuneTransformWidget {
         if (this._isActive()) {
             switch (componentIndex) {
                 case 0:
-                    this._myVariable.myPosition[index] = this._myVariable.myInitialPosition[index];
+                    this._myVariable.myPosition[index] = this._myVariable.myDefaultPosition[index];
                     this._myUI.myPositionTextComponents[index].text = this._myVariable.myPosition[index].toFixed(this._myVariable.myDecimalPlaces);
                     break;
                 case 1:
-                    this._myVariable.myRotation[index] = this._myVariable.myInitialRotation[index];
+                    this._myVariable.myRotation[index] = this._myVariable.myDefaultRotation[index];
                     this._myUI.myRotationTextComponents[index].text = this._myVariable.myRotation[index].toFixed(this._myVariable.myDecimalPlaces);
                     break;
                 case 2:
-                    this._myVariable.myScale[index] = this._myVariable.myInitialScale[index];
+                    this._myVariable.myScale[index] = this._myVariable.myDefaultScale[index];
                     this._myUI.myScaleTextComponents[index].text = this._myVariable.myScale[index].toFixed(this._myVariable.myDecimalPlaces);
                     break;
                 default:
-                    initialValue = 0;
+                    defaultValue = 0;
             }
         }
     }
@@ -567,22 +567,22 @@ PP.EasyTuneTransformWidget = class EasyTuneTransformWidget {
 
     _resetStep(index) {
         if (this._isActive()) {
-            let initialValue = 0;
+            let defaultValue = 0;
             switch (index) {
                 case 0:
-                    initialValue = this._myVariable.myInitialPositionStepPerSecond;
+                    defaultValue = this._myVariable.myDefaultPositionStepPerSecond;
                     break;
                 case 1:
-                    initialValue = this._myVariable.myInitialRotationStepPerSecond;
+                    defaultValue = this._myVariable.myDefaultRotationStepPerSecond;
                     break;
                 case 2:
-                    initialValue = this._myVariable.myInitialScaleStepPerSecond;
+                    defaultValue = this._myVariable.myDefaultScaleStepPerSecond;
                     break;
                 default:
-                    initialValue = 0;
+                    defaultValue = 0;
             }
 
-            this._changeStep(index, initialValue);
+            this._changeStep(index, defaultValue);
         }
     }
 

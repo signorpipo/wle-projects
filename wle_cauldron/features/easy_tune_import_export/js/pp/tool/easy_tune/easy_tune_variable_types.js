@@ -23,7 +23,7 @@ PP.EasyTuneVariable = class EasyTuneVariable {
         this.myType = type;
 
         this.myValue = null;
-        this.myInitialValue = null;
+        this.myDefaultValue = null;
 
         this.myIsActive = false;
 
@@ -34,12 +34,12 @@ PP.EasyTuneVariable = class EasyTuneVariable {
         return this.myValue;
     }
 
-    setValue(value, resetInitialValue = false) {
+    setValue(value, resetDefaultValue = false) {
         let oldValue = this.myValue;
         this.myValue = value;
 
-        if (resetInitialValue) {
-            PP.EasyTuneVariable.prototype.setInitialValue.call(this, value);
+        if (resetDefaultValue) {
+            PP.EasyTuneVariable.prototype.setDefaultValue.call(this, value);
         }
 
         PP.refreshEasyTuneWidget();
@@ -49,8 +49,8 @@ PP.EasyTuneVariable = class EasyTuneVariable {
         }
     }
 
-    setInitialValue(value) {
-        this.myInitialValue = value;
+    setDefaultValue(value) {
+        this.myDefaultValue = value;
     }
 
     registerValueChangedEventListener(id, callback) {
@@ -79,12 +79,12 @@ PP.EasyTuneVariableArray = class EasyTuneVariableArray extends PP.EasyTuneVariab
         return this.myValue.slice(0);
     }
 
-    setValue(value, resetInitialValue = false) {
+    setValue(value, resetDefaultValue = false) {
         let oldValue = this.myValue;
         this.myValue = value.slice(0);
 
-        if (resetInitialValue) {
-            PP.EasyTuneVariableArray.prototype.setInitialValue.call(this, value);
+        if (resetDefaultValue) {
+            PP.EasyTuneVariableArray.prototype.setDefaultValue.call(this, value);
         }
 
         PP.refreshEasyTuneWidget();
@@ -94,8 +94,8 @@ PP.EasyTuneVariableArray = class EasyTuneVariableArray extends PP.EasyTuneVariab
         }
     }
 
-    setInitialValue(value) {
-        this.myInitialValue = value.slice(0);
+    setDefaultValue(value) {
+        this.myDefaultValue = value.slice(0);
     }
 };
 
@@ -108,7 +108,7 @@ PP.EasyTuneNumberArray = class EasyTuneNumberArray extends PP.EasyTuneVariableAr
         this.myDecimalPlaces = decimalPlaces;
         this.myStepPerSecond = stepPerSecond;
 
-        this.myInitialStepPerSecond = this.myStepPerSecond;
+        this.myDefaultStepPerSecond = this.myStepPerSecond;
 
         this.myMin = min;
         this.myMax = max;
@@ -128,18 +128,18 @@ PP.EasyTuneNumberArray = class EasyTuneNumberArray extends PP.EasyTuneVariableAr
         this._clampValue(false);
     }
 
-    _clampValue(resetInitialValue) {
+    _clampValue(resetDefaultValue) {
         let clampedValue = this.myValue.vec_clamp(this.myMin, this.myMax);
 
-        if (!resetInitialValue) {
-            let clampedInitialValue = this.myInitialValue.vec_clamp(this.myMin, this.myMax);
-            let initialValueChanged = !clampedInitialValue.vec_equals(this.myInitialValue, 0.00001);
-            if (initialValueChanged) {
-                PP.EasyTuneVariableArray.prototype.setInitialValue.call(this, clampedInitialValue);
+        if (!resetDefaultValue) {
+            let clampedDefaultValue = this.myDefaultValue.vec_clamp(this.myMin, this.myMax);
+            let defaultValueChanged = !clampedDefaultValue.vec_equals(this.myDefaultValue, 0.00001);
+            if (defaultValueChanged) {
+                PP.EasyTuneVariableArray.prototype.setDefaultValue.call(this, clampedDefaultValue);
             }
         }
 
-        PP.EasyTuneVariableArray.prototype.setValue.call(this, clampedValue, resetInitialValue);
+        PP.EasyTuneVariableArray.prototype.setValue.call(this, clampedValue, resetDefaultValue);
     }
 };
 
@@ -152,11 +152,11 @@ PP.EasyTuneNumber = class EasyTuneNumber extends PP.EasyTuneNumberArray {
         return this.myValue[0];
     }
 
-    setValue(value, resetInitialValue = false) {
-        super.setValue([value], resetInitialValue);
+    setValue(value, resetDefaultValue = false) {
+        super.setValue([value], resetDefaultValue);
     }
 
-    setInitialValue(value) {
+    setDefaultValue(value) {
         super.setValue([value]);
     }
 };
@@ -196,11 +196,11 @@ PP.EasyTuneBool = class EasyTuneBool extends PP.EasyTuneBoolArray {
         return this.myValue[0];
     }
 
-    setValue(value, resetInitialValue = false) {
-        super.setValue([value], resetInitialValue);
+    setValue(value, resetDefaultValue = false) {
+        super.setValue([value], resetDefaultValue);
     }
 
-    setInitialValue(value) {
+    setDefaultValue(value) {
         super.setValue([value]);
     }
 };
@@ -228,13 +228,13 @@ PP.EasyTuneTransform = class EasyTuneTransform extends PP.EasyTuneVariable {
         this.myRotationStepPerSecond = rotationStepPerSecond;
         this.myScaleStepPerSecond = scaleStepPerSecond;
 
-        this.myInitialPosition = this.myPosition.vec3_clone();
-        this.myInitialRotation = this.myRotation.vec3_clone();
-        this.myInitialScale = this.myScale.vec3_clone();
+        this.myDefaultPosition = this.myPosition.vec3_clone();
+        this.myDefaultRotation = this.myRotation.vec3_clone();
+        this.myDefaultScale = this.myScale.vec3_clone();
 
-        this.myInitialPositionStepPerSecond = this.myPositionStepPerSecond;
-        this.myInitialRotationStepPerSecond = this.myRotationStepPerSecond;
-        this.myInitialScaleStepPerSecond = this.myScaleStepPerSecond;
+        this.myDefaultPositionStepPerSecond = this.myPositionStepPerSecond;
+        this.myDefaultRotationStepPerSecond = this.myRotationStepPerSecond;
+        this.myDefaultScaleStepPerSecond = this.myScaleStepPerSecond;
 
         this.myTransform = PP.mat4_create();
         this.myTransform.mat4_setPositionRotationDegreesScale(this.myPosition, this.myRotation, this.myScale);
@@ -247,7 +247,7 @@ PP.EasyTuneTransform = class EasyTuneTransform extends PP.EasyTuneVariable {
         return this.myTransform.slice(0);
     }
 
-    setValue(value, resetInitialValue = false) {
+    setValue(value, resetDefaultValue = false) {
         this.myTempTransform.mat4_setPositionRotationDegreesScale(this.myPosition, this.myRotation, this.myScale);
 
         value.mat4_getPosition(this.myPosition);
@@ -256,8 +256,8 @@ PP.EasyTuneTransform = class EasyTuneTransform extends PP.EasyTuneVariable {
 
         this.myTransform.mat4_setPositionRotationDegreesScale(this.myPosition, this.myRotation, this.myScale);
 
-        if (resetInitialValue) {
-            PP.EasyTuneTransform.prototype.setInitialValue.call(this, value);
+        if (resetDefaultValue) {
+            PP.EasyTuneTransform.prototype.setDefaultValue.call(this, value);
         }
 
         PP.refreshEasyTuneWidget();
@@ -267,9 +267,9 @@ PP.EasyTuneTransform = class EasyTuneTransform extends PP.EasyTuneVariable {
         }
     }
 
-    setInitialValue(value) {
-        this.myInitialPosition = value.mat4_getPosition();
-        this.myInitialRotation = value.mat4_getRotationDegrees();
-        this.myInitialScale = value.mat4_getScale();
+    setDefaultValue(value) {
+        this.myDefaultPosition = value.mat4_getPosition();
+        this.myDefaultRotation = value.mat4_getRotationDegrees();
+        this.myDefaultScale = value.mat4_getScale();
     }
 };

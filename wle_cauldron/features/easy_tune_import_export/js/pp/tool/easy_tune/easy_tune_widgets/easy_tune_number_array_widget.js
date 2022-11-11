@@ -371,7 +371,7 @@ PP.EasyTuneNumberArrayWidget = class EasyTuneNumberArrayWidget {
 
     _resetValue(index) {
         if (this._isActive()) {
-            this._myVariable.myValue[index] = this._myVariable.myInitialValue[index];
+            this._myVariable.myValue[index] = this._myVariable.myDefaultValue[index];
             this._myUI.myValueTextComponents[index].text = this._myVariable.myValue[index].toFixed(this._myVariable.myDecimalPlaces);
         }
     }
@@ -384,7 +384,7 @@ PP.EasyTuneNumberArrayWidget = class EasyTuneNumberArrayWidget {
 
     _resetStep() {
         if (this._isActive()) {
-            this._changeStep(this._myVariable.myInitialStepPerSecond);
+            this._changeStep(this._myVariable.myDefaultStepPerSecond);
         }
     }
 
