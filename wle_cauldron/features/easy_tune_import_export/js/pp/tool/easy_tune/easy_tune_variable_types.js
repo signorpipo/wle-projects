@@ -53,6 +53,14 @@ PP.EasyTuneVariable = class EasyTuneVariable {
         this.myDefaultValue = value;
     }
 
+    fromJSON(valueJSON, resetDefaultValue = false) {
+        this.setValue(JSON.parse(valueJSON), resetDefaultValue);
+    }
+
+    toJSON() {
+        return JSON.stringify(this.getValue());
+    }
+
     registerValueChangedEventListener(id, callback) {
         this._myValueChangedCallbacks.set(id, callback);
     }
@@ -271,5 +279,13 @@ PP.EasyTuneTransform = class EasyTuneTransform extends PP.EasyTuneVariable {
         this.myDefaultPosition = value.mat4_getPosition();
         this.myDefaultRotation = value.mat4_getRotationDegrees();
         this.myDefaultScale = value.mat4_getScale();
+    }
+
+    fromJSON(valueJSON, resetDefaultValue = false) {
+        this.setValue(JSON.parse(valueJSON), resetDefaultValue);
+    }
+
+    toJSON() {
+        return this.getValue().vec_toString();
     }
 };
