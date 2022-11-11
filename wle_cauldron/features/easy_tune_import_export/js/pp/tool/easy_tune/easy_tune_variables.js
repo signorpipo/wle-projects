@@ -43,7 +43,7 @@ PP.EasyTuneVariables = class EasyTuneVariables {
     fromJSON(json, resetDefaultValue = false) {
         let objectJSON = JSON.parse(json);
 
-        for (let variable of this._myStateMap.values()) {
+        for (let variable of this._myMap.values()) {
             let variableValue = objectJSON[variable.myName];
             if (variableValue !== undefined) {
                 variable.setValue(variableValue, resetDefaultValue);
@@ -54,7 +54,7 @@ PP.EasyTuneVariables = class EasyTuneVariables {
     toJSON() {
         let objectJSON = {};
 
-        for (let variable of this._myStateMap.values()) {
+        for (let variable of this._myMap.values()) {
             objectJSON[variable.myName] = variable.getValue();
         }
 

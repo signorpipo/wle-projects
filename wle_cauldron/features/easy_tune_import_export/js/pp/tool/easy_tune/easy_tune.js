@@ -91,23 +91,41 @@ PP.refreshEasyTuneWidget = function () {
 PP._refreshEasyTuneWidgetCallbacks = [];
 
 PP.importEasyTuneVariables = function (filePath = null, resetDefaultValue = false) {
-    if (filePath == null) {
-        // clipboard
+    if (filePath == null || filePath.length == 0) {
+        if (navigator.clipboard) {
+            navigator.clipboard.readText().then(function (clipboardValue) {
+                PP.myEasyTuneVariables.fromJSON(clipboardValue);
+
+                PP.refreshEasyTuneWidget();
+
+                console.log("Easy Tune Variables Imported");
+                console.log(clipboardValue);
+            }).catch(function (reason) {
+                console.error("An error occurred while importing the easy tune variables from the clipboard");
+                console.error(reason);
+            });
+        }
     } else {
         // fetch
     }
 
     PP.refreshEasyTuneWidget();
-
-    console.error("imported");
 };
 
 PP.exportEasyTuneVariables = function (filePath = null) {
-    if (filePath == null) {
-        // clipboard
+    let jsonVariables = PP.myEasyTuneVariables.toJSON();
+
+    if (filePath == null || filePath.length == 0) {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(jsonVariables).then(function () {
+                console.log("Easy Tune Variables Exported");
+                console.log(jsonVariables);
+            }).catch(function (reason) {
+                console.error("An error occurred while exporting the easy tune variables to the clipboard");
+                console.error(reason);
+            });
+        }
     } else {
         // fetch
     }
-
-    console.error("exported");
 };
