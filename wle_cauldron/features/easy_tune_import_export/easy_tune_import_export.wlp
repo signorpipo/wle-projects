@@ -528,7 +528,12 @@
                     "type": "add-easy-tune-variables"
                 },
                 {
-                    "type": "import-export-gamepad"
+                    "type": "import-export-gamepad",
+                    "import-export-gamepad": {
+                        "_myVariablesImportPath": "https://vhiterabbitxr.com/json-dump/elia",
+                        "_myVariablesImportURL": "https://vhiterabbitxr.com/json-dump/elia",
+                        "_myVariablesExportURL": "https://vhiterabbitxr.com/json-dump/elia/dump"
+                    }
                 }
             ]
         },
@@ -548,8 +553,29 @@
             "parent": "111",
             "components": [
                 {
-                    "type": "test-visual-line"
+                    "type": "test-visual-line",
+                    "test-visual-line": {
+                        "mat": "32"
+                    }
                 }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
             ]
         }
     },
@@ -704,7 +730,22 @@
         },
         "32": {
             "name": "Phong Opaque",
-            "pipeline": "13"
+            "pipeline": "13",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.1058823,
+                    0.1058823,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "ambientFactor": 0.5
+            }
         },
         "33": {
             "link": {

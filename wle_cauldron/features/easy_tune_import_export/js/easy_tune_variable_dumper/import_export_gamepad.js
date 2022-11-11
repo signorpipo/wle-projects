@@ -1,6 +1,6 @@
 WL.registerComponent("import-export-gamepad", {
-    _myVariablesImportPath: { type: WL.Type.String, default: '' },
-    _myVariablesExportPath: { type: WL.Type.String, default: '' },
+    _myVariablesImportURL: { type: WL.Type.String, default: '' },
+    _myVariablesExportURL: { type: WL.Type.String, default: '' },
 }, {
     init: function () {
     },
@@ -8,11 +8,11 @@ WL.registerComponent("import-export-gamepad", {
     },
     update: function (dt) {
         if (PP.myRightGamepad.getButtonInfo(PP.ButtonType.TOP_BUTTON).isPressEnd(2)) {
-            PP.importEasyTuneVariables(this._myVariablesImportPath);
+            PP.importEasyTuneVariables(this._myVariablesImportURL);
         }
 
         if (PP.myRightGamepad.getButtonInfo(PP.ButtonType.BOTTOM_BUTTON).isPressEnd(2)) {
-            PP.exportEasyTuneVariables(this._myVariablesExportPath);
+            PP.exportEasyTuneVariables(this._myVariablesExportURL);
         }
     }
 });

@@ -3,8 +3,8 @@ WL.registerComponent('pp-easy-tune', {
     _myShowOnStart: { type: WL.Type.Bool, default: false },
     _myShowVisibilityButton: { type: WL.Type.Bool, default: false },
     _myEnableGamepadScrollVariable: { type: WL.Type.Bool, default: true },
-    _myVariablesImportPath: { type: WL.Type.String, default: '' },
-    _myVariablesExportPath: { type: WL.Type.String, default: '' },
+    _myVariablesImportURL: { type: WL.Type.String, default: '' },
+    _myVariablesExportURL: { type: WL.Type.String, default: '' },
     _myImportVariablesOnStart: { type: WL.Type.Bool, default: false },
     _myEnableVariablesImportExportButtons: { type: WL.Type.Bool, default: false }
 }, {
@@ -33,8 +33,8 @@ WL.registerComponent('pp-easy-tune', {
         additionalSetup.myTextMaterial = PP.myDefaultResources.myMaterials.myText;
 
         additionalSetup.myEnableVariablesImportExportButtons = this._myEnableVariablesImportExportButtons;
-        additionalSetup.myVariablesImportPath = this._myVariablesImportPath;
-        additionalSetup.myVariablesExportPath = this._myVariablesExportPath;
+        additionalSetup.myVariablesImportURL = this._myVariablesImportURL;
+        additionalSetup.myVariablesExportURL = this._myVariablesExportURL;
 
         this._myWidget.start(this.object, additionalSetup, PP.myEasyTuneVariables._getInternalMap());
 
@@ -48,7 +48,7 @@ WL.registerComponent('pp-easy-tune', {
         if (this._myFirstUpdate) {
             this._myFirstUpdate = false;
             if (this._myImportVariablesOnStart) {
-                PP.importEasyTuneVariables(this._myVariablesImportPath, true);
+                PP.importEasyTuneVariables(this._myVariablesImportURL, true);
             }
         }
 
@@ -90,42 +90,104 @@ PP.refreshEasyTuneWidget = function () {
 };
 PP._refreshEasyTuneWidgetCallbacks = [];
 
-PP.importEasyTuneVariables = function (filePath = null, resetDefaultValue = false) {
-    if (filePath == null || filePath.length == 0) {
+PP.importEasyTuneVariables = function (fileURL = null, resetDefaultValue = false) {
+    if (fileURL == null || fileURL.length == 0) {
         if (navigator.clipboard) {
-            navigator.clipboard.readText().then(function (clipboardValue) {
-                PP.myEasyTuneVariables.fromJSON(clipboardValue);
+            navigator.clipboard.readText().then(
+                function (clipboard) {
+                    PP.myEasyTuneVariables.fromJSON(clipboard, resetDefaultValue);
 
-                PP.refreshEasyTuneWidget();
+                    PP.refreshEasyTuneWidget();
 
-                console.log("Easy Tune Variables Imported");
-                console.log(clipboardValue);
-            }).catch(function (reason) {
-                console.error("An error occurred while importing the easy tune variables from the clipboard");
+                    console.log("Easy Tune Variables Imported from: clipboard");
+                    console.log(clipboard);
+                }, function () {
+                    console.error("An error occurred while importing the easy tune variables from: clipboard");
+                }
+            ).catch(function (reason) {
+                console.error("An error occurred while importing the easy tune variables from: clipboard");
                 console.error(reason);
             });
         }
     } else {
-        // fetch
+        fetch(fileURL).then(
+            function (response) {
+                if (response.ok) {
+                    response.text().then(
+                        function (text) {
+                            PP.myEasyTuneVariables.fromJSON(text, resetDefaultValue);
+
+                            PP.refreshEasyTuneWidget();
+
+                            console.log("Easy Tune Variables Imported from:", fileURL);
+                            console.log(text);
+                        },
+                        function (response) {
+                            console.error("An error occurred while importing the easy tune variables from:", fileURL);
+                            console.error(response);
+                        }
+                    );
+                } else {
+                    console.error("An error occurred while importing the easy tune variables from:", fileURL);
+                    console.error(response);
+                }
+            },
+            function (response) {
+                console.error("An error occurred while importing the easy tune variables from:", fileURL);
+                console.error(response);
+            }
+        ).catch(function (reason) {
+            console.error("An error occurred while importing the easy tune variables from:", fileURL);
+            console.error(reason);
+        });
     }
 
     PP.refreshEasyTuneWidget();
 };
 
-PP.exportEasyTuneVariables = function (filePath = null) {
+PP.exportEasyTuneVariables = function (fileURL = null) {
     let jsonVariables = PP.myEasyTuneVariables.toJSON();
 
-    if (filePath == null || filePath.length == 0) {
+    if (fileURL == null || fileURL.length == 0) {
         if (navigator.clipboard) {
-            navigator.clipboard.writeText(jsonVariables).then(function () {
-                console.log("Easy Tune Variables Exported");
-                console.log(jsonVariables);
-            }).catch(function (reason) {
-                console.error("An error occurred while exporting the easy tune variables to the clipboard");
+            navigator.clipboard.writeText(jsonVariables).then(
+                function () {
+                    console.log("Easy Tune Variables Exported to: clipboard");
+                    console.log(jsonVariables);
+                },
+                function () {
+                    console.error("An error occurred while exporting the easy tune variables to: clipboard");
+                }
+            ).catch(function (reason) {
+                console.error("An error occurred while exporting the easy tune variables to: clipboard");
                 console.error(reason);
             });
         }
     } else {
-        // fetch
+        fetch(fileURL, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: jsonVariables
+        }).then(
+            function (response) {
+                if (response.ok) {
+                    console.log("Easy Tune Variables Exported to:", fileURL);
+                    console.log(jsonVariables);
+                } else {
+                    console.error("An error occurred while exporting the easy tune variables to:", fileURL);
+                    console.error(response);
+                }
+            },
+            function (response) {
+                console.error("An error occurred while exporting the easy tune variables to:", fileURL);
+                console.error(response);
+            }
+        ).catch(function (reason) {
+            console.error("An error occurred while exporting the easy tune variables to:", fileURL);
+            console.error(reason);
+        });
     }
 };
