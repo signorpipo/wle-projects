@@ -191,3 +191,4 @@ require('./easy_tune_variable_dumper/add_easy_tune_variables');
 require('./easy_tune_variable_dumper/import_export_gamepad');
 
 require('./test/test_visual_line');
+require('./test/object_to_string');
