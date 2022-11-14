@@ -20,8 +20,8 @@ PP.EasyTuneTransformWidgetSetup = class EasyTuneTransformWidgetSetup extends PP.
         this.myIncreaseButtonText = "+";
         this.myDecreaseButtonText = "-";
 
-        this.myDecreaseButtonPosition = [-0.13, 0, 0];
-        this.myIncreaseButtonPosition = [-this.myDecreaseButtonPosition[0], 0, 0];
+        this.myDecreaseButtonPosition = [-0.13, 0, -0.00001];
+        this.myIncreaseButtonPosition = [-this.myDecreaseButtonPosition[0], 0, -0.00001];
 
         let distanceBetweenComponents = Math.abs(this.myIncreaseButtonPosition[0]) + Math.abs(this.myRightSideButtonPosition[0]);
         let distanceFromVariableLabel = 0.045;
@@ -33,7 +33,7 @@ PP.EasyTuneTransformWidgetSetup = class EasyTuneTransformWidgetSetup extends PP.
         this.myRotationText = "Rotation";
         this.myScaleText = "Scale";
 
-        this.myComponentLabelTextScale = [0.19, 0.19, 0.19];
+        this.myComponentLabelTextScale = this.myLabelTextScale;
         this.myComponentLabelCursorTargetPosition = [0, 0, 0];
         this.myComponentLabelCursorTargetPosition[2] = this._myColliderZOffset - this._myPanelZOffset;
         this.myComponentLabelCollisionExtents = [0.065, 0.0175, 1];
@@ -58,7 +58,7 @@ PP.EasyTuneTransformWidgetSetup = class EasyTuneTransformWidgetSetup extends PP.
 
         let valuePanelLastPosition = this.myValuePanelsPositions[2][1];
         this.myStepPanelPosition = [0, valuePanelLastPosition - this._myValuePanelDistanceFromVariableLabelPanel, 0];
-        this.myStepTextScale = [0.19, 0.19, 0.19];
+        this.myStepTextScale = this.myLabelTextScale;
         this.myStepStartString = "Step: ";
 
         this.myStepCursorTargetPosition = [0, 0, 0];

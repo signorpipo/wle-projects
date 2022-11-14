@@ -54,6 +54,9 @@ PP.EasyTuneBaseWidgetSetup = class EasyTuneBaseWidgetSetup {
         this.myTextJustification = WL.Justification.Middle;
         this.myTextColor = this.myDefaultTextColor;
 
+        this.myLabelTextScale = [0.19, 0.19, 0.19];
+        this.myButtonTextScale = [0.18, 0.18, 0.18];
+
         this._myPanelZOffset = 0.01;
         this._myColliderZOffset = 0.017;
         this._mySideButtonDistanceFromBorder = 0.0125;
@@ -67,7 +70,7 @@ PP.EasyTuneBaseWidgetSetup = class EasyTuneBaseWidgetSetup {
         this.myPivotObjectPositions[PP.ToolHandedness.RIGHT] = [-0.08, 0.02, this._getPivotZOffset()];
 
         this.mySideButtonBackgroundScale = [0.015, 0.015, 1];
-        this.mySideButtonTextScale = [0.18, 0.18, 0.18];
+        this.mySideButtonTextScale = this.myButtonTextScale;
         this.mySideButtonTextPosition = [0, 0, 0.007];
 
         this.mySideButtonCursorTargetPosition = [0, 0, 0];
@@ -79,14 +82,14 @@ PP.EasyTuneBaseWidgetSetup = class EasyTuneBaseWidgetSetup {
         this.myLeftSideButtonPosition[0] = -this._mySideButtonPanelHalfWidth + this.mySideButtonBackgroundScale[0] + this._mySideButtonDistanceFromBorder;
 
         this.myRightSideButtonPosition = [0, 0, -0.00001];
-        this.myRightSideButtonPosition[0] = this._mySideButtonPanelHalfWidth - this.mySideButtonBackgroundScale[0] - this._mySideButtonDistanceFromBorder;
+        this.myRightSideButtonPosition[0] = -this.myLeftSideButtonPosition[0];
 
         // Display
 
         this.myDisplayPanelPosition = [0, 0.1, 0];
 
         this.myVariableLabelPanelPosition = [0, 0.025, this._myPanelZOffset];
-        this.myVariableLabelTextScale = [0.19, 0.19, 0.19];
+        this.myVariableLabelTextScale = this.myLabelTextScale;
 
         this.myVariableLabelCursorTargetPosition = [0, 0, 0];
         this.myVariableLabelCursorTargetPosition[2] = this._myColliderZOffset - this._myPanelZOffset;
@@ -111,6 +114,29 @@ PP.EasyTuneBaseWidgetSetup = class EasyTuneBaseWidgetSetup {
 
             this.myBackBackgroundColor = [70 / 255, 70 / 255, 70 / 255, 1];
         }
+
+        // Import Export
+
+        this.myImportExportButtonBackgroundScale = [0.04, 0.02, 1];
+        this.myImportExportButtonTextScale = this.myButtonTextScale;
+        this.myImportExportButtonTextPosition = [0, 0, 0.007];
+
+        this.myImportExportPanelPosition = [0, this._getBackPanelMaxY() + this._mySideButtonDistanceFromBorder + this.myImportExportButtonBackgroundScale[1], this._myPanelZOffset];
+
+        this.myImportExportButtonCursorTargetPosition = [0, 0, 0];
+        this.myImportExportButtonCursorTargetPosition[2] = this._myColliderZOffset - this._myPanelZOffset;
+        this.myImportExportButtonCollisionExtents = this.myImportExportButtonBackgroundScale.slice(0);
+        this.myImportExportButtonCollisionExtents[2] = this.myCursorTargetCollisionThickness;
+
+        this.myImportButtonText = "Import";
+        this.myExportButtonText = "Export";
+
+        this.myImportButtonPosition = [0, 0, -0.00001];
+        this.myImportButtonPosition[0] = -this.myImportExportButtonBackgroundScale[0] - this._mySideButtonDistanceFromBorder / 2;
+
+        this.myExportButtonPosition = [0, 0, -0.00001];
+        this.myExportButtonPosition[0] = -this.myImportButtonPosition[0];
+
 
         // Pointer
 

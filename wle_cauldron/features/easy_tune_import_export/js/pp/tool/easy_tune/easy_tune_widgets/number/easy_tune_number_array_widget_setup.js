@@ -39,7 +39,7 @@ PP.EasyTuneNumberArrayWidgetSetup = class EasyTuneNumberArrayWidgetSetup extends
 
         let valuePanelLastPosition = (this.myValuePanelsPositions[this.myArraySize - 1]) ? this.myValuePanelsPositions[this.myArraySize - 1][1] : 0;
         this.myStepPanelPosition = [0, this.myDisplayPanelPosition[1] + this.myValuesPanelPosition[1] + valuePanelLastPosition - this._myValuePanelDistanceFromVariableLabelPanel, this._myPanelZOffset];
-        this.myStepTextScale = [0.19, 0.19, 0.19];
+        this.myStepTextScale = this.myLabelTextScale;
         this.myStepStartString = "Step: ";
 
         this.myStepCursorTargetPosition = [0, 0, 0];

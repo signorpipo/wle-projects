@@ -6,6 +6,8 @@ PP.EasyTuneBaseWidgetUI = class EasyTuneBaseWidgetUI {
         this._mySetup = setup;
         this._myAdditionalSetup = additionalSetup;
 
+        this._myImportExportButtonsActive = true;
+
         this._myPlaneMesh = PP.myDefaultResources.myMeshes.myPlane;
 
         this._buildHook();
@@ -25,7 +27,18 @@ PP.EasyTuneBaseWidgetUI = class EasyTuneBaseWidgetUI {
 
     setVisible(visible) {
         this.myPivotObject.pp_setActiveHierarchy(visible);
+
+        if (visible) {
+            this.setImportExportButtonsActive(visible);
+        }
+
         this._setVisibleHook(visible);
+    }
+
+    setImportExportButtonsActive(active) {
+        this._myImportExportButtonsActive = active;
+
+        this.myImportExportPanel.pp_setActiveHierarchy(this._myImportExportButtonsActive);
     }
 
     // Hooks
@@ -75,6 +88,20 @@ PP.EasyTuneBaseWidgetUI = class EasyTuneBaseWidgetUI {
         this.myPreviousButtonText = WL.scene.addObject(this.myPreviousButtonPanel);
         this.myPreviousButtonCursorTarget = WL.scene.addObject(this.myPreviousButtonPanel);
 
+        // Import/Export
+
+        this.myImportExportPanel = WL.scene.addObject(this.myPivotObject);
+
+        this.myImportButtonPanel = WL.scene.addObject(this.myImportExportPanel);
+        this.myImportButtonBackground = WL.scene.addObject(this.myImportButtonPanel);
+        this.myImportButtonText = WL.scene.addObject(this.myImportButtonPanel);
+        this.myImportButtonCursorTarget = WL.scene.addObject(this.myImportButtonPanel);
+
+        this.myExportButtonPanel = WL.scene.addObject(this.myImportExportPanel);
+        this.myExportButtonBackground = WL.scene.addObject(this.myExportButtonPanel);
+        this.myExportButtonText = WL.scene.addObject(this.myExportButtonPanel);
+        this.myExportButtonCursorTarget = WL.scene.addObject(this.myExportButtonPanel);
+
         // Pointer
 
         this.myPointerCursorTarget = WL.scene.addObject(this.myPivotObject);
@@ -110,6 +137,22 @@ PP.EasyTuneBaseWidgetUI = class EasyTuneBaseWidgetUI {
         this.myPreviousButtonText.setTranslationLocal(this._mySetup.mySideButtonTextPosition);
         this.myPreviousButtonText.scale(this._mySetup.mySideButtonTextScale);
         this.myPreviousButtonCursorTarget.setTranslationLocal(this._mySetup.mySideButtonCursorTargetPosition);
+
+        // Import/Export
+
+        this.myImportExportPanel.setTranslationLocal(this._mySetup.myImportExportPanelPosition);
+
+        this.myImportButtonPanel.setTranslationLocal(this._mySetup.myImportButtonPosition);
+        this.myImportButtonBackground.scale(this._mySetup.myImportExportButtonBackgroundScale);
+        this.myImportButtonText.setTranslationLocal(this._mySetup.myImportExportButtonTextPosition);
+        this.myImportButtonText.scale(this._mySetup.myImportExportButtonTextScale);
+        this.myImportButtonCursorTarget.setTranslationLocal(this._mySetup.myImportExportButtonCursorTargetPosition);
+
+        this.myExportButtonPanel.setTranslationLocal(this._mySetup.myExportButtonPosition);
+        this.myExportButtonBackground.scale(this._mySetup.myImportExportButtonBackgroundScale);
+        this.myExportButtonText.setTranslationLocal(this._mySetup.myImportExportButtonTextPosition);
+        this.myExportButtonText.scale(this._mySetup.myImportExportButtonTextScale);
+        this.myExportButtonCursorTarget.setTranslationLocal(this._mySetup.myImportExportButtonCursorTargetPosition);
 
         // Pointer
 
@@ -169,6 +212,38 @@ PP.EasyTuneBaseWidgetUI = class EasyTuneBaseWidgetUI {
         this.myPreviousButtonCollisionComponent.collider = this._mySetup.myCursorTargetCollisionCollider;
         this.myPreviousButtonCollisionComponent.group = 1 << this._mySetup.myCursorTargetCollisionGroup;
         this.myPreviousButtonCollisionComponent.extents = this._mySetup.mySideButtonCollisionExtents;
+
+        // Import/Export
+
+        this.myImportButtonBackgroundComponent = this.myImportButtonBackground.addComponent('mesh');
+        this.myImportButtonBackgroundComponent.mesh = this._myPlaneMesh;
+        this.myImportButtonBackgroundComponent.material = this._myAdditionalSetup.myPlaneMaterial.clone();
+        this.myImportButtonBackgroundComponent.material.color = this._mySetup.myBackgroundColor;
+
+        this.myImportButtonTextComponent = this.myImportButtonText.addComponent('text');
+        this._setupTextComponent(this.myImportButtonTextComponent);
+        this.myImportButtonTextComponent.text = this._mySetup.myImportButtonText;
+
+        this.myImportButtonCursorTargetComponent = this.myImportButtonCursorTarget.addComponent('cursor-target');
+        this.myImportButtonCollisionComponent = this.myImportButtonCursorTarget.addComponent('collision');
+        this.myImportButtonCollisionComponent.collider = this._mySetup.myCursorTargetCollisionCollider;
+        this.myImportButtonCollisionComponent.group = 1 << this._mySetup.myCursorTargetCollisionGroup;
+        this.myImportButtonCollisionComponent.extents = this._mySetup.myImportExportButtonCollisionExtents;
+
+        this.myExportButtonBackgroundComponent = this.myExportButtonBackground.addComponent('mesh');
+        this.myExportButtonBackgroundComponent.mesh = this._myPlaneMesh;
+        this.myExportButtonBackgroundComponent.material = this._myAdditionalSetup.myPlaneMaterial.clone();
+        this.myExportButtonBackgroundComponent.material.color = this._mySetup.myBackgroundColor;
+
+        this.myExportButtonTextComponent = this.myExportButtonText.addComponent('text');
+        this._setupTextComponent(this.myExportButtonTextComponent);
+        this.myExportButtonTextComponent.text = this._mySetup.myExportButtonText;
+
+        this.myExportButtonCursorTargetComponent = this.myExportButtonCursorTarget.addComponent('cursor-target');
+        this.myExportButtonCollisionComponent = this.myExportButtonCursorTarget.addComponent('collision');
+        this.myExportButtonCollisionComponent.collider = this._mySetup.myCursorTargetCollisionCollider;
+        this.myExportButtonCollisionComponent.group = 1 << this._mySetup.myCursorTargetCollisionGroup;
+        this.myExportButtonCollisionComponent.extents = this._mySetup.myImportExportButtonCollisionExtents;
 
         // Pointer
 
