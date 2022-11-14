@@ -387,8 +387,6 @@ PP.EasyTuneTransformWidget = class EasyTuneTransformWidget extends PP.EasyTuneBa
 
             this._myStepButtonEditIntensity = value;
 
-            console.error(value);
-
             this._myStepIndex = index;
         }
     }
