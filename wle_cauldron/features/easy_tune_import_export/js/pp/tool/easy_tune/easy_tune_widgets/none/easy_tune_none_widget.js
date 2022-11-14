@@ -75,6 +75,7 @@ PP.EasyTuneNoneWidget = class EasyTuneNoneWidget {
     }
 
     start(parentObject, additionalSetup) {
+        this._mySetup.build();
         this._myUI.build(parentObject, this._mySetup, additionalSetup);
 
         this._addListeners();

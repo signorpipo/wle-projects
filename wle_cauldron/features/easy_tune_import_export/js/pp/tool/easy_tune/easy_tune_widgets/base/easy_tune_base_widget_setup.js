@@ -1,26 +1,34 @@
 PP.EasyTuneBaseWidgetSetup = class EasyTuneBaseWidgetSetup {
 
     constructor() {
+    }
+
+    build() {
         this._initializeBuildSetup();
         this._initializeRuntimeSetup();
     }
 
     // Hooks
 
-    getBackPanelMaxY() {
+    _getBackPanelMaxY() {
         return this.myDisplayPanelPosition[1] + this.myVariableLabelPanelPosition[1] + this.mySideButtonBackgroundScale[1] + this._mySideButtonDistanceFromBorder * 1.25;
     }
 
-    getBackPanelMinY() {
+    _getBackPanelMinY() {
         return this.myDisplayPanelPosition[1] - this._mySideButtonDistanceFromBorder * 1.25 - this.mySideButtonBackgroundScale[1];
     }
 
-    getBackPanelMaxX() {
+    _getBackPanelMaxX() {
         return this._mySideButtonPanelHalfWidth
     }
 
-    getBackPanelMinX() {
+    _getBackPanelMinX() {
         return -this._mySideButtonPanelHalfWidth;
+    }
+
+    // small Z offset to avoid glitching with other widgets
+    _getPivotZOffset() {
+        return 0;
     }
 
     _initializeBuildSetupHook() {
@@ -93,10 +101,10 @@ PP.EasyTuneBaseWidgetSetup = class EasyTuneBaseWidgetSetup {
         // Background
 
         {
-            let maxX = this.getBackPanelMaxX();
-            let minX = this.getBackPanelMinX();
-            let maxY = this.getBackPanelMaxY();
-            let minY = this.getBackPanelMinY();
+            let maxX = this._getBackPanelMaxX();
+            let minX = this._getBackPanelMinX();
+            let maxY = this._getBackPanelMaxY();
+            let minY = this._getBackPanelMinY();
 
             this.myBackPanelPosition = [(maxX + minX) / 2, (maxY + minY) / 2, 0];
             this.myBackBackgroundScale = [(maxX - minX) / 2, (maxY - minY) / 2, 1];
@@ -118,10 +126,5 @@ PP.EasyTuneBaseWidgetSetup = class EasyTuneBaseWidgetSetup {
         this.myScrollVariableDelay = 0.5;
 
         this._initializeRuntimeSetupHook();
-    }
-
-    // small Z offset to avoid glitching with other widgets
-    _getPivotZOffset() {
-        return 0;
     }
 };
