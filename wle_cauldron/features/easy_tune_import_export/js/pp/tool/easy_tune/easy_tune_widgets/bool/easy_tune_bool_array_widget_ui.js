@@ -36,8 +36,6 @@ PP.EasyTuneBoolArrayWidgetUI = class EasyTuneBoolArrayWidgetUI extends PP.EasyTu
             this.myValueTexts[i] = WL.scene.addObject(this.myValuePanels[i]);
             this.myValueCursorTargets[i] = WL.scene.addObject(this.myValuePanels[i]);
 
-            // Increase/Decrease
-
             this.myValueIncreaseButtonPanels[i] = WL.scene.addObject(this.myValuePanels[i]);
             this.myValueIncreaseButtonBackgrounds[i] = WL.scene.addObject(this.myValueIncreaseButtonPanels[i]);
             this.myValueIncreaseButtonTexts[i] = WL.scene.addObject(this.myValueIncreaseButtonPanels[i]);
@@ -98,8 +96,6 @@ PP.EasyTuneBoolArrayWidgetUI = class EasyTuneBoolArrayWidgetUI extends PP.EasyTu
             this.myValueCollisionComponents[i].collider = this._mySetup.myCursorTargetCollisionCollider;
             this.myValueCollisionComponents[i].group = 1 << this._mySetup.myCursorTargetCollisionGroup;
             this.myValueCollisionComponents[i].extents = this._mySetup.myValueCollisionExtents;
-
-            // Increase/Decrease
 
             this.myValueIncreaseButtonBackgroundComponents[i] = this.myValueIncreaseButtonBackgrounds[i].addComponent('mesh');
             this.myValueIncreaseButtonBackgroundComponents[i].mesh = this._myPlaneMesh;

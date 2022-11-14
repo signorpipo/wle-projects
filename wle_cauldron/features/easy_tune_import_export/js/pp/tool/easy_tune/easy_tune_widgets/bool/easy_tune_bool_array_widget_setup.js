@@ -2,6 +2,7 @@ PP.EasyTuneBoolArrayWidgetSetup = class EasyTuneBoolArrayWidgetSetup extends PP.
 
     constructor(arraySize) {
         super();
+
         this.myArraySize = arraySize;
     }
 
