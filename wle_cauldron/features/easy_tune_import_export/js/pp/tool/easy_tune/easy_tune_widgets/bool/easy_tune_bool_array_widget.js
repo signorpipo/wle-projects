@@ -1,98 +1,32 @@
 
-PP.EasyTuneBoolArrayWidget = class EasyTuneBoolArrayWidget {
+PP.EasyTuneBoolArrayWidget = class EasyTuneBoolArrayWidget extends PP.EasyTuneBaseWidget {
 
     constructor(arraySize, gamepad) {
-        this._myGamepad = gamepad;
+        super();
 
         this._mySetup = new PP.EasyTuneBoolArrayWidgetSetup(arraySize);
         this._myUI = new PP.EasyTuneBoolArrayWidgetUI();
 
-        this._myVariable = null;
-
-        this._myIsVisible = true;
-
-        this._myScrollVariableRequestCallbacks = new Map();     // Signature: callback(scrollAmount)
-
-        this._myAppendToVariableName = "";
+        this._myGamepad = gamepad;
 
         this._myValueEditIndex = 0;
         this._myValueButtonEditIntensity = 0;
         this._myValueButtonEditIntensityTimer = 0;
         this._myValueEditActive = false;
-
-        this._myScrollVariableActive = false;
-        this._myScrollDirection = 0;
-        this._myScrollVariableTimer = 0;
-        this._myHasScrolled = false;
     }
 
-    setEasyTuneVariable(variable, appendToVariableName) {
-        this._myVariable = variable;
-
-        if ((typeof appendToVariableName) !== 'undefined') {
-            this._myAppendToVariableName = appendToVariableName;
-        } else {
-            this._myAppendToVariableName = "";
-        }
-
-        this._refreshUI();
-    }
-
-    isScrollVariableActive() {
-        return this._myScrollVariableActive;
-    }
-
-    getScrollVariableDirection() {
-        return this._myScrollDirection;
-    }
-
-    setScrollVariableActive(active, scrollDirection) {
-        this._myScrollVariableActive = active;
-        this._myScrollDirection = scrollDirection;
-        this._myScrollVariableTimer = this._mySetup.myScrollVariableDelay;
-        this._myHasScrolled = false;
-    }
-
-    _refreshUI() {
-        if (this._myVariable) {
-            this._myUI.myVariableLabelTextComponent.text = this._myVariable.myName.concat(this._myAppendToVariableName);
-
-            for (let i = 0; i < this._mySetup.myArraySize; i++) {
-                this._myUI.myValueTextComponents[i].text = (this._myVariable.myValue[i]) ? "true" : "false";
-            }
+    _refreshUIHook() {
+        for (let i = 0; i < this._mySetup.myArraySize; i++) {
+            this._myUI.myValueTextComponents[i].text = (this._myVariable.myValue[i]) ? "true" : "false";
         }
     }
 
-    setVisible(visible) {
-        if (visible) {
-            this._refreshUI();
-        }
-        this._myUI.setVisible(visible);
-
-        this._myIsVisible = visible;
-    }
-
-    registerScrollVariableRequestEventListener(id, callback) {
-        this._myScrollVariableRequestCallbacks.set(id, callback);
-    }
-
-    unregisterScrollVariableRequestEventListener(id) {
-        this._myScrollVariableRequestCallbacks.delete(id);
-    }
-
-    start(parentObject, additionalSetup) {
-        this._mySetup.build();
-        this._myUI.build(parentObject, this._mySetup, additionalSetup);
+    _startHook(parentObject, additionalSetup) {
         this._myUI.setAdditionalButtonsActive(additionalSetup.myEnableAdditionalButtons);
-
-        this._addListeners();
     }
 
-    update(dt) {
-        if (this._isActive()) {
-            this._updateValue(dt);
-            this._updateScrollVariable(dt);
-        }
+    _updateHook(dt) {
+        this._updateValue(dt);
     }
 
     _updateValue(dt) {
@@ -119,44 +53,12 @@ PP.EasyTuneBoolArrayWidget = class EasyTuneBoolArrayWidget {
         }
     }
 
-    _updateScrollVariable(dt) {
-        if (this._myScrollVariableActive) {
-            if (this._myScrollVariableTimer <= 0) {
-                this._scrollVariableRequest(this._myScrollDirection);
-                this._myScrollVariableTimer = this._mySetup.myScrollVariableDelay;
-                this._myHasScrolled = true;
-            } else {
-                this._myScrollVariableTimer -= dt;
-            }
-        }
-    }
-
-    _isActive() {
-        return this._myIsVisible && this._myVariable;
-    }
-
-    _addListeners() {
+    _addListenersHook() {
         let ui = this._myUI;
 
         ui.myVariableLabelCursorTargetComponent.addClickFunction(this._resetAllValues.bind(this));
         ui.myVariableLabelCursorTargetComponent.addHoverFunction(this._genericTextHover.bind(this, ui.myVariableLabelText));
         ui.myVariableLabelCursorTargetComponent.addUnHoverFunction(this._genericTextUnHover.bind(this, ui.myVariableLabelText, this._mySetup.myVariableLabelTextScale));
-
-        ui.myNextButtonCursorTargetComponent.addDownFunction(this._setScrollVariableActive.bind(this, true, 1, false));
-        ui.myNextButtonCursorTargetComponent.addDownOnHoverFunction(this._setScrollVariableActive.bind(this, true, 1, false));
-        ui.myNextButtonCursorTargetComponent.addUpFunction(this._setScrollVariableActive.bind(this, false, 0, false));
-        ui.myNextButtonCursorTargetComponent.addUpWithNoDownFunction(this._setScrollVariableActive.bind(this, false, 0, true));
-        ui.myNextButtonCursorTargetComponent.addUnHoverFunction(this._setScrollVariableActive.bind(this, false, 0, true));
-        ui.myNextButtonCursorTargetComponent.addHoverFunction(this._genericHover.bind(this, ui.myNextButtonBackgroundComponent.material));
-        ui.myNextButtonCursorTargetComponent.addUnHoverFunction(this._genericUnHover.bind(this, ui.myNextButtonBackgroundComponent.material));
-
-        ui.myPreviousButtonCursorTargetComponent.addDownFunction(this._setScrollVariableActive.bind(this, true, -1, false));
-        ui.myPreviousButtonCursorTargetComponent.addDownOnHoverFunction(this._setScrollVariableActive.bind(this, true, -1, false));
-        ui.myPreviousButtonCursorTargetComponent.addUpFunction(this._setScrollVariableActive.bind(this, false, 0, false));
-        ui.myPreviousButtonCursorTargetComponent.addUpWithNoDownFunction(this._setScrollVariableActive.bind(this, false, 0, true));
-        ui.myPreviousButtonCursorTargetComponent.addUnHoverFunction(this._setScrollVariableActive.bind(this, false, 0, true));
-        ui.myPreviousButtonCursorTargetComponent.addHoverFunction(this._genericHover.bind(this, ui.myPreviousButtonBackgroundComponent.material));
-        ui.myPreviousButtonCursorTargetComponent.addUnHoverFunction(this._genericUnHover.bind(this, ui.myPreviousButtonBackgroundComponent.material));
 
         for (let i = 0; i < this._mySetup.myArraySize; i++) {
             ui.myValueIncreaseButtonCursorTargetComponents[i].addDownFunction(this._setValueEditIntensity.bind(this, i, 1));
@@ -205,27 +107,6 @@ PP.EasyTuneBoolArrayWidget = class EasyTuneBoolArrayWidget {
         }
     }
 
-    _setScrollVariableActive(active, scrollDirection, skipForceScroll) {
-        if (this._isActive() || !active) {
-            let forceScroll = !active && !this._myHasScrolled && !skipForceScroll;
-            let oldScrollDirection = this._myScrollDirection;
-
-            this.setScrollVariableActive(active, scrollDirection);
-
-            if (forceScroll) {
-                this._scrollVariableRequest(oldScrollDirection);
-            }
-        }
-    }
-
-    _scrollVariableRequest(amount) {
-        if (this._isActive() && amount != 0) {
-            for (let callback of this._myScrollVariableRequestCallbacks.values()) {
-                callback(amount);
-            }
-        }
-    }
-
     _resetValue(index) {
         if (this._isActive()) {
             this._myVariable.myValue[index] = this._myVariable.myDefaultValue[index];
@@ -237,14 +118,6 @@ PP.EasyTuneBoolArrayWidget = class EasyTuneBoolArrayWidget {
         for (let i = 0; i < this._mySetup.myArraySize; i++) {
             this._resetValue(i);
         }
-    }
-
-    _genericHover(material) {
-        material.color = this._mySetup.myButtonHoverColor;
-    }
-
-    _genericUnHover(material) {
-        material.color = this._mySetup.myBackgroundColor;
     }
 
     _genericTextHover(text) {

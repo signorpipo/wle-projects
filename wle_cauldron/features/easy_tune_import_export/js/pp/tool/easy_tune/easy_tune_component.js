@@ -12,11 +12,11 @@ WL.registerComponent('pp-easy-tune', {
     init: function () {
         this._myWidget = new PP.EasyTuneWidget();
 
-        PP._setEasyTuneWidgetActiveVariableCallbacks.push(function (variableName) {
+        PP.mySetEasyTuneWidgetActiveVariableCallbacks.push(function (variableName) {
             this._myWidget.setActiveVariable(variableName);
         }.bind(this));
 
-        PP._refreshEasyTuneWidgetCallbacks.push(function () {
+        PP.myRefreshEasyTuneWidgetCallbacks.push(function () {
             this._myWidget.refresh();
         }.bind(this));
 
@@ -35,10 +35,11 @@ WL.registerComponent('pp-easy-tune', {
 
         additionalSetup.myEnableVariablesImportExportButtons = this._myEnableVariablesImportExportButtons;
         additionalSetup.myVariablesImportCallback = function () {
-            PP.myImport
-        }
-        additionalSetup.myVariablesExportURL = this._myVariablesExportURL;
-        additionalSetup.myResetVariablesDefaultValueOnImport = this._myResetVariablesDefaultValueOnImport;
+            PP.importEasyTuneVariables(this._myVariablesImportURL, this._myResetVariablesDefaultValueOnImport);
+        };
+        additionalSetup.myVariablesExportCallback = function () {
+            PP.importEasyTuneVariables(this._myVariablesExportURL);
+        };
 
         this._myWidget.start(this.object, additionalSetup, PP.myEasyTuneVariables._getInternalMap());
 

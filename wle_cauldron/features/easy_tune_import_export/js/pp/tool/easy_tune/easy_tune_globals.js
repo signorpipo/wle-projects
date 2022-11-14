@@ -104,16 +104,16 @@ PP.exportEasyTuneVariables = function (fileURL = null) {
     }
 };
 
+PP.mySetEasyTuneWidgetActiveVariableCallbacks = [];
 PP.setEasyTuneWidgetActiveVariable = function (variableName) {
-    for (let callback of PP._setEasyTuneWidgetActiveVariableCallbacks) {
+    for (let callback of PP.mySetEasyTuneWidgetActiveVariableCallbacks) {
         callback(variableName);
     }
 };
-PP._setEasyTuneWidgetActiveVariableCallbacks = [];
 
+PP.myRefreshEasyTuneWidgetCallbacks = [];
 PP.refreshEasyTuneWidget = function () {
-    for (let callback of PP._refreshEasyTuneWidgetCallbacks) {
+    for (let callback of PP.myRefreshEasyTuneWidgetCallbacks) {
         callback();
     }
 };
-PP._refreshEasyTuneWidgetCallbacks = [];
