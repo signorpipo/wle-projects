@@ -152,6 +152,7 @@ require('./pp/tool/console_vr/console_vr_widget_setup');
 require('./pp/tool/console_vr/console_vr_widget_ui');
 require('./pp/tool/console_vr/console_vr_widget');
 require('./pp/tool/console_vr/console_vr');
+require('./pp/tool/console_vr/console_vr_component');
 
 require('./pp/tool/easy_tune/easy_object_tuners/easy_object_tuner');
 require('./pp/tool/easy_tune/easy_object_tuners/easy_light_attenuation');
@@ -183,7 +184,8 @@ require('./pp/tool/easy_tune/easy_tune_widgets/easy_tune_widget_setup');
 
 require('./pp/tool/easy_tune/easy_tune_variables');
 require('./pp/tool/easy_tune/easy_tune_variable_types');
-require('./pp/tool/easy_tune/easy_tune');
+require('./pp/tool/easy_tune/easy_tune_component');
+require('./pp/tool/easy_tune/easy_tune_globals');
 
 require('./pp/tool/widget_frame/widget_frame_setup');
 require('./pp/tool/widget_frame/widget_frame_ui');
