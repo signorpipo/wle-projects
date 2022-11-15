@@ -5,6 +5,8 @@ PP.EasyTuneBaseWidget = class EasyTuneBaseWidget {
         this._mySetup = null;
         this._myUI = null;
 
+        this._myAdditionalSetup = null;
+
         this._myVariable = null;
 
         this._myIsVisible = true;
@@ -98,6 +100,8 @@ PP.EasyTuneBaseWidget = class EasyTuneBaseWidget {
     }
 
     start(parentObject, additionalSetup) {
+        this._myAdditionalSetup = additionalSetup;
+
         this._mySetup.build();
         this._myUI.build(parentObject, this._mySetup, additionalSetup);
 
@@ -149,6 +153,14 @@ PP.EasyTuneBaseWidget = class EasyTuneBaseWidget {
         ui.myPreviousButtonCursorTargetComponent.addHoverFunction(this._genericHover.bind(this, ui.myPreviousButtonBackgroundComponent.material));
         ui.myPreviousButtonCursorTargetComponent.addUnHoverFunction(this._genericUnHover.bind(this, ui.myPreviousButtonBackgroundComponent.material));
 
+        ui.myImportButtonCursorTargetComponent.addUpFunction(this._importVariables.bind(this));
+        ui.myImportButtonCursorTargetComponent.addHoverFunction(this._genericHover.bind(this, ui.myImportButtonBackgroundComponent.material));
+        ui.myImportButtonCursorTargetComponent.addUnHoverFunction(this._genericUnHover.bind(this, ui.myImportButtonBackgroundComponent.material));
+
+        ui.myExportButtonCursorTargetComponent.addUpFunction(this._exportVariables.bind(this));
+        ui.myExportButtonCursorTargetComponent.addHoverFunction(this._genericHover.bind(this, ui.myExportButtonBackgroundComponent.material));
+        ui.myExportButtonCursorTargetComponent.addUnHoverFunction(this._genericUnHover.bind(this, ui.myExportButtonBackgroundComponent.material));
+
         this._addListenersHook();
     }
 
@@ -171,6 +183,14 @@ PP.EasyTuneBaseWidget = class EasyTuneBaseWidget {
                 callback(amount);
             }
         }
+    }
+
+    _importVariables() {
+        this._myAdditionalSetup.myVariablesImportCallback();
+    }
+
+    _exportVariables() {
+        this._myAdditionalSetup.myVariablesExportCallback();
     }
 
     _genericHover(material) {

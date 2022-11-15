@@ -417,7 +417,10 @@
                 {
                     "type": "pp-easy-tune",
                     "pp-easy-tune": {
-                        "_myHandedness": "left"
+                        "_myHandedness": "left",
+                        "_myVariablesImportURL": "https://vhiterabbitxr.com/json-dump/elia",
+                        "_myVariablesExportURL": "https://vhiterabbitxr.com/json-dump/elia/dump",
+                        "_myImportVariablesOnStart": true
                     }
                 }
             ]
