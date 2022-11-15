@@ -780,6 +780,18 @@ PP.ConsoleVRWidget = class ConsoleVRWidget {
     }
 };
 
+PP.ConsoleVRWidget.AdditionalSetup = class ConsoleVRWidgetAdditionalSetup {
+    constructor() {
+        this.myHandedness = PP.ToolHandedness.NONE;
+        this.myOverrideBrowserConsole = false;
+        this.myShowOnStart = false;
+        this.myShowVisibilityButton = false;
+        this.myPulseOnNewMessage = PP.ConsoleVRWidget.PulseOnNewMessage.NEVER;
+        this.myPlaneMaterial = null;
+        this.myTextMaterial = null;
+    }
+};
+
 PP.ConsoleVRWidget.ConsoleFunction = {
     INFO: 0,
     WARN: 1,
@@ -808,7 +820,7 @@ PP.ConsoleVRWidget.MessageType = {
     LOG: 3
 };
 
-PP.ConsoleVRWidget.Message = class Message {
+PP.ConsoleVRWidget.Message = class ConsoleVRWidgetMessage {
     constructor(messageType, messageLines) {
         this.myType = messageType;
         this.myLines = messageLines;

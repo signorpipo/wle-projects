@@ -24,14 +24,14 @@ WL.registerComponent('pp-easy-tune', {
     },
     start: function () {
 
-        let additionalSetup = {};
+        let additionalSetup = new PP.EasyTuneWidgetAdditionalSetup();
         additionalSetup.myHandedness = [null, 'left', 'right'][this._myHandedness];
         additionalSetup.myShowOnStart = this._myShowOnStart;
         additionalSetup.myShowVisibilityButton = this._myShowVisibilityButton;
         additionalSetup.myEnableAdditionalButtons = true;
         additionalSetup.myEnableGamepadScrollVariable = this._myEnableGamepadScrollVariable;
-        additionalSetup.myPlaneMaterial = PP.myDefaultResources.myMaterials.myFlatOpaque;
-        additionalSetup.myTextMaterial = PP.myDefaultResources.myMaterials.myText;
+        additionalSetup.myPlaneMaterial = PP.myDefaultResources.myMaterials.myFlatOpaque.clone();
+        additionalSetup.myTextMaterial = PP.myDefaultResources.myMaterials.myText.clone();
 
         additionalSetup.myEnableVariablesImportExportButtons = this._myEnableVariablesImportExportButtons;
         additionalSetup.myVariablesImportCallback = function () {

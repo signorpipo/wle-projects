@@ -281,3 +281,19 @@ PP.EasyTuneWidget = class EasyTuneWidget {
         }
     }
 };
+
+PP.EasyTuneWidgetAdditionalSetup = class EasyTuneWidgetAdditionalSetup {
+    constructor() {
+        this.myHandedness = PP.ToolHandedness.NONE;
+        this.myShowOnStart = false;
+        this.myShowVisibilityButton = false;
+        this.myEnableAdditionalButtons = false;
+        this.myEnableGamepadScrollVariable = false;
+        this.myPlaneMaterial = null;
+        this.myTextMaterial = null;
+
+        this.myEnableVariablesImportExportButtons = false;
+        this.myVariablesImportCallback = null;   // Signature: callback()
+        this.myVariablesExportCallback = null;   // Signature: callback()
+    }
+};

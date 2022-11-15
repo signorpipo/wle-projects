@@ -11,14 +11,14 @@ WL.registerComponent('pp-console-vr', {
         this._myStarted = false;
     },
     start: function () {
-        let additionalSetup = {};
+        let additionalSetup = new PP.ConsoleVRWidget.AdditionalSetup();
         additionalSetup.myHandedness = [null, 'left', 'right'][this._myHandedness];
         additionalSetup.myOverrideBrowserConsole = this._myOverrideBrowserConsole;
         additionalSetup.myShowOnStart = this._myShowOnStart;
         additionalSetup.myShowVisibilityButton = this._myShowVisibilityButton;
         additionalSetup.myPulseOnNewMessage = this._myPulseOnNewMessage;
-        additionalSetup.myPlaneMaterial = PP.myDefaultResources.myMaterials.myFlatOpaque;
-        additionalSetup.myTextMaterial = PP.myDefaultResources.myMaterials.myText;
+        additionalSetup.myPlaneMaterial = PP.myDefaultResources.myMaterials.myFlatOpaque.clone();
+        additionalSetup.myTextMaterial = PP.myDefaultResources.myMaterials.myText.clone();
 
         this._myWidget.start(this.object, additionalSetup);
 
