@@ -423,7 +423,7 @@
                         "_myImportVariablesOnStart": true,
                         "_myEnableGamepadScrollVariable": true,
                         "_myEnableVariablesImportExportButtons": true,
-                        "_myResetVariablesDefaultValueOnImport": false
+                        "_myResetVariablesDefaultValueOnImport": true
                     }
                 }
             ]

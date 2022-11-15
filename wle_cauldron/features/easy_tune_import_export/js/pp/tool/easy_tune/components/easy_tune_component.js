@@ -7,7 +7,7 @@ WL.registerComponent('pp-easy-tune', {
     _myVariablesImportURL: { type: WL.Type.String, default: '' },   // the URL can contain parameters inside brackets, like {param}
     _myVariablesExportURL: { type: WL.Type.String, default: '' },   // those parameters will be replaced with the same one on the current page url, like www.currentpage.com/?param=2
     _myImportVariablesOnStart: { type: WL.Type.Bool, default: false },
-    _myResetVariablesDefaultValueOnImport: { type: WL.Type.Bool, default: true }
+    _myResetVariablesDefaultValueOnImport: { type: WL.Type.Bool, default: false }
 }, {
     init: function () {
         this._myWidget = new PP.EasyTuneWidget();
@@ -52,7 +52,7 @@ WL.registerComponent('pp-easy-tune', {
         if (this._myFirstUpdate) {
             this._myFirstUpdate = false;
             if (this._myImportVariablesOnStart) {
-                PP.importEasyTuneVariables(this._myVariablesImportURL, true);
+                PP.importEasyTuneVariables(this._myVariablesImportURL, this._myResetVariablesDefaultValueOnImport);
             }
         }
 

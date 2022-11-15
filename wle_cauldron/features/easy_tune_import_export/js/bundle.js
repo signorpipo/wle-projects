@@ -185,8 +185,10 @@ require('./pp/tool/easy_tune/easy_tune_widgets/easy_tune_widget_setup');
 
 require('./pp/tool/easy_tune/easy_tune_variables');
 require('./pp/tool/easy_tune/easy_tune_variable_types');
-require('./pp/tool/easy_tune/easy_tune_component');
 require('./pp/tool/easy_tune/easy_tune_globals');
+
+require('./pp/tool/easy_tune/components/easy_tune_component');
+require('./pp/tool/easy_tune/components/easy_tune_import_variables');
 
 require('./pp/tool/widget_frame/widget_frame_setup');
 require('./pp/tool/widget_frame/widget_frame_ui');
