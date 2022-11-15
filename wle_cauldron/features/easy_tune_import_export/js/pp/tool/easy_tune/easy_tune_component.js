@@ -4,8 +4,8 @@ WL.registerComponent('pp-easy-tune', {
     _myShowVisibilityButton: { type: WL.Type.Bool, default: false },
     _myEnableGamepadScrollVariable: { type: WL.Type.Bool, default: true },
     _myEnableVariablesImportExportButtons: { type: WL.Type.Bool, default: false },
-    _myVariablesImportURL: { type: WL.Type.String, default: '' },
-    _myVariablesExportURL: { type: WL.Type.String, default: '' },
+    _myVariablesImportURL: { type: WL.Type.String, default: '' },   // the URL can contain parameters inside brackets, like {param}
+    _myVariablesExportURL: { type: WL.Type.String, default: '' },   // those parameters will be replaced with the same one on the current page url, like www.currentpage.com/?param=2
     _myImportVariablesOnStart: { type: WL.Type.Bool, default: false },
     _myResetVariablesDefaultValueOnImport: { type: WL.Type.Bool, default: true }
 }, {
