@@ -104,6 +104,7 @@ PP.EasyTuneBaseWidget = class EasyTuneBaseWidget {
 
         this._mySetup.build();
         this._myUI.build(parentObject, this._mySetup, additionalSetup);
+        this._myUI.setImportExportButtonsActive(this._myAdditionalSetup.myEnableVariablesImportExportButtons);
 
         this._startHook(parentObject, additionalSetup);
 

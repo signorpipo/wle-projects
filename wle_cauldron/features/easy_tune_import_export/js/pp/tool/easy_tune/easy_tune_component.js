@@ -3,10 +3,10 @@ WL.registerComponent('pp-easy-tune', {
     _myShowOnStart: { type: WL.Type.Bool, default: false },
     _myShowVisibilityButton: { type: WL.Type.Bool, default: false },
     _myEnableGamepadScrollVariable: { type: WL.Type.Bool, default: true },
+    _myEnableVariablesImportExportButtons: { type: WL.Type.Bool, default: false },
     _myVariablesImportURL: { type: WL.Type.String, default: '' },
     _myVariablesExportURL: { type: WL.Type.String, default: '' },
     _myImportVariablesOnStart: { type: WL.Type.Bool, default: false },
-    _myEnableVariablesImportExportButtons: { type: WL.Type.Bool, default: false },
     _myResetVariablesDefaultValueOnImport: { type: WL.Type.Bool, default: true }
 }, {
     init: function () {
@@ -23,7 +23,6 @@ WL.registerComponent('pp-easy-tune', {
         this._myStarted = false;
     },
     start: function () {
-
         let additionalSetup = new PP.EasyTuneWidgetAdditionalSetup();
         additionalSetup.myHandedness = [null, 'left', 'right'][this._myHandedness];
         additionalSetup.myShowOnStart = this._myShowOnStart;

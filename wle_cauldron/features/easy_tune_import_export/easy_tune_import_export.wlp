@@ -420,7 +420,10 @@
                         "_myHandedness": "left",
                         "_myVariablesImportURL": "https://vhiterabbitxr.com/json-dump/elia",
                         "_myVariablesExportURL": "https://vhiterabbitxr.com/json-dump/elia/dump",
-                        "_myImportVariablesOnStart": true
+                        "_myImportVariablesOnStart": true,
+                        "_myEnableGamepadScrollVariable": true,
+                        "_myEnableVariablesImportExportButtons": true,
+                        "_myResetVariablesDefaultValueOnImport": false
                     }
                 }
             ]

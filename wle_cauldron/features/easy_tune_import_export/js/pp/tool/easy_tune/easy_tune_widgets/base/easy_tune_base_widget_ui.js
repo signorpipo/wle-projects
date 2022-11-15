@@ -29,7 +29,7 @@ PP.EasyTuneBaseWidgetUI = class EasyTuneBaseWidgetUI {
         this.myPivotObject.pp_setActiveHierarchy(visible);
 
         if (visible) {
-            this.setImportExportButtonsActive(visible);
+            this.setImportExportButtonsActive(this._myImportExportButtonsActive);
         }
 
         this._setVisibleHook(visible);
