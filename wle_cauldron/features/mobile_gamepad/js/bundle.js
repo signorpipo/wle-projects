@@ -197,4 +197,8 @@ require('./pp/tool/widget_frame/widget_frame');
 
 //MOBILE GAMEPAD
 
-require('./mobile_Gamepad/joystick_ns_tcg');
+require('./mobile_gamepad/joystick_ns_tcg');
+
+//TEST
+
+require('./test/mouse_up');

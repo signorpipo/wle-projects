@@ -64,6 +64,9 @@
             "components": [
                 {
                     "type": "view"
+                },
+                {
+                    "type": "mouse-look"
                 }
             ]
         },
@@ -556,6 +559,73 @@
                 "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
             "parent": "136"
+        },
+        "146": {
+            "name": "Test",
+            "components": [
+                {
+                    "type": "pp-set-active",
+                    "active": false,
+                    "pp-set-active": {
+                        "_myActive": false
+                    }
+                }
+            ]
+        },
+        "147": {
+            "name": "NS TCG Joystick",
+            "parent": "146",
+            "components": [
+                {
+                    "type": "joystick",
+                    "joystick": {
+                        "NonVrCamera": "21",
+                        "Player": "19",
+                        "joystickBodyURL": ""
+                    }
+                }
+            ]
+        },
+        "148": {
+            "name": "Mouse Up",
+            "parent": "146",
+            "components": [
+                {
+                    "type": "mouse-up",
+                    "active": false
+                }
+            ]
+        },
+        "149": {
+            "name": "Cube",
+            "parent": "18",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "111"
+                    }
+                }
+            ],
+            "transformation": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                -3.0292012,
+                1.0
+            ]
         }
     },
     "meshes": {
@@ -1055,7 +1125,8 @@
                 "js/pp/tool/easy_tune/easy_object_tuners",
                 "js/pp/tool/easy_tune/easy_tune_widgets",
                 "js/pp/tool/widget_frame",
-                "js/mobile_gamepad"
+                "js/mobile_gamepad",
+                "js/test"
             ],
             "useInternalBundler": false
         },
@@ -1067,7 +1138,8 @@
             "camera": {
                 "near": 0.0099999,
                 "far": 10000.0
-            }
+            },
+            "serverCOEP": "unsafe-none"
         }
     },
     "files": [
