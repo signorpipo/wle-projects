@@ -138,7 +138,7 @@ WL.registerComponent(
 						let deadzone = 0;
 						deadzone = Math.max(deadzoneMinValue, bounds.width * deadzonePercentage);
 
-						console.error(maxDistance.toFixed(3), deadzone.toFixed(3), bounds.width.toFixed(3));
+						//console.error(maxDistance.toFixed(3), deadzone.toFixed(3), bounds.width.toFixed(3));
 
 						const distance2 =
 							distance < deadzone
@@ -230,11 +230,38 @@ WL.registerComponent(
 			stick1.setAttribute("style", "position: absolute; left :25%; top:25%; width: 50%; height: 50%;");
 			document.getElementById("joystickTranslation").appendChild(stick1);
 
-			const joystickBody1 = document.createElement("img");
+			/* const joystickBody1 = document.createElement("img");
 			joystickBody1.src = this.joystickBodyURL || this.defaultBodyURL;
 			joystickBody1.draggable = false;
 			joystickBody1.setAttribute("style", "opacity: 0.6; position: absolute; width: 100%; height: 100%;");
+			document.getElementById("stick1").appendChild(joystickBody1); */
+
+			/* const joystickBody1 = document.createElement("canvas");
+			joystickBody1.width = 50;
+			joystickBody1.height = 50;
+			joystickBody1.id = "joystickBody1";
+			joystickBody1.draggable = false;
+			joystickBody1.setAttribute("style", "opacity: 0.6; position: absolute; width: 100%; height: 100%;");
+			//joystickBody1.src = this.joystickBodyURL || this.defaultBodyURL;
 			document.getElementById("stick1").appendChild(joystickBody1);
+
+			let joystickBody1Context = joystickBody1.getContext("2d");
+			joystickBody1Context.clearRect(0, 0, joystickBody1Context.canvas.width, joystickBody1Context.canvas.height);
+			joystickBody1Context.arc(joystickBody1Context.canvas.width / 2, joystickBody1Context.canvas.height / 2, joystickBody1Context.canvas.width / 2, 0, Math.PI * 2, false);
+			joystickBody1Context.fillStyle = "red";
+			joystickBody1Context.fill(); */
+
+			const joystickBody1 = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+			joystickBody1.draggable = false;
+			joystickBody1.setAttribute("style", "opacity: 0.6; position: absolute; width: 100%; height: 100%;");
+			document.getElementById("stick1").appendChild(joystickBody1);
+
+			const joystickBody1Image = document.createElementNS("http://www.w3.org/2000/svg", 'image');
+			//joystickBody1Image.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
+			joystickBody1Image.setAttributeNS("http://www.w3.org/1999/xlink", 'xlink:href', this.joystickBodyURL || this.defaultBodyURL);
+			joystickBody1Image.setAttributeNS(null, 'height', '100%');
+			joystickBody1Image.setAttributeNS(null, 'width', '100%');
+			joystickBody1.appendChild(joystickBody1Image);
 
 			const joystickRotation = document.createElement("div");
 			joystickRotation.id = "joystickRotation";
