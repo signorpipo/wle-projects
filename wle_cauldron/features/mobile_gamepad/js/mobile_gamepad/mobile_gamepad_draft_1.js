@@ -163,11 +163,13 @@ WL.registerComponent(
                     //document.body.addEventListener("mouseleave", handleUp);
                 }
             }
-            this.joystick1 = new JoystickController("joystickTranslation", "joystickTranslationStick", 0.5, 64, 0.1, 8);
-            this.joystick2 = new JoystickController("joystickRotation", "joystickRotationStick", 0.5, 64, 0.1, 8);
+            this.joystick1 = new JoystickController("joystickTranslation", "joystickTranslationStick", 0.5, 0, 0.1, 0);
+            this.joystick2 = new JoystickController("joystickRotation", "joystickRotationStick", 0.5, 0, 0.1, 0);
         },
 
         createDynamicHtml: function () {
+            document.body.style.overflow = "hidden";
+
             const joysticksDiv = document.createElement("div"); // container
             joysticksDiv.id = "joysticksDiv";
             joysticksDiv.setAttribute(
@@ -180,26 +182,23 @@ WL.registerComponent(
             joystickTranslation.id = "joystickTranslation";
             joystickTranslation.setAttribute(
                 "style",
-                "position: absolute; width: 15%; aspect-ratio:1/1; min-width: 128px; left:5%; bottom:5%",
+                "position: absolute; width: 15%; aspect-ratio:1/1; min-width: 0px; left:5%; bottom:5%",
             );
             joysticksDiv.appendChild(joystickTranslation);
 
             const joystickTranslationBackground = document.createElement("div");
-            joystickTranslationBackground.src = this.joystickBodyURL || this.defaultLeftJoystickUrl;
-            joystickTranslationBackground.draggable = false;
-            joystickTranslationBackground.setAttribute("style", "width: 100%; height: 100%;");
+            joystickTranslationBackground.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
             joystickTranslation.appendChild(joystickTranslationBackground);
 
             const joystickTranslationBackgroundSVG = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-            joystickTranslationBackgroundSVG.draggable = false;
-            joystickTranslationBackgroundSVG.setAttribute("style", "width: 100%; height: 100%;");
+            joystickTranslationBackgroundSVG.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
             joystickTranslationBackground.appendChild(joystickTranslationBackgroundSVG);
 
             const joystickTranslationBackgroundSVGCircle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
             joystickTranslationBackgroundSVGCircle.setAttributeNS(null, 'cx', "50%");
             joystickTranslationBackgroundSVGCircle.setAttributeNS(null, 'cy', "50%");
             joystickTranslationBackgroundSVGCircle.setAttributeNS(null, 'r', "50%");
-            joystickTranslationBackgroundSVGCircle.setAttributeNS(null, 'style', 'fill: darkgray;');
+            joystickTranslationBackgroundSVGCircle.setAttributeNS(null, 'style', 'fill: #616161;');
             joystickTranslationBackgroundSVG.appendChild(joystickTranslationBackgroundSVGCircle);
 
             //avoid making them clickable
@@ -208,65 +207,60 @@ WL.registerComponent(
 
             const joystickTranslationStick = document.createElement("div");
             joystickTranslationStick.id = "joystickTranslationStick";
-            joystickTranslationStick.setAttribute("style", "position: absolute; left :25%; top:25%; width: 50%; height: 50%;");
+            joystickTranslationStick.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
             joystickTranslation.appendChild(joystickTranslationStick);
 
             const joystickTranslationStickSVG = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-            joystickTranslationStickSVG.draggable = false;
-            joystickTranslationStickSVG.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
+            joystickTranslationStickSVG.setAttribute("style", "position: absolute; width: 34%; height: 34%; top:33%; left:33%");
             joystickTranslationStick.appendChild(joystickTranslationStickSVG);
 
             const joystickTranslationStickSVGCircle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
             joystickTranslationStickSVGCircle.setAttributeNS(null, 'cx', "50%");
             joystickTranslationStickSVGCircle.setAttributeNS(null, 'cy', "50%");
             joystickTranslationStickSVGCircle.setAttributeNS(null, 'r', "50%");
-            joystickTranslationStickSVGCircle.setAttributeNS(null, 'style', 'fill: dimgray;');
+            joystickTranslationStickSVGCircle.setAttributeNS(null, 'style', 'fill: #e0e0e0;');
             joystickTranslationStickSVG.appendChild(joystickTranslationStickSVGCircle);
 
             const joystickRotation = document.createElement("div");
             joystickRotation.id = "joystickRotation";
             joystickRotation.setAttribute(
                 "style",
-                "position: absolute; width: 15%; aspect-ratio:1/1; min-width: 128px; right:5%; bottom:5%",
+                "position: absolute; width: 15%; aspect-ratio:1/1; min-width: 0px; right:5%; bottom:5%",
             );
             joysticksDiv.appendChild(joystickRotation);
 
             const joystickRotationBackground = document.createElement("div");
-            joystickRotationBackground.src = this.joystickBodyURL || this.defaultLeftJoystickUrl;
-            joystickRotationBackground.draggable = false;
-            joystickRotationBackground.setAttribute("style", "width: 100%; height: 100%;");
+            joystickRotationBackground.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
             joystickRotation.appendChild(joystickRotationBackground);
 
             joystickRotationBackground.addEventListener("mousedown", (event) => { event.preventDefault() });
             joystickRotationBackground.addEventListener("touchstart", (event) => { event.preventDefault() });
 
             const joystickRotationBackgroundSVG = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-            joystickRotationBackgroundSVG.draggable = false;
-            joystickRotationBackgroundSVG.setAttribute("style", "width: 100%; height: 100%;");
+            joystickRotationBackgroundSVG.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
             joystickRotationBackground.appendChild(joystickRotationBackgroundSVG);
 
             const joystickRotationBackgroundSVGCircle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
             joystickRotationBackgroundSVGCircle.setAttributeNS(null, 'cx', "50%");
             joystickRotationBackgroundSVGCircle.setAttributeNS(null, 'cy', "50%");
             joystickRotationBackgroundSVGCircle.setAttributeNS(null, 'r', "50%");
-            joystickRotationBackgroundSVGCircle.setAttributeNS(null, 'style', 'fill: darkgray;');
+            joystickRotationBackgroundSVGCircle.setAttributeNS(null, 'style', 'fill: #616161;');
             joystickRotationBackgroundSVG.appendChild(joystickRotationBackgroundSVGCircle);
 
             const joystickRotationStick = document.createElement("div");
             joystickRotationStick.id = "joystickRotationStick";
-            joystickRotationStick.setAttribute("style", "position: absolute; left :25%; top:25%; width: 50%; height: 50%;");
+            joystickRotationStick.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
             joystickRotation.appendChild(joystickRotationStick);
 
             const joystickRotationStickSVG = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-            joystickRotationStickSVG.draggable = false;
-            joystickRotationStickSVG.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
+            joystickRotationStickSVG.setAttribute("style", "position: absolute; width: 34%; height: 34%; top:33%; left:33%");
             joystickRotationStick.appendChild(joystickRotationStickSVG);
 
             const joystickRotationStickSVGCircle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
             joystickRotationStickSVGCircle.setAttributeNS(null, 'cx', "50%");
             joystickRotationStickSVGCircle.setAttributeNS(null, 'cy', "50%");
             joystickRotationStickSVGCircle.setAttributeNS(null, 'r', "50%");
-            joystickRotationStickSVGCircle.setAttributeNS(null, 'style', 'fill: dimgray;');
+            joystickRotationStickSVGCircle.setAttributeNS(null, 'style', 'fill: #e0e0e0;');
             joystickRotationStickSVG.appendChild(joystickRotationStickSVGCircle);
         },
     },
