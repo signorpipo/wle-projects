@@ -7,6 +7,17 @@ WL.registerComponent(
     },
     {
         start: function () {
+            document.body.style.overflow = "hidden";
+
+            const joysticksDiv = document.createElement("div"); // container
+            joysticksDiv.id = "joysticksDiv";
+            joysticksDiv.setAttribute(
+                "style",
+                "opacity:0.6",
+            );
+            document.body.appendChild(joysticksDiv);
+
+            this.createDynamicHtmlButtons();
             this.createDynamicHtml();
             this.createJoystick();
         },
@@ -168,21 +179,11 @@ WL.registerComponent(
         },
 
         createDynamicHtml: function () {
-            document.body.style.overflow = "hidden";
-
-            const joysticksDiv = document.createElement("div"); // container
-            joysticksDiv.id = "joysticksDiv";
-            joysticksDiv.setAttribute(
-                "style",
-                "opacity:0.6",
-            );
-            document.body.appendChild(joysticksDiv);
-
             const joystickTranslation = document.createElement("div");
             joystickTranslation.id = "joystickTranslation";
             joystickTranslation.setAttribute(
                 "style",
-                "position: absolute; width: 15%; aspect-ratio:1/1; min-width: 0px; left:5%; bottom:5%",
+                "position: absolute; width: 15vw; height:15vw; min-width: 0px; left:3vw; bottom:3vw",
             );
             joysticksDiv.appendChild(joystickTranslation);
 
@@ -225,7 +226,7 @@ WL.registerComponent(
             joystickRotation.id = "joystickRotation";
             joystickRotation.setAttribute(
                 "style",
-                "position: absolute; width: 15%; aspect-ratio:1/1; min-width: 0px; right:5%; bottom:5%",
+                "position: absolute; width: 15vw; height:15vw; min-width: 0px; right:3vw; bottom:3vw",
             );
             joysticksDiv.appendChild(joystickRotation);
 
@@ -247,6 +248,8 @@ WL.registerComponent(
             joystickRotationBackgroundSVGCircle.setAttributeNS(null, 'style', 'fill: #616161;');
             joystickRotationBackgroundSVG.appendChild(joystickRotationBackgroundSVGCircle);
 
+            test = joystickRotationBackgroundSVGCircle;
+
             const joystickRotationStick = document.createElement("div");
             joystickRotationStick.id = "joystickRotationStick";
             joystickRotationStick.setAttribute("style", "position: absolute; width: 100%; height: 100%;");
@@ -263,5 +266,161 @@ WL.registerComponent(
             joystickRotationStickSVGCircle.setAttributeNS(null, 'style', 'fill: #e0e0e0;');
             joystickRotationStickSVG.appendChild(joystickRotationStickSVGCircle);
         },
+
+        createDynamicHtmlButtons: function () {
+            let joysticksDiv = document.getElementById("joysticksDiv");
+
+            let topButton = document.createElement("div");
+            topButton.id = "topButton";
+            topButton.style.position = "absolute";
+            topButton.style.width = "5vw";
+            topButton.style.height = "5vw";
+            topButton.style.minWidth = "0px";
+            topButton.style.left = "20.5vw";
+            topButton.style.bottom = "10vw";
+            joysticksDiv.appendChild(topButton);
+
+            let topButtonBackground = document.createElement("div");
+            topButtonBackground.style.position = "absolute";
+            topButtonBackground.style.width = "100%";
+            topButtonBackground.style.height = "100%";
+            topButtonBackground.style.display = "flex";
+            topButtonBackground.style.alignItems = "center";
+            topButtonBackground.style.justifyContent = "center";
+            topButtonBackground.style.textAlign = "center";
+            topButton.appendChild(topButtonBackground);
+
+            let topButtonBackgroundSVG = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+            topButtonBackgroundSVG.style.position = "absolute";
+            topButtonBackgroundSVG.style.width = "100%";
+            topButtonBackgroundSVG.style.height = "100%";
+            topButtonBackground.appendChild(topButtonBackgroundSVG);
+
+            let topButtonBackgroundSVGCircle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+            topButtonBackgroundSVGCircle.setAttributeNS(null, 'cx', "50%");
+            topButtonBackgroundSVGCircle.setAttributeNS(null, 'cy', "50%");
+            topButtonBackgroundSVGCircle.setAttributeNS(null, 'r', "50%");
+            topButtonBackgroundSVGCircle.style.fill = "#616161";
+            topButtonBackgroundSVG.appendChild(topButtonBackgroundSVGCircle);
+
+            //avoid making them clickable
+            topButtonBackgroundSVGCircle.addEventListener("mousedown", (event) => { event.preventDefault() });
+            topButtonBackgroundSVGCircle.addEventListener("touchstart", (event) => { event.preventDefault() });
+
+            let topButtonIcon = document.createElement("div");
+            topButtonIcon.id = "topButtonIcon";
+            topButtonIcon.style.position = "absolute";
+            topButtonIcon.style.width = "100%";
+            topButtonIcon.style.height = "100%";
+            topButtonIcon.style.display = "flex";
+            topButtonIcon.style.alignItems = "center";
+            topButtonIcon.style.justifyContent = "center";
+            topButtonIcon.style.textAlign = "center";
+            topButton.appendChild(topButtonIcon);
+
+            let topButtonIconSVG = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+            topButtonIconSVG.style.position = "absolute";
+            topButtonIconSVG.style.width = "85%";
+            topButtonIconSVG.style.height = "85%";
+            topButtonIcon.appendChild(topButtonIconSVG);
+
+            let topButtonIconSVGBackground = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+            topButtonIconSVGBackground.setAttributeNS(null, 'cx', "50%");
+            topButtonIconSVGBackground.setAttributeNS(null, 'cy', "50%");
+            topButtonIconSVGBackground.setAttributeNS(null, 'r', "50%");
+            topButtonIconSVGBackground.style.fill = "#e0e0e0";
+            topButtonIconSVG.appendChild(topButtonIconSVGBackground);
+
+            let topButtonIconSVGLabel = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+            topButtonIconSVGLabel.setAttributeNS(null, 'x', "50%");
+            topButtonIconSVGLabel.setAttributeNS(null, 'y', "50%");
+            topButtonIconSVGLabel.style.fill = "#616161";
+            topButtonIconSVGLabel.style.fill = "#616161";
+            topButtonIconSVGLabel.style.textAnchor = "middle";
+            topButtonIconSVGLabel.style.dominantBaseline = "central";
+            topButtonIconSVGLabel.style.fontFamily = "sans-serif";
+            topButtonIconSVGLabel.style.fontSize = "2vw";
+            topButtonIconSVGLabel.style.fontWeight = "bold";
+            topButtonIconSVGLabel.textContent = "To";
+            topButtonIconSVG.appendChild(topButtonIconSVGLabel);
+
+
+
+            //BOTTOM
+            let bottomButton = document.createElement("div");
+            bottomButton.id = "bottomButton";
+            bottomButton.style.position = "absolute";
+            bottomButton.style.width = "5vw";
+            bottomButton.style.height = "5vw";
+            bottomButton.style.minWidth = "0px";
+            bottomButton.style.left = "19vw";
+            bottomButton.style.bottom = "3vw";
+            joysticksDiv.appendChild(bottomButton);
+
+            let bottomButtonBackground = document.createElement("div");
+            bottomButtonBackground.style.position = "absolute";
+            bottomButtonBackground.style.width = "100%";
+            bottomButtonBackground.style.height = "100%";
+            bottomButtonBackground.style.display = "flex";
+            bottomButtonBackground.style.alignItems = "center";
+            bottomButtonBackground.style.justifyContent = "center";
+            bottomButtonBackground.style.textAlign = "center";
+            bottomButton.appendChild(bottomButtonBackground);
+
+            let bottomButtonBackgroundSVG = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+            bottomButtonBackgroundSVG.style.position = "absolute";
+            bottomButtonBackgroundSVG.style.width = "100%";
+            bottomButtonBackgroundSVG.style.height = "100%";
+            bottomButtonBackground.appendChild(bottomButtonBackgroundSVG);
+
+            let bottomButtonBackgroundSVGCircle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+            bottomButtonBackgroundSVGCircle.setAttributeNS(null, 'cx', "50%");
+            bottomButtonBackgroundSVGCircle.setAttributeNS(null, 'cy', "50%");
+            bottomButtonBackgroundSVGCircle.setAttributeNS(null, 'r', "50%");
+            bottomButtonBackgroundSVGCircle.style.fill = "#616161";
+            bottomButtonBackgroundSVG.appendChild(bottomButtonBackgroundSVGCircle);
+
+            //avoid making them clickable
+            bottomButtonBackgroundSVGCircle.addEventListener("mousedown", (event) => { event.preventDefault() });
+            bottomButtonBackgroundSVGCircle.addEventListener("touchstart", (event) => { event.preventDefault() });
+
+            let bottomButtonIcon = document.createElement("div");
+            bottomButtonIcon.id = "bottomButtonIcon";
+            bottomButtonIcon.style.position = "absolute";
+            bottomButtonIcon.style.width = "100%";
+            bottomButtonIcon.style.height = "100%";
+            bottomButton.appendChild(bottomButtonIcon);
+
+            let bottomButtonIconSVG = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+            bottomButtonIconSVG.style.position = "absolute";
+            bottomButtonIconSVG.style.width = "85%";
+            bottomButtonIconSVG.style.height = "85%";
+            bottomButtonIconSVG.style.top = "7.5%";
+            bottomButtonIconSVG.style.left = "7.5%";
+            bottomButtonIcon.appendChild(bottomButtonIconSVG);
+
+            let bottomButtonIconSVGBackground = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+            bottomButtonIconSVGBackground.setAttributeNS(null, 'cx', "50%");
+            bottomButtonIconSVGBackground.setAttributeNS(null, 'cy', "50%");
+            bottomButtonIconSVGBackground.setAttributeNS(null, 'r', "50%");
+            bottomButtonIconSVGBackground.style.fill = "#e0e0e0";
+            bottomButtonIconSVG.appendChild(bottomButtonIconSVGBackground);
+
+            let bottomButtonIconSVGLabel = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+            bottomButtonIconSVGLabel.setAttributeNS(null, 'x', "50%");
+            bottomButtonIconSVGLabel.setAttributeNS(null, 'y', "50%");
+            bottomButtonIconSVGLabel.style.fill = "#616161";
+            bottomButtonIconSVGLabel.style.textAnchor = "middle";
+            bottomButtonIconSVGLabel.style.dominantBaseline = "central";
+            bottomButtonIconSVGLabel.style.fontFamily = "sans-serif";
+            bottomButtonIconSVGLabel.style.fontSize = "2vw";
+            bottomButtonIconSVGLabel.style.fontWeight = "bold";
+            bottomButtonIconSVGLabel.textContent = "Bo";
+            bottomButtonIconSVG.appendChild(bottomButtonIconSVGLabel);
+
+            test = topButtonIconSVGLabel;
+        }
     },
 );
+
+test = null;
