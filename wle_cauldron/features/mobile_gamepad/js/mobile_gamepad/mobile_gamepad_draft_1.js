@@ -40,17 +40,17 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         PP.myPlayerObjects.myPlayer.pp_translate(direction);
     },
     createButtonsController() {
-        this.selectLeft = new ButtonController("selectLeft", "selectLeftBack", "selectLeftLabel");
-        this.squeezeLeft = new ButtonController("squeezeLeft", "squeezeLeftBack", "squeezeLeftLabel");
-        this.topButtonLeft = new ButtonController("topButtonLeft", "topButtonLeftBack", "topButtonLeftLabel");
-        this.bottomButtonLeft = new ButtonController("bottomButtonLeft", "bottomButtonLeftBack", "bottomButtonLeftLabel");
-        this.selectButtonLeft = new ButtonController("thumbstickButtonLeft", "thumbstickButtonLeftBack", "thumbstickButtonLeftLabel");
+        this.selectLeft = new ButtonController("selectLeft", "selectLeftBack", "selectLeftIcon");
+        this.squeezeLeft = new ButtonController("squeezeLeft", "squeezeLeftBack", "squeezeLeftIcon");
+        this.topButtonLeft = new ButtonController("topButtonLeft", "topButtonLeftBack", "topButtonLeftIcon");
+        this.bottomButtonLeft = new ButtonController("bottomButtonLeft", "bottomButtonLeftBack", "bottomButtonLeftIcon");
+        this.selectButtonLeft = new ButtonController("thumbstickButtonLeft", "thumbstickButtonLeftBack", "thumbstickButtonLeftIcon");
 
-        this.selectRight = new ButtonController("selectRight", "selectRightBack", "selectRightLabel");
-        this.squeezeRight = new ButtonController("squeezeRight", "squeezeRightBack", "squeezeRightLabel");
-        this.topButtonRight = new ButtonController("topButtonRight", "topButtonRightBack", "topButtonRightLabel");
-        this.bottomButtonRight = new ButtonController("bottomButtonRight", "bottomButtonRightBack", "bottomButtonRightLabel");
-        this.selectButtonRight = new ButtonController("thumbstickButtonRight", "thumbstickButtonRightBack", "thumbstickButtonRightLabel");
+        this.selectRight = new ButtonController("selectRight", "selectRightBack", "selectRightIcon");
+        this.squeezeRight = new ButtonController("squeezeRight", "squeezeRightBack", "squeezeRightIcon");
+        this.topButtonRight = new ButtonController("topButtonRight", "topButtonRightBack", "topButtonRightIcon");
+        this.bottomButtonRight = new ButtonController("bottomButtonRight", "bottomButtonRightBack", "bottomButtonRightIcon");
+        this.selectButtonRight = new ButtonController("thumbstickButtonRight", "thumbstickButtonRightBack", "thumbstickButtonRightIcon");
 
         this.thumbstickLeft = new ThumbstickController("thumbstickLeft", "thumbstickLeftStick", 0.5, 0, 0.1, 0);
         this.thumbstickRight = new ThumbstickController("thumbstickRight", "thumbstickRightStick", 0.5, 0, 0.1, 0);
@@ -104,7 +104,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         thumbstickBackVisual.setAttributeNS(null, 'cx', "50%");
         thumbstickBackVisual.setAttributeNS(null, 'cy', "50%");
         thumbstickBackVisual.setAttributeNS(null, 'r', "48%");
-        thumbstickBackVisual.style.fill = "#616161";
+        thumbstickBackVisual.style.fill = this.htmlElementSizeSetup.backColor;
         thumbstickBackSVG.appendChild(thumbstickBackVisual);
 
         // avoid making them clickable
@@ -129,16 +129,16 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         thumbstickStickVisual.setAttributeNS(null, 'cx', "50%");
         thumbstickStickVisual.setAttributeNS(null, 'cy', "50%");
         thumbstickStickVisual.setAttributeNS(null, 'r', "17%");
-        thumbstickStickVisual.style.fill = "#e0e0e0";
+        thumbstickStickVisual.style.fill = this.htmlElementSizeSetup.iconColor;
         thumbstickStickSVG.appendChild(thumbstickStickVisual);
     },
     createHtmlButtons() {
         let buttonSetups = [];
-        buttonSetups.push(new ButtonSetup("thumbstickButton", "Th"));
-        buttonSetups.push(new ButtonSetup("bottomButton", "Bo"));
-        buttonSetups.push(new ButtonSetup("topButton", "To"));
-        buttonSetups.push(new ButtonSetup("squeeze", "Sq"));
-        buttonSetups.push(new ButtonSetup("select", "Se"));
+        buttonSetups.push(new ButtonSetup("thumbstickButton", "Th", 1));
+        buttonSetups.push(new ButtonSetup("bottomButton", "Bo", 2));
+        buttonSetups.push(new ButtonSetup("topButton", "To", 3));
+        buttonSetups.push(new ButtonSetup("squeeze", "Sq", 4));
+        buttonSetups.push(new ButtonSetup("select", "Se", 5));
 
         let minAngle = 245;
         let maxAngle = 385;
@@ -205,23 +205,77 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         buttonSVGBack.setAttributeNS(null, 'cx', "50%");
         buttonSVGBack.setAttributeNS(null, 'cy', "50%");
         buttonSVGBack.setAttributeNS(null, 'r', "50%");
-        buttonSVGBack.style.fill = "#616161";
+        buttonSVGBack.style.fill = this.htmlElementSizeSetup.backColor;
         buttonSVG.appendChild(buttonSVGBack);
 
-        let buttonSVGLabel = document.createElementNS("http://www.w3.org/2000/svg", 'text');
-        buttonSVGLabel.id = buttonID + "Label";
-        buttonSVGLabel.setAttributeNS(null, 'x', "50%");
-        buttonSVGLabel.setAttributeNS(null, 'y', "50%");
-        buttonSVGLabel.style.fill = "#e0e0e0";
-        buttonSVGLabel.style.textAlign = "center";
-        buttonSVGLabel.style.textAnchor = "middle";
-        buttonSVGLabel.style.dominantBaseline = "central";
-        buttonSVGLabel.style.alignmentBaseline = "central";
-        buttonSVGLabel.style.fontFamily = "sans-serif";
-        buttonSVGLabel.style.fontSize = this.createSizeValue(this.htmlElementSizeSetup.fontSize, this.htmlElementSizeSetup.minMultiplier);
-        buttonSVGLabel.style.fontWeight = "bold";
-        buttonSVGLabel.textContent = setup.myLabel;
-        buttonSVG.appendChild(buttonSVGLabel);
+        if (setup.myShapeIndex == null) {
+            let buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+            buttonSVGIcon.id = buttonID + "Icon";
+            buttonSVGIcon.setAttributeNS(null, 'x', "50%");
+            buttonSVGIcon.setAttributeNS(null, 'y', "50%");
+            buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
+            buttonSVGIcon.style.textAlign = "center";
+            buttonSVGIcon.style.textAnchor = "middle";
+            buttonSVGIcon.style.dominantBaseline = "central";
+            buttonSVGIcon.style.alignmentBaseline = "central";
+            buttonSVGIcon.style.fontFamily = "sans-serif";
+            buttonSVGIcon.style.fontSize = this.createSizeValue(this.htmlElementSizeSetup.fontSize, this.htmlElementSizeSetup.minMultiplier);
+            buttonSVGIcon.style.fontWeight = "bold";
+            buttonSVGIcon.textContent = setup.myIcon;
+            buttonSVG.appendChild(buttonSVGIcon);
+        } else {
+            let buttonSVGIcon = null;
+            switch (setup.myShapeIndex) {
+                case 1:
+                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+                    buttonSVGIcon.setAttributeNS(null, 'cx', "50%");
+                    buttonSVGIcon.setAttributeNS(null, 'cy', "50%");
+                    buttonSVGIcon.setAttributeNS(null, 'r', "25%");
+                    buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
+                    break;
+                case 2:
+                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+                    buttonSVGIcon.setAttributeNS(null, 'cx', "50%");
+                    buttonSVGIcon.setAttributeNS(null, 'cy', "50%");
+                    buttonSVGIcon.setAttributeNS(null, 'r', "20%");
+                    buttonSVGIcon.style.fill = this.htmlElementSizeSetup.backColor;
+                    buttonSVGIcon.style.stroke = this.htmlElementSizeSetup.iconColor;
+                    buttonSVGIcon.style.strokeWidth = "10%";
+                    break;
+                case 3:
+                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+                    buttonSVGIcon.setAttributeNS(null, 'cx', "50%");
+                    buttonSVGIcon.setAttributeNS(null, 'cy', "50%");
+                    buttonSVGIcon.setAttributeNS(null, 'r', "25%");
+                    buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
+                    break;
+                case 4:
+                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+                    buttonSVGIcon.setAttributeNS(null, 'x', "33%");
+                    buttonSVGIcon.setAttributeNS(null, 'y', "33%");
+                    buttonSVGIcon.setAttributeNS(null, 'width', "33%");
+                    buttonSVGIcon.setAttributeNS(null, 'height', "33%");
+                    buttonSVGIcon.style.fill = this.htmlElementSizeSetup.backColor;
+                    buttonSVGIcon.style.stroke = this.htmlElementSizeSetup.iconColor;
+                    buttonSVGIcon.style.strokeWidth = "10%";
+                    buttonSVGIcon.style.transform = "rotate(45deg)";
+                    buttonSVGIcon.style.transformOrigin = "50% 50%";
+                    break;
+                case 5:
+                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+                    buttonSVGIcon.setAttributeNS(null, 'x', "29%");
+                    buttonSVGIcon.setAttributeNS(null, 'y', "29%");
+                    buttonSVGIcon.setAttributeNS(null, 'width', "42%");
+                    buttonSVGIcon.setAttributeNS(null, 'height', "42%");
+                    buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
+                    buttonSVGIcon.style.transform = "rotate(45deg)";
+                    buttonSVGIcon.style.transformOrigin = "50% 50%";
+                    break;
+            }
+
+            buttonSVGIcon.id = buttonID + "Icon";
+            buttonSVG.appendChild(buttonSVGIcon);
+        }
     },
 
     createSizeValue(value, minMultiplier) {
@@ -242,21 +296,25 @@ class HTMLElementSizeSetup {
         this.buttonTranslate = 12;
 
         this.fontSize = 2;
+
+        this.backColor = "#616161";
+        this.iconColor = "#e0e0e0";
     }
 }
 
 class ButtonSetup {
-    constructor(id, label) {
+    constructor(id, label, shapeIndex = null) {
         this.myID = id;
         this.myLabel = label;
+        this.myShapeIndex = shapeIndex;
     }
 }
 
 class ButtonController {
-    constructor(buttonID, backID, labelID) {
+    constructor(buttonID, backID, iconID) {
         this.button = document.getElementById(buttonID);
         this.back = document.getElementById(backID);
-        this.label = document.getElementById(labelID);
+        this.icon = document.getElementById(iconID);
 
         // track touch identifier to remember which one moved the stick
         this.touchId = null;
@@ -279,8 +337,14 @@ class ButtonController {
         event.preventDefault();
 
         let backFillBackup = this.back.style.fill;
-        this.back.style.fill = this.label.style.fill;
-        this.label.style.fill = backFillBackup;
+        if (this.icon.style.strokeWidth.length > 0) {
+            this.back.style.fill = this.icon.style.stroke;
+            this.icon.style.fill = this.icon.style.stroke;
+            this.icon.style.stroke = backFillBackup;
+        } else {
+            this.back.style.fill = this.icon.style.fill;
+            this.icon.style.fill = backFillBackup;
+        }
 
         // if this is a touch event, keep track of which one
         if (event.changedTouches) {
@@ -297,8 +361,14 @@ class ButtonController {
         if (event.changedTouches != null && event.changedTouches.length > 0 && this.touchId != event.changedTouches[0].identifier) return;
 
         let backFillBackup = this.back.style.fill;
-        this.back.style.fill = this.label.style.fill;
-        this.label.style.fill = backFillBackup;
+        if (this.icon.style.strokeWidth.length > 0) {
+            this.back.style.fill = this.icon.style.stroke;
+            this.icon.style.fill = this.icon.style.stroke;
+            this.icon.style.stroke = backFillBackup;
+        } else {
+            this.back.style.fill = this.icon.style.fill;
+            this.icon.style.fill = backFillBackup;
+        }
 
         this.pressed = false;
     }
