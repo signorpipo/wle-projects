@@ -4,6 +4,8 @@ WL.registerComponent("mobile-gamepad-draft-1", {
     restrictY: { type: WL.Type.Bool, default: false },
 }, {
     start() {
+        this.htmlElementSizeSetup = new HTMLElementSizeSetup();
+
         this.setupHtml();
         this.createHtmlButtons();
         this.createHtmlThumbsticks();
@@ -80,14 +82,14 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         let thumbstick = document.createElement("div");
         thumbstick.id = id;
         thumbstick.style.position = "absolute";
-        thumbstick.style.width = "15vmax";
-        thumbstick.style.height = "15vmax";
-        thumbstick.style.bottom = "3vmax";
+        thumbstick.style.width = this.createSizeValue(this.htmlElementSizeSetup.thumbstickSize, this.htmlElementSizeSetup.minMultiplier);
+        thumbstick.style.height = this.createSizeValue(this.htmlElementSizeSetup.thumbstickSize, this.htmlElementSizeSetup.minMultiplier);
+        thumbstick.style.bottom = this.createSizeValue(this.htmlElementSizeSetup.thumbstickBottom, this.htmlElementSizeSetup.minMultiplier);
 
         if (isLeft) {
-            thumbstick.style.left = "3vmax";
+            thumbstick.style.left = this.createSizeValue(this.htmlElementSizeSetup.thumbstickLeft, this.htmlElementSizeSetup.minMultiplier);
         } else {
-            thumbstick.style.right = "3vmax";
+            thumbstick.style.right = this.createSizeValue(this.htmlElementSizeSetup.thumbstickRight, this.htmlElementSizeSetup.minMultiplier);
         }
 
         virtualGamepad.appendChild(thumbstick);
@@ -164,17 +166,30 @@ WL.registerComponent("mobile-gamepad-draft-1", {
 
         let button = document.createElement("div");
         button.style.position = "absolute";
-        button.style.width = "5vmax";
-        button.style.height = "5vmax";
+        button.style.width = this.createSizeValue(this.htmlElementSizeSetup.buttonSize, this.htmlElementSizeSetup.minMultiplier);
+        button.style.height = this.createSizeValue(this.htmlElementSizeSetup.buttonSize, this.htmlElementSizeSetup.minMultiplier);
+
+        let centerOnThumbstickBottom =
+            this.htmlElementSizeSetup.thumbstickBottom +
+            this.htmlElementSizeSetup.thumbstickSize / 2 -
+            this.htmlElementSizeSetup.buttonSize / 2;
+
+        button.style.bottom = this.createSizeValue(centerOnThumbstickBottom, this.htmlElementSizeSetup.minMultiplier);
 
         if (isLeft) {
-            button.style.left = "8vmax";
+            let centerOnThumbstickLeft =
+                this.htmlElementSizeSetup.thumbstickLeft +
+                this.htmlElementSizeSetup.thumbstickSize / 2 -
+                this.htmlElementSizeSetup.buttonSize / 2;
+            button.style.left = this.createSizeValue(centerOnThumbstickLeft, this.htmlElementSizeSetup.minMultiplier);
         } else {
-            button.style.right = "8vmax";
+            let centerOnThumbstickRight =
+                this.htmlElementSizeSetup.thumbstickRight +
+                this.htmlElementSizeSetup.thumbstickSize / 2 -
+                this.htmlElementSizeSetup.buttonSize / 2;
+            button.style.right = this.createSizeValue(centerOnThumbstickRight, this.htmlElementSizeSetup.minMultiplier);
         }
-
-        button.style.bottom = "8vmax";
-        button.style.transform = "rotate(" + fixedAngle + "deg) translateX(12vmax)";
+        button.style.transform = "rotate(" + fixedAngle + "deg) translateX(" + this.createSizeValue(this.htmlElementSizeSetup.buttonTranslate, this.htmlElementSizeSetup.minMultiplier) + ")";
         virtualGamepad.appendChild(button);
 
         let buttonSVG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -203,12 +218,32 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         buttonSVGLabel.style.dominantBaseline = "central";
         buttonSVGLabel.style.alignmentBaseline = "central";
         buttonSVGLabel.style.fontFamily = "sans-serif";
-        buttonSVGLabel.style.fontSize = "2vmax";
+        buttonSVGLabel.style.fontSize = this.createSizeValue(this.htmlElementSizeSetup.fontSize, this.htmlElementSizeSetup.minMultiplier);
         buttonSVGLabel.style.fontWeight = "bold";
         buttonSVGLabel.textContent = setup.myLabel;
         buttonSVG.appendChild(buttonSVGLabel);
+    },
+
+    createSizeValue(value, minMultiplier) {
+        return "min(" + value.toFixed(3) + "vmax," + (value * minMultiplier).toFixed(3) + "vw)";
     }
 });
+
+class HTMLElementSizeSetup {
+    constructor() {
+        this.minMultiplier = 5 / 3;
+
+        this.thumbstickSize = 15;
+        this.thumbstickLeft = 3;
+        this.thumbstickRight = 3;
+        this.thumbstickBottom = 3;
+
+        this.buttonSize = 5;
+        this.buttonTranslate = 12;
+
+        this.fontSize = 2;
+    }
+}
 
 class ButtonSetup {
     constructor(id, label) {
