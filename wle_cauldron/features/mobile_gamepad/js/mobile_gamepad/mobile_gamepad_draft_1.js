@@ -8,7 +8,8 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         this.createHtmlButtons();
         this.createHtmlThumbsticks();
 
-        this.createThumbsticks();
+        this.createButtonsController();
+        this.createThumbsticksController();
 
         test = virtualGamepad;
     },
@@ -36,7 +37,17 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         direction[2] *= this.speed * dt;
         PP.myPlayerObjects.myPlayer.pp_translate(direction);
     },
-    createThumbsticks() {
+    createButtonsController() {
+        this.select = new ButtonController("select", "selectBack", "selectLabel");
+        this.squeeze = new ButtonController("squeeze", "squeezeBack", "squeezeLabel");
+        this.topButton = new ButtonController("topButton", "topButtonBack", "topButtonLabel");
+        this.bottomButton = new ButtonController("bottomButton", "bottomButtonBack", "bottomButtonLabel");
+        this.selectButton = new ButtonController("thumbstickButton", "thumbstickButtonBack", "thumbstickButtonLabel");
+
+        this.thumbstickLeft = new ThumbstickController("thumbstickLeft", "thumbstickLeftStick", 0.5, 0, 0.1, 0);
+        this.thumbstickRight = new ThumbstickController("thumbstickRight", "thumbstickRightStick", 0.5, 0, 0.1, 0);
+    },
+    createThumbsticksController() {
         this.thumbstickLeft = new ThumbstickController("thumbstickLeft", "thumbstickLeftStick", 0.5, 0, 0.1, 0);
         this.thumbstickRight = new ThumbstickController("thumbstickRight", "thumbstickRightStick", 0.5, 0, 0.1, 0);
     },
@@ -45,6 +56,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         document.body.style.userSelect = "none";
         document.body.style.userSelect = "none";
         document.body.style.webkitUserSelect = "none";
+        document.body.style.webkitTapHighlightColor = "transparent";
         document.body.style.touchAction = "none";
 
         let virtualGamepad = document.createElement("div"); // container
@@ -84,7 +96,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         thumbstickBackVisual.setAttributeNS(null, 'cx', "50%");
         thumbstickBackVisual.setAttributeNS(null, 'cy', "50%");
         thumbstickBackVisual.setAttributeNS(null, 'r', "48%");
-        thumbstickBackVisual.setAttributeNS(null, 'fill', '#616161');
+        thumbstickBackVisual.style.fill = "#616161";
         thumbstickBackSVG.appendChild(thumbstickBackVisual);
 
         // avoid making them clickable
@@ -109,7 +121,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         thumbstickStickVisual.setAttributeNS(null, 'cx', "50%");
         thumbstickStickVisual.setAttributeNS(null, 'cy', "50%");
         thumbstickStickVisual.setAttributeNS(null, 'r', "17%");
-        thumbstickStickVisual.setAttributeNS(null, 'fill', '#e0e0e0');
+        thumbstickStickVisual.style.fill = "#e0e0e0";
         thumbstickStickSVG.appendChild(thumbstickStickVisual);
     },
     createHtmlButtons() {
@@ -117,8 +129,8 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         buttonSetups.push(new ButtonSetup("thumbstickButton", "Th"));
         buttonSetups.push(new ButtonSetup("bottomButton", "Bo"));
         buttonSetups.push(new ButtonSetup("topButton", "To"));
-        buttonSetups.push(new ButtonSetup("Squeeze", "Sq"));
-        buttonSetups.push(new ButtonSetup("Select", "Se"));
+        buttonSetups.push(new ButtonSetup("squeeze", "Sq"));
+        buttonSetups.push(new ButtonSetup("select", "Se"));
 
         let minAngle = 245;
         let maxAngle = 385;
@@ -136,7 +148,6 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         let virtualGamepad = document.getElementById("virtualGamepad");
 
         let button = document.createElement("div");
-        button.id = setup.myID;
         button.style.position = "absolute";
         button.style.width = "5vw";
         button.style.height = "5vw";
@@ -146,6 +157,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         virtualGamepad.appendChild(button);
 
         let buttonSVG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        buttonSVG.id = setup.myID;
         buttonSVG.style.position = "absolute";
         buttonSVG.style.width = "100%";
         buttonSVG.style.height = "100%";
@@ -157,9 +169,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         buttonSVGBack.setAttributeNS(null, 'cx', "50%");
         buttonSVGBack.setAttributeNS(null, 'cy', "50%");
         buttonSVGBack.setAttributeNS(null, 'r', "50%");
-        //buttonSVGBack.setAttributeNS(null, 'stroke', "#616161");
-        //buttonSVGBack.setAttributeNS(null, 'stroke-width', "7%");
-        buttonSVGBack.setAttributeNS(null, 'fill', "#616161");
+        buttonSVGBack.style.fill = "#616161";
         buttonSVG.appendChild(buttonSVGBack);
 
         let buttonSVGLabel = document.createElementNS("http://www.w3.org/2000/svg", 'text');
@@ -174,7 +184,6 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         buttonSVGLabel.style.fontFamily = "sans-serif";
         buttonSVGLabel.style.fontSize = "2vw";
         buttonSVGLabel.style.fontWeight = "bold";
-        //buttonSVGLabel.style.userSelect = "none";
         buttonSVGLabel.textContent = setup.myLabel;
         buttonSVG.appendChild(buttonSVGLabel);
     }
@@ -189,9 +198,53 @@ class ButtonSetup {
 
 class ButtonController {
     constructor(buttonID, backID, labelID) {
-        this.buttonID = document.getElementById(buttonID);
-        this.backID = document.getElementById(backID);
-        this.labelID = document.getElementById(labelID);
+        this.button = document.getElementById(buttonID);
+        this.back = document.getElementById(backID);
+        this.label = document.getElementById(labelID);
+
+        // track touch identifier to remember which one moved the stick
+        this.touchId = null;
+
+        this.pressed = false;
+
+        this.button.addEventListener("mousedown", this.handleDown.bind(this));
+        this.button.addEventListener("touchstart", this.handleDown.bind(this));
+        document.body.addEventListener("mouseup", this.handleUp.bind(this));
+        document.body.addEventListener("touchend", this.handleUp.bind(this));
+
+        // could be optional
+        //document.body.addEventListener("mouseenter", handleUp);
+        //document.body.addEventListener("mouseleave", handleUp);
+    }
+
+    handleDown(event) {
+        if (this.pressed) return;
+
+        event.preventDefault();
+
+        let backFillBackup = this.back.style.fill;
+        this.back.style.fill = this.label.style.fill;
+        this.label.style.fill = backFillBackup;
+
+        // if this is a touch event, keep track of which one
+        if (event.changedTouches) {
+            this.touchId = event.changedTouches[0].identifier;
+        }
+
+        this.pressed = true;
+    }
+
+    handleUp(event) {
+        if (!this.pressed) return;
+
+        // if this is a touch event, make sure it is the right one
+        if (event.changedTouches != null && event.changedTouches.length > 0 && this.touchId != event.changedTouches[0].identifier) return;
+
+        let backFillBackup = this.back.style.fill;
+        this.back.style.fill = this.label.style.fill;
+        this.label.style.fill = backFillBackup;
+
+        this.pressed = false;
     }
 }
 
