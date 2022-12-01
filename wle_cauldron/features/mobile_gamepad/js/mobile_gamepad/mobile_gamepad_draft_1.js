@@ -38,11 +38,17 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         PP.myPlayerObjects.myPlayer.pp_translate(direction);
     },
     createButtonsController() {
-        this.select = new ButtonController("select", "selectBack", "selectLabel");
-        this.squeeze = new ButtonController("squeeze", "squeezeBack", "squeezeLabel");
-        this.topButton = new ButtonController("topButton", "topButtonBack", "topButtonLabel");
-        this.bottomButton = new ButtonController("bottomButton", "bottomButtonBack", "bottomButtonLabel");
-        this.selectButton = new ButtonController("thumbstickButton", "thumbstickButtonBack", "thumbstickButtonLabel");
+        this.selectLeft = new ButtonController("selectLeft", "selectLeftBack", "selectLeftLabel");
+        this.squeezeLeft = new ButtonController("squeezeLeft", "squeezeLeftBack", "squeezeLeftLabel");
+        this.topButtonLeft = new ButtonController("topButtonLeft", "topButtonLeftBack", "topButtonLeftLabel");
+        this.bottomButtonLeft = new ButtonController("bottomButtonLeft", "bottomButtonLeftBack", "bottomButtonLeftLabel");
+        this.selectButtonLeft = new ButtonController("thumbstickButtonLeft", "thumbstickButtonLeftBack", "thumbstickButtonLeftLabel");
+
+        this.selectRight = new ButtonController("selectRight", "selectRightBack", "selectRightLabel");
+        this.squeezeRight = new ButtonController("squeezeRight", "squeezeRightBack", "squeezeRightLabel");
+        this.topButtonRight = new ButtonController("topButtonRight", "topButtonRightBack", "topButtonRightLabel");
+        this.bottomButtonRight = new ButtonController("bottomButtonRight", "bottomButtonRightBack", "bottomButtonRightLabel");
+        this.selectButtonRight = new ButtonController("thumbstickButtonRight", "thumbstickButtonRightBack", "thumbstickButtonRightLabel");
 
         this.thumbstickLeft = new ThumbstickController("thumbstickLeft", "thumbstickLeftStick", 0.5, 0, 0.1, 0);
         this.thumbstickRight = new ThumbstickController("thumbstickRight", "thumbstickRightStick", 0.5, 0, 0.1, 0);
@@ -74,14 +80,14 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         let thumbstick = document.createElement("div");
         thumbstick.id = id;
         thumbstick.style.position = "absolute";
-        thumbstick.style.width = "15vw";
-        thumbstick.style.height = "15vw";
-        thumbstick.style.bottom = "3vw";
+        thumbstick.style.width = "15vmax";
+        thumbstick.style.height = "15vmax";
+        thumbstick.style.bottom = "3vmax";
 
         if (isLeft) {
-            thumbstick.style.left = "3vw";
+            thumbstick.style.left = "3vmax";
         } else {
-            thumbstick.style.right = "3vw";
+            thumbstick.style.right = "3vmax";
         }
 
         virtualGamepad.appendChild(thumbstick);
@@ -137,27 +143,42 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         let currentAngle = minAngle;
         let angleStep = (maxAngle - minAngle) / (buttonSetups.length - 1);
         for (let setup of buttonSetups) {
-            this.createButtonWithSetup(setup, currentAngle);
+            this.createButtonWithSetup(setup, currentAngle, true);
+            this.createButtonWithSetup(setup, currentAngle, false);
             currentAngle += angleStep;
         }
     },
-    createButtonWithSetup(setup, angle) {
+    createButtonWithSetup(setup, angle, isLeft) {
         let fixedAngle = Math.pp_angleClamp(angle, true);
+
+        if (!isLeft) {
+            fixedAngle = 270 + (270 - fixedAngle);
+            fixedAngle = Math.pp_angleClamp(fixedAngle, true);
+        }
+
         let counterAngle = 360 - fixedAngle;
+
+        let buttonID = setup.myID + (isLeft ? "Left" : "Right");
 
         let virtualGamepad = document.getElementById("virtualGamepad");
 
         let button = document.createElement("div");
         button.style.position = "absolute";
-        button.style.width = "5vw";
-        button.style.height = "5vw";
-        button.style.left = "8vw";
-        button.style.bottom = "8vw";
-        button.style.transform = "rotate(" + fixedAngle + "deg) translateX(12vw)";
+        button.style.width = "5vmax";
+        button.style.height = "5vmax";
+
+        if (isLeft) {
+            button.style.left = "8vmax";
+        } else {
+            button.style.right = "8vmax";
+        }
+
+        button.style.bottom = "8vmax";
+        button.style.transform = "rotate(" + fixedAngle + "deg) translateX(12vmax)";
         virtualGamepad.appendChild(button);
 
         let buttonSVG = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        buttonSVG.id = setup.myID;
+        buttonSVG.id = buttonID;
         buttonSVG.style.position = "absolute";
         buttonSVG.style.width = "100%";
         buttonSVG.style.height = "100%";
@@ -165,7 +186,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         button.appendChild(buttonSVG);
 
         let buttonSVGBack = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        buttonSVGBack.id = setup.myID + "Back";
+        buttonSVGBack.id = buttonID + "Back";
         buttonSVGBack.setAttributeNS(null, 'cx', "50%");
         buttonSVGBack.setAttributeNS(null, 'cy', "50%");
         buttonSVGBack.setAttributeNS(null, 'r', "50%");
@@ -173,7 +194,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         buttonSVG.appendChild(buttonSVGBack);
 
         let buttonSVGLabel = document.createElementNS("http://www.w3.org/2000/svg", 'text');
-        buttonSVGLabel.id = setup.myID + "Label";
+        buttonSVGLabel.id = buttonID + "Label";
         buttonSVGLabel.setAttributeNS(null, 'x', "50%");
         buttonSVGLabel.setAttributeNS(null, 'y', "50%");
         buttonSVGLabel.style.fill = "#e0e0e0";
@@ -182,7 +203,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         buttonSVGLabel.style.dominantBaseline = "central";
         buttonSVGLabel.style.alignmentBaseline = "central";
         buttonSVGLabel.style.fontFamily = "sans-serif";
-        buttonSVGLabel.style.fontSize = "2vw";
+        buttonSVGLabel.style.fontSize = "2vmax";
         buttonSVGLabel.style.fontWeight = "bold";
         buttonSVGLabel.textContent = setup.myLabel;
         buttonSVG.appendChild(buttonSVGLabel);
