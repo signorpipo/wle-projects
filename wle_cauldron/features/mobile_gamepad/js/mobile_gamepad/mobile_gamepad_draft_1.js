@@ -137,8 +137,8 @@ WL.registerComponent("mobile-gamepad-draft-1", {
         buttonSetups.push(new ButtonSetup("thumbstickButton", "Th", 1));
         buttonSetups.push(new ButtonSetup("bottomButton", "Bo", 2));
         buttonSetups.push(new ButtonSetup("topButton", "To", 3));
-        buttonSetups.push(new ButtonSetup("squeeze", "Sq", 4));
-        buttonSetups.push(new ButtonSetup("select", "Se", 5));
+        buttonSetups.push(new ButtonSetup("select", "Se", 4));
+        buttonSetups.push(new ButtonSetup("squeeze", "Sq", 5));
 
         let minAngle = 245;
         let maxAngle = 385;
@@ -227,13 +227,10 @@ WL.registerComponent("mobile-gamepad-draft-1", {
             let buttonSVGIcon = null;
             switch (setup.myShapeIndex) {
                 case 1:
-                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
-                    buttonSVGIcon.setAttributeNS(null, 'x', "28%");
-                    buttonSVGIcon.setAttributeNS(null, 'y', "28%");
-                    buttonSVGIcon.setAttributeNS(null, 'rx', "10%");
-                    buttonSVGIcon.setAttributeNS(null, 'ry', "10%");
-                    buttonSVGIcon.setAttributeNS(null, 'width', "44%");
-                    buttonSVGIcon.setAttributeNS(null, 'height', "44%");
+                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+                    buttonSVGIcon.setAttributeNS(null, 'cx', "50%");
+                    buttonSVGIcon.setAttributeNS(null, 'cy', "50%");
+                    buttonSVGIcon.setAttributeNS(null, 'r', "17.5%");
                     buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
                     break;
                 case 2:
@@ -249,7 +246,7 @@ WL.registerComponent("mobile-gamepad-draft-1", {
                     buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
                     buttonSVGIcon.setAttributeNS(null, 'cx', "50%");
                     buttonSVGIcon.setAttributeNS(null, 'cy', "50%");
-                    buttonSVGIcon.setAttributeNS(null, 'r', "25%");
+                    buttonSVGIcon.setAttributeNS(null, 'r', "24%");
                     buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
                     break;
                 case 4:
@@ -264,19 +261,19 @@ WL.registerComponent("mobile-gamepad-draft-1", {
                     buttonSVGIcon.style.stroke = this.htmlElementSizeSetup.iconColor;
                     buttonSVGIcon.style.strokeWidth = "10%";
                     buttonSVGIcon.style.transformOrigin = "center";
-                    buttonSVGIcon.style.transform = "rotate(45deg)";
+                    //buttonSVGIcon.style.transform = "rotate(45deg)";
                     break;
                 case 5:
                     buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
-                    buttonSVGIcon.setAttributeNS(null, 'x', "28%");
-                    buttonSVGIcon.setAttributeNS(null, 'y', "28%");
+                    buttonSVGIcon.setAttributeNS(null, 'x', "28.5%");
+                    buttonSVGIcon.setAttributeNS(null, 'y', "28.5%");
                     buttonSVGIcon.setAttributeNS(null, 'rx', "10%");
                     buttonSVGIcon.setAttributeNS(null, 'ry', "10%");
-                    buttonSVGIcon.setAttributeNS(null, 'width', "44%");
-                    buttonSVGIcon.setAttributeNS(null, 'height', "44%");
+                    buttonSVGIcon.setAttributeNS(null, 'width', "43%");
+                    buttonSVGIcon.setAttributeNS(null, 'height', "43%");
                     buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
                     buttonSVGIcon.style.transformOrigin = "center";
-                    buttonSVGIcon.style.transform = "rotate(45deg)";
+                    //buttonSVGIcon.style.transform = "rotate(45deg)";
                     break;
             }
 
