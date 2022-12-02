@@ -227,10 +227,13 @@ WL.registerComponent("mobile-gamepad-draft-1", {
             let buttonSVGIcon = null;
             switch (setup.myShapeIndex) {
                 case 1:
-                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
-                    buttonSVGIcon.setAttributeNS(null, 'cx', "50%");
-                    buttonSVGIcon.setAttributeNS(null, 'cy', "50%");
-                    buttonSVGIcon.setAttributeNS(null, 'r', "25%");
+                    buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+                    buttonSVGIcon.setAttributeNS(null, 'x', "28%");
+                    buttonSVGIcon.setAttributeNS(null, 'y', "28%");
+                    buttonSVGIcon.setAttributeNS(null, 'rx', "10%");
+                    buttonSVGIcon.setAttributeNS(null, 'ry', "10%");
+                    buttonSVGIcon.setAttributeNS(null, 'width', "44%");
+                    buttonSVGIcon.setAttributeNS(null, 'height', "44%");
                     buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
                     break;
                 case 2:
@@ -251,25 +254,29 @@ WL.registerComponent("mobile-gamepad-draft-1", {
                     break;
                 case 4:
                     buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
-                    buttonSVGIcon.setAttributeNS(null, 'x', "33%");
-                    buttonSVGIcon.setAttributeNS(null, 'y', "33%");
-                    buttonSVGIcon.setAttributeNS(null, 'width', "33%");
-                    buttonSVGIcon.setAttributeNS(null, 'height', "33%");
+                    buttonSVGIcon.setAttributeNS(null, 'x', "32%");
+                    buttonSVGIcon.setAttributeNS(null, 'y', "32%");
+                    buttonSVGIcon.setAttributeNS(null, 'rx', "10%");
+                    buttonSVGIcon.setAttributeNS(null, 'ry', "10%");
+                    buttonSVGIcon.setAttributeNS(null, 'width', "36%");
+                    buttonSVGIcon.setAttributeNS(null, 'height', "36%");
                     buttonSVGIcon.style.fill = this.htmlElementSizeSetup.backColor;
                     buttonSVGIcon.style.stroke = this.htmlElementSizeSetup.iconColor;
                     buttonSVGIcon.style.strokeWidth = "10%";
+                    buttonSVGIcon.style.transformOrigin = "center";
                     buttonSVGIcon.style.transform = "rotate(45deg)";
-                    buttonSVGIcon.style.transformOrigin = "50% 50%";
                     break;
                 case 5:
                     buttonSVGIcon = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
-                    buttonSVGIcon.setAttributeNS(null, 'x', "29%");
-                    buttonSVGIcon.setAttributeNS(null, 'y', "29%");
-                    buttonSVGIcon.setAttributeNS(null, 'width', "42%");
-                    buttonSVGIcon.setAttributeNS(null, 'height', "42%");
+                    buttonSVGIcon.setAttributeNS(null, 'x', "28%");
+                    buttonSVGIcon.setAttributeNS(null, 'y', "28%");
+                    buttonSVGIcon.setAttributeNS(null, 'rx', "10%");
+                    buttonSVGIcon.setAttributeNS(null, 'ry', "10%");
+                    buttonSVGIcon.setAttributeNS(null, 'width', "44%");
+                    buttonSVGIcon.setAttributeNS(null, 'height', "44%");
                     buttonSVGIcon.style.fill = this.htmlElementSizeSetup.iconColor;
+                    buttonSVGIcon.style.transformOrigin = "center";
                     buttonSVGIcon.style.transform = "rotate(45deg)";
-                    buttonSVGIcon.style.transformOrigin = "50% 50%";
                     break;
             }
 
