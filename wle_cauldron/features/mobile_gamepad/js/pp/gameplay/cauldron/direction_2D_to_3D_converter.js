@@ -36,7 +36,7 @@ PP.Direction2DTo3DConverter = class Direction2DTo3DConverter {
     // it's also needed to specify the fly axis, if different from the conversionTransform up
     // if direction3DUp is null, conversionTransform up is used
     convert(direction2D, conversionTransform, direction3DUp = null, outDirection3D = PP.vec3_create()) {
-        this.convertTransform(direction2D, conversionTransform, direction3DUp, outDirection3D);
+        return this.convertTransform(direction2D, conversionTransform, direction3DUp, outDirection3D);
     }
 
     isFlying() {
@@ -114,10 +114,10 @@ PP.Direction2DTo3DConverter = class Direction2DTo3DConverter {
     // it's also needed to specify the fly axis, if different from the conversionTransform up
     // if direction3DUp is null, conversionTransform up is used
     convertTransform(direction2D, conversionTransform, direction3DUp = null, outDirection3D = PP.vec3_create()) {
-        this.convertTransformMatrix(direction2D, conversionTransform, direction3DUp = null, outDirection3D);
+        return this.convertTransformMatrix(direction2D, conversionTransform, direction3DUp, outDirection3D);
     }
 
-    convertTransformMatrix(direction2D, conversionTransform, direction3DUp = null, outDirection3D = PP.vec3_create()) {
+    convertTransformMatrix(direction2D, conversionTransformMatrix, direction3DUp = null, outDirection3D = PP.vec3_create()) {
         // implemented outside class definition
     }
 
@@ -132,18 +132,26 @@ PP.Direction2DTo3DConverter = class Direction2DTo3DConverter {
 
 PP.Direction2DTo3DConverter.prototype.convertForward = function () {
     let rotationQuat = PP.quat_create();
-    return function convert(direction2D, forward, direction3DUp = null, outDirection3D = PP.vec3_create()) {
+    return function convertForward(direction2D, forward, direction3DUp = null, outDirection3D = PP.vec3_create()) {
         rotationQuat.quat_identity();
         rotationQuat.quat_setForward(forward, direction3DUp);
-        this.convertRotationQuat(direction2D, rotationQuat, direction3DUp, outDirection3D);
+        return this.convertRotationQuat(direction2D, rotationQuat, direction3DUp, outDirection3D);
     }
 }();
 
 PP.Direction2DTo3DConverter.prototype.convertTransformMatrix = function () {
     let rotationQuat = PP.quat_create();
-    return function convert(direction2D, conversionTransform, direction3DUp = null, outDirection3D = PP.vec3_create()) {
-        rotationQuat = conversionTransform.mat4_getRotationQuat(rotationQuat);
-        this.convertRotationQuat(direction2D, rotationQuat, direction3DUp, outDirection3D);
+    return function convertTransformMatrix(direction2D, conversionTransformMatrix, direction3DUp = null, outDirection3D = PP.vec3_create()) {
+        rotationQuat = conversionTransformMatrix.mat4_getRotationQuat(rotationQuat);
+        return this.convertRotationQuat(direction2D, rotationQuat, direction3DUp, outDirection3D);
+    }
+}();
+
+PP.Direction2DTo3DConverter.prototype.convertTransformQuat = function () {
+    let rotationQuat = PP.quat_create();
+    return function convertTransformQuat(direction2D, conversionTransformQuat, direction3DUp = null, outDirection3D = PP.vec3_create()) {
+        rotationQuat = conversionTransformQuat.quat2_getRotationQuat(rotationQuat);
+        return this.convertRotationQuat(direction2D, rotationQuat, direction3DUp, outDirection3D);
     }
 }();
 
