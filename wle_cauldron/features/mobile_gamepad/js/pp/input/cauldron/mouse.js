@@ -40,15 +40,15 @@ PP.Mouse = class Mouse {
 
     start() {
         this._myOnMouseMoveCallback = this._onMouseMove.bind(this);
-        WL.canvas.addEventListener("mousemove", this._myOnMouseMoveCallback);
+        document.body.addEventListener("mousemove", this._myOnMouseMoveCallback);
         this._myOnMouseDownCallback = this._onMouseDown.bind(this);
-        WL.canvas.addEventListener("mousedown", this._myOnMouseDownCallback);
+        document.body.addEventListener("mousedown", this._myOnMouseDownCallback);
         this._myOnMouseUpCallback = this._onMouseUp.bind(this);
-        WL.canvas.addEventListener("mouseup", this._myOnMouseUpCallback);
+        document.body.addEventListener("mouseup", this._myOnMouseUpCallback);
         this._myOnMouseLeaveCallback = this._onMouseLeave.bind(this);
-        WL.canvas.addEventListener("mouseleave", this._myOnMouseLeaveCallback);
+        document.body.addEventListener("mouseleave", this._myOnMouseLeaveCallback);
         this._myOnMouseEnterCallback = this._onMouseEnter.bind(this);
-        WL.canvas.addEventListener("mouseenter", this._myOnMouseEnterCallback);
+        document.body.addEventListener("mouseenter", this._myOnMouseEnterCallback);
     }
 
     update(dt) {
@@ -71,12 +71,12 @@ PP.Mouse = class Mouse {
     }
 
     destroy() {
-        WL.canvas.removeEventListener("mousemove", this._myOnMouseMoveCallback);
-        WL.canvas.removeEventListener("mousedown", this._myOnMouseDownCallback);
-        WL.canvas.removeEventListener("mouseup", this._myOnMouseUpCallback);
-        WL.canvas.removeEventListener("mouseleave", this._myOnMouseLeaveCallback);
-        WL.canvas.removeEventListener("contextmenu", this._myPreventContextMenuCallback);
-        WL.canvas.removeEventListener("mousedown", this._myPreventMiddleButtonScrollCallback);
+        document.body.removeEventListener("mousemove", this._myOnMouseMoveCallback);
+        document.body.removeEventListener("mousedown", this._myOnMouseDownCallback);
+        document.body.removeEventListener("mouseup", this._myOnMouseUpCallback);
+        document.body.removeEventListener("mouseleave", this._myOnMouseLeaveCallback);
+        document.body.removeEventListener("contextmenu", this._myPreventContextMenuCallback);
+        document.body.removeEventListener("mousedown", this._myPreventMiddleButtonScrollCallback);
     }
 
     isValid() {
@@ -124,9 +124,9 @@ PP.Mouse = class Mouse {
     setContextMenuActive(active) {
         if (this._myContextMenuActive != active) {
             if (active) {
-                WL.canvas.removeEventListener("contextmenu", this._myPreventContextMenuCallback);
+                document.body.removeEventListener("contextmenu", this._myPreventContextMenuCallback);
             } else {
-                WL.canvas.addEventListener("contextmenu", this._myPreventContextMenuCallback, false);
+                document.body.addEventListener("contextmenu", this._myPreventContextMenuCallback, false);
             }
             this._myContextMenuActive = active;
         }
@@ -135,9 +135,9 @@ PP.Mouse = class Mouse {
     setMiddleButtonScrollActive(active) {
         if (this._myMiddleButtonScrollActive != active) {
             if (active) {
-                WL.canvas.removeEventListener("mousedown", this._myPreventMiddleButtonScrollCallback);
+                document.body.removeEventListener("mousedown", this._myPreventMiddleButtonScrollCallback);
             } else {
-                WL.canvas.addEventListener("mousedown", this._myPreventMiddleButtonScrollCallback, false);
+                document.body.addEventListener("mousedown", this._myPreventMiddleButtonScrollCallback, false);
             }
             this._myMiddleButtonScrollActive = active;
         }
@@ -293,7 +293,7 @@ PP.Mouse = class Mouse {
     }
 
     _updateScreenSize() {
-        let bounds = WL.canvas.getBoundingClientRect();
+        let bounds = document.body.getBoundingClientRect();
         this._myScreenSize[0] = bounds.width;
         this._myScreenSize[1] = bounds.height;
     }

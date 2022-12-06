@@ -1,8 +1,6 @@
 VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
     constructor(buttonElementParent, virtualGamepadParams, virtualButtonHandedness, virtualButtonIndex, gamepadButtonHandedness, gamepadButtonID) {
         this._myButtonElement = null;
-        this._myButtonBackElement = null;
-        this._myButtonIconElement = null;
 
         this._myIsActive = true;
 
@@ -12,8 +10,8 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
 
         this._build(buttonElementParent, virtualGamepadParams, virtualButtonHandedness, virtualButtonIndex, gamepadButtonHandedness, gamepadButtonID);
 
-        this._myButtonElement.addEventListener("mousedown", this._onMouseDown.bind(this));
-        this._myButtonElement.addEventListener("touchstart", this._onMouseDown.bind(this));
+        this._myButtonElement.addEventListener("mousedown", this._onMouseDown.bind(this, virtualGamepadParams.myStopPropagatingMouseDownEvents));
+        this._myButtonElement.addEventListener("touchstart", this._onMouseDown.bind(this, virtualGamepadParams.myStopPropagatingMouseDownEvents));
         document.body.addEventListener("mouseup", this._onMouseUp.bind(this));
         document.body.addEventListener("touchend", this._onMouseUp.bind(this));
 
@@ -31,10 +29,13 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         this._myIsActive = active;
     }
 
-    _onMouseDown(event) {
+    _onMouseDown(stopPropagatingMouseDownEvents, event) {
         if (!this._myIsActive) return;
         if (this._myIsPressed) return;
 
+        if (stopPropagatingMouseDownEvents) {
+            event.stopPropagation();
+        }
         event.preventDefault();
 
         this._myButtonIcon.setPressed(true);
@@ -76,8 +77,6 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         let buttonRingEndAngle = virtualGamepadParams.myButtonsRingEndAngle;
 
         let minSizeMultiplier = Math.max(1, virtualGamepadParams.myMinSizeMultiplier / virtualGamepadParams.myScale);
-
-        let fontSize = virtualGamepadParams.myLabelFontSize * virtualGamepadParams.myScale * virtualGamepadParams.myScaleLabelFont;
 
         let buttonsAmount = virtualGamepadParams.myButtonsOrder[PP.Handedness.LEFT].length;
 
@@ -123,7 +122,8 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         this._myButtonElement.style.transform = "rotate(" + counterAngle + "deg)";
         buttonPivot.appendChild(this._myButtonElement);
 
-        this._myButtonIcon = new VirtualGamepadIcon(this._myButtonElement, buttonParams.myIconParams, minSizeMultiplier);
+        let fontScale = virtualGamepadParams.myScale * virtualGamepadParams.myScaleLabelFont;
+        this._myButtonIcon = new VirtualGamepadIcon(this._myButtonElement, buttonParams.myIconParams, minSizeMultiplier, fontScale);
     }
 
     _createSizeValue(value, minSizeMultiplier) {

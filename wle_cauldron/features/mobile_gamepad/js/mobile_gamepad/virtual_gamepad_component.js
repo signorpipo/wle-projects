@@ -6,6 +6,10 @@ WL.registerComponent("virtual-gamepad", {
         params.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myLabel = "T";
         params.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myLabelFontSize = 2;
 
+        params.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myIconShape = VirtualGamepadIconShape.IMAGE;
+        params.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myImageURL = "./image2.png";
+        params.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myImageBrightnessPressed = 0.5;
+
         params.myButtonsOrder[PP.Handedness.LEFT][2] = null;
 
         params.myReleaseOnMouseLeave = false;

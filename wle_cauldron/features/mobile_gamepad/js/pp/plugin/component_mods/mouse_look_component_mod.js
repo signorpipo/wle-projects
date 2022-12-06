@@ -3,7 +3,7 @@ if (_WL && _WL._componentTypes && _WL._componentTypes[_WL._componentTypeIndices[
     // Modified Functions
 
     _WL._componentTypes[_WL._componentTypeIndices["mouse-look"]].prototype.init = function () {
-        WL.canvas.addEventListener('mousemove', function () {
+        document.body.addEventListener('mousemove', function () {
             let viewForward = PP.vec3_create();
             let viewUp = PP.vec3_create();
 
@@ -62,7 +62,7 @@ if (_WL && _WL._componentTypes && _WL._componentTypes[_WL._componentTypeIndices[
             WL.canvas.addEventListener('mousedown', function (e) {
                 if (e.button == this.mouseButtonIndex) {
                     this.mouseDown = true;
-                    WL.canvas.style.cursor = "grabbing";
+                    document.body.style.cursor = "grabbing";
                     if (e.button == 1) {
                         e.preventDefault();
                         /* Prevent scrolling */
@@ -70,24 +70,30 @@ if (_WL && _WL._componentTypes && _WL._componentTypes[_WL._componentTypeIndices[
                     }
                 }
             }.bind(this));
-            WL.canvas.addEventListener('mouseup', function (e) {
-                if (e.button == this.mouseButtonIndex) {
-                    this.mouseDown = false;
-                    WL.canvas.style.cursor = "initial";
+            document.body.addEventListener('mouseup', function (e) {
+                if (this.mouseDown) {
+                    if (e.button == this.mouseButtonIndex) {
+                        this.mouseDown = false;
+                        document.body.style.cursor = "initial";
+                    }
                 }
             }.bind(this));
-            WL.canvas.addEventListener('mouseleave', function (e) {
-                this.mouseDown = false;
-                WL.canvas.style.cursor = "initial";
+            document.body.addEventListener('mouseleave', function (e) {
+                if (this.mouseDown) {
+                    this.mouseDown = false;
+                    document.body.style.cursor = "initial";
+                }
             }.bind(this));
 
             WL.canvas.addEventListener('touchstart', function (e) {
                 this.mouseDown = true;
-                WL.canvas.style.cursor = "grabbing";
+                document.body.style.cursor = "grabbing";
             }.bind(this));
-            WL.canvas.addEventListener('touchend', function (e) {
-                this.mouseDown = false;
-                WL.canvas.style.cursor = "initial";
+            document.body.addEventListener('touchend', function (e) {
+                if (this.mouseDown) {
+                    this.mouseDown = false;
+                    document.body.style.cursor = "initial";
+                }
             }.bind(this));
         }
     };
