@@ -202,7 +202,7 @@ require('./mobile_gamepad/mobile_gamepad_draft_1');
 require('./mobile_gamepad/virtual_gamepad');
 require('./mobile_gamepad/virtual_gamepad_component');
 require('./mobile_gamepad/virtual_gamepad_params');
-require('./mobile_gamepad/virtual_gamepad_virtual_elements');
+require('./mobile_gamepad/virtual_gamepad_virtual_button');
 
 //TEST
 

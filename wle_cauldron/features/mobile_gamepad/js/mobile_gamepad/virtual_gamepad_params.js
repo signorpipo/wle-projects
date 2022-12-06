@@ -36,11 +36,13 @@ VirtualGamepadParams = class VirtualGamepadParams {
         this.myOpacity = 0.5;
 
         this.myScale = 1;
-        this.myScaleFont = 1;
-        this.myScaleMargin = 1;
 
         this.myLabelFontFamily = "";
         this.myLabelFontWeight = "";
+
+        this.myReleaseOnMouseLeave = false; // if mouse leaves the canvas it will be like it was released
+
+        // Advanced Params
 
         this.myButtonParams = [];
         this.myButtonParams[PP.Handedness.LEFT] = [];
@@ -69,6 +71,26 @@ VirtualGamepadParams = class VirtualGamepadParams {
         this.myThumbsticksOrder = [];
         this.myThumbsticksOrder[PP.Handedness.LEFT] = null;
         this.myThumbsticksOrder[PP.Handedness.RIGHT] = null;
+
+        // Even More Advanced Params
+
+        this.myScaleLabelFont = 1;
+        this.myScaleMargin = 1;
+
+        this.myMarginLeft = 0;
+        this.myMarginRight = 0;
+        this.myMarginBottom = 0;
+
+        this.myThumbstickSize = 0;
+
+        this.myButtonSize = 0;
+        this.myButtonsRingRadius = 0;
+        this.myButtonsRingStartAngle = 0;
+        this.myButtonsRingEndAngle = 0;
+
+        this.myFontSize = 0;
+
+        this.myMinSizeMultiplier = 0;  // can be used to specify a min size based on the view width for when the view is in portrait mode
 
         this._defaultSetup();
     }
@@ -146,5 +168,21 @@ VirtualGamepadParams = class VirtualGamepadParams {
 
         this.myThumbsticksOrder[PP.Handedness.LEFT] = PP.Handedness.LEFT;
         this.myThumbsticksOrder[PP.Handedness.RIGHT] = PP.Handedness.RIGHT;
+
+        // Sizes
+
+        this.myThumbstickSize = 15;
+        this.myMarginLeft = 3;
+        this.myMarginRight = 3;
+        this.myMarginBottom = 3;
+
+        this.myButtonSize = 5;
+        this.myButtonsRingRadius = 12;
+        this.myButtonsRingStartAngle = 385;
+        this.myButtonsRingEndAngle = 245;
+
+        this.myLabelFontSize = 2;
+
+        this.myMinSizeMultiplier = 5 / 3;
     }
 };
