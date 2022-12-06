@@ -1,32 +1,15 @@
 VirtualGamepadButtonParams = class VirtualGamepadButtonParams {
     constructor() {
-        this.myBackColor = "";
-        this.myIconColor = "";
-
-        this.myIconShape = VirtualGamepadIconShape.NONE;
-        this.myLabel = "";
+        this.myIconParams = new VirtualGamepadIconParams();
     }
 };
 
 VirtualGamepadThumbstickParams = class VirtualGamepadThumbstickParams {
     constructor() {
         this.myBackColor = "";
-        this.myThumbstickColor = "";
-        this.myIconColor = "";
 
-        this.myIconShape = VirtualGamepadIconShape.NONE;
-        this.myLabel = "";
+        this.myIconParams = new VirtualGamepadIconParams();
     }
-};
-
-VirtualGamepadIconShape = {
-    NONE: 0,
-    LABEL: 1,
-    DOT: 2,
-    CIRCLE: 3,
-    SQUARE: 4,
-    RING: 5,
-    FRAME: 6,
 };
 
 VirtualGamepadParams = class VirtualGamepadParams {
@@ -96,61 +79,58 @@ VirtualGamepadParams = class VirtualGamepadParams {
     }
 
     _defaultSetup() {
-        this.myLabelFontFamily = "sans-serif";
-        this.myLabelFontWeight = "normal";
-
         // Params
 
         let backColor = "#616161";
         let iconColor = "#e0e0e0";
 
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SQUEEZE].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SQUEEZE].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SQUEEZE].myIconShape = VirtualGamepadIconShape.SQUARE;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SQUEEZE].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SQUEEZE].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SQUEEZE].myIconParams.myIconShape = VirtualGamepadIconShape.SQUARE;
 
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconShape = VirtualGamepadIconShape.FRAME;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myIconShape = VirtualGamepadIconShape.FRAME;
 
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.TOP_BUTTON].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.TOP_BUTTON].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.TOP_BUTTON].myIconShape = VirtualGamepadIconShape.CIRCLE;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myIconShape = VirtualGamepadIconShape.CIRCLE;
 
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.BOTTOM_BUTTON].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconShape = VirtualGamepadIconShape.RING;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconParams.myIconShape = VirtualGamepadIconShape.RING;
 
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.THUMBSTICK].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.THUMBSTICK].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.THUMBSTICK].myIconShape = VirtualGamepadIconShape.DOT;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myIconShape = VirtualGamepadIconShape.DOT;
 
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SQUEEZE].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SQUEEZE].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SQUEEZE].myIconShape = VirtualGamepadIconShape.SQUARE;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SQUEEZE].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SQUEEZE].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SQUEEZE].myIconParams.myIconShape = VirtualGamepadIconShape.SQUARE;
 
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SELECT].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SELECT].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SELECT].myIconShape = VirtualGamepadIconShape.FRAME;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SELECT].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SELECT].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.SELECT].myIconParams.myIconShape = VirtualGamepadIconShape.FRAME;
 
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconShape = VirtualGamepadIconShape.CIRCLE;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myIconShape = VirtualGamepadIconShape.CIRCLE;
 
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.BOTTOM_BUTTON].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconShape = VirtualGamepadIconShape.RING;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.BOTTOM_BUTTON].myIconParams.myIconShape = VirtualGamepadIconShape.RING;
 
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.THUMBSTICK].myBackColor = backColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.THUMBSTICK].myIconColor = iconColor;
-        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.THUMBSTICK].myIconShape = VirtualGamepadIconShape.DOT;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myBackColor = backColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myIconColor = iconColor;
+        this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myIconShape = VirtualGamepadIconShape.DOT;
 
         this.myThumbstickParams[PP.Handedness.LEFT].myBackColor = backColor;
-        this.myThumbstickParams[PP.Handedness.LEFT].myThumbstickColor = iconColor;
-        this.myThumbstickParams[PP.Handedness.LEFT].myIconColor = backColor;
+        this.myThumbstickParams[PP.Handedness.LEFT].myIconParams.myBackColor = iconColor;
+        this.myThumbstickParams[PP.Handedness.LEFT].myIconParams.myIconColor = backColor;
 
         this.myThumbstickParams[PP.Handedness.RIGHT].myBackColor = backColor;
-        this.myThumbstickParams[PP.Handedness.RIGHT].myThumbstickColor = iconColor;
-        this.myThumbstickParams[PP.Handedness.RIGHT].myIconColor = backColor;
+        this.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myBackColor = iconColor;
+        this.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myIconColor = backColor;
 
         // Orders
 
