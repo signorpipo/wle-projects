@@ -1,6 +1,7 @@
 VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
     constructor(buttonElementParent, virtualGamepadParams, virtualButtonHandedness, virtualButtonIndex, gamepadButtonHandedness, gamepadButtonID) {
         this._myButtonElement = null;
+        this._myButtonIcon = null;
 
         this._myIsActive = true;
 
@@ -8,7 +9,9 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
 
         this._myIsPressed = false;
 
-        this._build(buttonElementParent, virtualGamepadParams, virtualButtonHandedness, virtualButtonIndex, gamepadButtonHandedness, gamepadButtonID);
+        this._myParams = virtualGamepadParams.myButtonParams[gamepadButtonHandedness][gamepadButtonID];
+
+        this._build(buttonElementParent, virtualGamepadParams, virtualButtonHandedness, virtualButtonIndex);
 
         this._myButtonElement.addEventListener("mousedown", this._onMouseDown.bind(this, virtualGamepadParams.myStopPropagatingMouseDownEvents));
         this._myButtonElement.addEventListener("touchstart", this._onMouseDown.bind(this, virtualGamepadParams.myStopPropagatingMouseDownEvents));
@@ -29,6 +32,15 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         this._myIsActive = active;
     }
 
+    reset() {
+        if (this._myIsPressed) {
+            this._myButtonIcon.setPressed(false);
+
+            this._myIsPressed = false;
+            this._myTouchID = null;
+        }
+    }
+
     _onMouseDown(stopPropagatingMouseDownEvents, event) {
         if (!this._myIsActive) return;
         if (this._myIsPressed) return;
@@ -41,7 +53,7 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         this._myButtonIcon.setPressed(true);
 
         // if this is a touch event, keep track of which one
-        if (event.changedTouches) {
+        if (event.changedTouches != null && event.changedTouches.length > 0) {
             this._myTouchID = event.changedTouches[0].identifier;
         }
 
@@ -55,14 +67,11 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         // if this is a touch event, make sure it is the right one
         if (event.changedTouches != null && event.changedTouches.length > 0 && this._myTouchID != event.changedTouches[0].identifier) return;
 
-        this._myButtonIcon.setPressed(false);
-
-        this._myIsPressed = false;
-        this._myTouchID = null;
+        this.reset();
     }
 
-    _build(buttonElementParent, virtualGamepadParams, virtualButtonHandedness, virtualButtonIndex, gamepadButtonHandedness, gamepadButtonID) {
-        // setup variables used for the sizes and similar
+    _build(buttonElementParent, virtualGamepadParams, virtualButtonHandedness, virtualButtonIndex) {
+        // setup variables used for the sizes and the like
 
         let buttonSize = virtualGamepadParams.myButtonSize * virtualGamepadParams.myScale;
         let buttonsRingRadius = virtualGamepadParams.myButtonsRingRadius * virtualGamepadParams.myScale;
@@ -79,8 +88,6 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         let minSizeMultiplier = Math.max(1, virtualGamepadParams.myMinSizeMultiplier / virtualGamepadParams.myScale);
 
         let buttonsAmount = virtualGamepadParams.myButtonsOrder[PP.Handedness.LEFT].length;
-
-        let buttonParams = virtualGamepadParams.myButtonParams[gamepadButtonHandedness][gamepadButtonID];
 
         let angleStep = (buttonRingEndAngle - buttonRingStartAngle) / (buttonsAmount - 1);
 
@@ -123,7 +130,7 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         buttonPivot.appendChild(this._myButtonElement);
 
         let fontScale = virtualGamepadParams.myScale * virtualGamepadParams.myScaleLabelFont;
-        this._myButtonIcon = new VirtualGamepadIcon(this._myButtonElement, buttonParams.myIconParams, minSizeMultiplier, fontScale);
+        this._myButtonIcon = new VirtualGamepadIcon(this._myButtonElement, this._myParams.myIconParams, minSizeMultiplier, fontScale);
     }
 
     _createSizeValue(value, minSizeMultiplier) {

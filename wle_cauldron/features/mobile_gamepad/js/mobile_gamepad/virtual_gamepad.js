@@ -22,6 +22,10 @@ VirtualGamepad = class VirtualGamepad {
         this._myVirtualGamepadVirtualButtons[PP.Handedness.RIGHT][PP.GamepadButtonID.BOTTOM_BUTTON] = null;
 
         this._myButtonsAmount = this._myVirtualGamepadVirtualButtons[PP.Handedness.LEFT].length;
+
+        this._myVirtualGamepadVirtualThumbsticks = [];
+        this._myVirtualGamepadVirtualThumbsticks[PP.Handedness.LEFT] = null;
+        this._myVirtualGamepadVirtualThumbsticks[PP.Handedness.RIGHT] = null;
     }
 
     setVisible(visible) {
@@ -36,11 +40,19 @@ VirtualGamepad = class VirtualGamepad {
                 this._myVirtualGamepadContainer.style.display = "none";
             }
 
-            for (let handednessButtons of this._myVirtualGamepadVirtualButtons) {
-                for (let button of handednessButtons) {
+            for (let handedness in this._myVirtualGamepadVirtualButtons) {
+                for (let gamepadButtonID in this._myVirtualGamepadVirtualButtons[handedness]) {
+                    let button = this._myVirtualGamepadVirtualButtons[handedness][gamepadButtonID];
                     if (button != null) {
                         button.reset();
                     }
+                }
+            }
+
+            for (let handedness in this._myVirtualGamepadVirtualThumbsticks) {
+                let thumbstick = this._myVirtualGamepadVirtualThumbsticks[handedness];
+                if (thumbstick != null) {
+                    thumbstick.reset();
                 }
             }
         }
@@ -61,14 +73,6 @@ VirtualGamepad = class VirtualGamepad {
 
     start() {
         this._buildVirtualGamepad();
-
-        for (let handednessButtons of this._myVirtualGamepadVirtualButtons) {
-            for (let button of handednessButtons) {
-                if (button != null) {
-                    button.start();
-                }
-            }
-        }
 
         this._myVisible = !this._myVisible;
         this.setVisible(this._myVisible);
@@ -106,6 +110,16 @@ VirtualGamepad = class VirtualGamepad {
                 this._buildButton(rightDiv, PP.Handedness.RIGHT, i, gamepadButtonHandedness, gamepadButtonID);
             }
         }
+
+        if (this._myParams.myThumbsticksOrder[PP.Handedness.LEFT] != null) {
+            let gamepadThumbstickHandedness = this._myParams.myThumbsticksOrder[PP.Handedness.LEFT];
+            this._buildThumbstick(leftDiv, PP.Handedness.LEFT, gamepadThumbstickHandedness);
+        }
+
+        if (this._myParams.myThumbsticksOrder[PP.Handedness.RIGHT] != null) {
+            let gamepadThumbstickHandedness = this._myParams.myThumbsticksOrder[PP.Handedness.RIGHT];
+            this._buildThumbstick(rightDiv, PP.Handedness.RIGHT, gamepadThumbstickHandedness);
+        }
     }
 
     _documentBodySetup() {
@@ -117,22 +131,14 @@ VirtualGamepad = class VirtualGamepad {
         document.body.style.touchAction = "none";
     }
 
-    _buildThumbstick() {
-        let thumbstickSize = this._myThumbstickSize * this._myParams.myScaleMargin;
-
-        let thumbstickBottom = this._myMarginBottom * this._myParams.myScaleMargin;
-        let thumbstickLeft = this._myMarginLeft * this._myParams.myScaleMargin;
-        let thumbstickRight = this._myMarginRight * this._myParams.myScaleMargin;
-
-        let minSizeMultiplier = this._myMinSizeMultiplier * this._myParams.myScale;
-
-        let fontSize = this._myFontSize * this._myParams.myScale * this._myParams.myScaleLabelFont;
-
-    }
-
     _buildButton(buttonElementParent, virtualButtonHandedness, virtualButtonIndex, gamepadButtonHandedness, gamepadButtonID) {
         let virtualGamepadVirtualButton = new VirtualGamepadVirtualButton(buttonElementParent, this._myParams, virtualButtonHandedness, virtualButtonIndex, gamepadButtonHandedness, gamepadButtonID);
         this._myVirtualGamepadVirtualButtons[gamepadButtonHandedness][gamepadButtonID] = virtualGamepadVirtualButton;
+    }
+
+    _buildThumbstick(thumbstickElementParent, virtualThumbstickHandedness, gamepadThumbstickHandedness) {
+        let virtualGamepadVirtualThumbstick = new VirtualGamepadVirtualThumbstick(thumbstickElementParent, this._myParams, virtualThumbstickHandedness, gamepadThumbstickHandedness);
+        this._myVirtualGamepadVirtualThumbsticks[gamepadThumbstickHandedness] = virtualGamepadVirtualThumbstick;
     }
 
     _createSizeValue(value, minSizeMultiplier) {

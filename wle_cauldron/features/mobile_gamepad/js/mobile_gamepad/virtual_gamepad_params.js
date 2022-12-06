@@ -7,6 +7,9 @@ VirtualGamepadButtonParams = class VirtualGamepadButtonParams {
 VirtualGamepadThumbstickParams = class VirtualGamepadThumbstickParams {
     constructor() {
         this.myBackColor = "";
+        this.myBackColorPressed = "";
+
+        this.myMaxDistanceFromCenterMultiplier = 1;
 
         this.myIconParams = new VirtualGamepadIconParams();
     }
@@ -16,7 +19,7 @@ VirtualGamepadParams = class VirtualGamepadParams {
     constructor() {
         this.myShowOnDesktop = false;
 
-        this.myOpacity = 0.5;
+        this.myOpacity = 1;
 
         this.myScale = 1;
 
@@ -77,6 +80,8 @@ VirtualGamepadParams = class VirtualGamepadParams {
     }
 
     _defaultSetup() {
+        this.myOpacity = 0.5;
+
         // Params
 
         let backColor = "#616161";
@@ -108,7 +113,8 @@ VirtualGamepadParams = class VirtualGamepadParams {
         this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myIconShape = VirtualGamepadIconShape.DOT;
 
 
-        for (let thumbstickParams of this.myThumbstickParams) {
+        for (let handedness in this.myThumbstickParams) {
+            let thumbstickParams = this.myThumbstickParams[handedness];
             thumbstickParams.myBackColor = backColor;
             thumbstickParams.myIconParams.myBackColor = iconColor;
             thumbstickParams.myIconParams.myBackColorPressed = iconColor;

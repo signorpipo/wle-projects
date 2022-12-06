@@ -28,7 +28,7 @@ VirtualGamepadIconParams = class VirtualGamepadIconParams {
         // if icon shape is image
 
         this.myImageURL = "";
-        this.myImageBrightnessPressed = 0;
+        this.myImageBrightnessPressed = 1;
     }
 };
 

@@ -10,6 +10,12 @@ WL.registerComponent("virtual-gamepad", {
         params.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myImageURL = "./image2.png";
         params.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myImageBrightnessPressed = 0.5;
 
+        params.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myBackColorPressed = params.myThumbstickParams[PP.Handedness.RIGHT].myBackColor;
+        params.myThumbstickParams[PP.Handedness.RIGHT].myBackColor = "#123123";
+        params.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myIconShape = VirtualGamepadIconShape.IMAGE;
+        params.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myImageURL = "./image2.png";
+        params.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myImageBrightnessPressed = 1.5;
+
         params.myButtonsOrder[PP.Handedness.LEFT][2] = null;
 
         params.myReleaseOnMouseLeave = false;
