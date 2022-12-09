@@ -3,9 +3,7 @@
 PP.XRGamepadCore = class XRGamepadCore extends PP.GamepadCore {
 
     constructor(handedness, handPoseParams = new PP.HandPoseParams()) {
-        super(handedness);
-
-        this._myHandPose = new PP.HandPose(this._myHandedness, handPoseParams);
+        super(handedness, new PP.HandPose(handedness, handPoseParams));
 
         this._mySelectPressed = false;
         this._mySqueezePressed = false;
@@ -13,14 +11,6 @@ PP.XRGamepadCore = class XRGamepadCore extends PP.GamepadCore {
         this._myIsXRSessionActive = false;
         this._myInputSource = null;
         this._myGamepad = null;
-    }
-
-    getHandedness() {
-        return this._myHandedness;
-    }
-
-    getHandPose() {
-        return this._myHandPose;
     }
 
     isGamepadCoreActive() {

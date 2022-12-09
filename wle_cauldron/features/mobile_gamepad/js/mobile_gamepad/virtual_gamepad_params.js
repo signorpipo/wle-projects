@@ -17,7 +17,11 @@ VirtualGamepadThumbstickParams = class VirtualGamepadThumbstickParams {
 
 VirtualGamepadParams = class VirtualGamepadParams {
     constructor() {
-        this.myShowOnDesktop = false;
+        this.myShowOnDesktopBrowser = false;
+        this.myShowOnVRBrowser = false;
+        this.myShowOnMobileBrowser = false;
+
+        this.myAutoUpdateVisibility = false;
 
         this.myOpacity = 1;
 
@@ -73,11 +77,12 @@ VirtualGamepadParams = class VirtualGamepadParams {
         this.myFontSize = 0;
 
         this.myMinSizeMultiplier = 0;  // can be used to specify a min size based on the view width for when the view is in portrait mode
-
-        this._defaultSetup();
     }
 
-    _defaultSetup() {
+    defaultSetup() {
+        this.myShowOnMobileBrowser = true;
+        this.myAutoUpdateVisibility = true;
+
         this.myOpacity = 0.5;
 
         // Params

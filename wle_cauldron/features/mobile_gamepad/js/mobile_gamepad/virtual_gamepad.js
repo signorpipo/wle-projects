@@ -26,6 +26,12 @@ VirtualGamepad = class VirtualGamepad {
         this._myVirtualGamepadVirtualThumbsticks = [];
         this._myVirtualGamepadVirtualThumbsticks[PP.Handedness.LEFT] = null;
         this._myVirtualGamepadVirtualThumbsticks[PP.Handedness.RIGHT] = null;
+
+        this._myVec3Zero = [0, 0, 0];
+    }
+
+    isVisible() {
+        return this._myVisible;
     }
 
     setVisible(visible) {
@@ -59,6 +65,8 @@ VirtualGamepad = class VirtualGamepad {
     }
 
     isButtonPressed(handedness, gamepadButtonID) {
+        if (!this._myVisible) return false;
+
         let button = this._myVirtualGamepadVirtualButtons[handedness][gamepadButtonID];
         if (button != null) {
             return button.isPressed();
@@ -68,18 +76,38 @@ VirtualGamepad = class VirtualGamepad {
     }
 
     getAxes(handedness) {
+        if (!this._myVisible) return this._myVec3Zero;
 
+        let thumbstick = this._myVirtualGamepadVirtualThumbsticks[handedness];
+        if (thumbstick != null) {
+            return thumbstick.getAxes();
+        }
+
+        return this._myVec3Zero;
     }
 
     start() {
         this._buildVirtualGamepad();
 
+        let currentVisible = this._myVisible;
         this._myVisible = !this._myVisible;
-        this.setVisible(this._myVisible);
+        this.setVisible(currentVisible);
     }
 
     update(dt) {
-
+        if (this._myParams.myAutoUpdateVisibility) {
+            if (PP.XRUtils.isSessionActive() && PP.BrowserUtils.isVRBrowser()) {
+                this.setVisible(false);
+            } else if (this._myParams.myShowOnDesktopBrowser && PP.BrowserUtils.isDesktopBrowser()) {
+                this.setVisible(true);
+            } else if (this._myParams.myShowOnVRBrowser && PP.BrowserUtils.isVRBrowser()) {
+                this.setVisible(true);
+            } else if (this._myParams.myShowOnMobileBrowser && PP.BrowserUtils.isMobileBrowser()) {
+                this.setVisible(true);
+            } else {
+                this.setVisible(false);
+            }
+        }
     }
 
     _buildVirtualGamepad() {

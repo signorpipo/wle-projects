@@ -73,6 +73,7 @@ require('./pp/cauldron/utils/mesh_utils');
 require('./pp/cauldron/utils/save_utils');
 require('./pp/cauldron/utils/text_utils');
 require('./pp/cauldron/utils/xr_utils');
+require('./pp/cauldron/utils/browser_utils');
 
 require('./pp/cauldron/physics/physics_utils');
 require('./pp/cauldron/physics/physics_raycast_data');

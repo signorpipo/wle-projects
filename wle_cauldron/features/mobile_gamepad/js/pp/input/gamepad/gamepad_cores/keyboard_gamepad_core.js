@@ -1,18 +1,9 @@
 PP.KeyboardGamepadCore = class KeyboardGamepadCore extends PP.GamepadCore {
 
-    constructor(handedness, handPose) {
-        super(handedness);
+    constructor(handedness, handPose = null) {
+        super(handedness, handPose);
 
-        this._myHandPose = handPose; // can be null for keyboard
         this._myHandPoseUpdateActive = false;
-    }
-
-    getHandedness() {
-        return this._myHandedness;
-    }
-
-    getHandPose() {
-        return this._myHandPose;
     }
 
     setHandPoseUpdateActive(active) {

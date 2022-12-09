@@ -170,7 +170,7 @@ PP.Mouse = class Mouse {
     }
 
     getOriginWorld(out = PP.vec3_create()) {
-        if (PP.XRUtils.isXRSessionActive()) {
+        if (PP.XRUtils.isSessionActive()) {
             PP.myPlayerObjects.myEyeLeft.pp_getPosition(out); // in theory mouse should not be used inside the session, but may make sense for AR which uses eye left
         } else {
             PP.myPlayerObjects.myNonVRCamera.pp_getPosition(out);
@@ -187,7 +187,7 @@ PP.Mouse = class Mouse {
         directionLocal.vec3_set(right * 2 - 1, -up * 2 + 1, -1.0);
 
         let projectionMatrixInvert = this._myProjectionMatrixInverse;
-        if (PP.XRUtils.isXRSessionActive()) {
+        if (PP.XRUtils.isSessionActive()) {
             projectionMatrixInvert = PP.myPlayerObjects.myEyeLeft.pp_getComponentHierarchy("view").projectionMatrix.mat4_invert(projectionMatrixInvert);
         } else {
             projectionMatrixInvert = PP.myPlayerObjects.myNonVRCamera.pp_getComponentHierarchy("view").projectionMatrix.mat4_invert(projectionMatrixInvert);
@@ -197,7 +197,7 @@ PP.Mouse = class Mouse {
         directionLocal.vec3_normalize(directionLocal);
 
         let directionWorld = directionLocal;
-        if (PP.XRUtils.isXRSessionActive()) {
+        if (PP.XRUtils.isSessionActive()) {
             directionWorld = directionLocal.vec3_transformQuat(PP.myPlayerObjects.myEyeLeft.pp_getRotationQuat(this._myRotationQuat), directionLocal);
         } else {
             directionWorld = directionLocal.vec3_transformQuat(PP.myPlayerObjects.myNonVRCamera.pp_getRotationQuat(this._myRotationQuat), directionLocal);

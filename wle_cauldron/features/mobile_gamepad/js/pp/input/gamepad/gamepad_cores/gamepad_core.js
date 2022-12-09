@@ -1,7 +1,8 @@
 PP.GamepadCore = class GamepadCore {
 
-    constructor(handedness) {
+    constructor(handedness, handPose) {
         this._myHandedness = handedness;
+        this._myHandPose = handPose;
     }
 
     getHandedness() {
@@ -9,7 +10,7 @@ PP.GamepadCore = class GamepadCore {
     }
 
     getHandPose() {
-        return null;
+        return this._myHandPose;
     }
 
     isGamepadCoreActive() {

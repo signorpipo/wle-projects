@@ -2,6 +2,8 @@ WL.registerComponent("virtual-gamepad", {
 }, {
     start() {
         let params = new VirtualGamepadParams();
+        params.defaultSetup();
+
         params.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myIconShape = VirtualGamepadIconShape.LABEL;
         params.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myLabel = "T";
         params.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myLabelFontSize = 2;
@@ -21,6 +23,10 @@ WL.registerComponent("virtual-gamepad", {
         params.myReleaseOnMouseLeave = false;
         params.myScaleInterface = 1;
         params.myScaleMargin = 1;
+
+        params.myShowOnDesktopBrowser = false;
+        params.myShowOnVRBrowser = true;
+        params.myShowOnMobileBrowser = true;
 
         this._myVirtualGamepad = new VirtualGamepad(params);
 
