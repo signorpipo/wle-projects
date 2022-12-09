@@ -120,7 +120,7 @@ PP.BaseGamepad = class BaseGamepad {
     }
 
     _getAxesData() {
-        let axes = [0.0, 0.0];
+        let axes = PP.vec2_create(0, 0);
         return axes;
     }
 
@@ -317,11 +317,14 @@ PP.BaseGamepad = class BaseGamepad {
     }
 
     _preUpdateAxesInfos() {
-        this._myAxesInfo.myPrevAxes = this._myAxesInfo.myAxes;
+        this._myAxesInfo.myPrevAxes[0] = this._myAxesInfo.myAxes[0];
+        this._myAxesInfo.myPrevAxes[1] = this._myAxesInfo.myAxes[1];
     }
 
     _updateAxesInfos() {
-        this._myAxesInfo.myAxes = this._getAxesData();
+        let axesData = this._getAxesData();
+        this._myAxesInfo.myAxes[0] = axesData[0];
+        this._myAxesInfo.myAxes[1] = axesData[1];
     }
 
     _postUpdateAxesInfos() {

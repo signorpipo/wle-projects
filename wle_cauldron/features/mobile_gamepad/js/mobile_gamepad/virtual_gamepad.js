@@ -26,8 +26,6 @@ VirtualGamepad = class VirtualGamepad {
         this._myVirtualGamepadVirtualThumbsticks = [];
         this._myVirtualGamepadVirtualThumbsticks[PP.Handedness.LEFT] = null;
         this._myVirtualGamepadVirtualThumbsticks[PP.Handedness.RIGHT] = null;
-
-        this._myVec3Zero = [0, 0, 0];
     }
 
     isVisible() {
@@ -75,15 +73,15 @@ VirtualGamepad = class VirtualGamepad {
         return false;
     }
 
-    getAxes(handedness) {
-        if (!this._myVisible) return this._myVec3Zero;
+    getAxes(handedness, outAxes = PP.vec2_create(0, 0)) {
+        if (!this._myVisible) return outAxes;
 
         let thumbstick = this._myVirtualGamepadVirtualThumbsticks[handedness];
         if (thumbstick != null) {
-            return thumbstick.getAxes();
+            outAxes.vec2_copy(thumbstick.getAxes());
         }
 
-        return this._myVec3Zero;
+        return outAxes;
     }
 
     start() {
