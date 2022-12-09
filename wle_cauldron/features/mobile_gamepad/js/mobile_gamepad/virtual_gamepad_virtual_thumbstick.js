@@ -74,7 +74,7 @@ VirtualGamepadVirtualThumbstick = class VirtualGamepadVirtualThumbstick {
 
         if (event.changedTouches != null && event.changedTouches.length > 0) {
             this._myThumbstickDragStartPosition[0] = event.changedTouches[0].clientX;
-            this._myThumbstickDragStartPosition[1] = event.changedTouches[1].clientY;
+            this._myThumbstickDragStartPosition[1] = event.changedTouches[0].clientY;
         } else {
             this._myThumbstickDragStartPosition[0] = event.clientX;
             this._myThumbstickDragStartPosition[1] = event.clientY;
@@ -102,7 +102,7 @@ VirtualGamepadVirtualThumbstick = class VirtualGamepadVirtualThumbstick {
 
         // if this is a touch event, make sure it is the right one
         if (event.changedTouches != null && event.changedTouches.length > 0) {
-            for (let changedTouch of event.changedTouches.length) {
+            for (let changedTouch of event.changedTouches) {
                 if (this._myTouchID == changedTouch.identifier) {
                     changedTouchFound = changedTouch;
                 }
@@ -145,13 +145,13 @@ VirtualGamepadVirtualThumbstick = class VirtualGamepadVirtualThumbstick {
     _build(thumbstickElementParent, virtualGamepadParams, virtualThumbstickHandedness) {
         // setup variables used for the sizes and the like
 
-        let thumbstickSize = virtualGamepadParams.myThumbstickSize * virtualGamepadParams.myScale;
+        let thumbstickSize = virtualGamepadParams.myThumbstickSize * virtualGamepadParams.myScaleInterface;
 
-        let marginBottom = virtualGamepadParams.myMarginBottom * virtualGamepadParams.myScale * virtualGamepadParams.myScaleMargin;
-        let marginLeft = virtualGamepadParams.myMarginLeft * virtualGamepadParams.myScale * virtualGamepadParams.myScaleMargin;
-        let marginRight = virtualGamepadParams.myMarginRight * virtualGamepadParams.myScale * virtualGamepadParams.myScaleMargin;
+        let marginBottom = virtualGamepadParams.myMarginBottom * virtualGamepadParams.myScaleInterface * virtualGamepadParams.myScaleMargin;
+        let marginLeft = virtualGamepadParams.myMarginLeft * virtualGamepadParams.myScaleInterface * virtualGamepadParams.myScaleMargin;
+        let marginRight = virtualGamepadParams.myMarginRight * virtualGamepadParams.myScaleInterface * virtualGamepadParams.myScaleMargin;
 
-        let minSizeMultiplier = Math.max(1, virtualGamepadParams.myMinSizeMultiplier / virtualGamepadParams.myScale);
+        let minSizeMultiplier = Math.max(1, virtualGamepadParams.myMinSizeMultiplier / virtualGamepadParams.myScaleInterface);
 
         // actual thumbstick creation
 
@@ -190,8 +190,7 @@ VirtualGamepadVirtualThumbstick = class VirtualGamepadVirtualThumbstick {
         this._myThumbstickElement.style.left = "33%";
         this._myThumbstickContainer.appendChild(this._myThumbstickElement);
 
-        let fontScale = virtualGamepadParams.myScale * virtualGamepadParams.myScaleLabelFont;
-        this._myThumbstickIcon = new VirtualGamepadIcon(this._myThumbstickElement, this._myParams.myIconParams, minSizeMultiplier, fontScale);
+        this._myThumbstickIcon = new VirtualGamepadIcon(this._myThumbstickElement, this._myParams.myIconParams, minSizeMultiplier, virtualGamepadParams.myScale);
     }
 
     _createSizeValue(value, minSizeMultiplier) {

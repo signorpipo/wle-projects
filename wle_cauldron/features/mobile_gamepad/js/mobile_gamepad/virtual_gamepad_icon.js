@@ -33,7 +33,7 @@ VirtualGamepadIconParams = class VirtualGamepadIconParams {
 };
 
 VirtualGamepadIcon = class VirtualGamepadIcon {
-    constructor(iconElementParent, iconParams, minSizeMultiplier, fontScale) {
+    constructor(iconElementParent, iconParams, minSizeMultiplier, scale) {
         this._myParams = iconParams;
 
         this._myBackElement = null;
@@ -41,7 +41,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
 
         this._myPressed = false;
 
-        this._build(iconElementParent, minSizeMultiplier, fontScale);
+        this._build(iconElementParent, minSizeMultiplier, scale);
     }
 
     setPressed(pressed) {
@@ -78,7 +78,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
         }
     }
 
-    _build(iconElementParent, minSizeMultiplier, fontScale) {
+    _build(iconElementParent, minSizeMultiplier, scale) {
         let iconContainer = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         iconContainer.style.position = "absolute";
         iconContainer.style.width = "100%";
@@ -105,7 +105,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                 this._myIconElement.style.alignmentBaseline = "central";
                 this._myIconElement.style.fontFamily = this._myParams.myLabelFontFamily;
                 this._myIconElement.style.fontWeight = this._myParams.myLabelFontWeight;
-                this._myIconElement.style.fontSize = this._createSizeValue(this._myParams.myLabelFontSize * fontScale, minSizeMultiplier);
+                this._myIconElement.style.fontSize = this._createSizeValue(this._myParams.myLabelFontSize * scale, minSizeMultiplier);
                 this._myIconElement.style.fill = this._myParams.myIconColor;
                 this._myIconElement.textContent = this._myParams.myLabel;
                 iconContainer.appendChild(this._myIconElement);

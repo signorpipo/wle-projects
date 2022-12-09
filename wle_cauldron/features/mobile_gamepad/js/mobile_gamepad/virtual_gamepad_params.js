@@ -21,7 +21,8 @@ VirtualGamepadParams = class VirtualGamepadParams {
 
         this.myOpacity = 1;
 
-        this.myScale = 1;
+        this.myScaleInterface = 1;
+        this.myScaleMargin = 1;
 
         this.myReleaseOnMouseLeave = false; // if mouse leaves the canvas it will be like it was released
         this.myStopPropagatingMouseDownEvents = true; // this can be used to make it so the rest of the game will ignore clicks on the virtual gamepad
@@ -57,9 +58,6 @@ VirtualGamepadParams = class VirtualGamepadParams {
         this.myThumbsticksOrder[PP.Handedness.RIGHT] = null;
 
         // Even More Advanced Params
-
-        this.myScaleLabelFont = 1;
-        this.myScaleMargin = 1;
 
         this.myMarginLeft = 0;
         this.myMarginRight = 0;

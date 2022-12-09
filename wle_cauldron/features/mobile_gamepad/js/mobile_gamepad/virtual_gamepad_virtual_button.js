@@ -73,19 +73,19 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
     _build(buttonElementParent, virtualGamepadParams, virtualButtonHandedness, virtualButtonIndex) {
         // setup variables used for the sizes and the like
 
-        let buttonSize = virtualGamepadParams.myButtonSize * virtualGamepadParams.myScale;
-        let buttonsRingRadius = virtualGamepadParams.myButtonsRingRadius * virtualGamepadParams.myScale;
+        let buttonSize = virtualGamepadParams.myButtonSize * virtualGamepadParams.myScaleInterface;
+        let buttonsRingRadius = virtualGamepadParams.myButtonsRingRadius * virtualGamepadParams.myScaleInterface;
 
-        let thumbstickSize = virtualGamepadParams.myThumbstickSize * virtualGamepadParams.myScale;
+        let thumbstickSize = virtualGamepadParams.myThumbstickSize * virtualGamepadParams.myScaleInterface;
 
-        let marginBottom = virtualGamepadParams.myMarginBottom * virtualGamepadParams.myScale * virtualGamepadParams.myScaleMargin;
-        let marginLeft = virtualGamepadParams.myMarginLeft * virtualGamepadParams.myScale * virtualGamepadParams.myScaleMargin;
-        let marginRight = virtualGamepadParams.myMarginRight * virtualGamepadParams.myScale * virtualGamepadParams.myScaleMargin;
+        let marginBottom = virtualGamepadParams.myMarginBottom * virtualGamepadParams.myScaleInterface * virtualGamepadParams.myScaleMargin;
+        let marginLeft = virtualGamepadParams.myMarginLeft * virtualGamepadParams.myScaleInterface * virtualGamepadParams.myScaleMargin;
+        let marginRight = virtualGamepadParams.myMarginRight * virtualGamepadParams.myScaleInterface * virtualGamepadParams.myScaleMargin;
 
         let buttonRingStartAngle = virtualGamepadParams.myButtonsRingStartAngle;
         let buttonRingEndAngle = virtualGamepadParams.myButtonsRingEndAngle;
 
-        let minSizeMultiplier = Math.max(1, virtualGamepadParams.myMinSizeMultiplier / virtualGamepadParams.myScale);
+        let minSizeMultiplier = Math.max(1, virtualGamepadParams.myMinSizeMultiplier / virtualGamepadParams.myScaleInterface);
 
         let buttonsAmount = virtualGamepadParams.myButtonsOrder[PP.Handedness.LEFT].length;
 
@@ -129,8 +129,7 @@ VirtualGamepadVirtualButton = class VirtualGamepadVirtualButton {
         this._myButtonElement.style.transform = "rotate(" + counterAngle + "deg)";
         buttonPivot.appendChild(this._myButtonElement);
 
-        let fontScale = virtualGamepadParams.myScale * virtualGamepadParams.myScaleLabelFont;
-        this._myButtonIcon = new VirtualGamepadIcon(this._myButtonElement, this._myParams.myIconParams, minSizeMultiplier, fontScale);
+        this._myButtonIcon = new VirtualGamepadIcon(this._myButtonElement, this._myParams.myIconParams, minSizeMultiplier, virtualGamepadParams.myScaleInterface);
     }
 
     _createSizeValue(value, minSizeMultiplier) {

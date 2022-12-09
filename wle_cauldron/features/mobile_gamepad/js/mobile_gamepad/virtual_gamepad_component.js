@@ -19,8 +19,7 @@ WL.registerComponent("virtual-gamepad", {
         params.myButtonsOrder[PP.Handedness.LEFT][2] = null;
 
         params.myReleaseOnMouseLeave = false;
-        params.myScale = 1;
-        params.myScaleLabelFont = 1;
+        params.myScaleInterface = 1;
         params.myScaleMargin = 1;
 
         this._myVirtualGamepad = new VirtualGamepad(params);
