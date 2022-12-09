@@ -24,7 +24,7 @@ PP.UniversalGamepad = class UniversalGamepad extends PP.BaseGamepad {
     }
 
     getGamepadCore(id) {
-        this._myGamepadCores.get(id);
+        return this._myGamepadCores.get(id);
     }
 
     removeGamepadCore(id) {

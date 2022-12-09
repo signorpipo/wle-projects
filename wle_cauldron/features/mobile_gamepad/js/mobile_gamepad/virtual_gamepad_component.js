@@ -3,6 +3,8 @@ WL.registerComponent("virtual-gamepad", {
     _myShowOnMobileBrowser: { type: WL.Type.Bool, default: true },
     _myShowOnHeadset: { type: WL.Type.Bool, default: false },
     _myReleaseOnMouseLeave: { type: WL.Type.Bool, default: false },
+    _myAddToUniversalGamepad: { type: WL.Type.Bool, default: true },
+    _myOpacity: { type: WL.Type.Float, default: 0.5 },
     _myIconColor: { type: WL.Type.String, default: "#e0e0e0" },
     _myBackgroundColor: { type: WL.Type.String, default: "#616161" },
     _myInterfaceScale: { type: WL.Type.Float, default: 1 },
@@ -33,6 +35,8 @@ WL.registerComponent("virtual-gamepad", {
             thumbstickParams.myIconParams.myIconColorPressed = this._myBackgroundColor;
         }
 
+        params.myOpacity = this._myOpacity;
+
         params.myReleaseOnMouseLeave = this._myReleaseOnMouseLeave;
         params.myInterfaceScale = this._myInterfaceScale;
         params.myMarginScale = this._myMarginScale;
@@ -53,8 +57,22 @@ WL.registerComponent("virtual-gamepad", {
         }
 
         this._myVirtualGamepad.start();
+
+        this._myFirstUpdate = true;
     },
     update(dt) {
+        if (this._myFirstUpdate) {
+            this._myFirstUpdate = false;
+
+            if (this._myAddToUniversalGamepad) {
+                let leftVirtualGamepadGamepadCore = new VirtualGamepadGamepadCore(this._myVirtualGamepad, PP.Handedness.LEFT, PP.myLeftGamepad.getGamepadCore("left_xr_gamepad").getHandPose());
+                let rightVirtualGamepadGamepadCore = new VirtualGamepadGamepadCore(this._myVirtualGamepad, PP.Handedness.RIGHT, PP.myRightGamepad.getGamepadCore("right_xr_gamepad").getHandPose());
+
+                PP.myLeftGamepad.addGamepadCore("left_virtual_gamepad", leftVirtualGamepadGamepadCore);
+                PP.myRightGamepad.addGamepadCore("right_virtual_gamepad", rightVirtualGamepadGamepadCore);
+            }
+        }
+
         this._myVirtualGamepad.update(dt);
     }
 });

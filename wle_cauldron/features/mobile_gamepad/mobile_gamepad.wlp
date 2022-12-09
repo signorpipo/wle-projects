@@ -593,7 +593,7 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "p1",
-                        "material": "111"
+                        "material": "32"
                     }
                 }
             ],
@@ -631,12 +631,246 @@
                 {
                     "type": "virtual-gamepad",
                     "virtual-gamepad": {
-                        "_myShowOnDesktopBrowser": false,
+                        "_myShowOnDesktopBrowser": true,
                         "_myShowOnVRBrowser": false,
                         "_myShowOnMobileBrowser": true,
-                        "_myShowOnHeadset": true
+                        "_myShowOnHeadset": true,
+                        "_myOpacity": 0.5
                     }
                 }
+            ]
+        },
+        "154": {
+            "name": "Test Gamepad Left",
+            "parent": "172",
+            "components": [
+                {
+                    "type": "pp-gamepad-mesh-animator",
+                    "pp-gamepad-mesh-animator": {
+                        "_mySelect": "159",
+                        "_mySqueeze": "160",
+                        "_myThumbstick": "161",
+                        "_myTopButton": "162",
+                        "_myBottomButton": "157",
+                        "_myUsePressForSqueeze": true
+                    }
+                }
+            ],
+            "translation": [
+                -0.1000002,
+                0.0,
+                -0.0
+            ],
+            "rotation": [
+                -0.0634155,
+                0.879951,
+                0.395382,
+                0.2556127
+            ],
+            "scale": [
+                1.0000094,
+                0.9999983,
+                1.0000115
+            ]
+        },
+        "155": {
+            "link": {
+                "name": "Gamepad Left<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "154",
+            "name": "Gamepad Left Mesh",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "156": {
+            "link": {
+                "name": "Gamepad Body Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "155"
+        },
+        "157": {
+            "link": {
+                "name": "Gamepad Bottom Button Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "155"
+        },
+        "158": {
+            "link": {
+                "name": "Gamepad Option Button Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "155"
+        },
+        "159": {
+            "link": {
+                "name": "Gamepad Select Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "155"
+        },
+        "160": {
+            "link": {
+                "name": "Gamepad Squeeze Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "155"
+        },
+        "161": {
+            "link": {
+                "name": "Gamepad Thumbstick Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "155"
+        },
+        "162": {
+            "link": {
+                "name": "Gamepad Top Button Left<Gamepad Left<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "155"
+        },
+        "163": {
+            "name": "Test Gamepad Right",
+            "parent": "172",
+            "components": [
+                {
+                    "type": "pp-gamepad-mesh-animator",
+                    "pp-gamepad-mesh-animator": {
+                        "_mySelect": "168",
+                        "_mySqueeze": "169",
+                        "_myThumbstick": "170",
+                        "_myTopButton": "171",
+                        "_myBottomButton": "166",
+                        "_myUsePressForSqueeze": true,
+                        "_myHandedness": "right"
+                    }
+                }
+            ],
+            "translation": [
+                0.1000003,
+                0.0,
+                -8.046627044677734e-7
+            ],
+            "rotation": [
+                0.1550479,
+                0.8685018,
+                0.4199348,
+                -0.2128838
+            ],
+            "scale": [
+                1.0000039,
+                0.9999999,
+                1.0000013
+            ]
+        },
+        "164": {
+            "link": {
+                "name": "Gamepad Right<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "163",
+            "name": "Gamepad Right Mesh",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "165": {
+            "link": {
+                "name": "Gamepad Body Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "164"
+        },
+        "166": {
+            "link": {
+                "name": "Gamepad Bottom Button Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "164"
+        },
+        "167": {
+            "link": {
+                "name": "Gamepad Option Button Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "164"
+        },
+        "168": {
+            "link": {
+                "name": "Gamepad Select Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "164"
+        },
+        "169": {
+            "link": {
+                "name": "Gamepad Squeeze Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "164"
+        },
+        "170": {
+            "link": {
+                "name": "Gamepad Thumbstick Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "164"
+        },
+        "171": {
+            "link": {
+                "name": "Gamepad Top Button Right<Gamepad Right<Gamepads",
+                "file": "assets\\models\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "parent": "164"
+        },
+        "172": {
+            "name": "Test Gamepad",
+            "parent": "146",
+            "translation": [
+                0.0,
+                0.0,
+                -0.496098
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
             ]
         }
     },

@@ -207,6 +207,7 @@ require('./mobile_gamepad/virtual_gamepad_params');
 require('./mobile_gamepad/virtual_gamepad_virtual_button');
 require('./mobile_gamepad/virtual_gamepad_virtual_thumbstick');
 require('./mobile_gamepad/virtual_gamepad_icon');
+require('./mobile_gamepad/virtual_gamepad_gamepad_core');
 
 //TEST
 

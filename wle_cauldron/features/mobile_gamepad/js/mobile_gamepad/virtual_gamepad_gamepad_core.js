@@ -1,4 +1,4 @@
-PP.VirtualGamepadGamepadCore = class VirtualGamepadGamepadCore extends PP.GamepadCore {
+VirtualGamepadGamepadCore = class VirtualGamepadGamepadCore extends PP.GamepadCore {
 
     constructor(virtualGamepad, handedness, handPose = null) {
         super(handedness, handPose);
@@ -43,7 +43,7 @@ PP.VirtualGamepadGamepadCore = class VirtualGamepadGamepadCore extends PP.Gamepa
         this._myButtonData.myValue = 0;
 
         if (this.isGamepadCoreActive()) {
-            if (this._myVirtualGamepad.isButtonPressed(this._myHandedness, buttonID).myIsPressed) {
+            if (this._myVirtualGamepad.isButtonPressed(this._myHandedness, buttonID)) {
                 this._myButtonData.myIsPressed = true;
                 this._myButtonData.myIsTouched = true;
                 this._myButtonData.myValue = 1;
@@ -57,7 +57,7 @@ PP.VirtualGamepadGamepadCore = class VirtualGamepadGamepadCore extends PP.Gamepa
         this._myAxesData.vec2_zero();
 
         if (this.isGamepadCoreActive()) {
-            this._myVirtualGamepad.getAxes(handedness, this._myAxesData);
+            this._myVirtualGamepad.getAxes(this._myHandedness, this._myAxesData);
         }
 
         return this._myAxesData;

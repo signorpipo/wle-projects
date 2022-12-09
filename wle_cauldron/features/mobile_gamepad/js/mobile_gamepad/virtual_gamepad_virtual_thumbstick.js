@@ -139,7 +139,7 @@ VirtualGamepadVirtualThumbstick = class VirtualGamepadVirtualThumbstick {
         this._myThumbstickElement.style.transform = "translate(" + translateThumbstickX + "px, " + translateThumbstickY + "px)";
 
         this._myAxes[0] = translateThumbstickX / maxDistanceFromCenter;
-        this._myAxes[1] = translateThumbstickY / maxDistanceFromCenter;
+        this._myAxes[1] = -(translateThumbstickY / maxDistanceFromCenter);
     }
 
     _build(thumbstickElementParent, virtualGamepadParams, virtualThumbstickHandedness) {
