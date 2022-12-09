@@ -175,12 +175,12 @@ VirtualGamepadVirtualThumbstick = class VirtualGamepadVirtualThumbstick {
         thumbstickContainerSVG.style.height = "100%";
         this._myThumbstickContainer.appendChild(thumbstickContainerSVG);
 
-        let thumbstickBack = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        thumbstickBack.setAttributeNS(null, 'cx', "50%");
-        thumbstickBack.setAttributeNS(null, 'cy', "50%");
-        thumbstickBack.setAttributeNS(null, 'r', "48%");
-        thumbstickBack.style.fill = this._myParams.myBackColor;
-        thumbstickContainerSVG.appendChild(thumbstickBack);
+        let thumbstickBackground = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        thumbstickBackground.setAttributeNS(null, 'cx', "50%");
+        thumbstickBackground.setAttributeNS(null, 'cy', "50%");
+        thumbstickBackground.setAttributeNS(null, 'r', "48%");
+        thumbstickBackground.style.fill = this._myParams.myBackgroundColor;
+        thumbstickContainerSVG.appendChild(thumbstickBackground);
 
         this._myThumbstickElement = document.createElement("div");
         this._myThumbstickElement.style.position = "absolute";

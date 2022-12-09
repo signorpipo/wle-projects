@@ -6,8 +6,8 @@ VirtualGamepadButtonParams = class VirtualGamepadButtonParams {
 
 VirtualGamepadThumbstickParams = class VirtualGamepadThumbstickParams {
     constructor() {
-        this.myBackColor = "";
-        this.myBackColorPressed = "";
+        this.myBackgroundColor = "";
+        this.myBackgroundColorPressed = "";
 
         this.myMaxDistanceFromCenterMultiplier = 1;
 
@@ -87,16 +87,16 @@ VirtualGamepadParams = class VirtualGamepadParams {
 
         // Params
 
-        let backColor = "#616161";
+        let backgroundColor = "#616161";
         let iconColor = "#e0e0e0";
 
         for (let handedness in this.myButtonParams) {
             for (let gamepadButtonID in this.myButtonParams[handedness]) {
                 let buttonParams = this.myButtonParams[handedness][gamepadButtonID];
-                buttonParams.myIconParams.myBackColor = backColor;
-                buttonParams.myIconParams.myBackColorPressed = iconColor;
+                buttonParams.myIconParams.myBackgroundColor = backgroundColor;
+                buttonParams.myIconParams.myBackgroundColorPressed = iconColor;
                 buttonParams.myIconParams.myIconColor = iconColor;
-                buttonParams.myIconParams.myIconColorPressed = backColor;
+                buttonParams.myIconParams.myIconColorPressed = backgroundColor;
             }
         }
 
@@ -117,11 +117,11 @@ VirtualGamepadParams = class VirtualGamepadParams {
 
         for (let handedness in this.myThumbstickParams) {
             let thumbstickParams = this.myThumbstickParams[handedness];
-            thumbstickParams.myBackColor = backColor;
-            thumbstickParams.myIconParams.myBackColor = iconColor;
-            thumbstickParams.myIconParams.myBackColorPressed = iconColor;
-            thumbstickParams.myIconParams.myIconColor = backColor;
-            thumbstickParams.myIconParams.myIconColorPressed = backColor;
+            thumbstickParams.myBackgroundColor = backgroundColor;
+            thumbstickParams.myIconParams.myBackgroundColor = iconColor;
+            thumbstickParams.myIconParams.myBackgroundColorPressed = iconColor;
+            thumbstickParams.myIconParams.myIconColor = backgroundColor;
+            thumbstickParams.myIconParams.myIconColorPressed = backgroundColor;
         }
 
         // Orders

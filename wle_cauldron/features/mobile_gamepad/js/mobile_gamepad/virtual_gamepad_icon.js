@@ -11,8 +11,8 @@ VirtualGamepadIconShape = {
 
 VirtualGamepadIconParams = class VirtualGamepadIconParams {
     constructor() {
-        this.myBackColor = "";
-        this.myBackColorPressed = "";
+        this.myBackgroundColor = "";
+        this.myBackgroundColorPressed = "";
         this.myIconColor = "";
         this.myIconColorPressed = "";
 
@@ -36,7 +36,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
     constructor(iconElementParent, iconParams, minSizeMultiplier, scale) {
         this._myParams = iconParams;
 
-        this._myBackElement = null;
+        this._myBackgroundElement = null;
         this._myIconElement = null;
 
         this._myPressed = false;
@@ -51,7 +51,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
             if (this._myParams.myIconShape != VirtualGamepadIconShape.NONE) {
                 if (this._myIconElement != null) {
                     if (this._myPressed) {
-                        this._myBackElement.style.fill = this._myParams.myBackColorPressed;
+                        this._myBackgroundElement.style.fill = this._myParams.myBackgroundColorPressed;
                         if (this._myIconElement.style.strokeWidth.length > 0) {
                             this._myIconElement.style.stroke = this._myParams.myIconColorPressed;
                         } else {
@@ -62,7 +62,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                             this._myIconElement.style.filter = "brightness(" + this._myParams.myImageBrightnessPressed + ")";
                         }
                     } else {
-                        this._myBackElement.style.fill = this._myParams.myBackColor;
+                        this._myBackgroundElement.style.fill = this._myParams.myBackgroundColor;
                         if (this._myIconElement.style.strokeWidth.length > 0) {
                             this._myIconElement.style.stroke = this._myParams.myIconColor;
                         } else {
@@ -85,12 +85,12 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
         iconContainer.style.height = "100%";
         iconElementParent.appendChild(iconContainer);
 
-        this._myBackElement = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        this._myBackElement.setAttributeNS(null, 'cx', "50%");
-        this._myBackElement.setAttributeNS(null, 'cy', "50%");
-        this._myBackElement.setAttributeNS(null, 'r', "50%");
-        this._myBackElement.style.fill = this._myParams.myBackColor;
-        iconContainer.appendChild(this._myBackElement);
+        this._myBackgroundElement = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        this._myBackgroundElement.setAttributeNS(null, 'cx', "50%");
+        this._myBackgroundElement.setAttributeNS(null, 'cy', "50%");
+        this._myBackgroundElement.setAttributeNS(null, 'r', "50%");
+        this._myBackgroundElement.style.fill = this._myParams.myBackgroundColor;
+        iconContainer.appendChild(this._myBackgroundElement);
 
         switch (this._myParams.myIconShape) {
             case VirtualGamepadIconShape.NONE:
@@ -181,12 +181,12 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
 
     _invertColors() {
         if (this._myIconElement.style.strokeWidth.length > 0) {
-            this._myBackElement.style.fill = this._myParams.myIconColor;
+            this._myBackgroundElement.style.fill = this._myParams.myIconColor;
             this._myIconElement.style.fill = this._myParams.myIconColor;
-            this._myIconElement.style.stroke = this._myParams.myBackColor;
+            this._myIconElement.style.stroke = this._myParams.myBackgroundColor;
         } else {
-            this._myBackElement.style.fill = this._myParams.myIconColor;
-            this._myIconElement.style.fill = this._myParams.myBackColor;
+            this._myBackgroundElement.style.fill = this._myParams.myIconColor;
+            this._myIconElement.style.fill = this._myParams.myBackgroundColor;
         }
     }
 }

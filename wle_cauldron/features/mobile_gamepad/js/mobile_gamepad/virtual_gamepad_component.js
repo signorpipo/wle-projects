@@ -4,7 +4,7 @@ WL.registerComponent("virtual-gamepad", {
     _myShowOnMobileBrowser: { type: WL.Type.Bool, default: true },
     _myReleaseOnMouseLeave: { type: WL.Type.Bool, default: false },
     _myIconColor: { type: WL.Type.String, default: "#e0e0e0" },
-    _myBackColor: { type: WL.Type.String, default: "#616161" },
+    _myBackgroundColor: { type: WL.Type.String, default: "#616161" },
     _myInterfaceScale: { type: WL.Type.Float, default: 1 },
     _myMarginScale: { type: WL.Type.Float, default: 1 },
 
@@ -16,20 +16,20 @@ WL.registerComponent("virtual-gamepad", {
         for (let handedness in params.myButtonParams) {
             for (let gamepadButtonID in params.myButtonParams[handedness]) {
                 let buttonParams = params.myButtonParams[handedness][gamepadButtonID];
-                buttonParams.myIconParams.myBackColor = this._myBackColor;
-                buttonParams.myIconParams.myBackColorPressed = this._myIconColor;
+                buttonParams.myIconParams.myBackgroundColor = this._myBackgroundColor;
+                buttonParams.myIconParams.myBackgroundColorPressed = this._myIconColor;
                 buttonParams.myIconParams.myIconColor = this._myIconColor;
-                buttonParams.myIconParams.myIconColorPressed = this._myBackColor;
+                buttonParams.myIconParams.myIconColorPressed = this._myBackgroundColor;
             }
         }
 
         for (let handedness in params.myThumbstickParams) {
             let thumbstickParams = params.myThumbstickParams[handedness];
-            thumbstickParams.myBackColor = this._myBackColor;
-            thumbstickParams.myIconParams.myBackColor = this._myIconColor;
-            thumbstickParams.myIconParams.myBackColorPressed = this._myIconColor;
-            thumbstickParams.myIconParams.myIconColor = this._myBackColor;
-            thumbstickParams.myIconParams.myIconColorPressed = this._myBackColor;
+            thumbstickParams.myBackgroundColor = this._myBackgroundColor;
+            thumbstickParams.myIconParams.myBackgroundColor = this._myIconColor;
+            thumbstickParams.myIconParams.myBackgroundColorPressed = this._myIconColor;
+            thumbstickParams.myIconParams.myIconColor = this._myBackgroundColor;
+            thumbstickParams.myIconParams.myIconColorPressed = this._myBackgroundColor;
         }
 
         params.myReleaseOnMouseLeave = this._myReleaseOnMouseLeave;
