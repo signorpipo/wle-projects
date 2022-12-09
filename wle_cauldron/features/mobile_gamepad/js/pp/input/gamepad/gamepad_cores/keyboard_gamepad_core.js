@@ -20,7 +20,7 @@ PP.KeyboardGamepadCore = class KeyboardGamepadCore extends PP.GamepadCore {
     }
 
     isGamepadCoreActive() {
-        return true;
+        return !PP.XRUtils.isSessionActive();
     }
 
     start() {

@@ -25,8 +25,8 @@ VirtualGamepadParams = class VirtualGamepadParams {
 
         this.myOpacity = 1;
 
-        this.myScaleInterface = 1;
-        this.myScaleMargin = 1;
+        this.myInterfaceScale = 1;
+        this.myMarginScale = 1;
 
         this.myReleaseOnMouseLeave = false; // if mouse leaves the canvas it will be like it was released
         this.myStopPropagatingMouseDownEvents = true; // this can be used to make it so the rest of the game will ignore clicks on the virtual gamepad
@@ -115,7 +115,6 @@ VirtualGamepadParams = class VirtualGamepadParams {
         this.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myIconShape = VirtualGamepadIconShape.DOT;
         this.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.THUMBSTICK].myIconParams.myIconShape = VirtualGamepadIconShape.DOT;
 
-
         for (let handedness in this.myThumbstickParams) {
             let thumbstickParams = this.myThumbstickParams[handedness];
             thumbstickParams.myBackColor = backColor;
@@ -144,17 +143,16 @@ VirtualGamepadParams = class VirtualGamepadParams {
 
         // Sizes
 
-        this.myThumbstickSize = 15;
         this.myMarginLeft = 3;
         this.myMarginRight = 3;
         this.myMarginBottom = 3;
+
+        this.myThumbstickSize = 15;
 
         this.myButtonSize = 5;
         this.myButtonsRingRadius = 12;
         this.myButtonsRingStartAngle = 385;
         this.myButtonsRingEndAngle = 245;
-
-        this.myLabelFontSize = 2;
 
         this.myMinSizeMultiplier = 5 / 3;
     }

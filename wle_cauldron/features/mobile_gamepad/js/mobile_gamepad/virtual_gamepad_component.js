@@ -1,34 +1,55 @@
 WL.registerComponent("virtual-gamepad", {
+    _myShowOnDesktopBrowser: { type: WL.Type.Bool, default: false },
+    _myShowOnVRBrowser: { type: WL.Type.Bool, default: false },
+    _myShowOnMobileBrowser: { type: WL.Type.Bool, default: true },
+    _myReleaseOnMouseLeave: { type: WL.Type.Bool, default: false },
+    _myIconColor: { type: WL.Type.String, default: "#e0e0e0" },
+    _myBackColor: { type: WL.Type.String, default: "#616161" },
+    _myInterfaceScale: { type: WL.Type.Float, default: 1 },
+    _myMarginScale: { type: WL.Type.Float, default: 1 },
+
 }, {
     start() {
         let params = new VirtualGamepadParams();
         params.defaultSetup();
 
-        params.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myIconShape = VirtualGamepadIconShape.LABEL;
-        params.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myLabel = "T";
-        params.myButtonParams[PP.Handedness.LEFT][PP.GamepadButtonID.SELECT].myIconParams.myLabelFontSize = 2;
+        for (let handedness in params.myButtonParams) {
+            for (let gamepadButtonID in params.myButtonParams[handedness]) {
+                let buttonParams = params.myButtonParams[handedness][gamepadButtonID];
+                buttonParams.myIconParams.myBackColor = this._myBackColor;
+                buttonParams.myIconParams.myBackColorPressed = this._myIconColor;
+                buttonParams.myIconParams.myIconColor = this._myIconColor;
+                buttonParams.myIconParams.myIconColorPressed = this._myBackColor;
+            }
+        }
 
-        params.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myIconShape = VirtualGamepadIconShape.IMAGE;
-        params.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myImageURL = "./image2.png";
-        params.myButtonParams[PP.Handedness.RIGHT][PP.GamepadButtonID.TOP_BUTTON].myIconParams.myImageBrightnessPressed = 0.5;
+        for (let handedness in params.myThumbstickParams) {
+            let thumbstickParams = params.myThumbstickParams[handedness];
+            thumbstickParams.myBackColor = this._myBackColor;
+            thumbstickParams.myIconParams.myBackColor = this._myIconColor;
+            thumbstickParams.myIconParams.myBackColorPressed = this._myIconColor;
+            thumbstickParams.myIconParams.myIconColor = this._myBackColor;
+            thumbstickParams.myIconParams.myIconColorPressed = this._myBackColor;
+        }
 
-        params.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myBackColorPressed = params.myThumbstickParams[PP.Handedness.RIGHT].myBackColor;
-        params.myThumbstickParams[PP.Handedness.RIGHT].myBackColor = "#123123";
-        params.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myIconShape = VirtualGamepadIconShape.IMAGE;
-        params.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myImageURL = "./image2.png";
-        params.myThumbstickParams[PP.Handedness.RIGHT].myIconParams.myImageBrightnessPressed = 1.5;
+        params.myReleaseOnMouseLeave = this._myReleaseOnMouseLeave;
+        params.myInterfaceScale = this._myInterfaceScale;
+        params.myMarginScale = this._myMarginScale;
 
-        params.myButtonsOrder[PP.Handedness.LEFT][2] = null;
+        params.myShowOnDesktopBrowser = this._myShowOnDesktopBrowser;
+        params.myShowOnVRBrowser = this._myShowOnVRBrowser;
+        params.myShowOnMobileBrowser = this._myShowOnMobileBrowser;
 
-        params.myReleaseOnMouseLeave = false;
-        params.myScaleInterface = 1;
-        params.myScaleMargin = 1;
-
-        params.myShowOnDesktopBrowser = false;
-        params.myShowOnVRBrowser = true;
-        params.myShowOnMobileBrowser = true;
+        if (params.myShowOnDesktopBrowser || params.myShowOnVRBrowser || params.myShowOnMobileBrowser) {
+            params.myAutoUpdateVisibility = true;
+        } else {
+            params.myAutoUpdateVisibility = false;
+        }
 
         this._myVirtualGamepad = new VirtualGamepad(params);
+        if (!params.myAutoUpdateVisibility) {
+            this._myVirtualGamepad.setVisible(false);
+        }
 
         this._myVirtualGamepad.start();
     },

@@ -201,6 +201,7 @@ require('./pp/tool/widget_frame/widget_frame');
 require('./mobile_gamepad/joystick_ns_tcg');
 require('./mobile_gamepad/mobile_gamepad_draft_1');
 require('./mobile_gamepad/virtual_gamepad');
+require('./mobile_gamepad/virtual_gamepad_component_draft');
 require('./mobile_gamepad/virtual_gamepad_component');
 require('./mobile_gamepad/virtual_gamepad_params');
 require('./mobile_gamepad/virtual_gamepad_virtual_button');

@@ -629,7 +629,11 @@
             "parent": "18",
             "components": [
                 {
-                    "type": "virtual-gamepad"
+                    "type": "virtual-gamepad",
+                    "virtual-gamepad": {
+                        "_myShowOnDesktopBrowser": false,
+                        "_myShowOnVRBrowser": false
+                    }
                 }
             ]
         }
