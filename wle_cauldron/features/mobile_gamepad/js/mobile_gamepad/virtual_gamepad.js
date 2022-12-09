@@ -33,30 +33,30 @@ VirtualGamepad = class VirtualGamepad {
     }
 
     setVisible(visible) {
-        if (this._myVirtualGamepadContainer == null) return;
-
         if (this._myVisible != visible) {
             this._myVisible = visible;
 
-            if (this._myVisible) {
-                this._myVirtualGamepadContainer.style.display = "block";
-            } else {
-                this._myVirtualGamepadContainer.style.display = "none";
-            }
+            if (this._myVirtualGamepadContainer != null) {
+                if (this._myVisible) {
+                    this._myVirtualGamepadContainer.style.display = "block";
+                } else {
+                    this._myVirtualGamepadContainer.style.display = "none";
+                }
 
-            for (let handedness in this._myVirtualGamepadVirtualButtons) {
-                for (let gamepadButtonID in this._myVirtualGamepadVirtualButtons[handedness]) {
-                    let button = this._myVirtualGamepadVirtualButtons[handedness][gamepadButtonID];
-                    if (button != null) {
-                        button.reset();
+                for (let handedness in this._myVirtualGamepadVirtualButtons) {
+                    for (let gamepadButtonID in this._myVirtualGamepadVirtualButtons[handedness]) {
+                        let button = this._myVirtualGamepadVirtualButtons[handedness][gamepadButtonID];
+                        if (button != null) {
+                            button.reset();
+                        }
                     }
                 }
-            }
 
-            for (let handedness in this._myVirtualGamepadVirtualThumbsticks) {
-                let thumbstick = this._myVirtualGamepadVirtualThumbsticks[handedness];
-                if (thumbstick != null) {
-                    thumbstick.reset();
+                for (let handedness in this._myVirtualGamepadVirtualThumbsticks) {
+                    let thumbstick = this._myVirtualGamepadVirtualThumbsticks[handedness];
+                    if (thumbstick != null) {
+                        thumbstick.reset();
+                    }
                 }
             }
         }
@@ -94,13 +94,13 @@ VirtualGamepad = class VirtualGamepad {
 
     update(dt) {
         if (this._myParams.myAutoUpdateVisibility) {
-            if (PP.XRUtils.isSessionActive() && PP.BrowserUtils.isVRBrowser()) {
+            if (PP.XRUtils.isSessionActive() && WL.vrSupported == 1) {
                 this.setVisible(false);
-            } else if (this._myParams.myShowOnDesktopBrowser && PP.BrowserUtils.isDesktopBrowser()) {
+            } else if (this._myParams.myShowOnDesktopBrowser && PP.BrowserUtils.isDesktop() && WL.vrSupported == 0) {
                 this.setVisible(true);
-            } else if (this._myParams.myShowOnVRBrowser && PP.BrowserUtils.isVRBrowser()) {
+            } else if (this._myParams.myShowOnHeadset && PP.BrowserUtils.isDesktop() && WL.vrSupported == 1) {
                 this.setVisible(true);
-            } else if (this._myParams.myShowOnMobileBrowser && PP.BrowserUtils.isMobileBrowser()) {
+            } else if (this._myParams.myShowOnMobileBrowser && PP.BrowserUtils.isMobile()) {
                 this.setVisible(true);
             } else {
                 this.setVisible(false);

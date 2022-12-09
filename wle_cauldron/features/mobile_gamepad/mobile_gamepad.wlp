@@ -632,7 +632,9 @@
                     "type": "virtual-gamepad",
                     "virtual-gamepad": {
                         "_myShowOnDesktopBrowser": false,
-                        "_myShowOnVRBrowser": false
+                        "_myShowOnVRBrowser": false,
+                        "_myShowOnMobileBrowser": true,
+                        "_myShowOnHeadset": true
                     }
                 }
             ]

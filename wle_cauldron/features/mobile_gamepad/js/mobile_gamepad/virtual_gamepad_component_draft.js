@@ -25,7 +25,7 @@ WL.registerComponent("virtual-gamepad-draft", {
         params.myMarginScale = 1;
 
         params.myShowOnDesktopBrowser = false;
-        params.myShowOnVRBrowser = true;
+        params.myShowOnHeadset = true;
         params.myShowOnMobileBrowser = true;
 
         this._myVirtualGamepad = new VirtualGamepad(params);

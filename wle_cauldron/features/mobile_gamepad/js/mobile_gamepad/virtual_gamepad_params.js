@@ -18,8 +18,8 @@ VirtualGamepadThumbstickParams = class VirtualGamepadThumbstickParams {
 VirtualGamepadParams = class VirtualGamepadParams {
     constructor() {
         this.myShowOnDesktopBrowser = false;
-        this.myShowOnVRBrowser = false;
         this.myShowOnMobileBrowser = false;
+        this.myShowOnHeadset = false;   // not 100% reliable, this is true if the device supports vr and it is desktop
 
         this.myAutoUpdateVisibility = false;
 
