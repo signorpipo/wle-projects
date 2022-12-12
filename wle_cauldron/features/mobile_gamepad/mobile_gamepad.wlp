@@ -625,7 +625,7 @@
             ]
         },
         "153": {
-            "name": "Virtual Gamepad",
+            "name": "Virtual Gamepad Custom",
             "parent": "18",
             "components": [
                 {
@@ -635,8 +635,22 @@
                         "_myShowOnVRBrowser": false,
                         "_myShowOnMobileBrowser": true,
                         "_myShowOnHeadset": true,
-                        "_myOpacity": 0.5
-                    }
+                        "_myOpacity": 0.5,
+                        "_myInterfaceScale": 1.0,
+                        "_myShowOnMobile": true,
+                        "_myShowOnDesktop": true,
+                        "_myLeftSelectButtonVisible": false,
+                        "_myLeftThumbstickButtonVisible": false,
+                        "_myRightTopButtonVisible": false,
+                        "_myLeftTopButtonOrderIndex": 4,
+                        "_myRightSelectButtonOrderIndex": 2,
+                        "_myRightThumbstickButtonOrderIndex": 2,
+                        "_myRightThumbstickButtonIconType": "label",
+                        "_myRightThumbstickButtonIconLabelOrImageUrl": "C",
+                        "_myRightBottomButtonIconLabelOrImageUrl": "./image2.png",
+                        "_myRightBottomButtonIconType": "image"
+                    },
+                    "active": false
                 }
             ]
         },
@@ -871,6 +885,19 @@
                 1.0,
                 1.0,
                 1.0
+            ]
+        },
+        "173": {
+            "name": "Virtual Gamepad",
+            "parent": "18",
+            "components": [
+                {
+                    "type": "virtual-gamepad",
+                    "virtual-gamepad": {
+                        "_myShowOnDesktop": true,
+                        "_myShowOnHeadset": true
+                    }
+                }
             ]
         }
     },
@@ -1328,7 +1355,8 @@
             "version": [
                 0,
                 9,
-                4
+                5,
+                2
             ]
         },
         "rendering": {

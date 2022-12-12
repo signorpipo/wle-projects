@@ -125,10 +125,18 @@ require('./pp/input/gamepad/universal_gamepad');
 require('./pp/input/gamepad/gamepad_cores/gamepad_core');
 require('./pp/input/gamepad/gamepad_cores/xr_gamepad_core');
 require('./pp/input/gamepad/gamepad_cores/keyboard_gamepad_core');
+require('./pp/input/gamepad/gamepad_cores/virtual_gamepad_gamepad_core');
 require('./pp/input/gamepad/cauldron/gamepad_mesh_animator');
 require('./pp/input/gamepad/cauldron/gamepad_manager');
 require('./pp/input/gamepad/cauldron/gamepad_utils');
 require('./pp/input/gamepad/cauldron/gamepad_control_scheme');
+
+require('./pp/input/virtual_gamepad/virtual_gamepad');
+require('./pp/input/virtual_gamepad/virtual_gamepad_component');
+require('./pp/input/virtual_gamepad/virtual_gamepad_params');
+require('./pp/input/virtual_gamepad/virtual_gamepad_virtual_button');
+require('./pp/input/virtual_gamepad/virtual_gamepad_virtual_thumbstick');
+require('./pp/input/virtual_gamepad/virtual_gamepad_icon');
 
 require('./pp/input/pose/base_pose.js');
 require('./pp/input/pose/hand_pose');
@@ -200,14 +208,7 @@ require('./pp/tool/widget_frame/widget_frame');
 
 require('./mobile_gamepad/joystick_ns_tcg');
 require('./mobile_gamepad/mobile_gamepad_draft_1');
-require('./mobile_gamepad/virtual_gamepad');
 require('./mobile_gamepad/virtual_gamepad_component_draft');
-require('./mobile_gamepad/virtual_gamepad_component');
-require('./mobile_gamepad/virtual_gamepad_params');
-require('./mobile_gamepad/virtual_gamepad_virtual_button');
-require('./mobile_gamepad/virtual_gamepad_virtual_thumbstick');
-require('./mobile_gamepad/virtual_gamepad_icon');
-require('./mobile_gamepad/virtual_gamepad_gamepad_core');
 
 //TEST
 

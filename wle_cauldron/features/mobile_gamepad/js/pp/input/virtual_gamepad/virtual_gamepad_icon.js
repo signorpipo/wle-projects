@@ -1,4 +1,4 @@
-VirtualGamepadIconShape = {
+VirtualGamepadIconType = {
     NONE: 0,
     LABEL: 1,
     IMAGE: 2,
@@ -12,23 +12,23 @@ VirtualGamepadIconShape = {
 VirtualGamepadIconParams = class VirtualGamepadIconParams {
     constructor() {
         this.myBackgroundColor = "";
-        this.myBackgroundColorPressed = "";
+        this.myBackgroundPressedColor = "";
         this.myIconColor = "";
-        this.myIconColorPressed = "";
+        this.myIconPressedColor = "";
 
-        this.myIconShape = VirtualGamepadIconShape.NONE;
+        this.myIconType = VirtualGamepadIconType.NONE;
 
-        // if icon shape is label
+        // if icon type is label
 
         this.myLabel = "";
         this.myLabelFontSize = 0;
         this.myLabelFontFamily = "";
         this.myLabelFontWeight = "";
 
-        // if icon shape is image
+        // if icon type is image
 
         this.myImageURL = "";
-        this.myImageBrightnessPressed = 1;
+        this.myImagePressedBrightness = 1;
     }
 };
 
@@ -48,18 +48,18 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
         if (this._myPressed != pressed) {
             this._myPressed = pressed;
 
-            if (this._myParams.myIconShape != VirtualGamepadIconShape.NONE) {
+            if (this._myParams.myIconType != VirtualGamepadIconType.NONE) {
                 if (this._myIconElement != null) {
                     if (this._myPressed) {
-                        this._myBackgroundElement.style.fill = this._myParams.myBackgroundColorPressed;
+                        this._myBackgroundElement.style.fill = this._myParams.myBackgroundPressedColor;
                         if (this._myIconElement.style.strokeWidth.length > 0) {
-                            this._myIconElement.style.stroke = this._myParams.myIconColorPressed;
+                            this._myIconElement.style.stroke = this._myParams.myIconPressedColor;
                         } else {
-                            this._myIconElement.style.fill = this._myParams.myIconColorPressed;
+                            this._myIconElement.style.fill = this._myParams.myIconPressedColor;
                         }
 
-                        if (this._myParams.myIconShape == VirtualGamepadIconShape.IMAGE) {
-                            this._myIconElement.style.filter = "brightness(" + this._myParams.myImageBrightnessPressed + ")";
+                        if (this._myParams.myIconType == VirtualGamepadIconType.IMAGE) {
+                            this._myIconElement.style.filter = "brightness(" + this._myParams.myImagePressedBrightness + ")";
                         }
                     } else {
                         this._myBackgroundElement.style.fill = this._myParams.myBackgroundColor;
@@ -69,7 +69,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                             this._myIconElement.style.fill = this._myParams.myIconColor;
                         }
 
-                        if (this._myParams.myIconShape == VirtualGamepadIconShape.IMAGE) {
+                        if (this._myParams.myIconType == VirtualGamepadIconType.IMAGE) {
                             this._myIconElement.style.filter = "none";
                         }
                     }
@@ -92,10 +92,10 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
         this._myBackgroundElement.style.fill = this._myParams.myBackgroundColor;
         iconContainer.appendChild(this._myBackgroundElement);
 
-        switch (this._myParams.myIconShape) {
-            case VirtualGamepadIconShape.NONE:
+        switch (this._myParams.myIconType) {
+            case VirtualGamepadIconType.NONE:
                 break;
-            case VirtualGamepadIconShape.LABEL:
+            case VirtualGamepadIconType.LABEL:
                 this._myIconElement = document.createElementNS("http://www.w3.org/2000/svg", 'text');
                 this._myIconElement.setAttributeNS(null, 'x', "50%");
                 this._myIconElement.setAttributeNS(null, 'y', "50%");
@@ -110,7 +110,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                 this._myIconElement.textContent = this._myParams.myLabel;
                 iconContainer.appendChild(this._myIconElement);
                 break;
-            case VirtualGamepadIconShape.IMAGE:
+            case VirtualGamepadIconType.IMAGE:
                 this._myIconElement = document.createElementNS("http://www.w3.org/2000/svg", 'image');
                 this._myIconElement.setAttributeNS(null, 'x', "0%");
                 this._myIconElement.setAttributeNS(null, 'y', "0%");
@@ -120,7 +120,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                 this._myIconElement.style.filter = "none";
                 iconContainer.appendChild(this._myIconElement);
                 break;
-            case VirtualGamepadIconShape.DOT:
+            case VirtualGamepadIconType.DOT:
                 this._myIconElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
                 this._myIconElement.setAttributeNS(null, 'cx', "50%");
                 this._myIconElement.setAttributeNS(null, 'cy', "50%");
@@ -128,7 +128,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                 this._myIconElement.style.fill = this._myParams.myIconColor;
                 iconContainer.appendChild(this._myIconElement);
                 break;
-            case VirtualGamepadIconShape.CIRCLE:
+            case VirtualGamepadIconType.CIRCLE:
                 this._myIconElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
                 this._myIconElement.setAttributeNS(null, 'cx', "50%");
                 this._myIconElement.setAttributeNS(null, 'cy', "50%");
@@ -136,7 +136,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                 this._myIconElement.style.fill = this._myParams.myIconColor;
                 iconContainer.appendChild(this._myIconElement);
                 break;
-            case VirtualGamepadIconShape.SQUARE:
+            case VirtualGamepadIconType.SQUARE:
                 this._myIconElement = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
                 this._myIconElement.setAttributeNS(null, 'x', "28%");
                 this._myIconElement.setAttributeNS(null, 'y', "28%");
@@ -148,7 +148,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                 this._myIconElement.style.transformOrigin = "center";
                 iconContainer.appendChild(this._myIconElement);
                 break;
-            case VirtualGamepadIconShape.RING:
+            case VirtualGamepadIconType.RING:
                 this._myIconElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
                 this._myIconElement.setAttributeNS(null, 'cx', "50%");
                 this._myIconElement.setAttributeNS(null, 'cy', "50%");
@@ -158,7 +158,7 @@ VirtualGamepadIcon = class VirtualGamepadIcon {
                 this._myIconElement.style.strokeWidth = "10%";
                 iconContainer.appendChild(this._myIconElement);
                 break;
-            case VirtualGamepadIconShape.FRAME:
+            case VirtualGamepadIconType.FRAME:
                 this._myIconElement = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
                 this._myIconElement.setAttributeNS(null, 'x', "31.5%");
                 this._myIconElement.setAttributeNS(null, 'y', "31.5%");

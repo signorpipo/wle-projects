@@ -96,11 +96,11 @@ VirtualGamepad = class VirtualGamepad {
         if (this._myParams.myAutoUpdateVisibility) {
             if (PP.XRUtils.isSessionActive() && WL.vrSupported == 1) {
                 this.setVisible(false);
-            } else if (this._myParams.myShowOnDesktopBrowser && PP.BrowserUtils.isDesktop() && WL.vrSupported == 0) {
+            } else if (this._myParams.myShowOnDesktop && PP.BrowserUtils.isDesktop() && WL.vrSupported == 0) {
                 this.setVisible(true);
             } else if (this._myParams.myShowOnHeadset && PP.BrowserUtils.isDesktop() && WL.vrSupported == 1) {
                 this.setVisible(true);
-            } else if (this._myParams.myShowOnMobileBrowser && PP.BrowserUtils.isMobile()) {
+            } else if (this._myParams.myShowOnMobile && PP.BrowserUtils.isMobile()) {
                 this.setVisible(true);
             } else {
                 this.setVisible(false);
