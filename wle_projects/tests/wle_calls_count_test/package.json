@@ -23,7 +23,7 @@
     "webxr"
   ],
   "dependencies": {
-    "@wonderlandengine/api": "0.9.4",
+    "@wonderlandengine/api": "0.9.6",
     "@wonderlandengine/components": "^0.8.16",
     "gl-matrix": "^3.4.3",
     "howler": "^2.2.3"
