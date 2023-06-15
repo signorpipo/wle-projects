@@ -13,6 +13,7 @@
 
 /* wle:auto-imports:start */
 import {MouseLookComponent} from '@wonderlandengine/components';
+import {LoadSceneComponent} from './cauldron/load_scene_component.js';
 import {FadeViewComponent} from './playground/components/fade_view_component.js';
 import {FunComponent} from './playground/components/fun_component.js';
 import {GrabbableSpawnerComponent} from './playground/components/grabbable_spawner_component.js';
@@ -96,6 +97,7 @@ if (document.readyState === 'loading') {
 
 /* wle:auto-register:start */
 engine.registerComponent(MouseLookComponent);
+engine.registerComponent(LoadSceneComponent);
 engine.registerComponent(FadeViewComponent);
 engine.registerComponent(FunComponent);
 engine.registerComponent(GrabbableSpawnerComponent);

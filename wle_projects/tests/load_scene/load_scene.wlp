@@ -29,6 +29,9 @@
                 },
                 {
                     "type": "pp-virtual-gamepad"
+                },
+                {
+                    "type": "load-scene"
                 }
             ]
         },
@@ -2880,7 +2883,8 @@
             "sourcePaths": [
                 "js",
                 "js/pp/index.js",
-                "js/playground/components"
+                "js/playground/components",
+                "js/cauldron"
             ],
             "bundlingType": "esbuild",
             "libraryPaths": [
@@ -3035,8 +3039,14 @@
     "textures": {},
     "images": {},
     "files": [
-        "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
-        "assets/models/pp/wondermelon.fbx"
+        {
+            "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
+            "importerName": "AssimpImporter"
+        },
+        {
+            "fileName": "assets/models/pp/wondermelon.fbx",
+            "importerName": "AssimpImporter"
+        }
     ],
     "fonts": {
         "147": {
