@@ -2,6 +2,7 @@ WL.registerComponent("reset-view-bug", {
     _myText: { type: WL.Type.Object }
 }, {
     init() {
+        this._myNextUpdate = 0;
         this._myLastPosition = [0, 0, 0];
         this._myLastLastPosition = [0, 0, 0];
         this._myTextComponent = this._myText.getComponent("text");
@@ -33,6 +34,13 @@ WL.registerComponent("reset-view-bug", {
                 this._myLastPosition[2] = xrPose.transform.position.z;
             }
         }
+
+        if (this._myNextUpdate > 0) {
+            this._myNextUpdate--;
+            if (this._myNextUpdate == 0) {
+                this._myTextComponent.text = this._myTextComponent.text.concat("After After View Reset: [", this._myLastPosition[0].toFixed(4), ", ", this._myLastPosition[1].toFixed(4), ", ", this._myLastPosition[2].toFixed(4), "]\n");
+            }
+        }
     },
     _onXRSessionStart(session) {
         session.requestReferenceSpace(WebXR.refSpace).then(function (referenceSpace) {
@@ -53,5 +61,6 @@ WL.registerComponent("reset-view-bug", {
         this.update(0);
         text = text.concat("After View Reset: [", this._myLastPosition[0].toFixed(4), ", ", this._myLastPosition[1].toFixed(4), ", ", this._myLastPosition[2].toFixed(4), "]\n");
         this._myTextComponent.text = text;
+        this._myNextUpdate = 2;
     }
 });
