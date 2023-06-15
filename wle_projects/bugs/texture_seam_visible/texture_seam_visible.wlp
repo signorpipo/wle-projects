@@ -1,0 +1,1158 @@
+{
+    "objects": {
+        "14": {
+            "name": "Player",
+            "components": [
+                {
+                    "type": "wasd-controls",
+                    "wasd-controls": {
+                        "headObject": "17",
+                        "speed": 0.0199999
+                    }
+                }
+            ],
+            "translation": [
+                -3.2591099,
+                1.8000135,
+                1.7569212
+            ],
+            "rotation": [
+                0.0,
+                -0.3768199,
+                0.0,
+                0.9262865
+            ],
+            "scaling": [
+                0.9999998,
+                1.0,
+                0.9999998
+            ]
+        },
+        "15": {
+            "name": "FloorPlane",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "92"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                1.1920928955078125e-7
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071068
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "17": {
+            "name": "NonVrCamera",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "mouse-look"
+                }
+            ]
+        },
+        "18": {
+            "name": "EyeLeft",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye left"
+                    }
+                }
+            ]
+        },
+        "19": {
+            "name": "EyeRight",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye right"
+                    }
+                }
+            ]
+        },
+        "21": {
+            "name": "Light",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "intensity": 3.3329999
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                3.0,
+                2.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "23": {
+            "name": "Light.000",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "intensity": 3.3329999
+                    }
+                }
+            ],
+            "translation": [
+                -1.0,
+                3.0,
+                -1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "27": {
+            "name": "Sphere",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "9",
+                        "material": "26"
+                    },
+                    "active": true
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                20.0,
+                20.0,
+                20.0
+            ]
+        },
+        "93": {
+            "name": "FloorPlane",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "92"
+                    }
+                }
+            ],
+            "translation": [
+                2.0,
+                0.0,
+                1.192145475670259e-7
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071068
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "parent": null
+        },
+        "94": {
+            "name": "FloorPlane",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "92"
+                    }
+                }
+            ],
+            "translation": [
+                2.384185791015625e-7,
+                0.0,
+                2.0
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                1.0,
+                0.9999894,
+                0.9999894
+            ],
+            "parent": null
+        },
+        "95": {
+            "name": "FloorPlane",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "92"
+                    }
+                }
+            ],
+            "translation": [
+                2.0,
+                0.0,
+                2.0
+            ],
+            "rotation": [
+                -0.7071068,
+                0.0,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                1.0,
+                0.9999894,
+                0.9999894
+            ],
+            "parent": null
+        }
+    },
+    "meshes": {
+        "7": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        }
+    },
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "55"
+            }
+        },
+        "20": {
+            "name": "White",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "emissiveColor": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "22": {
+            "name": "Pink",
+            "Phong": {
+                "diffuseColor": [
+                    0.9098039,
+                    0.0,
+                    0.5411764,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.999911299019004e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 10,
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.317647,
+                    0.0,
+                    0.2165777,
+                    1.0
+                ]
+            }
+        },
+        "25": {
+            "name": "Yellow",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.8039215,
+                    0.0,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.3843137,
+                    0.3089579,
+                    0.0,
+                    1.0
+                ]
+            }
+        },
+        "26": {
+            "name": "Green",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "diffuseTexture": "87"
+            },
+            "pipeline": "38"
+        },
+        "92": {
+            "name": "asd",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "diffuseTexture": "85",
+                "fogColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ],
+                "emissiveTexture": null
+            },
+            "pipeline": "38"
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "DistanceFieldVector Textured.frag",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "Flat Textured.frag",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Phong Textured.frag",
+                "file": "default"
+            }
+        },
+        "28": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "29": {
+            "link": {
+                "name": "Particle Textured.frag",
+                "file": "default"
+            }
+        },
+        "30": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "31": {
+            "link": {
+                "name": "Static.frag",
+                "file": "default"
+            }
+        },
+        "32": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "39": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        },
+        "42": {
+            "link": {
+                "name": "Background.frag",
+                "file": "default"
+            }
+        },
+        "43": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "45": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "46": {
+            "link": {
+                "name": "Physical.frag",
+                "file": "default"
+            }
+        },
+        "49": {
+            "link": {
+                "name": "Sky.frag",
+                "file": "default"
+            }
+        },
+        "50": {
+            "link": {
+                "name": "Text.frag",
+                "file": "default"
+            }
+        },
+        "52": {
+            "link": {
+                "name": "Text.vert",
+                "file": "default"
+            }
+        },
+        "53": {
+            "link": {
+                "name": "TileFeedback.frag",
+                "file": "default"
+            }
+        }
+    },
+    "settings": {
+        "project": {
+            "name": "texture-seam-visible",
+            "version": [
+                1,
+                0,
+                3
+            ]
+        },
+        "vr": {
+            "leftEyeObject": "18",
+            "rightEyeObject": "19"
+        },
+        "scripting": {
+            "sourcePaths": [
+                "js/"
+            ],
+            "bundlingType": "esbuild",
+            "libraryPaths": [
+                "/js/lib/"
+            ]
+        },
+        "editor": {
+            "camera": {
+                "near": 0.001,
+                "far": 1000.0
+            }
+        },
+        "rendering": {
+            "textureAtlasSize": [
+                8192,
+                8192
+            ]
+        }
+    },
+    "animations": {},
+    "skins": {},
+    "pipelines": {
+        "33": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "34": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "35": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            }
+        },
+        "36": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "37": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true,
+                "WITH_EMISSIVE": true
+            }
+        },
+        "38": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            },
+            "doubleSided": true
+        },
+        "40": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            }
+        },
+        "41": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "44": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "47": {
+            "link": {
+                "name": "Physical Opaque",
+                "file": "default"
+            }
+        },
+        "48": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            }
+        },
+        "51": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "54": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            }
+        },
+        "56": {
+            "link": {
+                "name": "Phong Normalmapped",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            }
+        },
+        "57": {
+            "link": {
+                "name": "Phong Lightmapped",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            }
+        }
+    },
+    "textures": {
+        "59": {
+            "link": {
+                "name": "60.webp",
+                "file": "assets\\textures\\60.webp"
+            }
+        },
+        "61": {
+            "link": {
+                "name": "alberogrosso-fase1.webp",
+                "file": "assets\\textures\\alberogrosso-fase1.webp"
+            }
+        },
+        "63": {
+            "link": {
+                "name": "AlberoGrosso_fase1.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase1.webp"
+            }
+        },
+        "65": {
+            "link": {
+                "name": "AlberoGrosso_fase2.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase2.webp"
+            }
+        },
+        "67": {
+            "link": {
+                "name": "AlberoGrosso_fase3.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase3.webp"
+            }
+        },
+        "69": {
+            "link": {
+                "name": "AlberoGrosso_fase4.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase4.webp"
+            }
+        },
+        "71": {
+            "link": {
+                "name": "AlberoGrosso_fase5.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase5.webp"
+            }
+        },
+        "73": {
+            "link": {
+                "name": "Albero_Blu.webp",
+                "file": "assets\\textures\\Albero_Blu.webp"
+            }
+        },
+        "75": {
+            "link": {
+                "name": "Albero_Giallo.webp",
+                "file": "assets\\textures\\Albero_Giallo.webp"
+            }
+        },
+        "77": {
+            "link": {
+                "name": "Albero_Rosso.webp",
+                "file": "assets\\textures\\Albero_Rosso.webp"
+            }
+        },
+        "79": {
+            "link": {
+                "name": "RadiciAlbero_fase1Fixed.webp",
+                "file": "assets\\textures\\RadiciAlbero_fase1Fixed.webp"
+            }
+        },
+        "81": {
+            "link": {
+                "name": "RadiciAlbero_fase2Fixed.webp",
+                "file": "assets\\textures\\RadiciAlbero_fase2Fixed.webp"
+            }
+        },
+        "83": {
+            "link": {
+                "name": "RadiciAlbero_fase3Fixed.webp",
+                "file": "assets\\textures\\RadiciAlbero_fase3Fixed.webp"
+            }
+        },
+        "85": {
+            "link": {
+                "name": "terreno_laby.webp",
+                "file": "assets\\textures\\terreno_laby.webp"
+            }
+        },
+        "87": {
+            "link": {
+                "name": "sky_laby.webp",
+                "file": "assets\\textures\\sky_laby.webp"
+            }
+        },
+        "89": {
+            "link": {
+                "name": "radici_muro_2.webp",
+                "file": "assets\\textures\\radici_muro_2.webp"
+            }
+        },
+        "91": {
+            "link": {
+                "name": "radici_muro.webp",
+                "file": "assets\\textures\\radici_muro.webp"
+            }
+        },
+        "97": {
+            "link": {
+                "name": "aXE_DEF_lambert1_AlbedoTransparency.webp",
+                "file": "assets\\textures\\aXE_DEF_lambert1_AlbedoTransparency.webp"
+            }
+        },
+        "99": {
+            "link": {
+                "name": "aXE_DEF_lambert1_MetallicSmoothness.webp",
+                "file": "assets\\textures\\aXE_DEF_lambert1_MetallicSmoothness.webp"
+            }
+        },
+        "101": {
+            "link": {
+                "name": "aXE_DEF_lambert1_Normal.webp",
+                "file": "assets\\textures\\aXE_DEF_lambert1_Normal.webp"
+            }
+        },
+        "103": {
+            "link": {
+                "name": "credits_brutti.webp",
+                "file": "assets\\textures\\credits_brutti.webp"
+            }
+        },
+        "105": {
+            "link": {
+                "name": "paper.webp",
+                "file": "assets\\textures\\paper.webp"
+            }
+        },
+        "107": {
+            "link": {
+                "name": "zesty.webp",
+                "file": "assets\\textures\\zesty.webp"
+            }
+        }
+    },
+    "images": {
+        "58": {
+            "link": {
+                "name": "60.webp",
+                "file": "assets\\textures\\60.webp"
+            },
+            "stream": false
+        },
+        "60": {
+            "link": {
+                "name": "alberogrosso-fase1.webp",
+                "file": "assets\\textures\\alberogrosso-fase1.webp"
+            },
+            "stream": false
+        },
+        "62": {
+            "link": {
+                "name": "AlberoGrosso_fase1.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase1.webp"
+            },
+            "stream": false
+        },
+        "64": {
+            "link": {
+                "name": "AlberoGrosso_fase2.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase2.webp"
+            },
+            "stream": false
+        },
+        "66": {
+            "link": {
+                "name": "AlberoGrosso_fase3.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase3.webp"
+            },
+            "stream": false
+        },
+        "68": {
+            "link": {
+                "name": "AlberoGrosso_fase4.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase4.webp"
+            },
+            "stream": false
+        },
+        "70": {
+            "link": {
+                "name": "AlberoGrosso_fase5.webp",
+                "file": "assets\\textures\\AlberoGrosso_fase5.webp"
+            },
+            "stream": false
+        },
+        "72": {
+            "link": {
+                "name": "Albero_Blu.webp",
+                "file": "assets\\textures\\Albero_Blu.webp"
+            },
+            "stream": false
+        },
+        "74": {
+            "link": {
+                "name": "Albero_Giallo.webp",
+                "file": "assets\\textures\\Albero_Giallo.webp"
+            },
+            "stream": false
+        },
+        "76": {
+            "link": {
+                "name": "Albero_Rosso.webp",
+                "file": "assets\\textures\\Albero_Rosso.webp"
+            },
+            "stream": false
+        },
+        "78": {
+            "link": {
+                "name": "RadiciAlbero_fase1Fixed.webp",
+                "file": "assets\\textures\\RadiciAlbero_fase1Fixed.webp"
+            },
+            "stream": false
+        },
+        "80": {
+            "link": {
+                "name": "RadiciAlbero_fase2Fixed.webp",
+                "file": "assets\\textures\\RadiciAlbero_fase2Fixed.webp"
+            },
+            "stream": false
+        },
+        "82": {
+            "link": {
+                "name": "RadiciAlbero_fase3Fixed.webp",
+                "file": "assets\\textures\\RadiciAlbero_fase3Fixed.webp"
+            },
+            "stream": false
+        },
+        "84": {
+            "link": {
+                "name": "terreno_laby.webp",
+                "file": "assets\\textures\\terreno_laby.webp"
+            },
+            "stream": false
+        },
+        "86": {
+            "link": {
+                "name": "sky_laby.webp",
+                "file": "assets\\textures\\sky_laby.webp"
+            },
+            "stream": false,
+            "maxSize": [
+                1024,
+                1024
+            ]
+        },
+        "88": {
+            "link": {
+                "name": "radici_muro_2.webp",
+                "file": "assets\\textures\\radici_muro_2.webp"
+            },
+            "stream": false
+        },
+        "90": {
+            "link": {
+                "name": "radici_muro.webp",
+                "file": "assets\\textures\\radici_muro.webp"
+            },
+            "stream": false
+        },
+        "96": {
+            "link": {
+                "name": "aXE_DEF_lambert1_AlbedoTransparency.webp",
+                "file": "assets\\textures\\aXE_DEF_lambert1_AlbedoTransparency.webp"
+            },
+            "stream": false
+        },
+        "98": {
+            "link": {
+                "name": "aXE_DEF_lambert1_MetallicSmoothness.webp",
+                "file": "assets\\textures\\aXE_DEF_lambert1_MetallicSmoothness.webp"
+            },
+            "stream": false
+        },
+        "100": {
+            "link": {
+                "name": "aXE_DEF_lambert1_Normal.webp",
+                "file": "assets\\textures\\aXE_DEF_lambert1_Normal.webp"
+            },
+            "stream": false
+        },
+        "102": {
+            "link": {
+                "name": "credits_brutti.webp",
+                "file": "assets\\textures\\credits_brutti.webp"
+            },
+            "stream": false
+        },
+        "104": {
+            "link": {
+                "name": "paper.webp",
+                "file": "assets\\textures\\paper.webp"
+            },
+            "stream": false
+        },
+        "106": {
+            "link": {
+                "name": "zesty.webp",
+                "file": "assets\\textures\\zesty.webp"
+            },
+            "stream": false
+        }
+    },
+    "fonts": {
+        "55": {
+            "link": {
+                "name": "DejaVuSans.ttf",
+                "file": "default"
+            }
+        }
+    },
+    "languages": {},
+    "files": [
+        {
+            "fileName": "assets/textures/60.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/alberogrosso-fase1.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/AlberoGrosso_fase1.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/AlberoGrosso_fase2.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/AlberoGrosso_fase3.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/AlberoGrosso_fase4.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/AlberoGrosso_fase5.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/Albero_Blu.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/Albero_Giallo.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/Albero_Rosso.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/RadiciAlbero_fase1Fixed.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/RadiciAlbero_fase2Fixed.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/RadiciAlbero_fase3Fixed.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/terreno_laby.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/sky_laby.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/radici_muro_2.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/radici_muro.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/aXE_DEF_lambert1_AlbedoTransparency.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/aXE_DEF_lambert1_MetallicSmoothness.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/aXE_DEF_lambert1_Normal.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/credits_brutti.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/paper.webp",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/textures/zesty.webp",
+            "importerName": ""
+        }
+    ]
+}
