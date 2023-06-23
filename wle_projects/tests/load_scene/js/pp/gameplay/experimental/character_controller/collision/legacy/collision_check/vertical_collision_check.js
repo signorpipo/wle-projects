@@ -9,6 +9,9 @@ CollisionCheck.prototype._verticalCheck = function () {
         collisionRuntimeParams.myIsCollidingVertically = false;
         collisionRuntimeParams.myVerticalCollisionHit.reset();
 
+        // #TODO the sign of 0 is by default downward, but it should probably be based on if u previously were on Ground or Ceiling
+        // If none, ok downward, if on Ground downward, if on Ceiling upward, so that even without @myCheckVerticalBothDirection
+        // if u were snapped to the ceiling u will keep snap on it even when 0 vertical movement
         let movementSign = Math.pp_sign(verticalMovement.vec3_lengthSigned(up), -1);
         let isMovementDownward = movementSign < 0;
 

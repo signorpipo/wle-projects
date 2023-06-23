@@ -1,9 +1,13 @@
 import { Globals } from "../../pp/globals";
 import { XRUtils } from "./xr_utils";
 
-export function isMobile(engine = Globals.getMainEngine()) {
-    return /Mobi/i.test(Globals.getNavigator(engine).userAgent);
-}
+export let isMobile = function () {
+    let checkMobile = new RegExp("Mobi", "i");
+    return function isMobile(engine = Globals.getMainEngine()) {
+        let userAgent = Globals.getNavigator(engine).userAgent;
+        return checkMobile.test(userAgent);
+    };
+}();
 
 export function isDesktop(engine = Globals.getMainEngine()) {
     return !BrowserUtils.isMobile(engine);

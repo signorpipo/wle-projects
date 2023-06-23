@@ -15,7 +15,9 @@ export function setCollisionCheck(collisionCheck, engine = Globals.getMainEngine
 }
 
 export function initBridge(engine = Globals.getMainEngine()) {
-    CollisionCheckBridge.setCollisionCheck(new CollisionCheck(engine), engine);
+    if (!_myCollisionChecks.has(engine)) {
+        CollisionCheckBridge.setCollisionCheck(new CollisionCheck(engine), engine);
+    }
 }
 
 export let checkMovement = function () {

@@ -56,6 +56,8 @@
             ○ pp_clear      
 
         GENERIC VECTOR (array with only numbers):
+            - vec_zero
+            - vec_isZero
             - vec_scale
             - vec_round     / vec_floor         / vec_ceil      / vec_clamp
             - vec_log       / vec_error         / vec_warn   
@@ -317,20 +319,12 @@ export function initArrayExtensionProtoype() {
 
     let vecExtension = {}
 
-    vecExtension.vec_toString = function vec_toString(decimalPlaces = null) {
-        return VecUtils.toString(this, ...arguments);
+    vecExtension.vec_zero = function vec_zero(out = null) {
+        return VecUtils.zero(this, ...arguments);
     };
 
-    vecExtension.vec_log = function vec_log(decimalPlaces = 4) {
-        return VecUtils.log(this, ...arguments);
-    };
-
-    vecExtension.vec_error = function vec_error(decimalPlaces = 4) {
-        return VecUtils.error(this, ...arguments);
-    };
-
-    vecExtension.vec_warn = function vec_warn(decimalPlaces = 4) {
-        return VecUtils.warn(this, ...arguments);
+    vecExtension.vec_isZero = function vec_isZero(epsilon = 0) {
+        return VecUtils.isZero(this, ...arguments);
     };
 
     vecExtension.vec_scale = function vec_scale(value, out = null) {
@@ -355,6 +349,22 @@ export function initArrayExtensionProtoype() {
 
     vecExtension.vec_equals = function vec_equals(vector, epsilon = 0) {
         return VecUtils.equals(this, ...arguments);
+    };
+
+    vecExtension.vec_toString = function vec_toString(decimalPlaces = null) {
+        return VecUtils.toString(this, ...arguments);
+    };
+
+    vecExtension.vec_log = function vec_log(decimalPlaces = 4) {
+        return VecUtils.log(this, ...arguments);
+    };
+
+    vecExtension.vec_error = function vec_error(decimalPlaces = 4) {
+        return VecUtils.error(this, ...arguments);
+    };
+
+    vecExtension.vec_warn = function vec_warn(decimalPlaces = 4) {
+        return VecUtils.warn(this, ...arguments);
     };
 
     // VECTOR 2
