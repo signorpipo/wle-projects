@@ -35,7 +35,7 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "8",
-                        "material": "22"
+                        "material": "61"
                     }
                 },
                 {
@@ -67,7 +67,7 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "10",
-                        "material": "25"
+                        "material": "62"
                     }
                 }
             ],
@@ -95,7 +95,7 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "9",
-                        "material": "26"
+                        "material": "63"
                     }
                 }
             ],
@@ -191,9 +191,9 @@
                     1.0
                 ],
                 "ambientColor": [
-                    0.05,
-                    0.05,
-                    0.05,
+                    0.618834,
+                    0.618834,
+                    0.618834,
                     1.0
                 ],
                 "diffuseColor": [
@@ -221,9 +221,9 @@
                 ],
                 "shininess": 10,
                 "ambientColor": [
-                    0.05,
-                    0.05,
-                    0.05,
+                    0.8475336,
+                    0.8475336,
+                    0.8475336,
                     1.0
                 ],
                 "emissiveColor": [
@@ -279,9 +279,9 @@
                     1.0
                 ],
                 "ambientColor": [
-                    0.05,
-                    0.05,
-                    0.05,
+                    1.0,
+                    1.0,
+                    1.0,
                     1.0
                 ],
                 "emissiveColor": [
@@ -291,6 +291,76 @@
                     1.0
                 ]
             }
+        },
+        "61": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "55"
+            },
+            "name": "Cube Material",
+            "pipeline": "38",
+            "Phong": {
+                "diffuseTexture": "60",
+                "ambientColor": [
+                    0.309417,
+                    0.309417,
+                    0.309417,
+                    1.0
+                ]
+            }
+        },
+        "62": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "55"
+            },
+            "name": "Cone Material",
+            "pipeline": "38",
+            "Phong": {
+                "ambientColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "diffuseTexture": "60"
+            }
+        },
+        "63": {
+            "name": "Sphere Green",
+            "Phong": {
+                "diffuseColor": [
+                    0.1529411,
+                    0.7882353,
+                    0.5411764,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.0,
+                    0.2352941,
+                    0.1437908,
+                    1.0
+                ]
+            },
+            "pipeline": "37"
         }
     },
     "shaders": {
@@ -474,8 +544,8 @@
                 "file": "default"
             },
             "features": {
-                "DEPRECATED_LIGHT_ATTENUATION": true,
-                "WITH_EMISSIVE": true
+                "DEPRECATED_LIGHT_ATTENUATION": false,
+                "WITH_EMISSIVE": false
             }
         },
         "38": {
@@ -549,10 +619,35 @@
             "features": {
                 "DEPRECATED_LIGHT_ATTENUATION": true
             }
+        },
+        "64": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true,
+                "WITH_EMISSIVE": true
+            },
+            "name": "My Phong Opaque"
         }
     },
-    "textures": {},
-    "images": {},
+    "textures": {
+        "60": {
+            "link": {
+                "name": "sky_laby.png",
+                "file": "assets\\textures\\sky_laby.png"
+            }
+        }
+    },
+    "images": {
+        "59": {
+            "link": {
+                "name": "sky_laby.png",
+                "file": "assets\\textures\\sky_laby.png"
+            }
+        }
+    },
     "fonts": {
         "55": {
             "link": {
@@ -561,5 +656,11 @@
             }
         }
     },
-    "languages": {}
+    "languages": {},
+    "files": [
+        {
+            "fileName": "assets/textures/sky_laby.png",
+            "importerName": ""
+        }
+    ]
 }

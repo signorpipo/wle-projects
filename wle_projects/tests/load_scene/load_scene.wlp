@@ -2364,7 +2364,7 @@
                     "type": "mesh",
                     "mesh": {
                         "mesh": "p1",
-                        "material": "148"
+                        "material": "236"
                     }
                 },
                 {
@@ -2814,6 +2814,26 @@
         "231": {
             "name": "material",
             "pipeline": "85"
+        },
+        "236": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "147"
+            },
+            "name": "Cube Material",
+            "pipeline": "14",
+            "Phong": {
+                "diffuseTexture": "235",
+                "ambientColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
         }
     },
     "shaders": {
@@ -3102,8 +3122,22 @@
             "blendEqAlpha": "max"
         }
     },
-    "textures": {},
-    "images": {},
+    "textures": {
+        "235": {
+            "link": {
+                "name": "terreno_laby.png",
+                "file": "assets\\textures\\terreno_laby.png"
+            }
+        }
+    },
+    "images": {
+        "234": {
+            "link": {
+                "name": "terreno_laby.png",
+                "file": "assets\\textures\\terreno_laby.png"
+            }
+        }
+    },
     "files": [
         {
             "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
@@ -3112,6 +3146,10 @@
         {
             "fileName": "assets/models/pp/wondermelon.fbx",
             "importerName": "AssimpImporter"
+        },
+        {
+            "fileName": "assets/textures/terreno_laby.png",
+            "importerName": ""
         }
     ],
     "fonts": {
