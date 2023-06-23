@@ -13,7 +13,9 @@
 
 /* wle:auto-imports:start */
 import {MouseLookComponent} from '@wonderlandengine/components';
-import {LoadSceneComponent} from './cauldron/load_scene_component.js';
+import {AppendSceneComponent} from './cauldron/components/append_scene_component.js';
+import {LoadSceneAfterDelayComponent} from './cauldron/components/load_scene_after_delay_component.js';
+import {LoadSceneComponent} from './cauldron/components/load_scene_component.js';
 import {FadeViewComponent} from './playground/components/fade_view_component.js';
 import {FunComponent} from './playground/components/fun_component.js';
 import {GrabbableSpawnerComponent} from './playground/components/grabbable_spawner_component.js';
@@ -53,7 +55,7 @@ const RuntimeOptions = {
     canvas: 'canvas',
 };
 const Constants = {
-    ProjectName: 'wle_pplayground_unbundled',
+    ProjectName: 'load-scene',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
     WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
@@ -97,6 +99,8 @@ if (document.readyState === 'loading') {
 
 /* wle:auto-register:start */
 engine.registerComponent(MouseLookComponent);
+engine.registerComponent(AppendSceneComponent);
+engine.registerComponent(LoadSceneAfterDelayComponent);
 engine.registerComponent(LoadSceneComponent);
 engine.registerComponent(FadeViewComponent);
 engine.registerComponent(FunComponent);

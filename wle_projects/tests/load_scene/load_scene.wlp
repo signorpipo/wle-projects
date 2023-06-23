@@ -31,7 +31,19 @@
                     "type": "pp-virtual-gamepad"
                 },
                 {
-                    "type": "load-scene"
+                    "type": "load-scene",
+                    "active": false
+                },
+                {
+                    "type": "load-scene-after-delay",
+                    "active": true,
+                    "load-scene-after-delay": {
+                        "_myDelay": 10000.0
+                    }
+                },
+                {
+                    "type": "append-scene",
+                    "active": true
                 }
             ]
         },
@@ -308,7 +320,8 @@
                     "type": "pp-console-vr-tool",
                     "pp-console-vr-tool": {
                         "_myHandedness": "Left"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "pp-easy-tune-tool",
@@ -2850,11 +2863,11 @@
     },
     "settings": {
         "project": {
-            "name": "wle_pplayground_unbundled",
+            "name": "load-scene",
             "version": [
                 1,
                 0,
-                3
+                4
             ]
         },
         "rendering": {
@@ -2884,7 +2897,7 @@
                 "js",
                 "js/pp/index.js",
                 "js/playground/components",
-                "js/cauldron"
+                "js/cauldron/components"
             ],
             "bundlingType": "esbuild",
             "libraryPaths": [
