@@ -37,12 +37,15 @@
                         "mesh": "8",
                         "material": "22"
                     }
+                },
+                {
+                    "type": "move"
                 }
             ],
             "translation": [
-                2.9802322387695313e-8,
-                0.4999999,
-                5.960464477539065e-8
+                0.0,
+                0.0,
+                0.0
             ],
             "rotation": [
                 0.0,
@@ -54,7 +57,8 @@
                 0.5,
                 0.5,
                 0.5
-            ]
+            ],
+            "parent": "58"
         },
         "24": {
             "name": "Cone",
@@ -110,6 +114,14 @@
                 0.75,
                 0.75,
                 0.75
+            ]
+        },
+        "58": {
+            "name": "Move",
+            "translation": [
+                0.0,
+                2.0,
+                0.0
             ]
         }
     },
@@ -420,7 +432,8 @@
         },
         "scripting": {
             "sourcePaths": [
-                "js/"
+                "js/",
+                "js/cauldron/components"
             ],
             "bundlingType": "esbuild",
             "libraryPaths": [

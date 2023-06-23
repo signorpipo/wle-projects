@@ -2335,6 +2335,59 @@
                 1.0,
                 -4.3711388286737935e-8
             ]
+        },
+        "232": {
+            "name": "Move",
+            "parent": "18",
+            "translation": [
+                3.0,
+                2.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "233": {
+            "name": "Cube",
+            "parent": "232",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "move",
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.5,
+                0.5,
+                0.5
+            ]
         }
     },
     "meshes": {
