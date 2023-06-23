@@ -2826,7 +2826,7 @@
             "name": "Cube Material",
             "pipeline": "14",
             "Phong": {
-                "diffuseTexture": "235",
+                "diffuseTexture": "300",
                 "ambientColor": [
                     1.0,
                     1.0,
@@ -3123,7 +3123,7 @@
         }
     },
     "textures": {
-        "235": {
+        "300": {
             "link": {
                 "name": "terreno_laby.png",
                 "file": "assets\\textures\\terreno_laby.png"
@@ -3131,7 +3131,7 @@
         }
     },
     "images": {
-        "234": {
+        "299": {
             "link": {
                 "name": "terreno_laby.png",
                 "file": "assets\\textures\\terreno_laby.png"

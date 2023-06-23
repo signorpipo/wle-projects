@@ -303,7 +303,7 @@
             "name": "Cube Material",
             "pipeline": "38",
             "Phong": {
-                "diffuseTexture": "60",
+                "diffuseTexture": "300",
                 "ambientColor": [
                     0.309417,
                     0.309417,
@@ -329,7 +329,7 @@
                     1.0,
                     1.0
                 ],
-                "diffuseTexture": "60"
+                "diffuseTexture": "300"
             }
         },
         "63": {
@@ -633,7 +633,7 @@
         }
     },
     "textures": {
-        "60": {
+        "300": {
             "link": {
                 "name": "sky_laby.png",
                 "file": "assets\\textures\\sky_laby.png"
@@ -641,7 +641,7 @@
         }
     },
     "images": {
-        "59": {
+        "299": {
             "link": {
                 "name": "sky_laby.png",
                 "file": "assets\\textures\\sky_laby.png"
