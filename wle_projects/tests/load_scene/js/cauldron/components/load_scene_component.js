@@ -22,6 +22,5 @@ export class LoadSceneComponent extends Component {
         if (Globals.getLeftGamepad(this.engine).getButtonInfo(GamepadButtonID.BOTTOM_BUTTON).isPressEnd()) {
             Globals.getScene(this.engine).load("scene-2-streamable-no-view.bin");
         }
-
     }
 }
