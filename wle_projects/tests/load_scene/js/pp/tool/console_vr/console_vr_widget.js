@@ -16,6 +16,8 @@ export class ConsoleVRWidgetParams extends WidgetParams {
         this.myShowOnStart = false;
         this.myShowVisibilityButton = false;
         this.myPulseOnNewMessage = ConsoleVRWidgetPulseOnNewMessage.NEVER;
+
+        this.myResetBrowserConsoleOriginalFunctionsOnDestroy = true;
     }
 }
 
@@ -314,7 +316,7 @@ export class ConsoleVRWidget {
                     let errorMessage = "An error occurred while trying to add a new message to the Console VR Widget";
                     let message = new ConsoleVRWidgetMessage(ConsoleVRWidgetMessageType.ERROR, [errorMessage]);
                     this._myMessages.push(message);
-                    ConsoleOriginalFunctions.error(errorMessage);
+                    ConsoleOriginalFunctions.error(this._myEngine, errorMessage);
                 } catch (anotherError) {
                     // ignored
                 }
@@ -698,7 +700,7 @@ export class ConsoleVRWidget {
                         break;
                 }
             } else if (this._myConfig.myClearBrowserConsoleWhenClearPressed) {
-                ConsoleOriginalFunctions.clear();
+                ConsoleOriginalFunctions.clear(this._myEngine);
             }
         }
     }
@@ -909,6 +911,24 @@ export class ConsoleVRWidget {
 
         this._myUI.destroy();
         this._myWidgetFrame.destroy();
+
+        if (this._myParams.myResetBrowserConsoleOriginalFunctionsOnDestroy) {
+            console.log = ConsoleOriginalFunctions.getLog(this._myEngine);
+            console.error = ConsoleOriginalFunctions.getError(this._myEngine);
+            console.warn = ConsoleOriginalFunctions.getWarn(this._myEngine);
+            console.info = ConsoleOriginalFunctions.getInfo(this._myEngine);
+            console.debug = ConsoleOriginalFunctions.getDebug(this._myEngine);
+            console.assert = ConsoleOriginalFunctions.getAssert(this._myEngine);
+            console.clear = ConsoleOriginalFunctions.getClear(this._myEngine);
+        } else {
+            console.log = this._myOldBrowserConsole[ConsoleVRWidgetConsoleFunction.LOG];
+            console.error = this._myOldBrowserConsole[ConsoleVRWidgetConsoleFunction.ERROR];
+            console.warn = this._myOldBrowserConsole[ConsoleVRWidgetConsoleFunction.WARN];
+            console.info = this._myOldBrowserConsole[ConsoleVRWidgetConsoleFunction.INFO];
+            console.debug = this._myOldBrowserConsole[ConsoleVRWidgetConsoleFunction.DEBUG];
+            console.assert = this._myOldBrowserConsole[ConsoleVRWidgetConsoleFunction.ASSERT];
+            console.clear = this._myOldBrowserConsoleClear;
+        }
     }
 
     isDestroyed() {
