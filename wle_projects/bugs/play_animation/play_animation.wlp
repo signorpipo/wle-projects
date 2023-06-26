@@ -1,0 +1,1142 @@
+{
+    "objects": {
+        "14": {
+            "name": "Player",
+            "components": [
+                {
+                    "type": "wasd-controls",
+                    "wasd-controls": {
+                        "headObject": "17"
+                    }
+                }
+            ],
+            "translation": [
+                -3.2591099,
+                1.8000135,
+                1.7569212
+            ],
+            "rotation": [
+                0.0,
+                -0.3768199,
+                0.0,
+                0.9262865
+            ],
+            "scaling": [
+                0.9999998,
+                1.0,
+                0.9999998
+            ]
+        },
+        "15": {
+            "name": "FloorPlane",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "7",
+                        "material": "20"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                1.1920928955078125e-7
+            ],
+            "rotation": [
+                -0.7072496,
+                0.0,
+                0.0,
+                0.7069638
+            ],
+            "scaling": [
+                4.0,
+                4.0,
+                4.0
+            ]
+        },
+        "16": {
+            "name": "Cube",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "8",
+                        "material": "22"
+                    }
+                }
+            ],
+            "translation": [
+                2.9802322387695313e-8,
+                0.4999999,
+                5.960464477539065e-8
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.5,
+                0.5,
+                0.5
+            ]
+        },
+        "17": {
+            "name": "NonVrCamera",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "mouse-look"
+                }
+            ]
+        },
+        "18": {
+            "name": "EyeLeft",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye left"
+                    }
+                }
+            ]
+        },
+        "19": {
+            "name": "EyeRight",
+            "parent": "14",
+            "components": [
+                {
+                    "type": "view"
+                },
+                {
+                    "type": "input",
+                    "input": {
+                        "type": "eye right"
+                    }
+                }
+            ]
+        },
+        "21": {
+            "name": "Light",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "intensity": 3.3329999
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                3.0,
+                2.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "23": {
+            "name": "Light.000",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "intensity": 3.3329999
+                    }
+                }
+            ],
+            "translation": [
+                -1.0,
+                3.0,
+                -1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "24": {
+            "name": "Cone",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "10",
+                        "material": "25"
+                    }
+                }
+            ],
+            "translation": [
+                1.5,
+                1.0,
+                -1.4901161193847656e-8
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "27": {
+            "name": "Sphere",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "9",
+                        "material": "26"
+                    }
+                }
+            ],
+            "translation": [
+                0.4999999,
+                0.75,
+                -1.25
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.75,
+                0.75,
+                0.75
+            ]
+        },
+        "58": {
+            "name": "Test"
+        },
+        "59": {
+            "name": "FBX",
+            "parent": "58"
+        },
+        "60": {
+            "name": "GLB",
+            "parent": "58"
+        },
+        "66": {
+            "link": {
+                "name": "Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "60",
+            "scaling": [
+                0.001,
+                0.001,
+                0.001
+            ],
+            "translation": [
+                -1.7144596,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -0.7071066,
+                0.0,
+                0.0,
+                0.7071068
+            ]
+        },
+        "67": {
+            "link": {
+                "name": "0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "66"
+        },
+        "68": {
+            "link": {
+                "name": "Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "67"
+        },
+        "69": {
+            "link": {
+                "name": "RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "68"
+        },
+        "70": {
+            "link": {
+                "name": "Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "69"
+        },
+        "71": {
+            "link": {
+                "name": "Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "70"
+        },
+        "72": {
+            "link": {
+                "name": "_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "71",
+            "skin": "65"
+        },
+        "73": {
+            "link": {
+                "name": "root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "72",
+            "skin": "65"
+        },
+        "74": {
+            "link": {
+                "name": "torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "73",
+            "skin": "65"
+        },
+        "75": {
+            "link": {
+                "name": "thigh.B.L_03<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "74",
+            "skin": "65"
+        },
+        "76": {
+            "link": {
+                "name": "leg.upper.B.L_04<thigh.B.L_03<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "75",
+            "skin": "65"
+        },
+        "77": {
+            "link": {
+                "name": "leg.lower.B.L_05<leg.upper.B.L_04<thigh.B.L_03<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "76",
+            "skin": "65"
+        },
+        "78": {
+            "link": {
+                "name": "foot.B.L_06<leg.lower.B.L_05<leg.upper.B.L_04<thigh.B.L_03<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "77",
+            "skin": "65"
+        },
+        "79": {
+            "link": {
+                "name": "tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "74",
+            "skin": "65"
+        },
+        "80": {
+            "link": {
+                "name": "tail.01_08<tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "79",
+            "skin": "65"
+        },
+        "81": {
+            "link": {
+                "name": "tail.02_09<tail.01_08<tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "80",
+            "skin": "65"
+        },
+        "82": {
+            "link": {
+                "name": "tail.03_010<tail.02_09<tail.01_08<tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "81",
+            "skin": "65"
+        },
+        "83": {
+            "link": {
+                "name": "tail.end_011<tail.03_010<tail.02_09<tail.01_08<tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "82",
+            "skin": "65"
+        },
+        "84": {
+            "link": {
+                "name": "spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "74",
+            "skin": "65"
+        },
+        "85": {
+            "link": {
+                "name": "spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "84",
+            "skin": "65"
+        },
+        "86": {
+            "link": {
+                "name": "leg.upper.F.L_014<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "85",
+            "skin": "65"
+        },
+        "87": {
+            "link": {
+                "name": "leg.lower.FL_015<leg.upper.F.L_014<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "86",
+            "skin": "65"
+        },
+        "88": {
+            "link": {
+                "name": "foot.F.L_016<leg.lower.FL_015<leg.upper.F.L_014<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "87",
+            "skin": "65"
+        },
+        "89": {
+            "link": {
+                "name": "neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "85",
+            "skin": "65"
+        },
+        "90": {
+            "link": {
+                "name": "head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "89",
+            "skin": "65"
+        },
+        "91": {
+            "link": {
+                "name": "ear.L_019<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "90",
+            "skin": "65"
+        },
+        "92": {
+            "link": {
+                "name": "ear.R_020<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "90",
+            "skin": "65"
+        },
+        "93": {
+            "link": {
+                "name": "mouth_021<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "90",
+            "skin": "65"
+        },
+        "94": {
+            "link": {
+                "name": "eye.L_022<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "90",
+            "skin": "65"
+        },
+        "95": {
+            "link": {
+                "name": "eye.R_023<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "90",
+            "skin": "65"
+        },
+        "96": {
+            "link": {
+                "name": "leg.upper.F.R_024<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "85",
+            "skin": "65"
+        },
+        "97": {
+            "link": {
+                "name": "leg.lower.F.R_00<leg.upper.F.R_024<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "96",
+            "skin": "65"
+        },
+        "98": {
+            "link": {
+                "name": "foot.F.R_025<leg.lower.F.R_00<leg.upper.F.R_024<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "97",
+            "skin": "65"
+        },
+        "99": {
+            "link": {
+                "name": "thigh.B.R_026<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "74",
+            "skin": "65"
+        },
+        "100": {
+            "link": {
+                "name": "leg.upper.B.R_027<thigh.B.R_026<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "99",
+            "skin": "65"
+        },
+        "101": {
+            "link": {
+                "name": "leg.lower.B.R_028<leg.upper.B.R_027<thigh.B.R_026<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "100",
+            "skin": "65"
+        },
+        "102": {
+            "link": {
+                "name": "foot.B.R_029<leg.lower.B.R_028<leg.upper.B.R_027<thigh.B.R_026<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "101",
+            "skin": "65"
+        },
+        "103": {
+            "link": {
+                "name": "tail.CTRL_030<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "74",
+            "skin": "65"
+        },
+        "104": {
+            "link": {
+                "name": "foot.F.IK.L_031<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "73",
+            "skin": "65"
+        },
+        "105": {
+            "link": {
+                "name": "foot.B.IK.L_032<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "73",
+            "skin": "65"
+        },
+        "106": {
+            "link": {
+                "name": "foot.F.IK.R_033<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "73",
+            "skin": "65"
+        },
+        "107": {
+            "link": {
+                "name": "foot.B.IK.R_034<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "73",
+            "skin": "65"
+        },
+        "108": {
+            "link": {
+                "name": "Object_43<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "71",
+            "components": [
+                {
+                    "mesh": {
+                        "skin": "65"
+                    }
+                }
+            ]
+        },
+        "109": {
+            "link": {
+                "name": "Object_42<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "71"
+        },
+        "110": {
+            "link": {
+                "name": "Cat<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "69"
+        }
+    },
+    "meshes": {
+        "7": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "10": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        },
+        "64": {
+            "link": {
+                "name": "Cat_Mat_Gradient_0",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
+        }
+    },
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "55"
+            }
+        },
+        "20": {
+            "name": "White",
+            "shader": "Phong",
+            "Phong": {
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.99993744699168e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 1,
+                "emissiveColor": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "22": {
+            "name": "Pink",
+            "Phong": {
+                "diffuseColor": [
+                    0.9098039,
+                    0.0,
+                    0.5411764,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999899930335232e-7,
+                    9.999911299019004e-7,
+                    9.999999974752427e-7,
+                    1.0
+                ],
+                "shininess": 10,
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.317647,
+                    0.0,
+                    0.2165777,
+                    1.0
+                ]
+            }
+        },
+        "25": {
+            "name": "Yellow",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.8039215,
+                    0.0,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.3843137,
+                    0.3089579,
+                    0.0,
+                    1.0
+                ]
+            }
+        },
+        "26": {
+            "name": "Green",
+            "Phong": {
+                "diffuseColor": [
+                    0.1529411,
+                    0.7882353,
+                    0.5411764,
+                    1.0
+                ],
+                "specularColor": [
+                    9.999999974752427e-7,
+                    9.999899930335232e-7,
+                    9.999899930335232e-7,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.05,
+                    0.05,
+                    0.05,
+                    1.0
+                ],
+                "emissiveColor": [
+                    0.0,
+                    0.2352941,
+                    0.1437908,
+                    1.0
+                ]
+            }
+        },
+        "63": {
+            "link": {
+                "name": "Mat_Gradient",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "DistanceFieldVector Textured.frag",
+                "file": "default"
+            }
+        },
+        "2": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "Flat Textured.frag",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Phong Textured.frag",
+                "file": "default"
+            }
+        },
+        "28": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "29": {
+            "link": {
+                "name": "Particle Textured.frag",
+                "file": "default"
+            }
+        },
+        "30": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "31": {
+            "link": {
+                "name": "Static.frag",
+                "file": "default"
+            }
+        },
+        "32": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "39": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        },
+        "42": {
+            "link": {
+                "name": "Background.frag",
+                "file": "default"
+            }
+        },
+        "43": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "45": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "46": {
+            "link": {
+                "name": "Physical.frag",
+                "file": "default"
+            }
+        },
+        "49": {
+            "link": {
+                "name": "Sky.frag",
+                "file": "default"
+            }
+        },
+        "50": {
+            "link": {
+                "name": "Text.frag",
+                "file": "default"
+            }
+        },
+        "52": {
+            "link": {
+                "name": "Text.vert",
+                "file": "default"
+            }
+        },
+        "53": {
+            "link": {
+                "name": "TileFeedback.frag",
+                "file": "default"
+            }
+        }
+    },
+    "settings": {
+        "project": {
+            "name": "play-animation",
+            "version": [
+                1,
+                0,
+                4
+            ]
+        },
+        "vr": {
+            "leftEyeObject": "18",
+            "rightEyeObject": "19"
+        },
+        "scripting": {
+            "sourcePaths": [
+                "js/"
+            ],
+            "bundlingType": "esbuild",
+            "libraryPaths": [
+                "/js/lib/"
+            ]
+        }
+    },
+    "animations": {
+        "111": {
+            "link": {
+                "name": "Scene",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
+        }
+    },
+    "skins": {
+        "65": {
+            "link": {
+                "name": "skin_0",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "joints": [
+                "72",
+                "73",
+                "74",
+                "75",
+                "76",
+                "77",
+                "78",
+                "79",
+                "80",
+                "81",
+                "82",
+                "83",
+                "84",
+                "85",
+                "86",
+                "87",
+                "88",
+                "89",
+                "90",
+                "91",
+                "92",
+                "93",
+                "94",
+                "95",
+                "96",
+                "97",
+                "98",
+                "99",
+                "100",
+                "101",
+                "102",
+                "103",
+                "104",
+                "105",
+                "106",
+                "107"
+            ]
+        }
+    },
+    "pipelines": {
+        "33": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "34": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "35": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            }
+        },
+        "36": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "37": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true,
+                "WITH_EMISSIVE": true
+            }
+        },
+        "38": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            }
+        },
+        "40": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            }
+        },
+        "41": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "44": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "47": {
+            "link": {
+                "name": "Physical Opaque",
+                "file": "default"
+            }
+        },
+        "48": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            }
+        },
+        "51": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "54": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            }
+        },
+        "56": {
+            "link": {
+                "name": "Phong Normalmapped",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            }
+        },
+        "57": {
+            "link": {
+                "name": "Phong Lightmapped",
+                "file": "default"
+            },
+            "features": {
+                "DEPRECATED_LIGHT_ATTENUATION": true
+            }
+        }
+    },
+    "textures": {
+        "62": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
+        }
+    },
+    "images": {
+        "61": {
+            "link": {
+                "name": "image_0",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
+        }
+    },
+    "fonts": {
+        "55": {
+            "link": {
+                "name": "DejaVuSans.ttf",
+                "file": "default"
+            }
+        }
+    },
+    "languages": {},
+    "files": [
+        {
+            "fileName": "assets/models/toon_cat_free_glb.glb",
+            "importerName": ""
+        }
+    ]
+}
