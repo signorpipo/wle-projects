@@ -1,0 +1,13 @@
+{
+    "name": "load-scene",
+    "version": "0.2.3",
+    "author": "Pipo",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "@wonderlandengine/api": "1.0.0",
+        "@wonderlandengine/components": "^1.0.3",
+        "gl-matrix": "^3.4.3",
+        "howler": "^2.2.3"
+    }
+}
