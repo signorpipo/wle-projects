@@ -196,7 +196,7 @@ export class PlayerTransformManager {
     start() {
         this.resetToReal(true);
 
-        XRUtils.registerSessionStartEndEventListeners(this, this._onXRSessionStart.bind(this), this._onXRSessionEnd.bind(this), true, false, this._myParams.myEngine);
+        XRUtils.registerSessionStartEndEventListeners(this, this._onXRSessionStart.bind(this), this._onXRSessionEnd.bind(this), true, true, this._myParams.myEngine);
     }
 
     getParams() {
@@ -655,7 +655,7 @@ PlayerTransformManager.prototype.resetReal = function () {
         }
 
         if (resetHeight) {
-            playerHeadManager.setHeight(this.getHeight(), true);
+            playerHeadManager.setHeightHead(this.getHeight(), true);
         }
 
         if (updateRealFlags) {
@@ -1113,7 +1113,7 @@ PlayerTransformManager.prototype.setHeight = function () {
         CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).positionCheck(true, transformQuat, this._myParams.myMovementCollisionCheckParams, this._myCollisionRuntimeParams);
 
         if (this._myCollisionRuntimeParams.myIsPositionOk || forceSet) {
-            this.getPlayerHeadManager().setHeight(this.getHeight(), true);
+            this.getPlayerHeadManager().setHeightHead(this.getHeight(), true);
         } else {
             this._myValidHeight = previousHeight;
         }

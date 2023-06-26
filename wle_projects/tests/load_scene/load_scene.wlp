@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "load-scene",
-                    "active": false
+                    "active": true
                 },
                 {
                     "type": "load-scene-after-delay",
@@ -43,7 +43,7 @@
                 },
                 {
                     "type": "append-scene",
-                    "active": true
+                    "active": false
                 }
             ]
         },
@@ -321,7 +321,7 @@
                     "pp-console-vr-tool": {
                         "_myHandedness": "Left"
                     },
-                    "active": false
+                    "active": true
                 },
                 {
                     "type": "pp-easy-tune-tool",
