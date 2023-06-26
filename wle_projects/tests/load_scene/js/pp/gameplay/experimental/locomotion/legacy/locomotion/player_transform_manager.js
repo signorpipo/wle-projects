@@ -334,7 +334,7 @@ export class PlayerTransformManager {
     }
 
     updateReal() {
-        this._updateReal(0, false);
+        this._updateReal(0);
     }
 
     resetToReal(updateRealFlags = false) {
@@ -348,7 +348,7 @@ export class PlayerTransformManager {
         this._myValidHeight = Math.pp_clamp(this.getHeightReal(), this._myParams.myMinHeight, this._myParams.myMaxHeight);
 
         if (updateRealFlags) {
-            this._updateReal(0, false);
+            this._updateReal(0);
         }
     }
 
@@ -582,7 +582,7 @@ export class PlayerTransformManager {
 
     _onXRSessionStart(manualCall, session) {
         if (this._myActive) {
-            if (this._myParams.myResetToValidOnEnterSession && !manualCall) {
+            if (this._myParams.myResetToValidOnEnterSession) {
                 this._myResetRealOnSynced = true;
             }
         }
@@ -659,7 +659,7 @@ PlayerTransformManager.prototype.resetReal = function () {
         }
 
         if (updateRealFlags) {
-            this._updateReal(0, false);
+            this._updateReal(0);
         }
     };
 }();
@@ -683,13 +683,15 @@ PlayerTransformManager.prototype.update = function () {
                         !this._myParams.myNeverResetRealPositionVR,
                         !this._myParams.myNeverResetRealRotationVR,
                         !this._myParams.myNeverResetRealHeightVR,
-                        false);
+                        true);
+                    this.resetHeadToReal();
                 } else {
                     this.resetReal(
                         !this._myParams.myNeverResetRealPositionNonVR,
                         !this._myParams.myNeverResetRealRotationNonVR,
                         !this._myParams.myNeverResetRealHeightNonVR,
-                        false);
+                        true);
+                    this.resetHeadToReal();
                 }
             }
         }
@@ -735,7 +737,7 @@ PlayerTransformManager.prototype._updateReal = function () {
     let floatingTransformQuat = quat2_create();
     let horizontalDirection = vec3_create();
     let rotationQuat = quat_create();
-    return function _updateReal(dt, resetRealEnabled = true) {
+    return function _updateReal(dt) {
         // Check if new head is ok and update the data
         // If head is not synced (blurred or session changing) avoid this and keep last valid
         if (this.getPlayerHeadManager().isSynced()) {
