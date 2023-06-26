@@ -336,14 +336,23 @@ export class PlayerTransformManager {
         this._updateReal(0);
     }
 
-    resetToReal(updateRealFlags = false) {
-        this._myValidPosition = this.getPositionReal(this._myValidPosition);
+    resetToReal(resetToPlayerInsteadOfHead = false, updateRealFlags = false) {
+        if (resetToPlayerInsteadOfHead) {
+            this._myValidPosition = this.getPlayerHeadManager().getPlayer().pp_getPosition(this._myValidPosition);
+        } else {
+            this._myValidPosition = this.getPositionReal(this._myValidPosition);
+        }
 
         if (!this._myParams.myAlwaysSyncPositionWithReal) {
             this._myValidPositionHead = this.getPositionHeadReal(this._myValidPositionHead);
         }
 
-        this._myValidRotationQuat = this.getRotationRealQuat(this._myValidRotationQuat);
+        if (resetToPlayerInsteadOfHead) {
+            this._myValidRotationQuat = this.getPlayerHeadManager().getPlayer().pp_getRotationQuat(this._myValidRotationQuat);
+        } else {
+            this._myValidRotationQuat = this.getRotationRealQuat(this._myValidRotationQuat);
+        }
+
         this._myValidHeight = Math.pp_clamp(this.getHeightReal(), this._myParams.myMinHeight, this._myParams.myMaxHeight);
 
         if (updateRealFlags) {
