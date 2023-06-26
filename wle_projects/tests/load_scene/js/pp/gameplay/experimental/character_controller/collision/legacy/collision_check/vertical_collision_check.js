@@ -30,6 +30,13 @@ CollisionCheck.prototype._verticalCheck = function () {
             }
         }
 
+        // #TODO Here, if there is no vertical movement and there is no horizontal movement (or it has been canceled)
+        // it would probably make more sense to skip this check, and if it is vertically colliding, but the movement is 0,0,0
+        // we can say that the movement is, after all, fine
+        // For now I will keep it as it is because i'm not sure if some feature (like the transform manager) could make assumption
+        // on the fact that even a 0,0,0 movement can fail thanks to this (like the head colliding check)
+        // Is not a big problem anyway, u can just check if the movement is 0 before checking the collision, and if it is 0
+        // u won't move anyway
         if (collisionCheckParams.myVerticalPositionCheckEnabled) {
             newFeetPosition = feetPosition.vec3_add(outFixedMovement, newFeetPosition);
             let canStay = this._verticalPositionCheck(newFeetPosition, isMovementDownward, height, up, forward, collisionCheckParams, collisionRuntimeParams);

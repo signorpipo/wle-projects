@@ -148,8 +148,7 @@ export class PlayerLocomotionComponent extends Component {
             if (this._myStartCounter == 0) {
                 this._myPlayerLocomotion.start();
 
-                this._myPlayerLocomotion.getPlayerTransformManager().resetReal(true, false, false, true);
-                this._myPlayerLocomotion.getPlayerTransformManager().resetHeadToReal();
+                this._myPlayerLocomotion.getPlayerTransformManager().resetReal(true, false, false, true, true);
             }
 
             this._myPlayerLocomotion.getPlayerHeadManager().update(dt);
