@@ -21,7 +21,7 @@
                 0.0,
                 0.9262865
             ],
-            "scaling": [
+            "scale": [
                 0.9999998,
                 1.0,
                 0.9999998
@@ -49,7 +49,7 @@
                 0.0,
                 0.7069638
             ],
-            "scaling": [
+            "scale": [
                 4.0,
                 4.0,
                 4.0
@@ -77,7 +77,7 @@
                 0.0,
                 1.0
             ],
-            "scaling": [
+            "scale": [
                 0.5,
                 0.5,
                 0.5
@@ -131,7 +131,7 @@
                 {
                     "type": "light",
                     "light": {
-                        "intensity": 3.3329999
+                        "attenuation": 0.1
                     }
                 }
             ],
@@ -146,7 +146,7 @@
                 0.0,
                 1.0
             ],
-            "scaling": [
+            "scale": [
                 1.0,
                 1.0,
                 1.0
@@ -158,7 +158,7 @@
                 {
                     "type": "light",
                     "light": {
-                        "intensity": 3.3329999
+                        "attenuation": 0.1
                     }
                 }
             ],
@@ -173,7 +173,7 @@
                 0.0,
                 1.0
             ],
-            "scaling": [
+            "scale": [
                 1.0,
                 1.0,
                 1.0
@@ -201,7 +201,7 @@
                 0.0,
                 1.0
             ],
-            "scaling": [
+            "scale": [
                 1.0,
                 1.0,
                 1.0
@@ -229,40 +229,77 @@
                 0.0,
                 1.0
             ],
-            "scaling": [
+            "scale": [
                 0.75,
                 0.75,
                 0.75
             ]
         },
         "58": {
-            "name": "Test"
+            "name": "Test",
+            "parent": null,
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
         },
-        "60": {
+        "59": {
             "name": "Cat",
             "parent": "58"
+        },
+        "60": {
+            "name": "Skeleton",
+            "parent": "58",
+            "translation": [
+                -2.3409039,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
         },
         "66": {
             "link": {
                 "name": "Sketchfab_model",
                 "file": "assets\\models\\toon_cat_free_glb.glb"
             },
-            "parent": "60",
-            "scaling": [
+            "parent": "59",
+            "scale": [
                 0.001,
-                0.001,
-                0.001
-            ],
-            "translation": [
-                -1.7144596,
-                0.0,
-                0.0
+                0.0009999,
+                0.0009998
             ],
             "rotation": [
-                -0.7071066,
-                0.0,
-                0.0,
-                0.7071068
+                -0.7071068,
+                2.0579520310093358e-8,
+                2.0579507875595482e-8,
+                0.7071067
+            ],
+            "translation": [
+                -1.2271568,
+                -0.0,
+                0.0
             ]
         },
         "67": {
@@ -625,811 +662,807 @@
             },
             "parent": "69"
         },
-        "112": {
-            "name": "Skeleton",
-            "parent": "58",
-            "translation": [
-                -2.4831717,
-                0.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
-            ]
-        },
-        "156": {
+        "155": {
             "link": {
                 "name": "Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "112"
+            "parent": "60",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -0.7071066,
+                1.9129744899260004e-8,
+                -4.40905196796848e-8,
+                0.7071068
+            ],
+            "scale": [
+                0.2110655,
+                0.2110654,
+                0.2110634
+            ]
+        },
+        "156": {
+            "link": {
+                "name": "root<Sketchfab_model",
+                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
+            },
+            "parent": "155"
         },
         "157": {
             "link": {
-                "name": "root<Sketchfab_model",
+                "name": "GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "156"
         },
         "158": {
             "link": {
-                "name": "GLTF_SceneRootNode<root<Sketchfab_model",
-                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
-            },
-            "parent": "157"
-        },
-        "159": {
-            "link": {
                 "name": "Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158",
+            "parent": "157",
             "components": [
                 {
                     "animation": {
                         "preview": true,
                         "autoplay": true,
-                        "retarget": true
+                        "retarget": false
                     }
                 }
             ]
         },
-        "160": {
+        "159": {
             "link": {
                 "name": "Object_4<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "159"
+            "parent": "158"
         },
-        "161": {
+        "160": {
             "link": {
                 "name": "Rib1_0<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "159"
+            "parent": "158"
         },
-        "162": {
+        "161": {
             "link": {
                 "name": "Object_6<Rib1_0<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "161"
+            "parent": "160"
         },
-        "163": {
+        "162": {
             "link": {
                 "name": "Rib2_1<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "159"
+            "parent": "158"
         },
-        "164": {
+        "163": {
             "link": {
                 "name": "Object_8<Rib2_1<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "163"
+            "parent": "162"
         },
-        "165": {
+        "164": {
             "link": {
                 "name": "ShoulderBlade.L_2<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "159"
+            "parent": "158"
         },
-        "166": {
+        "165": {
             "link": {
                 "name": "Object_10<ShoulderBlade.L_2<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "165"
+            "parent": "164"
         },
-        "167": {
+        "166": {
             "link": {
                 "name": "ShoulderBlade.R_3<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "159"
+            "parent": "158"
         },
-        "168": {
+        "167": {
             "link": {
                 "name": "Object_12<ShoulderBlade.R_3<Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "167"
+            "parent": "166"
         },
-        "169": {
+        "168": {
             "link": {
                 "name": "Head_6<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "170": {
+        "169": {
             "link": {
                 "name": "Object_14<Head_6<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "169"
+            "parent": "168"
         },
-        "171": {
+        "170": {
             "link": {
                 "name": "Teeth_5<Head_6<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "169"
+            "parent": "168"
         },
-        "172": {
+        "171": {
             "link": {
                 "name": "Object_16<Teeth_5<Head_6<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "171"
+            "parent": "170"
         },
-        "173": {
+        "172": {
             "link": {
                 "name": "Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
+        },
+        "173": {
+            "link": {
+                "name": "Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
+            },
+            "parent": "172"
         },
         "174": {
             "link": {
-                "name": "Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "173"
         },
         "175": {
             "link": {
-                "name": "Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "174"
         },
         "176": {
             "link": {
-                "name": "Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Head_9<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "175"
         },
         "177": {
             "link": {
-                "name": "Head_9<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Eye.L_7<Head_9<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "176"
         },
         "178": {
             "link": {
-                "name": "Eye.L_7<Head_9<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
-                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
-            },
-            "parent": "177"
-        },
-        "179": {
-            "link": {
                 "name": "Eye.R_8<Head_9<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
-                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
-            },
-            "parent": "177"
-        },
-        "180": {
-            "link": {
-                "name": "Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "176"
         },
-        "181": {
+        "179": {
+            "link": {
+                "name": "Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
+            },
+            "parent": "175"
+        },
+        "180": {
             "link": {
                 "name": "Arm_Lower.L_15<Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
+            },
+            "parent": "179"
+        },
+        "181": {
+            "link": {
+                "name": "Hand.L_14<Arm_Lower.L_15<Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "180"
         },
         "182": {
             "link": {
-                "name": "Hand.L_14<Arm_Lower.L_15<Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Finger1.L_10<Hand.L_14<Arm_Lower.L_15<Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "181"
         },
         "183": {
             "link": {
-                "name": "Finger1.L_10<Hand.L_14<Arm_Lower.L_15<Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
-                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
-            },
-            "parent": "182"
-        },
-        "184": {
-            "link": {
                 "name": "Finger2.L_11<Hand.L_14<Arm_Lower.L_15<Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "182"
+            "parent": "181"
         },
-        "185": {
+        "184": {
             "link": {
                 "name": "Thumb.L_12<Hand.L_14<Arm_Lower.L_15<Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "182"
+            "parent": "181"
         },
-        "186": {
+        "185": {
             "link": {
                 "name": "Finger3.L_13<Hand.L_14<Arm_Lower.L_15<Arm_Upper.L_16<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "182"
+            "parent": "181"
         },
-        "187": {
+        "186": {
             "link": {
                 "name": "Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "176"
+            "parent": "175"
+        },
+        "187": {
+            "link": {
+                "name": "Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
+            },
+            "parent": "186"
         },
         "188": {
             "link": {
-                "name": "Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Hand.R_21<Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "187"
         },
         "189": {
             "link": {
-                "name": "Hand.R_21<Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Finger1.R_17<Hand.R_21<Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "188"
         },
         "190": {
             "link": {
-                "name": "Finger1.R_17<Hand.R_21<Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
-                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
-            },
-            "parent": "189"
-        },
-        "191": {
-            "link": {
                 "name": "Finger2.R_18<Hand.R_21<Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "189"
+            "parent": "188"
         },
-        "192": {
+        "191": {
             "link": {
                 "name": "Thumb.R_19<Hand.R_21<Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "189"
+            "parent": "188"
         },
-        "193": {
+        "192": {
             "link": {
                 "name": "Finger3.R_20<Hand.R_21<Arm_Lower.R_22<Arm_Upper.R_23<Spine_24<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "189"
+            "parent": "188"
         },
-        "194": {
+        "193": {
             "link": {
                 "name": "Leg_Thigh.L_28<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "175"
+            "parent": "174"
+        },
+        "194": {
+            "link": {
+                "name": "Leg_Shin.L_27<Leg_Thigh.L_28<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
+            },
+            "parent": "193"
         },
         "195": {
             "link": {
-                "name": "Leg_Shin.L_27<Leg_Thigh.L_28<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Foot_Heel.L_26<Leg_Shin.L_27<Leg_Thigh.L_28<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "194"
         },
         "196": {
             "link": {
-                "name": "Foot_Heel.L_26<Leg_Shin.L_27<Leg_Thigh.L_28<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Foot_Toes.L_25<Foot_Heel.L_26<Leg_Shin.L_27<Leg_Thigh.L_28<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "195"
         },
         "197": {
             "link": {
-                "name": "Foot_Toes.L_25<Foot_Heel.L_26<Leg_Shin.L_27<Leg_Thigh.L_28<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
-                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
-            },
-            "parent": "196"
-        },
-        "198": {
-            "link": {
                 "name": "Leg_Thigh.R_32<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "175"
+            "parent": "174"
+        },
+        "198": {
+            "link": {
+                "name": "Leg_Shin.R_31<Leg_Thigh.R_32<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
+            },
+            "parent": "197"
         },
         "199": {
             "link": {
-                "name": "Leg_Shin.R_31<Leg_Thigh.R_32<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Foot_Heel.R_30<Leg_Shin.R_31<Leg_Thigh.R_32<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "198"
         },
         "200": {
             "link": {
-                "name": "Foot_Heel.R_30<Leg_Shin.R_31<Leg_Thigh.R_32<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
+                "name": "Foot_Toes.R_29<Foot_Heel.R_30<Leg_Shin.R_31<Leg_Thigh.R_32<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
             "parent": "199"
         },
         "201": {
             "link": {
-                "name": "Foot_Toes.R_29<Foot_Heel.R_30<Leg_Shin.R_31<Leg_Thigh.R_32<Pelvis_33<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
-                "file": "assets\\models\\skeleton_character_-_low_poly.glb"
-            },
-            "parent": "200"
-        },
-        "202": {
-            "link": {
                 "name": "Hand.L_IK_34<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "203": {
+        "202": {
             "link": {
                 "name": "Elbow_Target.L_35<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "204": {
+        "203": {
             "link": {
                 "name": "Hand.R_IK_36<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "205": {
+        "204": {
             "link": {
                 "name": "Elbow_Target.R_37<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "206": {
+        "205": {
             "link": {
                 "name": "Foot_Heel.L_IK_38<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "207": {
+        "206": {
             "link": {
                 "name": "Foot_Heel.R_IK_39<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "208": {
+        "207": {
             "link": {
                 "name": "Knee_Target.R_40<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "209": {
+        "208": {
             "link": {
                 "name": "Knee_Target.L_41<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "210": {
+        "209": {
             "link": {
                 "name": "Eye_Target_44<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "174"
+            "parent": "173"
         },
-        "211": {
+        "210": {
             "link": {
                 "name": "Eye.L_IK_42<Eye_Target_44<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "210"
+            "parent": "209"
         },
-        "212": {
+        "211": {
             "link": {
                 "name": "Eye.R_IK_43<Eye_Target_44<Skeleton Armature_45<Skeleton_46<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "210"
+            "parent": "209"
         },
-        "213": {
+        "212": {
             "link": {
                 "name": "Eye1_47<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "214": {
+        "213": {
             "link": {
                 "name": "Object_58<Eye1_47<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "213"
+            "parent": "212"
         },
-        "215": {
+        "214": {
             "link": {
                 "name": "Object_59<Eye1_47<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "213"
+            "parent": "212"
         },
-        "216": {
+        "215": {
             "link": {
                 "name": "Object_60<Eye1_47<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "213"
+            "parent": "212"
         },
-        "217": {
+        "216": {
             "link": {
                 "name": "Eye1.001_48<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "218": {
+        "217": {
             "link": {
                 "name": "Object_62<Eye1.001_48<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "217"
+            "parent": "216"
         },
-        "219": {
+        "218": {
             "link": {
                 "name": "Object_63<Eye1.001_48<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "217"
+            "parent": "216"
         },
-        "220": {
+        "219": {
             "link": {
                 "name": "Object_64<Eye1.001_48<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "217"
+            "parent": "216"
         },
-        "221": {
+        "220": {
             "link": {
                 "name": "Leg_Shin.R_49<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "222": {
+        "221": {
             "link": {
                 "name": "Object_66<Leg_Shin.R_49<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "221"
+            "parent": "220"
         },
-        "223": {
+        "222": {
             "link": {
                 "name": "Leg_Thigh.R_50<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "224": {
+        "223": {
             "link": {
                 "name": "Object_68<Leg_Thigh.R_50<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "223"
+            "parent": "222"
         },
-        "225": {
+        "224": {
             "link": {
                 "name": "Pelvis_51<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "226": {
+        "225": {
             "link": {
                 "name": "Object_70<Pelvis_51<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "225"
+            "parent": "224"
         },
-        "227": {
+        "226": {
             "link": {
                 "name": "Foot_Heel.R_52<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "228": {
+        "227": {
             "link": {
                 "name": "Object_72<Foot_Heel.R_52<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "227"
+            "parent": "226"
         },
-        "229": {
+        "228": {
             "link": {
                 "name": "Foot_Toes.R_53<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "230": {
+        "229": {
             "link": {
                 "name": "Object_74<Foot_Toes.R_53<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "229"
+            "parent": "228"
         },
-        "231": {
+        "230": {
             "link": {
                 "name": "Arm_Lower.R_54<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "232": {
+        "231": {
             "link": {
                 "name": "Object_76<Arm_Lower.R_54<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "231"
+            "parent": "230"
         },
-        "233": {
+        "232": {
             "link": {
                 "name": "Arm_Upper.R_55<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "234": {
+        "233": {
             "link": {
                 "name": "Object_78<Arm_Upper.R_55<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "233"
+            "parent": "232"
         },
-        "235": {
+        "234": {
             "link": {
                 "name": "Hand.R_56<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "236": {
+        "235": {
             "link": {
                 "name": "Object_80<Hand.R_56<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "235"
+            "parent": "234"
         },
-        "237": {
+        "236": {
             "link": {
                 "name": "Hand_Finger1.R_57<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "238": {
+        "237": {
             "link": {
                 "name": "Object_82<Hand_Finger1.R_57<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "237"
+            "parent": "236"
         },
-        "239": {
+        "238": {
             "link": {
                 "name": "Hand_Finger2.R_58<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "240": {
+        "239": {
             "link": {
                 "name": "Object_84<Hand_Finger2.R_58<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "239"
+            "parent": "238"
         },
-        "241": {
+        "240": {
             "link": {
                 "name": "Hand_Finger3.R_59<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "242": {
+        "241": {
             "link": {
                 "name": "Object_86<Hand_Finger3.R_59<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "241"
+            "parent": "240"
         },
-        "243": {
+        "242": {
             "link": {
                 "name": "Hand_Thumb.R_60<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "244": {
+        "243": {
             "link": {
                 "name": "Object_88<Hand_Thumb.R_60<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "243"
+            "parent": "242"
         },
-        "245": {
+        "244": {
             "link": {
                 "name": "Leg_Shin.L_61<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "246": {
+        "245": {
             "link": {
                 "name": "Object_90<Leg_Shin.L_61<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "245"
+            "parent": "244"
         },
-        "247": {
+        "246": {
             "link": {
                 "name": "Leg_Thigh.L_62<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "248": {
+        "247": {
             "link": {
                 "name": "Object_92<Leg_Thigh.L_62<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "247"
+            "parent": "246"
         },
-        "249": {
+        "248": {
             "link": {
                 "name": "Foot_Heel.L_63<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "250": {
+        "249": {
             "link": {
                 "name": "Object_94<Foot_Heel.L_63<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "249"
+            "parent": "248"
         },
-        "251": {
+        "250": {
             "link": {
                 "name": "Foot_Toes.L_64<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "252": {
+        "251": {
             "link": {
                 "name": "Object_96<Foot_Toes.L_64<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "251"
+            "parent": "250"
         },
-        "253": {
+        "252": {
             "link": {
                 "name": "Arm_Lower.L_65<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "254": {
+        "253": {
             "link": {
                 "name": "Object_98<Arm_Lower.L_65<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "253"
+            "parent": "252"
         },
-        "255": {
+        "254": {
             "link": {
                 "name": "Arm_Upper.L_66<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "256": {
+        "255": {
             "link": {
                 "name": "Object_100<Arm_Upper.L_66<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "255"
+            "parent": "254"
         },
-        "257": {
+        "256": {
             "link": {
                 "name": "Hand.L_67<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "258": {
+        "257": {
             "link": {
                 "name": "Object_102<Hand.L_67<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "257"
+            "parent": "256"
         },
-        "259": {
+        "258": {
             "link": {
                 "name": "Hand_Finger1.L_68<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "260": {
+        "259": {
             "link": {
                 "name": "Object_104<Hand_Finger1.L_68<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "259"
+            "parent": "258"
         },
-        "261": {
+        "260": {
             "link": {
                 "name": "Hand_Finger2.L_69<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "262": {
+        "261": {
             "link": {
                 "name": "Object_106<Hand_Finger2.L_69<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "261"
+            "parent": "260"
         },
-        "263": {
+        "262": {
             "link": {
                 "name": "Hand_Finger3.L_70<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "264": {
+        "263": {
             "link": {
                 "name": "Object_108<Hand_Finger3.L_70<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "263"
+            "parent": "262"
         },
-        "265": {
+        "264": {
             "link": {
                 "name": "Hand_Thumb.L_71<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "158"
+            "parent": "157"
         },
-        "266": {
+        "265": {
             "link": {
                 "name": "Object_110<Hand_Thumb.L_71<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "265"
+            "parent": "264"
         }
     },
     "meshes": {
@@ -1475,217 +1508,217 @@
                 "file": "assets\\models\\toon_cat_free_glb.glb"
             }
         },
-        "120": {
+        "119": {
             "link": {
                 "name": "Object_0",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "121": {
+        "120": {
             "link": {
                 "name": "Object_1",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "122": {
+        "121": {
             "link": {
                 "name": "Object_2",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "123": {
+        "122": {
             "link": {
                 "name": "Object_3",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "124": {
+        "123": {
             "link": {
                 "name": "Object_4",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "125": {
+        "124": {
             "link": {
                 "name": "Object_5",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "126": {
+        "125": {
             "link": {
                 "name": "Object_6",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "127": {
+        "126": {
             "link": {
                 "name": "Object_7",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "128": {
+        "127": {
             "link": {
                 "name": "Object_8",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "129": {
+        "128": {
             "link": {
                 "name": "Object_9",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "130": {
+        "129": {
             "link": {
                 "name": "Object_10",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "131": {
+        "130": {
             "link": {
                 "name": "Object_11",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "132": {
+        "131": {
             "link": {
                 "name": "Object_12",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "133": {
+        "132": {
             "link": {
                 "name": "Object_13",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "134": {
+        "133": {
             "link": {
                 "name": "Object_14",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "135": {
+        "134": {
             "link": {
                 "name": "Object_15",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "136": {
+        "135": {
             "link": {
                 "name": "Object_16",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "137": {
+        "136": {
             "link": {
                 "name": "Object_17",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "138": {
+        "137": {
             "link": {
                 "name": "Object_18",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "139": {
+        "138": {
             "link": {
                 "name": "Object_19",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "140": {
+        "139": {
             "link": {
                 "name": "Object_20",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "141": {
+        "140": {
             "link": {
                 "name": "Object_21",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "142": {
+        "141": {
             "link": {
                 "name": "Object_22",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "143": {
+        "142": {
             "link": {
                 "name": "Object_23",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "144": {
+        "143": {
             "link": {
                 "name": "Object_24",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "145": {
+        "144": {
             "link": {
                 "name": "Object_25",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "146": {
+        "145": {
             "link": {
                 "name": "Object_26",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "147": {
+        "146": {
             "link": {
                 "name": "Object_27",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "148": {
+        "147": {
             "link": {
                 "name": "Object_28",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "149": {
+        "148": {
             "link": {
                 "name": "Object_29",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "150": {
+        "149": {
             "link": {
                 "name": "Object_30",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "151": {
+        "150": {
             "link": {
                 "name": "Object_31",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "152": {
+        "151": {
             "link": {
                 "name": "Object_32",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "153": {
+        "152": {
             "link": {
                 "name": "Object_33",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "154": {
+        "153": {
             "link": {
                 "name": "Object_34",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "155": {
+        "154": {
             "link": {
                 "name": "Object_35",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
@@ -1712,25 +1745,7 @@
                     9.999999974752427e-7,
                     1.0
                 ],
-                "shininess": 1,
-                "emissiveColor": [
-                    0.2,
-                    0.2,
-                    0.2,
-                    1.0
-                ],
-                "ambientColor": [
-                    0.05,
-                    0.05,
-                    0.05,
-                    1.0
-                ],
-                "diffuseColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ]
+                "shininess": 1
             }
         },
         "22": {
@@ -1750,12 +1765,6 @@
                 ],
                 "shininess": 10,
                 "ambientColor": [
-                    0.05,
-                    0.05,
-                    0.05,
-                    1.0
-                ],
-                "emissiveColor": [
                     0.317647,
                     0.0,
                     0.2165777,
@@ -1779,12 +1788,6 @@
                     1.0
                 ],
                 "ambientColor": [
-                    0.05,
-                    0.05,
-                    0.05,
-                    1.0
-                ],
-                "emissiveColor": [
                     0.3843137,
                     0.3089579,
                     0.0,
@@ -1808,12 +1811,6 @@
                     1.0
                 ],
                 "ambientColor": [
-                    0.05,
-                    0.05,
-                    0.05,
-                    1.0
-                ],
-                "emissiveColor": [
                     0.0,
                     0.2352941,
                     0.1437908,
@@ -1827,31 +1824,31 @@
                 "file": "assets\\models\\toon_cat_free_glb.glb"
             }
         },
-        "115": {
+        "114": {
             "link": {
                 "name": "Skele-Bone",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "116": {
+        "115": {
             "link": {
                 "name": "Teeth",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "117": {
+        "116": {
             "link": {
                 "name": "material",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "118": {
+        "117": {
             "link": {
                 "name": "Pupil",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
         },
-        "119": {
+        "118": {
             "link": {
                 "name": "Iris",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
@@ -1982,11 +1979,11 @@
     },
     "settings": {
         "project": {
-            "name": "play-animation",
+            "name": "play_animation_0_9_5",
             "version": [
-                1,
                 0,
-                4
+                9,
+                5
             ]
         },
         "vr": {
@@ -1995,11 +1992,7 @@
         },
         "scripting": {
             "sourcePaths": [
-                "js/"
-            ],
-            "bundlingType": "esbuild",
-            "libraryPaths": [
-                "/js/lib/"
+                "/js/editor-components-bundle.js"
             ]
         }
     },
@@ -2010,7 +2003,7 @@
                 "file": "assets\\models\\toon_cat_free_glb.glb"
             }
         },
-        "267": {
+        "266": {
             "link": {
                 "name": "Animation",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
@@ -2092,28 +2085,18 @@
             "link": {
                 "name": "Phong Opaque",
                 "file": "default"
-            },
-            "features": {
-                "DEPRECATED_LIGHT_ATTENUATION": true,
-                "WITH_EMISSIVE": true
             }
         },
         "38": {
             "link": {
                 "name": "Phong Opaque Textured",
                 "file": "default"
-            },
-            "features": {
-                "DEPRECATED_LIGHT_ATTENUATION": true
             }
         },
         "40": {
             "link": {
                 "name": "Foliage",
                 "file": "default"
-            },
-            "features": {
-                "DEPRECATED_LIGHT_ATTENUATION": true
             }
         },
         "41": {
@@ -2156,18 +2139,12 @@
             "link": {
                 "name": "Phong Normalmapped",
                 "file": "default"
-            },
-            "features": {
-                "DEPRECATED_LIGHT_ATTENUATION": true
             }
         },
         "57": {
             "link": {
                 "name": "Phong Lightmapped",
                 "file": "default"
-            },
-            "features": {
-                "DEPRECATED_LIGHT_ATTENUATION": true
             }
         }
     },
@@ -2178,7 +2155,7 @@
                 "file": "assets\\models\\toon_cat_free_glb.glb"
             }
         },
-        "114": {
+        "113": {
             "link": {
                 "name": "texture_0",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
@@ -2192,7 +2169,7 @@
                 "file": "assets\\models\\toon_cat_free_glb.glb"
             }
         },
-        "113": {
+        "112": {
             "link": {
                 "name": "image_0",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
@@ -2207,15 +2184,8 @@
             }
         }
     },
-    "languages": {},
     "files": [
-        {
-            "fileName": "assets/models/toon_cat_free_glb.glb",
-            "importerName": ""
-        },
-        {
-            "fileName": "assets/models/skeleton_character_-_low_poly.glb",
-            "importerName": ""
-        }
+        "assets/models/toon_cat_free_glb.glb",
+        "assets/models/skeleton_character_-_low_poly.glb"
     ]
 }
