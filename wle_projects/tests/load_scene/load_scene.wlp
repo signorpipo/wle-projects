@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "load-scene",
-                    "active": true
+                    "active": false
                 },
                 {
                     "type": "load-scene-after-delay",
@@ -43,7 +43,7 @@
                 },
                 {
                     "type": "append-scene",
-                    "active": false
+                    "active": true
                 }
             ]
         },

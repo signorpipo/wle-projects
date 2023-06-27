@@ -283,7 +283,16 @@
                 "name": "Spine_4<GLTF_SceneRootNode<root<Sketchfab_model",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             },
-            "parent": "103"
+            "parent": "103",
+            "components": [
+                {
+                    "animation": {
+                        "retarget": false,
+                        "autoplay": true,
+                        "preview": true
+                    }
+                }
+            ]
         },
         "105": {
             "link": {
@@ -1035,7 +1044,393 @@
             "parent": "210"
         },
         "213": {
-            "name": "Skin Character"
+            "name": "Skeleton"
+        },
+        "214": {
+            "name": "Cat"
+        },
+        "220": {
+            "link": {
+                "name": "Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "214",
+            "scaling": [
+                0.001,
+                0.0009999,
+                0.0009999
+            ],
+            "translation": [
+                -2.9851217,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                -0.7071066,
+                0.0,
+                0.0,
+                0.7071068
+            ]
+        },
+        "221": {
+            "link": {
+                "name": "0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "220"
+        },
+        "222": {
+            "link": {
+                "name": "Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "221"
+        },
+        "223": {
+            "link": {
+                "name": "RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "222"
+        },
+        "224": {
+            "link": {
+                "name": "Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "223"
+        },
+        "225": {
+            "link": {
+                "name": "Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "224"
+        },
+        "226": {
+            "link": {
+                "name": "_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "225",
+            "skin": "219"
+        },
+        "227": {
+            "link": {
+                "name": "root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "226",
+            "skin": "219"
+        },
+        "228": {
+            "link": {
+                "name": "torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "227",
+            "skin": "219",
+            "components": [
+                {
+                    "animation": {
+                        "preview": true,
+                        "retarget": false,
+                        "autoplay": true
+                    }
+                }
+            ]
+        },
+        "229": {
+            "link": {
+                "name": "thigh.B.L_03<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "228",
+            "skin": "219"
+        },
+        "230": {
+            "link": {
+                "name": "leg.upper.B.L_04<thigh.B.L_03<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "229",
+            "skin": "219"
+        },
+        "231": {
+            "link": {
+                "name": "leg.lower.B.L_05<leg.upper.B.L_04<thigh.B.L_03<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "230",
+            "skin": "219"
+        },
+        "232": {
+            "link": {
+                "name": "foot.B.L_06<leg.lower.B.L_05<leg.upper.B.L_04<thigh.B.L_03<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "231",
+            "skin": "219"
+        },
+        "233": {
+            "link": {
+                "name": "tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "228",
+            "skin": "219"
+        },
+        "234": {
+            "link": {
+                "name": "tail.01_08<tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "233",
+            "skin": "219"
+        },
+        "235": {
+            "link": {
+                "name": "tail.02_09<tail.01_08<tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "234",
+            "skin": "219"
+        },
+        "236": {
+            "link": {
+                "name": "tail.03_010<tail.02_09<tail.01_08<tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "235",
+            "skin": "219"
+        },
+        "237": {
+            "link": {
+                "name": "tail.end_011<tail.03_010<tail.02_09<tail.01_08<tail_07<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "236",
+            "skin": "219"
+        },
+        "238": {
+            "link": {
+                "name": "spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "228",
+            "skin": "219"
+        },
+        "239": {
+            "link": {
+                "name": "spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "238",
+            "skin": "219"
+        },
+        "240": {
+            "link": {
+                "name": "leg.upper.F.L_014<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "239",
+            "skin": "219"
+        },
+        "241": {
+            "link": {
+                "name": "leg.lower.FL_015<leg.upper.F.L_014<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "240",
+            "skin": "219"
+        },
+        "242": {
+            "link": {
+                "name": "foot.F.L_016<leg.lower.FL_015<leg.upper.F.L_014<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "241",
+            "skin": "219"
+        },
+        "243": {
+            "link": {
+                "name": "neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "239",
+            "skin": "219"
+        },
+        "244": {
+            "link": {
+                "name": "head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "243",
+            "skin": "219"
+        },
+        "245": {
+            "link": {
+                "name": "ear.L_019<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "244",
+            "skin": "219"
+        },
+        "246": {
+            "link": {
+                "name": "ear.R_020<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "244",
+            "skin": "219"
+        },
+        "247": {
+            "link": {
+                "name": "mouth_021<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "244",
+            "skin": "219"
+        },
+        "248": {
+            "link": {
+                "name": "eye.L_022<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "244",
+            "skin": "219"
+        },
+        "249": {
+            "link": {
+                "name": "eye.R_023<head_018<neck_017<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "244",
+            "skin": "219"
+        },
+        "250": {
+            "link": {
+                "name": "leg.upper.F.R_024<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "239",
+            "skin": "219"
+        },
+        "251": {
+            "link": {
+                "name": "leg.lower.F.R_00<leg.upper.F.R_024<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "250",
+            "skin": "219"
+        },
+        "252": {
+            "link": {
+                "name": "foot.F.R_025<leg.lower.F.R_00<leg.upper.F.R_024<spine.02_013<spine.01_012<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "251",
+            "skin": "219"
+        },
+        "253": {
+            "link": {
+                "name": "thigh.B.R_026<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "228",
+            "skin": "219"
+        },
+        "254": {
+            "link": {
+                "name": "leg.upper.B.R_027<thigh.B.R_026<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "253",
+            "skin": "219"
+        },
+        "255": {
+            "link": {
+                "name": "leg.lower.B.R_028<leg.upper.B.R_027<thigh.B.R_026<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "254",
+            "skin": "219"
+        },
+        "256": {
+            "link": {
+                "name": "foot.B.R_029<leg.lower.B.R_028<leg.upper.B.R_027<thigh.B.R_026<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "255",
+            "skin": "219"
+        },
+        "257": {
+            "link": {
+                "name": "tail.CTRL_030<torso_02<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "228",
+            "skin": "219"
+        },
+        "258": {
+            "link": {
+                "name": "foot.F.IK.L_031<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "227",
+            "skin": "219"
+        },
+        "259": {
+            "link": {
+                "name": "foot.B.IK.L_032<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "227",
+            "skin": "219"
+        },
+        "260": {
+            "link": {
+                "name": "foot.F.IK.R_033<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "227",
+            "skin": "219"
+        },
+        "261": {
+            "link": {
+                "name": "foot.B.IK.R_034<root_01<_rootJoint<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "227",
+            "skin": "219"
+        },
+        "262": {
+            "link": {
+                "name": "Object_43<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "225",
+            "components": [
+                {
+                    "mesh": {
+                        "skin": "219"
+                    }
+                }
+            ]
+        },
+        "263": {
+            "link": {
+                "name": "Object_42<Object_5<Rig<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "225"
+        },
+        "264": {
+            "link": {
+                "name": "Cat<RootNode<Object_2<0df7f1c552db41979cdb0b8efba99edf.fbx<Sketchfab_model",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "parent": "223"
         }
     },
     "meshes": {
@@ -1290,6 +1685,12 @@
                 "name": "Object_35",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
+        },
+        "218": {
+            "link": {
+                "name": "Cat_Mat_Gradient_0",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
         }
     },
     "materials": {
@@ -1450,6 +1851,12 @@
                 "name": "Iris",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
+        },
+        "217": {
+            "link": {
+                "name": "Mat_Gradient",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
         }
     },
     "shaders": {
@@ -1604,9 +2011,60 @@
                 "name": "Animation",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
+        },
+        "265": {
+            "link": {
+                "name": "Scene",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
         }
     },
-    "skins": {},
+    "skins": {
+        "219": {
+            "link": {
+                "name": "skin_0",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            },
+            "joints": [
+                "226",
+                "227",
+                "228",
+                "229",
+                "230",
+                "231",
+                "232",
+                "233",
+                "234",
+                "235",
+                "236",
+                "237",
+                "238",
+                "239",
+                "240",
+                "241",
+                "242",
+                "243",
+                "244",
+                "245",
+                "246",
+                "247",
+                "248",
+                "249",
+                "250",
+                "251",
+                "252",
+                "253",
+                "254",
+                "255",
+                "256",
+                "257",
+                "258",
+                "259",
+                "260",
+                "261"
+            ]
+        }
+    },
     "pipelines": {
         "33": {
             "link": {
@@ -1721,6 +2179,12 @@
                 "name": "texture_0",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
             }
+        },
+        "216": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
+            }
         }
     },
     "images": {
@@ -1728,6 +2192,12 @@
             "link": {
                 "name": "image_0",
                 "file": "assets\\models\\skeleton_character_-_low_poly.glb"
+            }
+        },
+        "215": {
+            "link": {
+                "name": "image_0",
+                "file": "assets\\models\\toon_cat_free_glb.glb"
             }
         }
     },
@@ -1743,6 +2213,10 @@
     "files": [
         {
             "fileName": "assets/models/skeleton_character_-_low_poly.glb",
+            "importerName": ""
+        },
+        {
+            "fileName": "assets/models/toon_cat_free_glb.glb",
             "importerName": ""
         }
     ]
