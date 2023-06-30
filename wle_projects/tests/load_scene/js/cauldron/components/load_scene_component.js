@@ -26,5 +26,9 @@ export class LoadSceneComponent extends Component {
         if (Globals.getRightGamepad(this.engine).getButtonInfo(GamepadButtonID.SELECT).isPressEnd()) {
             Globals.getScene(this.engine).load("scene-3-skin.bin");
         }
+
+        if (Globals.getRightGamepad(this.engine).getButtonInfo(GamepadButtonID.SQUEEZE).isPressEnd()) {
+            Globals.getScene(this.engine).load("scene-3.bin");
+        }
     }
 }
