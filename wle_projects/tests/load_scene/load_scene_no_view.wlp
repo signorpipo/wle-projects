@@ -1,0 +1,2549 @@
+{
+    "objects": {
+        "18": {
+            "name": "Scene",
+            "translation": [
+                -5.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "28": {
+            "name": "Lights",
+            "parent": "18"
+        },
+        "29": {
+            "name": "Light 1",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "color": [
+                            0.3921568,
+                            0.329466,
+                            0.1384083
+                        ],
+                        "type": "sun"
+                    }
+                }
+            ],
+            "translation": [
+                -7.152557373046875e-7,
+                20.0000514,
+                -9.5367431640625e-7
+            ],
+            "rotation": [
+                -0.2156182,
+                0.0850898,
+                0.0188639,
+                0.9725804
+            ],
+            "scaling": [
+                0.9999992,
+                0.999998,
+                0.9999992
+            ]
+        },
+        "30": {
+            "name": "Light 2",
+            "parent": "28",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "color": [
+                            0.1876201,
+                            0.3921568,
+                            0.3368116
+                        ],
+                        "type": "sun"
+                    }
+                }
+            ],
+            "translation": [
+                -0.0000011,
+                20.0000514,
+                -0.0000021
+            ],
+            "rotation": [
+                0.0999406,
+                0.8659851,
+                -0.1919842,
+                0.4508033
+            ],
+            "scaling": [
+                0.9999998,
+                0.9999994,
+                0.9999997
+            ]
+        },
+        "150": {
+            "name": "Playground",
+            "parent": "18",
+            "components": [
+                {
+                    "type": "playground-gateway"
+                },
+                {
+                    "type": "particles-spawner",
+                    "particles-spawner": {
+                        "_myParticlesContainer": "185"
+                    }
+                },
+                {
+                    "type": "load-audio"
+                },
+                {
+                    "type": "play-music"
+                },
+                {
+                    "type": "sfx-on-grab-throw"
+                },
+                {
+                    "type": "fade-view",
+                    "fade-view": {
+                        "_myStartDelay": 0.5,
+                        "_myTimeToFadeIn": 1.5,
+                        "_myColor": "108, 255, 222"
+                    }
+                },
+                {
+                    "type": "pp-mute-everything",
+                    "active": false
+                }
+            ]
+        },
+        "151": {
+            "name": "Floor",
+            "parent": "150",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                9.5,
+                                1.0,
+                                14.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                -1.0,
+                0.0
+            ],
+            "scaling": [
+                7.5,
+                1.0,
+                12.0
+            ]
+        },
+        "153": {
+            "name": "Walls",
+            "parent": "150"
+        },
+        "154": {
+            "name": "Wall",
+            "parent": "153",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                7.5,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                5.0,
+                -13.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                7.5,
+                5.0,
+                1.0
+            ]
+        },
+        "156": {
+            "name": "Wall",
+            "parent": "153",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                7.5,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                5.0,
+                13.0
+            ],
+            "scaling": [
+                7.5,
+                5.0,
+                1.0
+            ]
+        },
+        "157": {
+            "name": "Wall",
+            "parent": "153",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                14.0,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                8.5,
+                5.0006198,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.7071068,
+                0.0,
+                0.7071068
+            ],
+            "scaling": [
+                14.0,
+                5.0,
+                1.0
+            ]
+        },
+        "158": {
+            "name": "Wall",
+            "parent": "153",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                14.0,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                -8.5,
+                5.0002169,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.7071068,
+                0.0,
+                0.7071068
+            ],
+            "scaling": [
+                14.0,
+                5.0,
+                1.0
+            ]
+        },
+        "159": {
+            "name": "Throw Platform",
+            "parent": "150",
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "160": {
+            "name": "Ramp",
+            "parent": "227",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.5,
+                                0.1,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "rotation": [
+                0.258819,
+                0.0,
+                0.0,
+                0.9659258
+            ],
+            "translation": [
+                0.0,
+                0.2649999,
+                1.8149999
+            ],
+            "scaling": [
+                0.5,
+                0.1,
+                1.0000001
+            ]
+        },
+        "162": {
+            "name": "Floor",
+            "parent": "227",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.1,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.75,
+                0.0
+            ],
+            "scaling": [
+                1.0,
+                0.1,
+                1.0
+            ]
+        },
+        "163": {
+            "name": "Fence",
+            "parent": "227",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "164": {
+            "name": "Piece",
+            "parent": "163",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.5,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                }
+            ],
+            "translation": [
+                -0.8999999,
+                1.35,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1,
+                0.5,
+                1.0
+            ]
+        },
+        "165": {
+            "name": "Piece",
+            "parent": "163",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.5,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                }
+            ],
+            "translation": [
+                0.8999999,
+                1.35,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1,
+                0.5,
+                1.0
+            ]
+        },
+        "166": {
+            "name": "Piece",
+            "parent": "163",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.1,
+                                0.5,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                },
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                1.35,
+                -1.1000206
+            ],
+            "rotation": [
+                0.0,
+                0.7071068,
+                0.0,
+                0.7071068
+            ],
+            "scaling": [
+                0.1,
+                0.5,
+                1.0
+            ]
+        },
+        "167": {
+            "name": "Spawn Stand",
+            "parent": "159",
+            "translation": [
+                -0.3499999,
+                1.8999998,
+                0.4499999
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.1,
+                0.1,
+                0.1
+            ]
+        },
+        "185": {
+            "name": "Grabbables",
+            "parent": "159",
+            "translation": [
+                1.25,
+                2.0999999,
+                -1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "186": {
+            "name": "Throw Target",
+            "parent": "150",
+            "translation": [
+                0.0,
+                3.5,
+                5.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "target-hit-check"
+                },
+                {
+                    "type": "wave-movement"
+                },
+                {
+                    "type": "fun",
+                    "active": false
+                }
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "187": {
+            "name": "Visual",
+            "parent": "186"
+        },
+        "188": {
+            "name": "Piece",
+            "parent": "187",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6499999,
+                                0.075,
+                                0.075
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": false,
+                        "kinematic": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                -0.5749999,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.6499999,
+                0.075,
+                0.075
+            ]
+        },
+        "189": {
+            "name": "Piece",
+            "parent": "187",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6499999,
+                                0.075,
+                                0.075
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": false,
+                        "kinematic": true
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.7071068,
+                0.7071067
+            ],
+            "translation": [
+                -0.5749999,
+                -2.9802322387695313e-8,
+                0.0
+            ],
+            "scaling": [
+                0.6499999,
+                0.075,
+                0.075
+            ]
+        },
+        "191": {
+            "name": "Piece",
+            "parent": "187",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6499999,
+                                0.075,
+                                0.075
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": false,
+                        "kinematic": true
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.5749999,
+                0.0
+            ],
+            "scaling": [
+                0.6499999,
+                0.075,
+                0.075
+            ]
+        },
+        "192": {
+            "name": "Piece",
+            "parent": "187",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6499999,
+                                0.075,
+                                0.075
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": false,
+                        "kinematic": true
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.7071068,
+                0.7071067
+            ],
+            "translation": [
+                0.5749999,
+                2.9802322387695313e-8,
+                0.0
+            ],
+            "scaling": [
+                0.6499999,
+                0.075,
+                0.075
+            ]
+        },
+        "193": {
+            "name": "Target Hit Trigger",
+            "parent": "186",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "groups": 4,
+                        "block": 0,
+                        "gravity": false,
+                        "kinematic": true,
+                        "trigger": true,
+                        "allowSimulation": false,
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6,
+                                0.6,
+                                0.1
+                            ]
+                        }
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.25
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "194": {
+            "name": "Mesh",
+            "parent": "203",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ]
+        },
+        "195": {
+            "name": "Spawn Position",
+            "parent": "167",
+            "translation": [
+                -0.0000066,
+                2.0000019,
+                4.76837158203125e-7
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "grabbable-spawner",
+                    "grabbable-spawner": {
+                        "_mPrototypesContainer": "185",
+                        "_myPrototypesContainer": "185"
+                    }
+                }
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "198": {
+            "name": "Mesh",
+            "parent": "204",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ]
+        },
+        "199": {
+            "name": "Mesh",
+            "parent": "205",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "148"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ]
+        },
+        "200": {
+            "name": "Mesh",
+            "parent": "206",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "149"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ]
+        },
+        "202": {
+            "name": "Mesh",
+            "parent": "208",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p3",
+                        "material": "148"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ]
+        },
+        "203": {
+            "name": "1",
+            "parent": "185",
+            "translation": [
+                -2.5,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "Scene",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
+                },
+                {
+                    "type": "sfx-on-collision"
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "204": {
+            "name": "2",
+            "parent": "185",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "Scene",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
+                },
+                {
+                    "type": "sfx-on-collision"
+                }
+            ],
+            "translation": [
+                -2.5,
+                0.0,
+                1.1499999
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "205": {
+            "name": "3",
+            "parent": "185",
+            "translation": [
+                -2.5,
+                0.0,
+                1.2999999
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "sphere",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "Scene",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
+                },
+                {
+                    "type": "sfx-on-collision"
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "206": {
+            "name": "4",
+            "parent": "185",
+            "translation": [
+                -2.5,
+                0.0,
+                1.45
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "sphere",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "Scene",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
+                },
+                {
+                    "type": "sfx-on-collision"
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "208": {
+            "name": "5",
+            "parent": "185",
+            "translation": [
+                -2.5,
+                0.0,
+                1.5999999
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "convexMesh",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "convexMesh": {
+                            "mesh": "p3",
+                            "scaling": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "Scene",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
+                },
+                {
+                    "type": "sfx-on-collision"
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "209": {
+            "name": "6",
+            "parent": "185",
+            "translation": [
+                -2.5,
+                0.0,
+                1.75
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "convexMesh",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "convexMesh": {
+                            "mesh": "p3",
+                            "scaling": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "Scene",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
+                },
+                {
+                    "type": "sfx-on-collision"
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "210": {
+            "name": "Mesh",
+            "parent": "209",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p3",
+                        "material": "149"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ]
+        },
+        "220": {
+            "link": {
+                "name": "Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "226",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                -4.3711388286737935e-8,
+                0.0,
+                1.0
+            ],
+            "name": "Mesh",
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "221": {
+            "link": {
+                "name": "Wondermelon Peel<Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "220"
+        },
+        "222": {
+            "link": {
+                "name": "Wondermelon Rind<Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "220"
+        },
+        "223": {
+            "link": {
+                "name": "Wondermelon Pulp<Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "220"
+        },
+        "224": {
+            "link": {
+                "name": "Wondermelon Seed<Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "220"
+        },
+        "226": {
+            "name": "Wondermelon",
+            "parent": "185",
+            "translation": [
+                -1.6000006,
+                0.0,
+                1.45
+            ],
+            "rotation": [
+                0.0,
+                4.3711391839451614e-8,
+                0.0,
+                1.0
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "convexMesh",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "convexMesh": {
+                            "mesh": "230",
+                            "scaling": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "Scene",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
+                },
+                {
+                    "type": "sfx-on-collision"
+                }
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "227": {
+            "name": "Balcony",
+            "parent": "159",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                -4.3711388286737935e-8
+            ]
+        },
+        "228": {
+            "name": "Spawn Stand Base",
+            "parent": "167",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p3",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "convexMesh",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.1,
+                                1.0
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 4,
+                        "gravity": false,
+                        "static": true,
+                        "convexMesh": {
+                            "mesh": "p3",
+                            "scaling": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        }
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                1.0,
+                -4.3711388286737935e-8
+            ]
+        },
+        "232": {
+            "name": "Move",
+            "parent": "18",
+            "translation": [
+                3.0,
+                2.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "233": {
+            "name": "Cube",
+            "parent": "232",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "236"
+                    }
+                },
+                {
+                    "type": "move",
+                    "active": false
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                0.5,
+                0.5,
+                0.5
+            ]
+        }
+    },
+    "meshes": {
+        "p0": {
+            "link": {
+                "name": "PrimitivePlane",
+                "file": "default"
+            }
+        },
+        "p1": {
+            "link": {
+                "name": "PrimitiveCube",
+                "file": "default"
+            }
+        },
+        "p2": {
+            "link": {
+                "name": "PrimitiveSphere",
+                "file": "default"
+            }
+        },
+        "p3": {
+            "link": {
+                "name": "PrimitiveCone",
+                "file": "default"
+            }
+        },
+        "p4": {
+            "link": {
+                "name": "PrimitiveCylinder",
+                "file": "default"
+            }
+        },
+        "p5": {
+            "link": {
+                "name": "PrimitiveCircle",
+                "file": "default"
+            }
+        },
+        "113": {
+            "link": {
+                "name": "Gamepad Body Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "114": {
+            "link": {
+                "name": "Gamepad Bottom Button Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "115": {
+            "link": {
+                "name": "Gamepad Option Button Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "116": {
+            "link": {
+                "name": "Gamepad Select Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "117": {
+            "link": {
+                "name": "Gamepad Squeeze Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "118": {
+            "link": {
+                "name": "Gamepad Thumbstick Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "119": {
+            "link": {
+                "name": "Gamepad Top Button Left",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "120": {
+            "link": {
+                "name": "Gamepad Body Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "121": {
+            "link": {
+                "name": "Gamepad Bottom Button Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "122": {
+            "link": {
+                "name": "Gamepad Option Button Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "123": {
+            "link": {
+                "name": "Gamepad Select Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "124": {
+            "link": {
+                "name": "Gamepad Squeeze Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "125": {
+            "link": {
+                "name": "Gamepad Thumbstick Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "126": {
+            "link": {
+                "name": "Gamepad Top Button Right",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "215": {
+            "link": {
+                "name": "Wondermelon Peel",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "216": {
+            "link": {
+                "name": "Wondermelon Rind",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "217": {
+            "link": {
+                "name": "Wondermelon Pulp",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "218": {
+            "link": {
+                "name": "Wondermelon Seed",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "229": {
+            "link": {
+                "name": "Wondermelon Convex Mesh Loose",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "230": {
+            "link": {
+                "name": "Wondermelon Convex Mesh Fit",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        }
+    },
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "147"
+            }
+        },
+        "31": {
+            "name": "Flat Opaque",
+            "pipeline": "7"
+        },
+        "32": {
+            "name": "Phong Opaque",
+            "pipeline": "13",
+            "Phong": {
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "90": {
+            "name": "Flat Transparent No Depth",
+            "pipeline": "89"
+        },
+        "110": {
+            "name": "Text",
+            "pipeline": "82",
+            "Text": {
+                "font": "147"
+            }
+        },
+        "111": {
+            "link": {
+                "name": "Gamepad Body",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "Phong": {
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "112": {
+            "link": {
+                "name": "Gamepad Button",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "Phong": {
+                "shininess": 2,
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "144": {
+            "name": "Tracked Hand Joint",
+            "Phong": {
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.0784,
+                    0.0784,
+                    0.0784,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "fogColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            }
+        },
+        "148": {
+            "name": "Gold",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.5882353,
+                    0.1843137,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "shininess": 2,
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ]
+            }
+        },
+        "149": {
+            "name": "Cyan",
+            "Phong": {
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.345098,
+                    1.0,
+                    0.8823529,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ]
+            }
+        },
+        "211": {
+            "link": {
+                "name": "Wondermelon Peel",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.0,
+                    0.5294117,
+                    0.317647,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "212": {
+            "link": {
+                "name": "Wondermelon Rind",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.8,
+                    0.6666666,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "213": {
+            "link": {
+                "name": "Wondermelon Pulp",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.8627451,
+                    0.117647,
+                    0.345098,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "214": {
+            "link": {
+                "name": "Wondermelon Seed",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.0980392,
+                    0.0980392,
+                    0.0980392,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "231": {
+            "name": "material",
+            "pipeline": "85"
+        },
+        "236": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "147"
+            },
+            "name": "Cube Material",
+            "pipeline": "14",
+            "Phong": {
+                "diffuseTexture": "300",
+                "ambientColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            }
+        }
+    },
+    "shaders": {
+        "1": {
+            "link": {
+                "name": "Depth.frag",
+                "file": "default"
+            }
+        },
+        "3": {
+            "link": {
+                "name": "DistanceFieldVector.frag",
+                "file": "default"
+            }
+        },
+        "5": {
+            "link": {
+                "name": "Dynamic.vert",
+                "file": "default"
+            }
+        },
+        "6": {
+            "link": {
+                "name": "Flat.frag",
+                "file": "default"
+            }
+        },
+        "9": {
+            "link": {
+                "name": "MeshVisualizer.frag",
+                "file": "default"
+            }
+        },
+        "11": {
+            "link": {
+                "name": "Skinning.vert",
+                "file": "default"
+            }
+        },
+        "12": {
+            "link": {
+                "name": "Phong.frag",
+                "file": "default"
+            }
+        },
+        "15": {
+            "link": {
+                "name": "Particle.frag",
+                "file": "default"
+            }
+        },
+        "76": {
+            "link": {
+                "name": "Physical.frag",
+                "file": "default"
+            }
+        },
+        "79": {
+            "link": {
+                "name": "Sky.frag",
+                "file": "default"
+            }
+        },
+        "80": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "81": {
+            "link": {
+                "name": "Text.frag",
+                "file": "default"
+            }
+        },
+        "83": {
+            "link": {
+                "name": "Text.vert",
+                "file": "default"
+            }
+        },
+        "84": {
+            "link": {
+                "name": "TileFeedback.frag",
+                "file": "default"
+            }
+        },
+        "87": {
+            "link": {
+                "name": "Background.frag",
+                "file": "default"
+            }
+        },
+        "88": {
+            "link": {
+                "name": "FullScreenTriangle.vert",
+                "file": "default"
+            }
+        },
+        "301": {
+            "link": {
+                "name": "lib\\Color.glsl",
+                "file": "default"
+            }
+        },
+        "302": {
+            "link": {
+                "name": "lib\\Compatibility.frag",
+                "file": "default"
+            }
+        },
+        "303": {
+            "link": {
+                "name": "lib\\CoordinateSystems.glsl",
+                "file": "default"
+            }
+        },
+        "304": {
+            "link": {
+                "name": "lib\\GI.frag",
+                "file": "default"
+            }
+        },
+        "305": {
+            "link": {
+                "name": "lib\\Inputs.frag",
+                "file": "default"
+            }
+        },
+        "306": {
+            "link": {
+                "name": "lib\\Lights.frag",
+                "file": "default"
+            }
+        },
+        "307": {
+            "link": {
+                "name": "lib\\Materials.frag",
+                "file": "default"
+            }
+        },
+        "308": {
+            "link": {
+                "name": "lib\\Math.glsl",
+                "file": "default"
+            }
+        },
+        "309": {
+            "link": {
+                "name": "lib\\Packing.frag",
+                "file": "default"
+            }
+        },
+        "310": {
+            "link": {
+                "name": "lib\\Quaternion.glsl",
+                "file": "default"
+            }
+        },
+        "311": {
+            "link": {
+                "name": "lib\\ShaderType.glsl",
+                "file": "default"
+            }
+        },
+        "312": {
+            "link": {
+                "name": "lib\\Slug.frag",
+                "file": "default"
+            }
+        },
+        "313": {
+            "link": {
+                "name": "lib\\Slug.vert",
+                "file": "default"
+            }
+        },
+        "314": {
+            "link": {
+                "name": "lib\\Surface.frag",
+                "file": "default"
+            }
+        },
+        "315": {
+            "link": {
+                "name": "lib\\Textures.frag",
+                "file": "default"
+            }
+        },
+        "316": {
+            "link": {
+                "name": "lib\\Uniforms.glsl",
+                "file": "default"
+            }
+        }
+    },
+    "settings": {
+        "project": {
+            "name": "load-scene-no-view",
+            "version": [
+                1,
+                0,
+                4
+            ],
+            "packageForStreaming": true
+        },
+        "rendering": {
+            "clearColor": [
+                0.4235294,
+                1.0,
+                0.8705882,
+                1.0
+            ]
+        },
+        "runtime": {
+            "xrButtonColor": "white",
+            "webxr": {
+                "optionalFeatures": {
+                    "hand-tracking": true,
+                    "local-floor": true
+                },
+                "requiredFeatures": {
+                    "local-floor": false,
+                    "hand-tracking": false
+                }
+            },
+            "viewObject": "21"
+        },
+        "scripting": {
+            "sourcePaths": [
+                "js",
+                "js/pp/index.js",
+                "js/playground/components",
+                "js/cauldron/components"
+            ],
+            "bundlingType": "esbuild",
+            "libraryPaths": [
+                "/js/lib/"
+            ]
+        },
+        "vr": {
+            "leftEyeObject": "26",
+            "rightEyeObject": "27"
+        },
+        "editor": {
+            "camera": {
+                "near": 0.0099999,
+                "far": 10000.0
+            }
+        },
+        "physx": {
+            "enable": true,
+            "groupNames": {
+                "0": "Player",
+                "1": "Solid",
+                "2": "Interactable",
+                "3": "Group 3",
+                "4": "Group 4",
+                "5": "Group 5",
+                "6": "Group 6",
+                "7": "Group 7"
+            }
+        }
+    },
+    "animations": {},
+    "skins": {},
+    "pipelines": {
+        "2": {
+            "link": {
+                "name": "Depth",
+                "file": "default"
+            }
+        },
+        "4": {
+            "link": {
+                "name": "DistanceFieldVector",
+                "file": "default"
+            }
+        },
+        "7": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            }
+        },
+        "8": {
+            "link": {
+                "name": "Flat Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "ALPHA_MASKED": true
+            }
+        },
+        "10": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "13": {
+            "link": {
+                "name": "Phong Opaque",
+                "file": "default"
+            }
+        },
+        "14": {
+            "link": {
+                "name": "Phong Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "ALPHA_MASKED": true
+            }
+        },
+        "16": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            }
+        },
+        "17": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "77": {
+            "link": {
+                "name": "Physical Opaque",
+                "file": "default"
+            }
+        },
+        "78": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "ALPHA_MASKED": true
+            }
+        },
+        "82": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "85": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            }
+        },
+        "145": {
+            "link": {
+                "name": "Phong Normalmapped",
+                "file": "default"
+            }
+        },
+        "146": {
+            "link": {
+                "name": "Phong Lightmapped",
+                "file": "default"
+            }
+        },
+        "89": {
+            "link": {
+                "name": "Flat Opaque",
+                "file": "default"
+            },
+            "name": "Flat Transparent No Depth",
+            "features": {
+                "ALPHA_MASKED": true
+            },
+            "depthTest": false,
+            "depthFunction": "always",
+            "blending": true,
+            "blendSrcRgb": "source alpha",
+            "blendSrcAlpha": "source alpha",
+            "blendDestRgb": "one minus source alpha",
+            "blendDestAlpha": "one minus source alpha",
+            "blendEqAlpha": "max"
+        },
+        "317": {
+            "link": {
+                "name": "TileFeedback",
+                "file": "default"
+            }
+        }
+    },
+    "textures": {
+        "300": {
+            "link": {
+                "name": "terreno_laby.png",
+                "file": "assets\\textures\\terreno_laby.png"
+            }
+        }
+    },
+    "images": {
+        "299": {
+            "link": {
+                "name": "terreno_laby.png",
+                "file": "assets\\textures\\terreno_laby.png"
+            }
+        }
+    },
+    "files": {
+        "318": {
+            "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
+            "importerName": "AssimpImporter"
+        },
+        "319": {
+            "fileName": "assets/models/pp/wondermelon.fbx",
+            "importerName": "AssimpImporter"
+        },
+        "320": {
+            "fileName": "assets/textures/terreno_laby.png",
+            "importerName": ""
+        }
+    },
+    "fonts": {
+        "147": {
+            "link": {
+                "name": "DejaVuSans.ttf",
+                "file": "default"
+            }
+        }
+    },
+    "languages": {}
+}

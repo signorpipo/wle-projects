@@ -30,5 +30,9 @@ export class LoadSceneComponent extends Component {
         if (Globals.getRightGamepad(this.engine).getButtonInfo(GamepadButtonID.SQUEEZE).isPressEnd()) {
             Globals.getScene(this.engine).load("scene-3.bin");
         }
+
+        if (Globals.getRightGamepad(this.engine).getButtonInfo(GamepadButtonID.TOP_BUTTON).isPressEnd()) {
+            Globals.getScene(this.engine).load("scene-4.bin");
+        }
     }
 }

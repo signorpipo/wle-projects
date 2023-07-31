@@ -26,5 +26,13 @@ export class AppendSceneComponent extends Component {
         if (Globals.getRightGamepad(this.engine).getButtonInfo(GamepadButtonID.SELECT).isPressEnd()) {
             Globals.getScene(this.engine).append("scene-2-streamable-no-view-skin.bin");
         }
+
+        if (Globals.getRightGamepad(this.engine).getButtonInfo(GamepadButtonID.SQUEEZE).isPressEnd()) {
+            Globals.getScene(this.engine).append("load-scene-no-view.bin");
+        }
+
+        if (Globals.getRightGamepad(this.engine).getButtonInfo(GamepadButtonID.TOP_BUTTON).isPressEnd()) {
+            Globals.getScene(this.engine).append("scene-4.bin");
+        }
     }
 }
