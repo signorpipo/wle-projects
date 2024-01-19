@@ -1964,6 +1964,96 @@
                 "name": "TileFeedback.frag",
                 "file": "default"
             }
+        },
+        "509": {
+            "link": {
+                "name": "lib\\Color.glsl",
+                "file": "default"
+            }
+        },
+        "510": {
+            "link": {
+                "name": "lib\\Compatibility.frag",
+                "file": "default"
+            }
+        },
+        "511": {
+            "link": {
+                "name": "lib\\CoordinateSystems.glsl",
+                "file": "default"
+            }
+        },
+        "512": {
+            "link": {
+                "name": "lib\\GI.frag",
+                "file": "default"
+            }
+        },
+        "513": {
+            "link": {
+                "name": "lib\\Inputs.frag",
+                "file": "default"
+            }
+        },
+        "514": {
+            "link": {
+                "name": "lib\\Lights.frag",
+                "file": "default"
+            }
+        },
+        "515": {
+            "link": {
+                "name": "lib\\Materials.frag",
+                "file": "default"
+            }
+        },
+        "516": {
+            "link": {
+                "name": "lib\\Math.glsl",
+                "file": "default"
+            }
+        },
+        "517": {
+            "link": {
+                "name": "lib\\Packing.frag",
+                "file": "default"
+            }
+        },
+        "518": {
+            "link": {
+                "name": "lib\\Quaternion.glsl",
+                "file": "default"
+            }
+        },
+        "519": {
+            "link": {
+                "name": "lib\\Slug.frag",
+                "file": "default"
+            }
+        },
+        "520": {
+            "link": {
+                "name": "lib\\Slug.vert",
+                "file": "default"
+            }
+        },
+        "521": {
+            "link": {
+                "name": "lib\\Surface.frag",
+                "file": "default"
+            }
+        },
+        "522": {
+            "link": {
+                "name": "lib\\Textures.frag",
+                "file": "default"
+            }
+        },
+        "524": {
+            "link": {
+                "name": "lib\\Uniforms.glsl",
+                "file": "default"
+            }
         }
     },
     "settings": {
@@ -1971,8 +2061,8 @@
             "name": "scene-2-streamable-no-view-skin",
             "version": [
                 1,
-                0,
-                4
+                1,
+                6
             ],
             "packageForStreaming": true
         },
@@ -2169,6 +2259,12 @@
                 "WITH_EMISSIVE": true
             },
             "name": "My Phong Opaque"
+        },
+        "523": {
+            "link": {
+                "name": "TileFeedback",
+                "file": "default"
+            }
         }
     },
     "textures": {
@@ -2220,18 +2316,18 @@
         }
     },
     "languages": {},
-    "files": [
-        {
+    "files": {
+        "525": {
             "fileName": "assets/textures/sky_laby.png",
             "importerName": ""
         },
-        {
+        "526": {
             "fileName": "assets/models/skeleton_character_-_low_poly.glb",
             "importerName": ""
         },
-        {
+        "527": {
             "fileName": "assets/models/toon_cat_free_glb.glb",
             "importerName": ""
         }
-    ]
+    }
 }

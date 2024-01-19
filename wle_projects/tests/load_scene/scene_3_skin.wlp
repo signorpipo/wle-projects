@@ -1979,6 +1979,96 @@
                 "name": "TileFeedback.frag",
                 "file": "default"
             }
+        },
+        "266": {
+            "link": {
+                "name": "lib\\Color.glsl",
+                "file": "default"
+            }
+        },
+        "267": {
+            "link": {
+                "name": "lib\\Compatibility.frag",
+                "file": "default"
+            }
+        },
+        "268": {
+            "link": {
+                "name": "lib\\CoordinateSystems.glsl",
+                "file": "default"
+            }
+        },
+        "269": {
+            "link": {
+                "name": "lib\\GI.frag",
+                "file": "default"
+            }
+        },
+        "270": {
+            "link": {
+                "name": "lib\\Inputs.frag",
+                "file": "default"
+            }
+        },
+        "271": {
+            "link": {
+                "name": "lib\\Lights.frag",
+                "file": "default"
+            }
+        },
+        "272": {
+            "link": {
+                "name": "lib\\Materials.frag",
+                "file": "default"
+            }
+        },
+        "273": {
+            "link": {
+                "name": "lib\\Math.glsl",
+                "file": "default"
+            }
+        },
+        "274": {
+            "link": {
+                "name": "lib\\Packing.frag",
+                "file": "default"
+            }
+        },
+        "275": {
+            "link": {
+                "name": "lib\\Quaternion.glsl",
+                "file": "default"
+            }
+        },
+        "276": {
+            "link": {
+                "name": "lib\\Slug.frag",
+                "file": "default"
+            }
+        },
+        "277": {
+            "link": {
+                "name": "lib\\Slug.vert",
+                "file": "default"
+            }
+        },
+        "278": {
+            "link": {
+                "name": "lib\\Surface.frag",
+                "file": "default"
+            }
+        },
+        "279": {
+            "link": {
+                "name": "lib\\Textures.frag",
+                "file": "default"
+            }
+        },
+        "281": {
+            "link": {
+                "name": "lib\\Uniforms.glsl",
+                "file": "default"
+            }
         }
     },
     "settings": {
@@ -1986,8 +2076,8 @@
             "name": "scene-3-skin",
             "version": [
                 1,
-                0,
-                4
+                1,
+                6
             ]
         },
         "vr": {
@@ -2171,6 +2261,12 @@
             "features": {
                 "DEPRECATED_LIGHT_ATTENUATION": true
             }
+        },
+        "280": {
+            "link": {
+                "name": "TileFeedback",
+                "file": "default"
+            }
         }
     },
     "textures": {
@@ -2210,14 +2306,14 @@
         }
     },
     "languages": {},
-    "files": [
-        {
+    "files": {
+        "282": {
             "fileName": "assets/models/skeleton_character_-_low_poly.glb",
             "importerName": ""
         },
-        {
+        "283": {
             "fileName": "assets/models/toon_cat_free_glb.glb",
             "importerName": ""
         }
-    ]
+    }
 }

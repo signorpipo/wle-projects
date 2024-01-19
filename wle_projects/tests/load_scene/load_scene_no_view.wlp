@@ -2317,8 +2317,8 @@
             "name": "load-scene-no-view",
             "version": [
                 1,
-                0,
-                4
+                1,
+                6
             ],
             "packageForStreaming": true
         },
