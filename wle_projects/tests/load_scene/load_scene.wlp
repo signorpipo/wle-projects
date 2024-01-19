@@ -32,7 +32,7 @@
                 },
                 {
                     "type": "load-scene",
-                    "active": true
+                    "active": false
                 },
                 {
                     "type": "load-scene-after-delay",
@@ -43,7 +43,7 @@
                 },
                 {
                     "type": "append-scene",
-                    "active": false
+                    "active": true
                 }
             ]
         },
@@ -2388,6 +2388,164 @@
                 0.5,
                 0.5
             ]
+        },
+        "320": {
+            "name": "Instructions",
+            "parent": "18",
+            "translation": [
+                1.9978404,
+                1.4999998,
+                -5.0
+            ],
+            "rotation": [
+                -7.549790836947068e-8,
+                1.0,
+                -7.549790836947068e-8,
+                -4.371138118131057e-8
+            ],
+            "scaling": [
+                0.8,
+                0.8,
+                0.8
+            ]
+        },
+        "321": {
+            "name": "Text",
+            "parent": "320",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "LOAD\n\nLeft Select         / E: Cube, no view, loads default\nLeft Squeeze     / Q: Default scene\nLeft Top             / F: This scene\nLeft Bottom       / C: Streamable, textures, no view\nRight Select       / U: Skins, animation, textures\nRight Squeeze   / O: Default scene, loads back",
+                        "alignment": "left",
+                        "justification": "top"
+                    }
+                }
+            ],
+            "translation": [
+                -0.8346303,
+                0.8430255,
+                0.0099685
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "322": {
+            "name": "Back",
+            "parent": "320",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "323"
+                    }
+                }
+            ],
+            "translation": [
+                0.4667356,
+                0.0,
+                -0.0000882
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.4445517,
+                1.0,
+                1.0
+            ]
+        },
+        "324": {
+            "name": "Instructions",
+            "parent": "18",
+            "translation": [
+                -1.3688735,
+                1.4999974,
+                -5.0
+            ],
+            "rotation": [
+                -7.549790836947068e-8,
+                1.0,
+                -7.549790836947068e-8,
+                -4.371138118131057e-8
+            ],
+            "scaling": [
+                0.8,
+                0.8,
+                0.8
+            ]
+        },
+        "325": {
+            "name": "Text",
+            "parent": "324",
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "APPEND\n\nLeft Select         / E: Streamable, default scene\nLeft Squeeze     / Q: Default scene\nLeft Top             / F: This scene\nLeft Bottom       / C: Streamable, textures, no view\nRight Select       / U: Streamable, skins, animation, textures, no view\nRight Squeeze   / O: Streamable, this scene, no view",
+                        "alignment": "left",
+                        "justification": "top"
+                    }
+                }
+            ],
+            "translation": [
+                -0.8346303,
+                0.8430255,
+                0.0099685
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "326": {
+            "name": "Back",
+            "parent": "324",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p0",
+                        "material": "323"
+                    }
+                }
+            ],
+            "translation": [
+                0.826157,
+                0.0000091,
+                -0.0000514
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.8632633,
+                1.0,
+                1.0
+            ]
         }
     },
     "meshes": {
@@ -2831,6 +2989,18 @@
                     1.0,
                     1.0,
                     1.0,
+                    1.0
+                ]
+            }
+        },
+        "323": {
+            "name": "Flat Black",
+            "pipeline": "7",
+            "Flat": {
+                "color": [
+                    0.0,
+                    0.0,
+                    0.0,
                     1.0
                 ]
             }
