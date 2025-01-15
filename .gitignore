@@ -1,5 +1,7 @@
 cache/
 
+dist/
+
 deploy/
 
 node_modules/
