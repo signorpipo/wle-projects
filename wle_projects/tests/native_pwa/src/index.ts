@@ -97,6 +97,11 @@ engine.onLoadingScreenEnd.once(() => {
     if (el) setTimeout(() => el.remove(), 2000);
 });
 
+// PWA instantly requests session
+engine
+    .requestXRSession('immersive-vr', Constants.WebXRRequiredFeatures, Constants.WebXROptionalFeatures)
+    .catch((e) => console.error(e));
+
 /* WebXR setup. */
 
 function requestSession(mode: XRSessionMode): void {
