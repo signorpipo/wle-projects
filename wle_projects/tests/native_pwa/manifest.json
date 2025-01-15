@@ -1,14 +1,13 @@
 {
-    "name": "wle-pplayground",
-    "short_name": "wle-pplayground",
-    "version": "0.4.2",
+    "name": "native-pwa",
+    "short_name": "native-pwa",
+    "version": "1.0.0",
     "author": "Pipo",
-    "description": "Playground template project for the Wonderland Engine",
-    "homepage_url": "https://github.com/signorpipo/wle-pplayground",
+    "description": "Native PWA Test",
     "lang": "en-US",
     "display": "standalone",
-    "ovr_package_name": "com.signorpipo.wle_pplayground",
-    "start_url": "<link to a page which has the app with pwa working (netlify can work)>",
+    "ovr_package_name": "com.signorpipo.native_pwa",
+    "start_url": "https://native-pwa.netlify.app/",
     "scope": "./",
     "focusaware": true,
     "orientation": "landscape",
@@ -64,14 +63,14 @@
             "sizes": "1920x1080",
             "type": "image/png",
             "form_factor": "wide",
-            "label": "Playground template project for the Wonderland Engine"
+            "label": "Native PWA Test"
         },
         {
             "src": "pwa/screenshots/pp/mobile_screenshot.png",
             "sizes": "1080x1920",
             "type": "image/png",
             "form_factor": "narrow",
-            "label": "Playground template project for the Wonderland Engine"
+            "label": "Native PWA Test"
         }
     ]
 }
