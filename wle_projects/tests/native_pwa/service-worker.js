@@ -1,6 +1,6 @@
 // #region Service Worker Setup
 
-let _myAppName = "wle-pplayground";
+let _myAppName = "native-pwa";
 let _myServiceWorkerVersion = 1;
 let _myCacheVersion = 1;
 
@@ -9,6 +9,26 @@ let _myCacheVersion = 1;
 let _myResourceURLsToPrecache = [
     "/",
     "index.html",
+    "node_modules/@wonderlandengine/api/index.js",
+    _myAppName + "-app.js",
+    _myAppName + "-bundle.js",
+    "WonderlandRuntime-LoadingScreen.bin",
+    "WonderlandRuntime-physx.wasm",
+    "WonderlandRuntime-physx.js",
+    "WonderlandRuntime-physx-simd.wasm",
+    "WonderlandRuntime-physx-simd.js",
+    "WonderlandRuntime-physx-threads.wasm",
+    "WonderlandRuntime-physx-threads.js",
+    "WonderlandRuntime-physx-simd-threads.wasm",
+    "WonderlandRuntime-physx-simd-threads.js",
+    _myAppName + ".bin",
+    _myAppName + "-textures.bin",
+    "d1550dc2-2b9c-4c80-a575-22f58d3850d8.webp",
+    "assets/audio/sfx/playground/collision.mp3",
+    "assets/audio/sfx/playground/grab.mp3",
+    "assets/audio/sfx/playground/strike.mp3",
+    "assets/audio/sfx/playground/throw.mp3",
+    "assets/audio/music/playground/playground_ambient.mp3",
     "favicon.ico",
     "manifest.json",
     "icon48.png",
@@ -19,27 +39,7 @@ let _myResourceURLsToPrecache = [
     "icon192.png",
     "icon512.png",
     "pwa/screenshots/pp/desktop_screenshot.png",
-    "pwa/screenshots/pp/mobile_screenshot.png",
-    _myAppName + "-bundle.js",
-    "WonderlandRuntime-LoadingScreen.bin",
-    //"WonderlandRuntime-physx.wasm",
-    //"WonderlandRuntime-physx.js",
-    //"WonderlandRuntime-physx-simd.wasm",
-    //"WonderlandRuntime-physx-simd.js",
-    //"WonderlandRuntime-physx-threads.wasm",
-    //"WonderlandRuntime-physx-threads.js",
-    //"WonderlandRuntime-physx-threads.worker.js",
-    //"WonderlandRuntime-physx-simd-threads.wasm",
-    //"WonderlandRuntime-physx-simd-threads.js",
-    //"WonderlandRuntime-physx-simd-threads.worker.js",
-    _myAppName + ".bin",
-    _myAppName + "-textures.bin",
-    "d1550dc2-2b9c-4c80-a575-22f58d3850d8.png",
-    "assets/audio/sfx/playground/collision.mp3",
-    "assets/audio/sfx/playground/grab.mp3",
-    "assets/audio/sfx/playground/strike.mp3",
-    "assets/audio/sfx/playground/throw.mp3",
-    "assets/audio/music/playground/playground_ambient.mp3"
+    "pwa/screenshots/pp/mobile_screenshot.png"
 ];
 
 
