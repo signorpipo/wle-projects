@@ -61,4 +61,4 @@ try {
   console.error(error);
   window.alert(`Failed to load ${Constants.ProjectName}.bin: ` + error);
 }
-//# sourceMappingURL=wle-pplayground-app.js.map
+//# sourceMappingURL=native-pwa-app.js.map

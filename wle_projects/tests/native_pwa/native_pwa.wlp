@@ -3762,7 +3762,7 @@
         },
         "scripting": {
             "application": {
-                "output": "wle-pplayground-app.js",
+                "output": "native-pwa-app.js",
                 "bundling": "esbuild",
                 "entryPoint": "src/app.ts"
             },
@@ -3772,7 +3772,7 @@
                     "src/playground/components"
                 ],
                 "entryPoint": "src/index.ts",
-                "output": "wle-pplayground-bundle.js"
+                "output": "native-pwa-bundle.js"
             },
             "libraryPaths": [
                 "/js/lib/"
