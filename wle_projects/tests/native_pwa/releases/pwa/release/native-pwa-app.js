@@ -12,7 +12,7 @@ var Constants = {
   ProjectName: "native-pwa",
   RuntimeBaseName: "WonderlandRuntime",
   WebXRRequiredFeatures: ["local"],
-  WebXROptionalFeatures: ["local", "local-floor", "hand-tracking", "hit-test"]
+  WebXROptionalFeatures: ["local", "local-floor", "hand-tracking"]
 };
 var RuntimeOptions = {
   physx: true,
@@ -31,11 +31,11 @@ if (disableEngineLogs) {
 }
 var engine = await loadRuntime(Constants.RuntimeBaseName, RuntimeOptions);
 engine.onLoadingScreenEnd.once(() => {
+  engine.requestXRSession("immersive-vr", Constants.WebXRRequiredFeatures, Constants.WebXROptionalFeatures).catch((e) => console.error(e));
   const el = document.getElementById("version");
   if (el)
     setTimeout(() => el.remove(), 2e3);
 });
-engine.requestXRSession("immersive-vr", Constants.WebXRRequiredFeatures, Constants.WebXROptionalFeatures).catch((e) => console.error(e));
 function requestSession(mode) {
   engine.requestXRSession(mode, Constants.WebXRRequiredFeatures, Constants.WebXROptionalFeatures).catch((e) => console.error(e));
 }

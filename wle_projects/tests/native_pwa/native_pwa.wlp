@@ -3792,7 +3792,8 @@
             "webxr": {
                 "optionalFeatures": {
                     "hand-tracking": true,
-                    "local-floor": true
+                    "local-floor": true,
+                    "hit-test": false
                 }
             }
         },
