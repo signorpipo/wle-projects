@@ -27,7 +27,7 @@ const Constants = {
     ProjectName: 'native-pwa',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
-    WebXROptionalFeatures: ['local', 'local-floor', 'hand-tracking', 'hit-test',],
+    WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
 };
 const RuntimeOptions = {
     physx: true,

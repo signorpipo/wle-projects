@@ -35,6 +35,7 @@ engine.onLoadingScreenEnd.once(() => {
   if (el)
     setTimeout(() => el.remove(), 2e3);
 });
+engine.requestXRSession("immersive-vr", Constants.WebXRRequiredFeatures, Constants.WebXROptionalFeatures).catch((e) => console.error(e));
 function requestSession(mode) {
   engine.requestXRSession(mode, Constants.WebXRRequiredFeatures, Constants.WebXROptionalFeatures).catch((e) => console.error(e));
 }
