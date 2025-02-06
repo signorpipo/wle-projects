@@ -27,7 +27,7 @@ const Constants = {
     ProjectName: 'native-pwa',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
-    WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
+    WebXROptionalFeatures: ['local', 'local-floor', 'hand-tracking', 'hit-test',],
 };
 const RuntimeOptions = {
     physx: true,
@@ -52,6 +52,11 @@ engine.onLoadingScreenEnd.once(() => {
     const el = document.getElementById('version');
     if (el) setTimeout(() => el.remove(), 2000);
 });
+
+// PWA instantly requests session
+engine
+    .requestXRSession('immersive-vr', Constants.WebXRRequiredFeatures, Constants.WebXROptionalFeatures)
+    .catch((e) => console.error(e));
 
 /* WebXR setup. */
 
