@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.signorpipo.native_pwa",
+        "sha256_cert_fingerprints": ["00:A5:72:4A:9A:BD:46:40:AB:05:F4:59:5A:E3:75:8E:B0:E5:C1:1D:FA:4A:26:6D:AA:CB:E4:D7:40:DC:AC:E5"]
+      }
+    }]

@@ -1,9 +1,13 @@
 cache/
 
+dist/
+
 deploy/
 
 node_modules/
 
 .editor/
+
+.autosave/
 
 imgui.ini
