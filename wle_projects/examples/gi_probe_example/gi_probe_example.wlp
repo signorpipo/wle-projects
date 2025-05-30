@@ -36,9 +36,6 @@
                     "type": "pp-show-xr-buttons"
                 },
                 {
-                    "type": "pp-show-fps"
-                },
-                {
                     "type": "target-framerate",
                     "target-framerate": {
                         "framerate": 60.0
@@ -1208,14 +1205,15 @@
                 {
                     "type": "light",
                     "light": {
-                        "shadows": false,
+                        "shadows": true,
                         "intensity": 0.5,
                         "type": "sun",
                         "color": [
                             0.5659329,
                             0.9151942,
                             0.859658
-                        ]
+                        ],
+                        "shadowRange": 50.0
                     }
                 }
             ],
@@ -1973,26 +1971,32 @@
                 "name": "image_4",
                 "file": "assets\\models\\sci_fi_lab.glb"
             },
-            "compression": "uastc"
+            "compression": "uastc",
+            "stream": true
         },
         "244bdc73-8e7e-4c9b-9c27-5d03f5f43d3c": {
             "link": {
                 "name": "image_5",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc",
+            "stream": true
         },
         "5dbc78d9-4e12-4304-8cbb-bd367de53ab9": {
             "link": {
                 "name": "image_6",
                 "file": "assets\\models\\sci_fi_lab.glb"
             },
-            "compression": "uastc"
+            "compression": "uastc",
+            "stream": true
         },
         "f006b0fb-c003-4a6f-80b4-c2e77c7d2c93": {
             "link": {
                 "name": "image_7",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc",
+            "stream": true
         },
         "d6ea01a6-70d2-4df0-a04d-6bbb7cd5b510": {
             "link": {
@@ -4183,7 +4187,7 @@
                 "ALPHA_MASKED": false,
                 "WITH_FOG": false,
                 "GLOBAL_ILLUMINATION": false,
-                "GLOBAL_ILLUMINATION_PROBE_VOLUME": false
+                "GLOBAL_ILLUMINATION_PROBE_VOLUME": true
             },
             "doubleSided": false,
             "sampleAlphaToCoverage": false,
@@ -4200,7 +4204,8 @@
                 "WITH_FOG": true,
                 "WITH_EMISSIVE": true,
                 "SHADOW_NORMAL_OFFSET_UV_ONLY": true,
-                "SHADOW_NORMAL_OFFSET_SLOPE_SCALE": true
+                "SHADOW_NORMAL_OFFSET_SLOPE_SCALE": true,
+                "GLOBAL_ILLUMINATION_PROBE_VOLUME": true
             },
             "name": "Physical Opaque Textured No Shadows",
             "castShadows": false,
@@ -4333,9 +4338,9 @@
         },
         "rendering": {
             "clearColor": [
-                0.4235294,
-                1.0,
-                0.8705882,
+                0.0101499,
+                0.041935,
+                0.2352941,
                 1.0
             ],
             "sky": {
@@ -4355,10 +4360,9 @@
                 8192,
                 8192
             ],
-            "useTextureStreaming": false,
+            "useTextureStreaming": true,
             "bloom": {
-                "enabled": false,
-                "passes": 2
+                "enabled": false
             }
         },
         "xr": {
@@ -4400,6 +4404,21 @@
                 "5": "Group 5",
                 "6": "Group 6",
                 "7": "Group 7"
+            }
+        },
+        "gi": {
+            "probeVolume": {
+                "enabled": true,
+                "translation": [
+                    3.9787003,
+                    1.9931908,
+                    -3.0163118
+                ],
+                "scaling": [
+                    14.1574001,
+                    4.1133389,
+                    8.0827388
+                ]
             }
         }
     }
