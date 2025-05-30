@@ -1212,10 +1212,10 @@
                 -5.960464477539065e-8
             ],
             "rotation": [
-                0.119699,
-                -0.4598741,
-                0.4280204,
-                0.7687563
+                -0.0428993,
+                -0.4079865,
+                0.4382851,
+                0.7997579
             ],
             "scaling": [
                 0.9999988,
@@ -1389,7 +1389,23 @@
                 "name": "Object_28<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
                 "file": "assets\\models\\sci_fi_lab.glb"
             },
-            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                8.0500001,
+                6.0,
+                -0.0000604
+            ],
+            "rotation": [
+                -0.0,
+                -1.1920920428565296e-7,
+                1.0,
+                0.0
+            ],
+            "scaling": [
+                0.9999998,
+                0.9999998,
+                1.0
+            ]
         },
         "70f1a81f-d20f-4870-b485-c13cf01b9f6a": {
             "link": {
@@ -1404,6 +1420,64 @@
                 "file": "assets\\models\\sci_fi_lab.glb"
             },
             "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "765ed0ab-72e5-468e-9ddb-3c260317d7e4": {
+            "link": {
+                "name": "Object_30<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                8.0500001,
+                6.025,
+                -0.0000604
+            ],
+            "rotation": [
+                -0.0,
+                -1.1920928955078125e-7,
+                1.0,
+                0.0
+            ],
+            "scaling": [
+                0.9999998,
+                0.9999998,
+                1.0
+            ]
+        },
+        "a1a9ee53-c54a-4ab0-a892-e91af94317b2": {
+            "link": {
+                "name": "Object_27<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                8.0500001,
+                6.025,
+                -0.0000604
+            ],
+            "rotation": [
+                0.0,
+                -1.1920889164684922e-7,
+                1.0,
+                0.0000032
+            ],
+            "scaling": [
+                1.0000009,
+                1.0000009,
+                1.0
+            ]
+        },
+        "59e5eab2-c486-4a15-ac8e-a67556acb9e7": {
+            "link": {
+                "name": "Object_28<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                -0.05,
+                0.0,
+                0.0
+            ]
         }
     },
     "meshes": {
@@ -2406,6 +2480,12 @@
                 "name": "image_109",
                 "file": "assets\\models\\sci_fi_lab.glb"
             }
+        },
+        "1cffdb03-00ad-4fe2-a918-e285a8c6f2eb": {
+            "link": {
+                "name": "hdri.jpg",
+                "file": "assets\\textures\\hdri.jpg"
+            }
         }
     },
     "textures": {
@@ -3074,6 +3154,12 @@
                 "name": "texture_109",
                 "file": "assets\\models\\sci_fi_lab.glb"
             }
+        },
+        "d840ba48-cb3e-4223-a378-d8b3f51c6f02": {
+            "link": {
+                "name": "hdri.jpg",
+                "file": "assets\\textures\\hdri.jpg"
+            }
         }
     },
     "shaders": {
@@ -3613,169 +3699,197 @@
             "link": {
                 "name": "Panel_sciana",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "21d7fcc6-b30b-476e-a274-0be83a77a18e": {
             "link": {
                 "name": "Panel_sterowania",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "a4709686-e02b-40d0-aa39-a4e2784fe29d": {
             "link": {
                 "name": "Podoga2",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "f4e1e79f-e0df-4795-b0eb-811238eb8795": {
             "link": {
                 "name": "SCIANA_DUZA",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "38b16e0c-7bce-47ee-a520-5f12e5842681"
         },
         "ecf96108-fc82-4286-9c65-37cfa8146ce1": {
             "link": {
                 "name": "SCIANA_MAA",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "c31d340d-9d17-4e04-befe-d749c8d775a4": {
             "link": {
                 "name": "SCIANA_PODLOGA",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "96819dd9-13fb-4815-b40a-8fadd3b6136c": {
             "link": {
                 "name": "SZYBKA",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "b8f9d3fd-5254-4274-8752-f623b2971d89": {
             "link": {
                 "name": "drzwi",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "44ecf96b-b205-4ba8-ab21-2b8335c3c0ad": {
             "link": {
                 "name": "duz_soik_szybka",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "6bb3b26a-807c-4a25-a3a5-336e7734962b": {
             "link": {
                 "name": "duzy_soik",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "01d79ec6-ec2f-4736-ae49-20621269294b": {
             "link": {
                 "name": "panel",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "38b16e0c-7bce-47ee-a520-5f12e5842681"
         },
         "72e5cb6b-8379-4fd1-b022-53980a98ba79": {
             "link": {
                 "name": "panel3",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "ad6f7857-f502-4554-8f18-49b93b579138": {
             "link": {
                 "name": "rura_glowna_podloga",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "56a0e2d5-fa8b-4ef8-9dc9-3e22ad0ec3a5": {
             "link": {
                 "name": "rura_glowna_szybka",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "174aca65-6503-4257-ba8e-9317b2f31947": {
             "link": {
                 "name": "rura_gwna_baza",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "621dd908-8aa9-4908-9f14-de353e9efbf2": {
             "link": {
                 "name": "rura_przod",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "c0a22ddf-c021-40f1-882e-6b74e0ee56d6": {
             "link": {
                 "name": "rura_tylna",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "d998a736-60fc-4670-bc9c-62ba64e93770": {
             "link": {
                 "name": "sciana3",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "38b16e0c-7bce-47ee-a520-5f12e5842681"
         },
         "5e41a09e-f37b-49cd-bbc1-c1cfec57f9d5": {
             "link": {
                 "name": "stolik",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "49878861-300e-48e0-a6af-da2070034291": {
             "link": {
                 "name": "stolik_szybka",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "f36f968c-78cb-4d29-8868-68194976f6e6": {
             "link": {
                 "name": "szafka",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "d4e9a9d5-6493-4a57-a42b-939f17f4e66a": {
             "link": {
                 "name": "szafka_body",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "0618ef85-dfb3-4a43-bb34-2299ff444989": {
             "link": {
                 "name": "szafka_szyba",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "075bf9b0-785a-4093-bcf3-e83d12492fb5": {
             "link": {
                 "name": "szafka_szybka",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "3fdecd51-66d2-4043-916d-4072ef7a3403": {
             "link": {
                 "name": "szyba_przegroda",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "9f7330b0-134b-42bc-a278-e824af568f1b": {
             "link": {
                 "name": "soik_may",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "220e46cc-0f3e-4bb1-9e94-e20d142739ee": {
             "link": {
                 "name": "soik_may_szybka",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         },
         "15146e3e-36cf-4833-bcdc-03b596d3201e": {
             "link": {
                 "name": "tablica",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
         }
     },
     "animations": {},
@@ -3879,8 +3993,21 @@
                 "file": "default"
             },
             "features": {
-                "SEPARATE_OCCLUSION_TEXTURE": true
+                "SEPARATE_OCCLUSION_TEXTURE": true,
+                "NORMAL_MAPPING": true
             }
+        },
+        "38b16e0c-7bce-47ee-a520-5f12e5842681": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "SEPARATE_OCCLUSION_TEXTURE": true,
+                "NORMAL_MAPPING": true
+            },
+            "name": "Physical Opaque Textured No Shadows",
+            "castShadows": false
         },
         "34d9e3a1-e64c-4786-b7ef-581ce83aaf88": {
             "link": {
@@ -3969,6 +4096,10 @@
             "fileName": "assets/models/sci_fi_lab.glb",
             "importerName": "",
             "importPhysicalAsPhongMaterials": true
+        },
+        "a8a9568b-83d0-4e4c-85f3-9d12d0652051": {
+            "fileName": "assets/textures/hdri.jpg",
+            "importerName": ""
         }
     },
     "languages": {},
@@ -4009,7 +4140,16 @@
                 1.0,
                 0.8705882,
                 1.0
-            ]
+            ],
+            "sky": {
+                "enabled": true,
+                "material": "fdd04da3-6300-46e4-afad-fb76a6e26dfd"
+            },
+            "environment": {
+                "enabled": true,
+                "bakingMode": "image",
+                "image": "1cffdb03-00ad-4fe2-a918-e285a8c6f2eb"
+            }
         },
         "xr": {
             "leftEyeObject": "bfeccf36-046b-49b5-b355-da4ede4daf21",
