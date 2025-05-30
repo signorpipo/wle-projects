@@ -12,7 +12,9 @@ import { WonderlandEngine } from '@wonderlandengine/api';
 
 /* wle:auto-imports:start */
 import {Cursor} from '@wonderlandengine/components';
+import {FixedFoveation} from '@wonderlandengine/components';
 import {MouseLookComponent} from '@wonderlandengine/components';
+import {TargetFramerate} from '@wonderlandengine/components';
 import {ConsoleVRToolComponent} from './pp/index.js';
 import {EasyTuneToolComponent} from './pp/index.js';
 import {FingerCursorComponent} from './pp/index.js';
@@ -23,6 +25,7 @@ import {PlayerLocomotionComponent} from './pp/index.js';
 import {ResetLocalTransformComponent} from './pp/index.js';
 import {SetHandLocalTransformComponent} from './pp/index.js';
 import {SetHeadLocalTransformComponent} from './pp/index.js';
+import {ShowFPSComponent} from './pp/index.js';
 import {ShowXRButtonsComponent} from './pp/index.js';
 import {SpatialAudioListenerComponent} from './pp/index.js';
 import {SwitchHandObjectComponent} from './pp/index.js';
@@ -34,7 +37,9 @@ import {VirtualGamepadComponent} from './pp/index.js';
 export default function (engine: Readonly<WonderlandEngine>): void {
 /* wle:auto-register:start */
 engine.registerComponent(Cursor);
+engine.registerComponent(FixedFoveation);
 engine.registerComponent(MouseLookComponent);
+engine.registerComponent(TargetFramerate);
 engine.registerComponent(ConsoleVRToolComponent);
 engine.registerComponent(EasyTuneToolComponent);
 engine.registerComponent(FingerCursorComponent);
@@ -45,6 +50,7 @@ engine.registerComponent(PlayerLocomotionComponent);
 engine.registerComponent(ResetLocalTransformComponent);
 engine.registerComponent(SetHandLocalTransformComponent);
 engine.registerComponent(SetHeadLocalTransformComponent);
+engine.registerComponent(ShowFPSComponent);
 engine.registerComponent(ShowXRButtonsComponent);
 engine.registerComponent(SpatialAudioListenerComponent);
 engine.registerComponent(SwitchHandObjectComponent);

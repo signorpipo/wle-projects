@@ -34,6 +34,21 @@
                 },
                 {
                     "type": "pp-show-xr-buttons"
+                },
+                {
+                    "type": "pp-show-fps"
+                },
+                {
+                    "type": "target-framerate",
+                    "target-framerate": {
+                        "framerate": 60.0
+                    }
+                },
+                {
+                    "type": "fixed-foveation",
+                    "fixed-foveation": {
+                        "fixedFoveation": 1.0
+                    }
                 }
             ]
         },
@@ -1193,7 +1208,7 @@
                 {
                     "type": "light",
                     "light": {
-                        "shadows": true,
+                        "shadows": false,
                         "intensity": 0.5,
                         "type": "sun",
                         "color": [
@@ -1410,7 +1425,23 @@
                 "name": "Object_29<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
                 "file": "assets\\models\\sci_fi_lab.glb"
             },
-            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0000001,
+                1.0,
+                1.0
+            ]
         },
         "c18e0662-133e-45f5-9a0f-385218427a68": {
             "link": {
@@ -3627,15 +3658,18 @@
                     0.3921568
                 ]
             },
-            "pipeline": "2d2fb7df-35f2-4ea3-a493-70fe1235b94f",
+            "pipeline": "38b16e0c-7bce-47ee-a520-5f12e5842681",
             "Physical": {
-                "roughnessFactor": 0.3499999,
+                "roughnessFactor": 1.0,
                 "albedoColor": [
-                    0.4160553,
-                    0.6352322,
-                    0.6549019,
+                    1.0,
+                    1.0,
+                    1.0,
                     1.0
-                ]
+                ],
+                "albedoTexture": "c7ab25f0-5a55-4360-83a4-02411c11f3e3",
+                "roughnessMetallicTexture": "4fa7729c-af5e-4c7f-a650-518c403f8e04",
+                "normalTexture": "a3502b71-1392-4551-8cae-d86ac2b8920b"
             }
         },
         "90348bdc-8768-4244-9398-b89361708289": {
@@ -3660,15 +3694,11 @@
                     0.3921568
                 ]
             },
-            "pipeline": "2d2fb7df-35f2-4ea3-a493-70fe1235b94f",
+            "pipeline": "38b16e0c-7bce-47ee-a520-5f12e5842681",
             "Physical": {
-                "roughnessFactor": 0.3499999,
-                "albedoColor": [
-                    0.8235294,
-                    1.0,
-                    0.9397923,
-                    1.0
-                ]
+                "albedoTexture": "c7ab25f0-5a55-4360-83a4-02411c11f3e3",
+                "roughnessMetallicTexture": "4fa7729c-af5e-4c7f-a650-518c403f8e04",
+                "normalTexture": "a3502b71-1392-4551-8cae-d86ac2b8920b"
             }
         },
         "3699d0b5-ea21-4ec3-8d94-7f02ef40eec8": {
@@ -3840,7 +3870,20 @@
                 "name": "Panel_sterowania",
                 "file": "assets\\models\\sci_fi_lab.glb"
             },
-            "pipeline": "9104535f-2c03-4d28-8052-347735487f59"
+            "pipeline": "9104535f-2c03-4d28-8052-347735487f59",
+            "Physical": {
+                "albedoTexture": "dfd5c15b-0c60-4c52-8814-2f5262ef7197",
+                "emissiveTexture": "1051c604-c993-43ac-83a9-2f614c2f168c",
+                "emissiveColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "normalTexture": "da90e9e2-a313-4e48-a395-be223a0f2717",
+                "roughnessMetallicTexture": "5eb4001d-12c1-400f-8769-46ccb0a97c35",
+                "metallicFactor": 1.0
+            }
         },
         "a4709686-e02b-40d0-aa39-a4e2784fe29d": {
             "link": {
@@ -4138,10 +4181,13 @@
                 "LIGHTMAP": false,
                 "LIGHTMAP_MULTIPLY_ALBEDO": false,
                 "ALPHA_MASKED": false,
-                "WITH_FOG": true
+                "WITH_FOG": false,
+                "GLOBAL_ILLUMINATION": false,
+                "GLOBAL_ILLUMINATION_PROBE_VOLUME": false
             },
             "doubleSided": false,
-            "sampleAlphaToCoverage": false
+            "sampleAlphaToCoverage": false,
+            "shader": "9b31b513-9351-4934-88ae-d1511b2c09cf"
         },
         "38b16e0c-7bce-47ee-a520-5f12e5842681": {
             "link": {
@@ -4297,9 +4343,22 @@
                 "material": "fdd04da3-6300-46e4-afad-fb76a6e26dfd"
             },
             "environment": {
-                "enabled": true,
+                "enabled": false,
                 "bakingMode": "image",
                 "image": "1cffdb03-00ad-4fe2-a918-e285a8c6f2eb"
+            },
+            "compressedTextureAtlasSize": [
+                16384,
+                8192
+            ],
+            "textureAtlasSize": [
+                8192,
+                8192
+            ],
+            "useTextureStreaming": false,
+            "bloom": {
+                "enabled": false,
+                "passes": 2
             }
         },
         "xr": {
