@@ -169,9 +169,8 @@
                             0.9151943
                         ],
                         "type": "point",
-                        "shadows": false,
-                        "intensity": 10.0,
-                        "outerAngle": 270.0
+                        "outerAngle": 270.0,
+                        "intensity": 10.0
                     }
                 }
             ],
@@ -1165,9 +1164,8 @@
                             0.9540635
                         ],
                         "type": "point",
-                        "shadows": false,
-                        "intensity": 10.0,
-                        "outerAngle": 350.0
+                        "outerAngle": 350.0,
+                        "intensity": 10.0
                     }
                 }
             ],
@@ -1397,7 +1395,7 @@
             ],
             "rotation": [
                 -0.0,
-                -1.1920920428565296e-7,
+                -1.1920920428565297e-7,
                 1.0,
                 0.0
             ],
@@ -1825,7 +1823,8 @@
             "link": {
                 "name": "image_0",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "86b0a3a2-fb9b-4bb0-8394-f3e5297dd8ec": {
             "link": {
@@ -1837,7 +1836,8 @@
             "link": {
                 "name": "image_2",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "3b1269ff-d6ee-4b4d-9406-3143567226f2": {
             "link": {
@@ -1849,7 +1849,8 @@
             "link": {
                 "name": "image_4",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "244bdc73-8e7e-4c9b-9c27-5d03f5f43d3c": {
             "link": {
@@ -1861,7 +1862,8 @@
             "link": {
                 "name": "image_6",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "f006b0fb-c003-4a6f-80b4-c2e77c7d2c93": {
             "link": {
@@ -1879,7 +1881,8 @@
             "link": {
                 "name": "image_9",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "303a1cbb-386f-4580-bd3f-c0491f3daf1b": {
             "link": {
@@ -1903,7 +1906,8 @@
             "link": {
                 "name": "image_13",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "632f2b05-8934-4945-a590-0fe0ebab8eb7": {
             "link": {
@@ -1915,7 +1919,8 @@
             "link": {
                 "name": "image_15",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "4b774bfc-b79e-41d4-ad6d-8bbd4c3d598e": {
             "link": {
@@ -1927,7 +1932,8 @@
             "link": {
                 "name": "image_17",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "8a2a79b6-364e-4e8e-9685-d31920757431": {
             "link": {
@@ -1951,7 +1957,8 @@
             "link": {
                 "name": "image_21",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "4ab4d92d-ff77-41e9-ab66-c174ca833aed": {
             "link": {
@@ -1963,7 +1970,8 @@
             "link": {
                 "name": "image_23",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "711417da-7f95-4dca-badf-262e9a1c8a75": {
             "link": {
@@ -1993,7 +2001,8 @@
             "link": {
                 "name": "image_28",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "1c3eb0f5-b3f7-4125-88ba-cd64a5c387f3": {
             "link": {
@@ -2005,7 +2014,8 @@
             "link": {
                 "name": "image_30",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "c9d17bea-2049-4e71-af49-b2ad7af6a225": {
             "link": {
@@ -2041,7 +2051,8 @@
             "link": {
                 "name": "image_36",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "57476d5c-101b-4101-b320-d80bed661a16": {
             "link": {
@@ -2065,7 +2076,8 @@
             "link": {
                 "name": "image_40",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "6d319faf-6028-4499-aa36-403cf0dc0720": {
             "link": {
@@ -2107,7 +2119,8 @@
             "link": {
                 "name": "image_47",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "3eaa8760-7baa-4ee5-9ebd-a3d02289ee42": {
             "link": {
@@ -2155,7 +2168,8 @@
             "link": {
                 "name": "image_55",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "25cbf093-1f29-407e-a57b-f1f24cdbf47f": {
             "link": {
@@ -2179,7 +2193,8 @@
             "link": {
                 "name": "image_59",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "abdb4937-965b-4882-921e-c3b5b1c3e4d7": {
             "link": {
@@ -2203,7 +2218,8 @@
             "link": {
                 "name": "image_63",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "26ecffdb-1f4b-497c-9ae9-0c1b0e2b84c2": {
             "link": {
@@ -2245,7 +2261,8 @@
             "link": {
                 "name": "image_70",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "15f88f1f-d107-4417-b69f-62570b88c71b": {
             "link": {
@@ -2293,7 +2310,8 @@
             "link": {
                 "name": "image_78",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "531b3417-6213-4e74-89e1-4cf3f32327b0": {
             "link": {
@@ -2317,7 +2335,8 @@
             "link": {
                 "name": "image_82",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "d1dcf5c3-36f6-4920-a6b1-d70881bf07cb": {
             "link": {
@@ -2353,7 +2372,8 @@
             "link": {
                 "name": "image_88",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "60621da3-e2d6-451a-a204-6ec0503b3ed8": {
             "link": {
@@ -2413,7 +2433,8 @@
             "link": {
                 "name": "image_98",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "e89ce7a6-bef7-43bc-b0d5-6331fd3fa4f1": {
             "link": {
@@ -2461,7 +2482,8 @@
             "link": {
                 "name": "image_106",
                 "file": "assets\\models\\sci_fi_lab.glb"
-            }
+            },
+            "compression": "uastc"
         },
         "44a6c7f1-dc8c-4d72-a6b9-0c82839c76bb": {
             "link": {
@@ -2485,7 +2507,8 @@
             "link": {
                 "name": "hdri.jpg",
                 "file": "assets\\textures\\hdri.jpg"
-            }
+            },
+            "compression": "none"
         }
     },
     "textures": {
