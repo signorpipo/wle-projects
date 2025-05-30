@@ -50,10 +50,11 @@
                     }
                 }
             ],
-            "translation": [
-                0.0,
-                0.0,
-                -8.0
+            "rotation": [
+                -7.549790126404332e-8,
+                1.0,
+                -7.549790126404332e-8,
+                -4.371138118131057e-8
             ]
         },
         "5503f8af-6bfc-4d97-b2cc-3e4d8fd44d09": {
@@ -163,52 +164,32 @@
                     "type": "light",
                     "light": {
                         "color": [
-                            0.3921568,
-                            0.329466,
-                            0.1384083
+                            0.5659329,
+                            0.7115613,
+                            0.9151943
                         ],
-                        "type": "sun"
+                        "type": "point",
+                        "shadows": false,
+                        "intensity": 10.0,
+                        "outerAngle": 270.0
                     }
                 }
             ],
-            "translation": [
-                0.0,
-                20.0000514,
-                0.0
-            ],
-            "rotation": [
-                -0.2156182,
-                0.0850898,
-                0.0188639,
-                0.9725804
-            ]
-        },
-        "8cd24f76-f5f3-4f30-9742-2ac04ef0cc16": {
-            "name": "Light 2",
-            "parent": "26727e6b-7a15-4314-8a36-b7bf99ece0fa",
-            "components": [
-                {
-                    "type": "light",
-                    "light": {
-                        "color": [
-                            0.1876201,
-                            0.3921568,
-                            0.3368116
-                        ],
-                        "type": "sun"
-                    }
-                }
+            "scaling": [
+                1.0,
+                1.0,
+                0.9999999
             ],
             "translation": [
-                0.0,
-                20.0000514,
-                0.0
+                0.3560064,
+                2.8849599,
+                -3.0178322
             ],
             "rotation": [
-                0.0999406,
-                0.8659851,
-                -0.1919842,
-                0.4508033
+                0.0,
+                0.0,
+                0.0,
+                1.0
             ]
         },
         "8be78c73-85be-4c1e-8f67-fd89305ab2ae": {
@@ -710,7 +691,7 @@
         },
         "f068fda9-1cee-4714-9a63-95aa8db22769": {
             "name": "Floor",
-            "parent": "526adb29-57d2-4b09-ac41-5efed44996a2",
+            "parent": "7c3dea61-5a6b-4c27-a1bb-e6026705b779",
             "components": [
                 {
                     "type": "physx",
@@ -731,14 +712,20 @@
                 }
             ],
             "translation": [
-                0.0,
+                4.8227128,
                 -1.0,
-                0.0
+                -3.6099038
             ],
             "scaling": [
                 10.0,
                 10.0,
                 10.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
             ]
         },
         "d299a8fa-0a3b-424f-9932-0bb22d4a1b8c": {
@@ -980,6 +967,443 @@
         "4470cf2d-650d-4c38-be1b-2434a74c4ff1": {
             "name": "Cursors",
             "parent": "f0cbb5f3-92cc-4f20-941c-2e7a438f166c"
+        },
+        "6e519be4-383e-45c5-bff3-66e8ffe51a2b": {
+            "name": "Walls",
+            "parent": "7c3dea61-5a6b-4c27-a1bb-e6026705b779",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "e90fa8e0-0926-485b-876d-bcb4f6042a97": {
+            "name": "Wall",
+            "parent": "6e519be4-383e-45c5-bff3-66e8ffe51a2b",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                7.5,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                3.7461416,
+                5.0,
+                -8.0
+            ],
+            "scaling": [
+                7.5,
+                5.0,
+                1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "cf67092e-ed8b-4cac-9311-feec1395b8e6": {
+            "name": "Wall",
+            "parent": "6e519be4-383e-45c5-bff3-66e8ffe51a2b",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                5.0,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                -3.9999976,
+                5.0002164,
+                -2.5
+            ],
+            "rotation": [
+                0.0,
+                0.7071068,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                4.9998865,
+                5.0,
+                0.9999858
+            ]
+        },
+        "1f16821f-660b-40d0-b674-cd3ddb4bcb9f": {
+            "name": "Wall",
+            "parent": "6e519be4-383e-45c5-bff3-66e8ffe51a2b",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                7.5,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                3.746,
+                5.0,
+                2.0
+            ],
+            "scaling": [
+                7.5,
+                5.0,
+                1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "9393f21e-a533-43af-a1e1-3082d450d663": {
+            "name": "Wall",
+            "parent": "6e519be4-383e-45c5-bff3-66e8ffe51a2b",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                5.0,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "translation": [
+                12.0,
+                5.0002164,
+                -2.4999995
+            ],
+            "rotation": [
+                0.0,
+                0.7071068,
+                0.0,
+                0.7071067
+            ],
+            "scaling": [
+                4.9998865,
+                5.0,
+                0.9999858
+            ]
+        },
+        "7c3dea61-5a6b-4c27-a1bb-e6026705b779": {
+            "name": "Collision",
+            "parent": "526adb29-57d2-4b09-ac41-5efed44996a2"
+        },
+        "664be3bf-0a53-4420-947c-0fac801fcc21": {
+            "name": "Visual",
+            "parent": "526adb29-57d2-4b09-ac41-5efed44996a2"
+        },
+        "8cd24f76-f5f3-4f30-9742-2ac04ef0cc16": {
+            "name": "Light 1",
+            "parent": "26727e6b-7a15-4314-8a36-b7bf99ece0fa",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "color": [
+                            0.7045911,
+                            0.9514189,
+                            0.9540635
+                        ],
+                        "type": "point",
+                        "shadows": false,
+                        "intensity": 10.0,
+                        "outerAngle": 350.0
+                    }
+                }
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                0.9999999
+            ],
+            "translation": [
+                7.6524186,
+                2.0427236,
+                -3.0178322
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "14c75133-db8b-4f61-b18a-0b8a8b140fa0": {
+            "name": "Shadow",
+            "parent": "26727e6b-7a15-4314-8a36-b7bf99ece0fa",
+            "components": [
+                {
+                    "type": "light",
+                    "light": {
+                        "shadows": true,
+                        "intensity": 0.5,
+                        "type": "sun",
+                        "color": [
+                            0.4027519,
+                            0.9045936,
+                            0.5694413
+                        ]
+                    }
+                }
+            ],
+            "translation": [
+                -2.8552615,
+                4.9646382,
+                -5.960464477539065e-8
+            ],
+            "rotation": [
+                0.119699,
+                -0.4598741,
+                0.4280204,
+                0.7687563
+            ],
+            "scaling": [
+                0.9999988,
+                0.9999989,
+                0.9999994
+            ]
+        },
+        "0835ab39-cae8-4af2-b8fd-4f3686284e47": {
+            "link": {
+                "name": "Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "664be3bf-0a53-4420-947c-0fac801fcc21"
+        },
+        "c76cd56e-5e4a-4835-8005-b756adbfaffc": {
+            "link": {
+                "name": "enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "0835ab39-cae8-4af2-b8fd-4f3686284e47"
+        },
+        "bed44b57-4042-4a9b-8553-d357f52c9c31": {
+            "link": {
+                "name": "Object_2<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "e7a4b56b-7a9e-42bb-a34e-6490fa5d94bb": {
+            "link": {
+                "name": "Object_3<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "d4841ac3-a3aa-4fd7-800a-79ca8b6cd8a0": {
+            "link": {
+                "name": "Object_4<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "f4e27eac-2c69-471a-9625-b978ad9f3c4a": {
+            "link": {
+                "name": "Object_5<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "139c14be-1560-48c1-ba95-e31c0e6cd1bc": {
+            "link": {
+                "name": "Object_8<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "268b8c7b-d059-4c2f-88ae-4c9515b5a846": {
+            "link": {
+                "name": "Object_9<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "d12c04c6-d1c1-48fc-b15f-983cb5c8a244": {
+            "link": {
+                "name": "Object_10<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "08a08549-a5eb-440e-a0e5-b5d26c851501": {
+            "link": {
+                "name": "Object_11<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "878ad67d-090b-4750-be70-c5d5ea0e7454": {
+            "link": {
+                "name": "Object_12<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "4e35e1dc-7966-4e74-8718-3820f7a586bd": {
+            "link": {
+                "name": "Object_13<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "d005d205-ef3f-4803-a468-b1c4c6663c2e": {
+            "link": {
+                "name": "Object_14<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "6bf369d0-1585-4030-8e43-84b44206c5a5": {
+            "link": {
+                "name": "Object_15<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "c74f8ed3-625b-4196-a18c-2106b36abba3": {
+            "link": {
+                "name": "Object_16<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "04c6d970-ad55-4fba-a87e-db09e64c91fa": {
+            "link": {
+                "name": "Object_18<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "22db4f46-1847-42a4-9a32-7d2ff70c3df5": {
+            "link": {
+                "name": "Object_19<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "0941526f-e6d1-4a9c-acd2-ca9c387a07d1": {
+            "link": {
+                "name": "Object_22<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "9a365fb5-a833-452c-b9d9-67c97d5a599b": {
+            "link": {
+                "name": "Object_23<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "0258d473-6137-4e6a-8e70-6e3ffc5bd88e": {
+            "link": {
+                "name": "Object_24<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "3b18fa6c-195a-4d18-9bf4-feda6f0d1eb5": {
+            "link": {
+                "name": "Object_25<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "d125f380-109d-46d4-8fd0-9bda07096f4b": {
+            "link": {
+                "name": "Object_26<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "66c47af5-c29b-49b8-b46c-9826087c1814": {
+            "link": {
+                "name": "Object_27<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "e5434430-5faa-4f5f-af34-16a388e27f68": {
+            "link": {
+                "name": "Object_28<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "70f1a81f-d20f-4870-b485-c13cf01b9f6a": {
+            "link": {
+                "name": "Object_29<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
+        },
+        "c18e0662-133e-45f5-9a0f-385218427a68": {
+            "link": {
+                "name": "Object_30<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
         }
     },
     "meshes": {
@@ -1138,6 +1562,180 @@
                 "name": "Wondermelon Convex Mesh Fit",
                 "file": "assets\\models\\playground\\wondermelon.fbx"
             }
+        },
+        "c70d5b24-dd57-4ab0-8b97-af28aafca4b4": {
+            "link": {
+                "name": "Object_0",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ee07ff12-e74a-4d3e-b085-7e82182aa31e": {
+            "link": {
+                "name": "Object_1",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4435aad7-265d-4341-ac6a-bf3a42da8e1a": {
+            "link": {
+                "name": "Object_2",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f3447005-af0d-4a07-a4b4-077556ad7bdd": {
+            "link": {
+                "name": "Object_3",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "04949530-ca2b-4590-9d9a-feacf14bb81d": {
+            "link": {
+                "name": "Object_4",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "784e3eec-521a-409e-9c24-cb69dab2e9aa": {
+            "link": {
+                "name": "Object_5",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3c601ebc-f225-4bdd-b944-56b61dec4e87": {
+            "link": {
+                "name": "Object_6",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f20bde51-25ab-47a3-a596-c4d9c943ad3d": {
+            "link": {
+                "name": "Object_7",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "152d136a-eb9e-4ac1-a39e-af7829f4e3a2": {
+            "link": {
+                "name": "Object_8",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f48cb94e-22c5-4e9b-ab33-b5df2b5bab6e": {
+            "link": {
+                "name": "Object_9",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "20e8f15a-0ff7-41bf-b7ab-6f7b40d6f45c": {
+            "link": {
+                "name": "Object_10",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "04aa9509-866e-4d43-9116-4a2da748f5d6": {
+            "link": {
+                "name": "Object_11",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "330bca31-2306-4327-a632-954d8348ef1d": {
+            "link": {
+                "name": "Object_12",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9f774e06-cf96-44f6-9ccf-792fca7bf019": {
+            "link": {
+                "name": "Object_13",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1f0b4ea7-077b-42f1-a7b8-88ebd931b3f3": {
+            "link": {
+                "name": "Object_14",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a312a64a-35b7-41b8-8538-b66452583d19": {
+            "link": {
+                "name": "Object_15",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "6a075965-f42b-4bd8-a930-04d86962f2c6": {
+            "link": {
+                "name": "Object_16",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "202d5c45-14fc-4912-b6ba-d906d241f5ca": {
+            "link": {
+                "name": "Object_17",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c54f17f6-b577-4608-a994-256d2c167917": {
+            "link": {
+                "name": "Object_18",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "cbf6e0a2-7468-4341-9a8c-14b6550a13cc": {
+            "link": {
+                "name": "Object_19",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "93d9a937-78e8-45e2-a8d5-3f1ed9f596f4": {
+            "link": {
+                "name": "Object_20",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "b04828e5-44ef-40de-8d19-a252522b82df": {
+            "link": {
+                "name": "Object_21",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1e39a0cc-aca5-4d43-bf6d-e84c4337771a": {
+            "link": {
+                "name": "Object_22",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "76eb0600-f757-4edd-8f49-1901832b6a42": {
+            "link": {
+                "name": "Object_23",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ac29b4a2-6d85-45af-a2ec-6018e936d9d2": {
+            "link": {
+                "name": "Object_24",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "316f6bcb-d0d0-4941-9bb7-7f80446804f4": {
+            "link": {
+                "name": "Object_25",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "bf90cb36-48e6-4886-8641-8bb938ba03cb": {
+            "link": {
+                "name": "Object_26",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "b80b7781-7ffe-4eca-84e5-92b2ff68353c": {
+            "link": {
+                "name": "Object_27",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "7c5e5fc5-7c72-41c0-bcd1-e0d6bbe6af73": {
+            "link": {
+                "name": "Object_28",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
         }
     },
     "images": {
@@ -1148,6 +1746,666 @@
             },
             "compression": "none",
             "stream": false
+        },
+        "5e807769-3429-47a4-9ac6-18318043563e": {
+            "link": {
+                "name": "image_0",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "86b0a3a2-fb9b-4bb0-8394-f3e5297dd8ec": {
+            "link": {
+                "name": "image_1",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a6144177-9362-49ce-9a41-778c53545709": {
+            "link": {
+                "name": "image_2",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3b1269ff-d6ee-4b4d-9406-3143567226f2": {
+            "link": {
+                "name": "image_3",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "7480ea5b-0926-4b96-9ef2-472ac7624e12": {
+            "link": {
+                "name": "image_4",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "244bdc73-8e7e-4c9b-9c27-5d03f5f43d3c": {
+            "link": {
+                "name": "image_5",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5dbc78d9-4e12-4304-8cbb-bd367de53ab9": {
+            "link": {
+                "name": "image_6",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f006b0fb-c003-4a6f-80b4-c2e77c7d2c93": {
+            "link": {
+                "name": "image_7",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d6ea01a6-70d2-4df0-a04d-6bbb7cd5b510": {
+            "link": {
+                "name": "image_8",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "06347549-7ab1-45ef-b590-ec5ec606b9f2": {
+            "link": {
+                "name": "image_9",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "303a1cbb-386f-4580-bd3f-c0491f3daf1b": {
+            "link": {
+                "name": "image_10",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "2b465465-bb82-44be-9e09-3c489bcf1096": {
+            "link": {
+                "name": "image_11",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9ba4da76-28aa-445e-9c8c-2d4ac39e90d3": {
+            "link": {
+                "name": "image_12",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c0b4a76f-563e-4006-9453-4b1190f31312": {
+            "link": {
+                "name": "image_13",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "632f2b05-8934-4945-a590-0fe0ebab8eb7": {
+            "link": {
+                "name": "image_14",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "6d730e85-9b50-4230-a329-621cf375fccb": {
+            "link": {
+                "name": "image_15",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4b774bfc-b79e-41d4-ad6d-8bbd4c3d598e": {
+            "link": {
+                "name": "image_16",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "59058b42-12a1-49bf-9c51-2919cfc74a41": {
+            "link": {
+                "name": "image_17",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8a2a79b6-364e-4e8e-9685-d31920757431": {
+            "link": {
+                "name": "image_18",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "89a7504c-7131-48b0-bfa3-dd4759ff2ff3": {
+            "link": {
+                "name": "image_19",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "38bd3537-daed-4e58-8c7d-9cfb353f2119": {
+            "link": {
+                "name": "image_20",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ba1a73c4-3287-4159-80e7-91401169719e": {
+            "link": {
+                "name": "image_21",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4ab4d92d-ff77-41e9-ab66-c174ca833aed": {
+            "link": {
+                "name": "image_22",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ea232c3a-12b6-4a55-8f51-2c867170abf9": {
+            "link": {
+                "name": "image_23",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "711417da-7f95-4dca-badf-262e9a1c8a75": {
+            "link": {
+                "name": "image_24",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "fafda500-00fd-42a7-a642-e0726ff0d8b3": {
+            "link": {
+                "name": "image_25",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "354d0552-0a5e-4999-9e2f-3f0039a309b6": {
+            "link": {
+                "name": "image_26",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a96c0a2e-2a1c-4da0-84cd-243f54ea9577": {
+            "link": {
+                "name": "image_27",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "edd4dcdc-359c-4753-b4b7-a37301031c92": {
+            "link": {
+                "name": "image_28",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1c3eb0f5-b3f7-4125-88ba-cd64a5c387f3": {
+            "link": {
+                "name": "image_29",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "82ed056e-e437-4f2c-ac92-e39cc80f8884": {
+            "link": {
+                "name": "image_30",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c9d17bea-2049-4e71-af49-b2ad7af6a225": {
+            "link": {
+                "name": "image_31",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "778b7f94-6345-4d6a-9fd4-47141214c9f2": {
+            "link": {
+                "name": "image_32",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "fff88af5-13a4-41b5-96b4-13d633336c46": {
+            "link": {
+                "name": "image_33",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "7d9664e3-7cad-4106-90c1-c755317d9027": {
+            "link": {
+                "name": "image_34",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "190e5346-3071-4917-9bec-3a56f63c8a28": {
+            "link": {
+                "name": "image_35",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "6d8c9852-c418-477c-bec2-4fbec56ff979": {
+            "link": {
+                "name": "image_36",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "57476d5c-101b-4101-b320-d80bed661a16": {
+            "link": {
+                "name": "image_37",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a5d579ef-f3b3-401f-a6fc-210032ad8292": {
+            "link": {
+                "name": "image_38",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "826b76b4-d04f-48ee-bd19-fbff6715c21b": {
+            "link": {
+                "name": "image_39",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "941407c3-9a03-40ae-a3fb-73f058de8a74": {
+            "link": {
+                "name": "image_40",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "6d319faf-6028-4499-aa36-403cf0dc0720": {
+            "link": {
+                "name": "image_41",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4b5371c0-7df2-45d5-8222-b43c3a17011b": {
+            "link": {
+                "name": "image_42",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5172e56c-da9e-4118-939f-ae8a670d9d63": {
+            "link": {
+                "name": "image_43",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "099e9fad-c732-4782-96fc-a4e36374552c": {
+            "link": {
+                "name": "image_44",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "dbf41317-6029-47d9-a6ca-817d648ea5b6": {
+            "link": {
+                "name": "image_45",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "6d521bd7-f09d-4d81-8e9e-13934ffb70d1": {
+            "link": {
+                "name": "image_46",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "e043886b-ed30-4a96-9ab5-3177146056c9": {
+            "link": {
+                "name": "image_47",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3eaa8760-7baa-4ee5-9ebd-a3d02289ee42": {
+            "link": {
+                "name": "image_48",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9cb516d6-8f2a-4586-a14c-50aec338c29d": {
+            "link": {
+                "name": "image_49",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "bad131a8-43b6-4b49-ade2-950381982037": {
+            "link": {
+                "name": "image_50",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "499c6125-1e71-491f-bd22-906a8686f2c7": {
+            "link": {
+                "name": "image_51",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "945f368d-7147-4dfd-86bd-4ce8a3b848e8": {
+            "link": {
+                "name": "image_52",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "aa1139c9-fc76-4397-acbc-a67dd39116f3": {
+            "link": {
+                "name": "image_53",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f14b953b-f4e6-439d-bb85-5768331e67a2": {
+            "link": {
+                "name": "image_54",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "fca6dd40-6d38-4ecd-a1e9-2d8995cd01a4": {
+            "link": {
+                "name": "image_55",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "25cbf093-1f29-407e-a57b-f1f24cdbf47f": {
+            "link": {
+                "name": "image_56",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "48f15ab7-16fa-42fb-8dc0-273f220896ce": {
+            "link": {
+                "name": "image_57",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "982f6799-1fae-48c2-89be-b130e8032f30": {
+            "link": {
+                "name": "image_58",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5dbb513f-06ce-452e-94ba-edc98da3e5fb": {
+            "link": {
+                "name": "image_59",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "abdb4937-965b-4882-921e-c3b5b1c3e4d7": {
+            "link": {
+                "name": "image_60",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a36e1f20-51e1-4d87-9a92-a839cfd82801": {
+            "link": {
+                "name": "image_61",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "b0f88a30-f52e-4c7c-bf37-bf6acadc773d": {
+            "link": {
+                "name": "image_62",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8603cedd-808b-40ae-a7c8-7e348e495e2e": {
+            "link": {
+                "name": "image_63",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "26ecffdb-1f4b-497c-9ae9-0c1b0e2b84c2": {
+            "link": {
+                "name": "image_64",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "db543b78-fa29-49b1-9c3d-fda8701ca0ef": {
+            "link": {
+                "name": "image_65",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "403b5ffc-53a2-4aca-905f-02acc2a8bf72": {
+            "link": {
+                "name": "image_66",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "b1000c97-e944-4201-973d-4517a4ddf22a": {
+            "link": {
+                "name": "image_67",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "abdc4cf0-896a-4433-acba-685e2204139c": {
+            "link": {
+                "name": "image_68",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "7bf9c2fe-850a-48ce-9914-d76a1a6e6ac4": {
+            "link": {
+                "name": "image_69",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8303ae29-d071-43b5-8e66-01b1b11ac6f0": {
+            "link": {
+                "name": "image_70",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "15f88f1f-d107-4417-b69f-62570b88c71b": {
+            "link": {
+                "name": "image_71",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4e623574-6624-4921-8a48-907d816f6bd9": {
+            "link": {
+                "name": "image_72",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "0896d9d7-4886-4d81-be8f-2a02de45449c": {
+            "link": {
+                "name": "image_73",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a5571497-28c1-43c1-9db5-59dbda7bad20": {
+            "link": {
+                "name": "image_74",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "18b23d77-c79d-4040-85a4-db7a7e37e4d3": {
+            "link": {
+                "name": "image_75",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ac45d3fb-93c1-41f1-87ae-f1047295da9f": {
+            "link": {
+                "name": "image_76",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "cd153baf-4e8c-4481-ab37-d354d07bdeb2": {
+            "link": {
+                "name": "image_77",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8af764a2-b941-47c8-949f-8012a9e729bd": {
+            "link": {
+                "name": "image_78",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "531b3417-6213-4e74-89e1-4cf3f32327b0": {
+            "link": {
+                "name": "image_79",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8f1019e3-6804-49aa-a943-86140780025a": {
+            "link": {
+                "name": "image_80",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8bb7cd1c-12b7-4760-a425-36d8287cbc1f": {
+            "link": {
+                "name": "image_81",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "58d9aa0e-2131-413c-b516-a4cd3034c706": {
+            "link": {
+                "name": "image_82",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d1dcf5c3-36f6-4920-a6b1-d70881bf07cb": {
+            "link": {
+                "name": "image_83",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "909adb31-6bbd-496c-9a77-6fecc9b79f50": {
+            "link": {
+                "name": "image_84",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c1bdc871-7ddb-4cba-8427-05351a56981f": {
+            "link": {
+                "name": "image_85",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "073dda4b-ff1f-4c84-838c-f339506c8a05": {
+            "link": {
+                "name": "image_86",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3f197027-c2b0-4c64-bffd-272249881578": {
+            "link": {
+                "name": "image_87",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "bf4be2a5-7c10-45e6-8032-43bc5a1ba3bb": {
+            "link": {
+                "name": "image_88",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "60621da3-e2d6-451a-a204-6ec0503b3ed8": {
+            "link": {
+                "name": "image_89",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "51980c5d-2dab-4da7-8484-6b80f507e115": {
+            "link": {
+                "name": "image_90",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "16554b64-6b78-44d4-9ed6-3a4aea5dd86a": {
+            "link": {
+                "name": "image_91",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1e0613b3-15a0-4511-b18f-55449ea18488": {
+            "link": {
+                "name": "image_92",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d442efb7-d01b-4df6-84d3-318e2206e93d": {
+            "link": {
+                "name": "image_93",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "66014ded-236b-4f0f-8d40-01703d02e7ed": {
+            "link": {
+                "name": "image_94",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "00499e99-5bff-41d3-b65f-e311f4498e58": {
+            "link": {
+                "name": "image_95",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "0a917cf2-c2fd-4c83-8c2e-31c97d710224": {
+            "link": {
+                "name": "image_96",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "efaed490-6abf-4e0c-aaf7-84fdd8628383": {
+            "link": {
+                "name": "image_97",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "009e5a5e-53f0-4182-ad7f-aaa0016a28de": {
+            "link": {
+                "name": "image_98",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "e89ce7a6-bef7-43bc-b0d5-6331fd3fa4f1": {
+            "link": {
+                "name": "image_99",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ce5c51d7-de50-49ee-88d3-fa5476eea869": {
+            "link": {
+                "name": "image_100",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8ef7250a-308f-48cc-b6aa-fc266bcc4f6f": {
+            "link": {
+                "name": "image_101",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f8663496-2bc6-4d21-8ff1-1585242dfe45": {
+            "link": {
+                "name": "image_102",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "102ac7d9-1f19-47bd-bb4a-4c5e95f66535": {
+            "link": {
+                "name": "image_103",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "764fd528-9198-4d19-854b-12363287d8dd": {
+            "link": {
+                "name": "image_104",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8604cdb0-3e35-4d6e-88b5-dff6510fd35f": {
+            "link": {
+                "name": "image_105",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "471ef00e-f047-45d9-9338-51557962361e": {
+            "link": {
+                "name": "image_106",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "44a6c7f1-dc8c-4d72-a6b9-0c82839c76bb": {
+            "link": {
+                "name": "image_107",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "83cc9446-6217-483f-a3f3-ef1093851549": {
+            "link": {
+                "name": "image_108",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "42a7b935-f0f2-4ad1-a647-caf35217a714": {
+            "link": {
+                "name": "image_109",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
         }
     },
     "textures": {
@@ -1155,6 +2413,666 @@
             "link": {
                 "name": "icon.png",
                 "file": "assets\\textures\\pp\\icon.png"
+            }
+        },
+        "163278e7-6d1d-4756-84d2-b9113b7c891c": {
+            "link": {
+                "name": "texture_0",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d7434169-a572-4ae8-86e9-9e6dfd318f72": {
+            "link": {
+                "name": "texture_1",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9fc3186e-0c35-4fe3-98bb-fc4e88f5d247": {
+            "link": {
+                "name": "texture_2",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "2120253e-dcaf-43c5-8ad2-29c6d5816b39": {
+            "link": {
+                "name": "texture_3",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "dfd5c15b-0c60-4c52-8814-2f5262ef7197": {
+            "link": {
+                "name": "texture_4",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5eb4001d-12c1-400f-8769-46ccb0a97c35": {
+            "link": {
+                "name": "texture_5",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1051c604-c993-43ac-83a9-2f614c2f168c": {
+            "link": {
+                "name": "texture_6",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "da90e9e2-a313-4e48-a395-be223a0f2717": {
+            "link": {
+                "name": "texture_7",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "351925be-1b67-4766-9983-7844e0c47332": {
+            "link": {
+                "name": "texture_8",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1a2d1bfb-0632-4777-91db-0ced7c94333b": {
+            "link": {
+                "name": "texture_9",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "dcd2ca71-c0ee-452e-8da5-13504c5b8d15": {
+            "link": {
+                "name": "texture_10",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4a84e3a4-049e-434d-9b73-317e622f3191": {
+            "link": {
+                "name": "texture_11",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "155855f0-9800-42c9-bce0-27c4ab6e1187": {
+            "link": {
+                "name": "texture_12",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "094e384b-1b29-45ca-94bd-2815b35898f5": {
+            "link": {
+                "name": "texture_13",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "70eec171-1012-4db7-ad5d-0e5025e95e8c": {
+            "link": {
+                "name": "texture_14",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "18172726-9699-4e3e-acfc-0fec6f789833": {
+            "link": {
+                "name": "texture_15",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1a677368-b9a2-4984-952d-18c2986f46f0": {
+            "link": {
+                "name": "texture_16",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "b8e78ebd-148c-4c32-b27b-a23b8cd17a5d": {
+            "link": {
+                "name": "texture_17",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "0d131736-4593-4494-a916-ef323ac272e6": {
+            "link": {
+                "name": "texture_18",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "16e2930c-66c0-4ffa-8b88-19c309eaa7b2": {
+            "link": {
+                "name": "texture_19",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c44fbdda-80fa-4907-9c87-f3ac070aab01": {
+            "link": {
+                "name": "texture_20",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "159b8b88-4bd5-41ea-a04f-3b6b386424ae": {
+            "link": {
+                "name": "texture_21",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5186e356-5118-426f-a0a0-d0ce3c1dc70f": {
+            "link": {
+                "name": "texture_22",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "268eeb16-5980-4063-9c7a-71e549c14e62": {
+            "link": {
+                "name": "texture_23",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "87d12e05-2123-40eb-a460-2d778c97344c": {
+            "link": {
+                "name": "texture_24",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ba0b1021-a88f-4245-89c4-bc6058ce034b": {
+            "link": {
+                "name": "texture_25",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "31e88c25-48a3-4750-a83f-4ddcdeb0a2fc": {
+            "link": {
+                "name": "texture_26",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "dd2d20e9-e220-466e-af0c-191117d408c4": {
+            "link": {
+                "name": "texture_27",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "54d539b1-a50c-4309-9492-94505b7b1043": {
+            "link": {
+                "name": "texture_28",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "760d4a44-703f-4e00-ae2b-e4b595962dbd": {
+            "link": {
+                "name": "texture_29",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "52f80a42-4d83-4349-b113-6f7040c5ea29": {
+            "link": {
+                "name": "texture_30",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a34dcf36-cba7-4327-a13f-43831c7d5527": {
+            "link": {
+                "name": "texture_31",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "64d858fc-5805-4cd7-8fca-b4411b944a4e": {
+            "link": {
+                "name": "texture_32",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9a2499e3-ab2f-4800-9cf7-ca10833e2608": {
+            "link": {
+                "name": "texture_33",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a4727885-2c3e-48f7-acc4-aa29c5bea45b": {
+            "link": {
+                "name": "texture_34",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9a0d6cca-3857-4d14-ae0c-b19b83b12e8c": {
+            "link": {
+                "name": "texture_35",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "7072db43-cd07-4506-bd9c-4316fb056345": {
+            "link": {
+                "name": "texture_36",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "699ecc0f-058d-49dc-a492-5de7db8c1238": {
+            "link": {
+                "name": "texture_37",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3ea727a2-8753-41e9-995f-eaf387ff9958": {
+            "link": {
+                "name": "texture_38",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d4cdec7f-973d-4b55-9ea5-8f6cfb8e6a73": {
+            "link": {
+                "name": "texture_39",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "19232a4f-6717-404f-a3a9-ecb6f6493eed": {
+            "link": {
+                "name": "texture_40",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "0c55ac64-b269-4b19-bdb0-0f5e6d09f301": {
+            "link": {
+                "name": "texture_41",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "efa1e3c9-09f8-4209-8888-a4e7588d6e43": {
+            "link": {
+                "name": "texture_42",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "82ff50f9-b9e5-44ed-adc5-d83db1c6ff2c": {
+            "link": {
+                "name": "texture_43",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "46b264b4-baa9-470a-87ec-bacc86485a97": {
+            "link": {
+                "name": "texture_44",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4e026d4d-f56f-4b7c-a8b1-a613accb6fd3": {
+            "link": {
+                "name": "texture_45",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8f8aaf4f-09b6-44d8-b79f-245c9493cf71": {
+            "link": {
+                "name": "texture_46",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "da776edd-1504-479c-968f-b8a87691ceee": {
+            "link": {
+                "name": "texture_47",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "64c65f46-82b1-4cc6-80ab-624794529631": {
+            "link": {
+                "name": "texture_48",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5518a19e-8ff7-4897-acdf-0bca4e9fca4b": {
+            "link": {
+                "name": "texture_49",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "631fcaed-a9cc-46b4-b112-1e63a82ae5f5": {
+            "link": {
+                "name": "texture_50",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "e30cc740-a50b-490b-a2d8-0b9dd2c67e0a": {
+            "link": {
+                "name": "texture_51",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f8fd81e3-2ba7-4fb6-af23-0b09fa945b4e": {
+            "link": {
+                "name": "texture_52",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "bd023155-da04-4a1e-9e9c-1a914ae0a870": {
+            "link": {
+                "name": "texture_53",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "df7c5fe9-077a-4a38-a066-4fa87ba0549b": {
+            "link": {
+                "name": "texture_54",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5f9bd112-2b6e-436f-b09f-47962a0e2f3c": {
+            "link": {
+                "name": "texture_55",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f8f2fcd5-7924-4f64-9eb9-e3793abf71d3": {
+            "link": {
+                "name": "texture_56",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "b4c43d65-faeb-4f60-b69f-ad88841adf4b": {
+            "link": {
+                "name": "texture_57",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "60d8f441-7645-4b44-80a2-ec3a9f7f2a14": {
+            "link": {
+                "name": "texture_58",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c16c6746-5a52-411e-9403-a42bf1468b3a": {
+            "link": {
+                "name": "texture_59",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3da2c380-a87f-4ec7-895e-37c4715bd454": {
+            "link": {
+                "name": "texture_60",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "b795ba6f-c561-439d-9082-eab799cd3fb4": {
+            "link": {
+                "name": "texture_61",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3c05399e-2544-4fc0-828b-c3555744dee3": {
+            "link": {
+                "name": "texture_62",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c887ffa3-f518-4934-8fc0-224cdeb1488e": {
+            "link": {
+                "name": "texture_63",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "09567d0a-e126-4978-b5e8-97c111098907": {
+            "link": {
+                "name": "texture_64",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "e9d4d88e-db0a-4392-a692-758aa3366595": {
+            "link": {
+                "name": "texture_65",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a5336d03-3a9e-4954-b5dc-ee8c0f06221c": {
+            "link": {
+                "name": "texture_66",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c7ab25f0-5a55-4360-83a4-02411c11f3e3": {
+            "link": {
+                "name": "texture_67",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4fa7729c-af5e-4c7f-a650-518c403f8e04": {
+            "link": {
+                "name": "texture_68",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a3502b71-1392-4551-8cae-d86ac2b8920b": {
+            "link": {
+                "name": "texture_69",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5b013a09-9225-4cf1-8cfb-0f7c46d50118": {
+            "link": {
+                "name": "texture_70",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ae628843-fa58-4a51-8b29-b68c98ad8ea5": {
+            "link": {
+                "name": "texture_71",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3f1a105d-0527-4ae6-a57d-fe4f1abb6d8c": {
+            "link": {
+                "name": "texture_72",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "babb628e-7c70-4ef7-8506-22b21eb2ea26": {
+            "link": {
+                "name": "texture_73",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4365f354-9bf3-47f9-ac6e-c83db4a9a882": {
+            "link": {
+                "name": "texture_74",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "dcc9409f-f1f5-440c-a8b8-de8a639f655e": {
+            "link": {
+                "name": "texture_75",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1698dad6-e363-470e-bd35-22a0d4ea9464": {
+            "link": {
+                "name": "texture_76",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "2a645f1f-b74a-4ed1-af4f-95643945311c": {
+            "link": {
+                "name": "texture_77",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3e17703d-1292-4c4b-8ad3-41e873ce424a": {
+            "link": {
+                "name": "texture_78",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "7b3994ea-4831-4b13-b1ea-654f6d399867": {
+            "link": {
+                "name": "texture_79",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d387bc7b-317c-4724-ae25-11d50ff5b65f": {
+            "link": {
+                "name": "texture_80",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "24f623a7-7232-4a82-a001-d410fa427477": {
+            "link": {
+                "name": "texture_81",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "599fb994-32fe-4c7a-8a84-f122b19d727a": {
+            "link": {
+                "name": "texture_82",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "edc73e18-06ff-4bad-939a-5bc8b1b9f866": {
+            "link": {
+                "name": "texture_83",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1a7434b2-0543-4369-b200-0f40054628cf": {
+            "link": {
+                "name": "texture_84",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "98f639bb-1013-4423-9750-3ee85c0938b1": {
+            "link": {
+                "name": "texture_85",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c3076a50-c9b6-49a4-95a7-a70ef733c1da": {
+            "link": {
+                "name": "texture_86",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "04042ed4-e0f3-409d-b26c-859b2a2cade2": {
+            "link": {
+                "name": "texture_87",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "0e4574bf-0565-47cc-9c69-6035660b2f60": {
+            "link": {
+                "name": "texture_88",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "7495e642-12c1-4c62-8d8b-dc699be76eff": {
+            "link": {
+                "name": "texture_89",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "72facd7d-67aa-4b8a-9045-e8f508ca5676": {
+            "link": {
+                "name": "texture_90",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3443c57f-59e3-4001-9dd0-6de1803ffee4": {
+            "link": {
+                "name": "texture_91",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5e2d3d72-b495-44a2-8af2-01f84219272e": {
+            "link": {
+                "name": "texture_92",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "4c5a1bb7-6bde-45a1-acdc-8929bb8ac204": {
+            "link": {
+                "name": "texture_93",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9f409ccd-5164-4f84-ac3e-8d48813ee1d3": {
+            "link": {
+                "name": "texture_94",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "e64b1fb6-cfa0-44f1-858c-d31c0824a8c2": {
+            "link": {
+                "name": "texture_95",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "e71b37f9-3e77-4f43-952c-5fef5bd96574": {
+            "link": {
+                "name": "texture_96",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f7226db8-4e78-4034-a2df-c9f9092374cc": {
+            "link": {
+                "name": "texture_97",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "abcedacb-0f91-41f7-bfdf-d2077e2ca666": {
+            "link": {
+                "name": "texture_98",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "e863891b-9335-42a5-b9f4-cd959a439589": {
+            "link": {
+                "name": "texture_99",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "7ee90138-eb37-4058-90b9-45eb1fe70e19": {
+            "link": {
+                "name": "texture_100",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "e5507e44-7559-4418-ac50-8a0d66163995": {
+            "link": {
+                "name": "texture_101",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "96fef484-568c-4dad-9546-0998aae264a9": {
+            "link": {
+                "name": "texture_102",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9062802b-b9cf-4234-9e7a-6e01a6688512": {
+            "link": {
+                "name": "texture_103",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "50e560ca-d45c-4e45-8e15-015749f397da": {
+            "link": {
+                "name": "texture_104",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "8ccdb46e-ab57-4d91-98ca-2e6ca5064020": {
+            "link": {
+                "name": "texture_105",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "792dc0b7-2e71-41f2-8979-e91a2021fdd9": {
+            "link": {
+                "name": "texture_106",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d19a2049-f0e0-42b5-b0fd-3dc3587e120c": {
+            "link": {
+                "name": "texture_107",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "08baa114-378f-4922-9c84-37f0c0d358ee": {
+            "link": {
+                "name": "texture_108",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "1d4f3fbf-8865-4779-aeaf-51238f14dd9f": {
+            "link": {
+                "name": "texture_109",
+                "file": "assets\\models\\sci_fi_lab.glb"
             }
         }
     },
@@ -1644,7 +3562,33 @@
         },
         "fdd04da3-6300-46e4-afad-fb76a6e26dfd": {
             "name": "Sky",
-            "pipeline": "6a25dc7c-d12d-45a0-8e15-ace3bd9637e6"
+            "pipeline": "6a25dc7c-d12d-45a0-8e15-ace3bd9637e6",
+            "Sky": {
+                "colorStop3": [
+                    0.0101499,
+                    0.041935,
+                    0.2352941,
+                    1.0
+                ],
+                "colorStop0": [
+                    0.4949481,
+                    0.5363728,
+                    0.8470588,
+                    1.0
+                ],
+                "colorStop1": [
+                    0.0101499,
+                    0.041935,
+                    0.2352941,
+                    1.0
+                ],
+                "colorStop2": [
+                    0.0101499,
+                    0.041935,
+                    0.2352941,
+                    1.0
+                ]
+            }
         },
         "eb68d1ad-89df-45b0-a7ff-d270e70a6ffe": {
             "name": "Outline Text",
@@ -1663,6 +3607,174 @@
                     0.1658823,
                     1.0
                 ]
+            }
+        },
+        "72ea662d-cc30-40f5-ac6b-3f28ae9879c6": {
+            "link": {
+                "name": "Panel_sciana",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "21d7fcc6-b30b-476e-a274-0be83a77a18e": {
+            "link": {
+                "name": "Panel_sterowania",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "a4709686-e02b-40d0-aa39-a4e2784fe29d": {
+            "link": {
+                "name": "Podoga2",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f4e1e79f-e0df-4795-b0eb-811238eb8795": {
+            "link": {
+                "name": "SCIANA_DUZA",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ecf96108-fc82-4286-9c65-37cfa8146ce1": {
+            "link": {
+                "name": "SCIANA_MAA",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c31d340d-9d17-4e04-befe-d749c8d775a4": {
+            "link": {
+                "name": "SCIANA_PODLOGA",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "96819dd9-13fb-4815-b40a-8fadd3b6136c": {
+            "link": {
+                "name": "SZYBKA",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "b8f9d3fd-5254-4274-8752-f623b2971d89": {
+            "link": {
+                "name": "drzwi",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "44ecf96b-b205-4ba8-ab21-2b8335c3c0ad": {
+            "link": {
+                "name": "duz_soik_szybka",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "6bb3b26a-807c-4a25-a3a5-336e7734962b": {
+            "link": {
+                "name": "duzy_soik",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "01d79ec6-ec2f-4736-ae49-20621269294b": {
+            "link": {
+                "name": "panel",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "72e5cb6b-8379-4fd1-b022-53980a98ba79": {
+            "link": {
+                "name": "panel3",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "ad6f7857-f502-4554-8f18-49b93b579138": {
+            "link": {
+                "name": "rura_glowna_podloga",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "56a0e2d5-fa8b-4ef8-9dc9-3e22ad0ec3a5": {
+            "link": {
+                "name": "rura_glowna_szybka",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "174aca65-6503-4257-ba8e-9317b2f31947": {
+            "link": {
+                "name": "rura_gwna_baza",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "621dd908-8aa9-4908-9f14-de353e9efbf2": {
+            "link": {
+                "name": "rura_przod",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "c0a22ddf-c021-40f1-882e-6b74e0ee56d6": {
+            "link": {
+                "name": "rura_tylna",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d998a736-60fc-4670-bc9c-62ba64e93770": {
+            "link": {
+                "name": "sciana3",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "5e41a09e-f37b-49cd-bbc1-c1cfec57f9d5": {
+            "link": {
+                "name": "stolik",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "49878861-300e-48e0-a6af-da2070034291": {
+            "link": {
+                "name": "stolik_szybka",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "f36f968c-78cb-4d29-8868-68194976f6e6": {
+            "link": {
+                "name": "szafka",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "d4e9a9d5-6493-4a57-a42b-939f17f4e66a": {
+            "link": {
+                "name": "szafka_body",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "0618ef85-dfb3-4a43-bb34-2299ff444989": {
+            "link": {
+                "name": "szafka_szyba",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "075bf9b0-785a-4093-bcf3-e83d12492fb5": {
+            "link": {
+                "name": "szafka_szybka",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "3fdecd51-66d2-4043-916d-4072ef7a3403": {
+            "link": {
+                "name": "szyba_przegroda",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "9f7330b0-134b-42bc-a278-e824af568f1b": {
+            "link": {
+                "name": "soik_may",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "220e46cc-0f3e-4bb1-9e94-e20d142739ee": {
+            "link": {
+                "name": "soik_may_szybka",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            }
+        },
+        "15146e3e-36cf-4833-bcdc-03b596d3201e": {
+            "link": {
+                "name": "tablica",
+                "file": "assets\\models\\sci_fi_lab.glb"
             }
         }
     },
@@ -1721,6 +3833,29 @@
             "link": {
                 "name": "Phong Normalmapped",
                 "file": "default"
+            },
+            "shader": "9b31b513-9351-4934-88ae-d1511b2c09cf",
+            "features": {
+                "GLOBAL_ILLUMINATION": false,
+                "TONEMAPPING": false,
+                "TEXTURED": true,
+                "DEPRECATED_AMBIENT_FACTOR": false,
+                "DEPRECATED_LIGHT_ATTENUATION": false,
+                "WITH_FOG": true,
+                "LIGHTMAP_MULTIPLY_DIFFUSE": false,
+                "SHADOW_PCF": false,
+                "SHADOW_NORMAL_OFFSET_UV_ONLY": true,
+                "NORMAL_MAPPING": true,
+                "WITH_EMISSIVE": false,
+                "GLOBAL_ILLUMINATION_PROBE_VOLUME": false,
+                "SHADOW_NORMAL_OFFSET_SLOPE_SCALE": true,
+                "ALPHA_MASKED": false,
+                "VERTEX_COLORS": false,
+                "LIGHTMAP": false,
+                "SHADOW_NORMAL_OFFSET_SCALE_BY_SHADOW_DEPTH": false,
+                "LIGHTMAP_MULTIPLY_ALBEDO": false,
+                "OCCLUSION_TEXTURE": false,
+                "SEPARATE_OCCLUSION_TEXTURE": true
             }
         },
         "23d2e5ed-cb5d-4166-b156-400853518648": {
@@ -1829,6 +3964,11 @@
         "88ef22f2-9f2d-4c27-83b8-70f49921b282": {
             "fileName": "assets/textures/pp/icon.png",
             "importerName": ""
+        },
+        "fee3f8a7-8ffb-4ecc-bff1-7cb021d5515d": {
+            "fileName": "assets/models/sci_fi_lab.glb",
+            "importerName": "",
+            "importPhysicalAsPhongMaterials": true
         }
     },
     "languages": {},
