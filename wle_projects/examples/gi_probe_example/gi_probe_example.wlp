@@ -63,10 +63,20 @@
                 }
             ],
             "rotation": [
-                -7.549790126404332e-8,
+                -6.342756364574598e-8,
+                0.9199454,
+                -2.7416504622124194e-7,
+                0.3920464
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "scaling": [
+                0.9999983,
                 1.0,
-                -7.549790126404332e-8,
-                -4.371138118131057e-8
+                0.9999983
             ]
         },
         "5503f8af-6bfc-4d97-b2cc-3e4d8fd44d09": {
@@ -176,14 +186,16 @@
                     "type": "light",
                     "light": {
                         "color": [
-                            0.5659329,
-                            0.7115613,
-                            0.9151943
+                            0.3268863,
+                            0.3423674,
+                            0.6007066
                         ],
                         "type": "point",
                         "outerAngle": 270.0,
-                        "intensity": 10.0
-                    }
+                        "intensity": 8.0,
+                        "shadows": true
+                    },
+                    "active": true
                 }
             ],
             "scaling": [
@@ -1164,7 +1176,7 @@
             "parent": "526adb29-57d2-4b09-ac41-5efed44996a2"
         },
         "8cd24f76-f5f3-4f30-9742-2ac04ef0cc16": {
-            "name": "Light 1",
+            "name": "Light 2",
             "parent": "26727e6b-7a15-4314-8a36-b7bf99ece0fa",
             "components": [
                 {
@@ -1178,7 +1190,8 @@
                         "type": "point",
                         "outerAngle": 350.0,
                         "intensity": 10.0
-                    }
+                    },
+                    "active": false
                 }
             ],
             "scaling": [
@@ -1199,14 +1212,14 @@
             ]
         },
         "14c75133-db8b-4f61-b18a-0b8a8b140fa0": {
-            "name": "Shadow",
+            "name": "Sun",
             "parent": "26727e6b-7a15-4314-8a36-b7bf99ece0fa",
             "components": [
                 {
                     "type": "light",
                     "light": {
                         "shadows": true,
-                        "intensity": 0.5,
+                        "intensity": 0.001,
                         "type": "sun",
                         "color": [
                             0.5659329,
@@ -1214,7 +1227,8 @@
                             0.859658
                         ],
                         "shadowRange": 50.0
-                    }
+                    },
+                    "active": false
                 }
             ],
             "translation": [
@@ -1377,13 +1391,6 @@
         "3b18fa6c-195a-4d18-9bf4-feda6f0d1eb5": {
             "link": {
                 "name": "Object_25<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
-                "file": "assets\\models\\sci_fi_lab.glb"
-            },
-            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
-        },
-        "d125f380-109d-46d4-8fd0-9bda07096f4b": {
-            "link": {
-                "name": "Object_26<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
                 "file": "assets\\models\\sci_fi_lab.glb"
             },
             "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc"
@@ -3950,7 +3957,19 @@
                 "name": "panel",
                 "file": "assets\\models\\sci_fi_lab.glb"
             },
-            "pipeline": "38b16e0c-7bce-47ee-a520-5f12e5842681"
+            "pipeline": "38b16e0c-7bce-47ee-a520-5f12e5842681",
+            "Physical": {
+                "albedoTexture": "19232a4f-6717-404f-a3a9-ecb6f6493eed",
+                "emissiveTexture": "efa1e3c9-09f8-4209-8888-a4e7588d6e43",
+                "emissiveColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "normalTexture": "82ff50f9-b9e5-44ed-adc5-d83db1c6ff2c",
+                "roughnessMetallicTexture": "0c55ac64-b269-4b19-bdb0-0f5e6d09f301"
+            }
         },
         "72e5cb6b-8379-4fd1-b022-53980a98ba79": {
             "link": {
@@ -4418,7 +4437,10 @@
                     14.1574001,
                     4.1133389,
                     8.0827388
-                ]
+                ],
+                "lods": 2,
+                "quality": "high",
+                "minProbeSpacing": 0.75
             }
         }
     }
