@@ -3627,7 +3627,16 @@
                     0.3921568
                 ]
             },
-            "pipeline": "313227a6-182e-4b31-9838-632a9291f4d2"
+            "pipeline": "2d2fb7df-35f2-4ea3-a493-70fe1235b94f",
+            "Physical": {
+                "roughnessFactor": 0.3499999,
+                "albedoColor": [
+                    0.4160553,
+                    0.6352322,
+                    0.6549019,
+                    1.0
+                ]
+            }
         },
         "90348bdc-8768-4244-9398-b89361708289": {
             "name": "Cyan",
@@ -3651,7 +3660,16 @@
                     0.3921568
                 ]
             },
-            "pipeline": "313227a6-182e-4b31-9838-632a9291f4d2"
+            "pipeline": "2d2fb7df-35f2-4ea3-a493-70fe1235b94f",
+            "Physical": {
+                "roughnessFactor": 0.3499999,
+                "albedoColor": [
+                    0.8235294,
+                    1.0,
+                    0.9397923,
+                    1.0
+                ]
+            }
         },
         "3699d0b5-ea21-4ec3-8d94-7f02ef40eec8": {
             "link": {
@@ -4121,7 +4139,9 @@
                 "LIGHTMAP_MULTIPLY_ALBEDO": false,
                 "ALPHA_MASKED": false,
                 "WITH_FOG": true
-            }
+            },
+            "doubleSided": false,
+            "sampleAlphaToCoverage": false
         },
         "38b16e0c-7bce-47ee-a520-5f12e5842681": {
             "link": {
