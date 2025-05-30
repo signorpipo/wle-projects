@@ -1159,9 +1159,9 @@
                     "type": "light",
                     "light": {
                         "color": [
-                            0.7045911,
-                            0.9514189,
-                            0.9540635
+                            0.5659329,
+                            0.7115613,
+                            0.9151943
                         ],
                         "type": "point",
                         "outerAngle": 350.0,
@@ -1197,9 +1197,9 @@
                         "intensity": 0.5,
                         "type": "sun",
                         "color": [
-                            0.4027519,
-                            0.9045936,
-                            0.5694413
+                            0.5659329,
+                            0.9151942,
+                            0.859658
                         ]
                     }
                 }
@@ -1475,6 +1475,98 @@
                 -0.05,
                 0.0,
                 0.0
+            ]
+        },
+        "8f990dd1-98de-4414-97f5-fcdda4f6a4d2": {
+            "link": {
+                "name": "Object_6<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "462da378-0377-4943-a621-073b42057a10": {
+            "link": {
+                "name": "Object_7<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "9a19fc0d-70c2-4db5-888b-bccc0eb0c867": {
+            "link": {
+                "name": "Object_20<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "bed0a4e0-99b5-4bd4-8ae3-d95783ea639f": {
+            "link": {
+                "name": "Object_21<enviro_lab.obj.cleaner.materialmerger.gles<Sketchfab_model",
+                "file": "assets\\models\\sci_fi_lab.glb"
+            },
+            "parent": "c76cd56e-5e4a-4835-8005-b756adbfaffc",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
             ]
         }
     },
@@ -4017,7 +4109,18 @@
             },
             "features": {
                 "SEPARATE_OCCLUSION_TEXTURE": true,
-                "NORMAL_MAPPING": true
+                "NORMAL_MAPPING": true,
+                "WITH_EMISSIVE": true,
+                "TONEMAPPING": false,
+                "VERTEX_COLORS": false,
+                "SHADOW_PCF": false,
+                "SHADOW_NORMAL_OFFSET_SLOPE_SCALE": true,
+                "SHADOW_NORMAL_OFFSET_UV_ONLY": true,
+                "OCCLUSION_TEXTURE": false,
+                "LIGHTMAP": false,
+                "LIGHTMAP_MULTIPLY_ALBEDO": false,
+                "ALPHA_MASKED": false,
+                "WITH_FOG": true
             }
         },
         "38b16e0c-7bce-47ee-a520-5f12e5842681": {
@@ -4027,10 +4130,15 @@
             },
             "features": {
                 "SEPARATE_OCCLUSION_TEXTURE": true,
-                "NORMAL_MAPPING": true
+                "NORMAL_MAPPING": true,
+                "WITH_FOG": true,
+                "WITH_EMISSIVE": true,
+                "SHADOW_NORMAL_OFFSET_UV_ONLY": true,
+                "SHADOW_NORMAL_OFFSET_SLOPE_SCALE": true
             },
             "name": "Physical Opaque Textured No Shadows",
-            "castShadows": false
+            "castShadows": false,
+            "doubleSided": false
         },
         "34d9e3a1-e64c-4786-b7ef-581ce83aaf88": {
             "link": {
